@@ -28,9 +28,13 @@ class Home extends CI_Controller {
 		$this->load->view('index');
 
 	}	
-	public function vieclam()
+	public function plans()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('plans');
+	}
+	public function domain()
+	{
+		$this->load->view('domain');
 	}
 	
 }
