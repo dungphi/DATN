@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Quamax A Web Hosting Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title>Trang Tìm Việc làm Online</title>
 <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="<?=base_url();?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,15 +58,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
 	<div class="header">
 		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" class="img-responsive" alt="" /></a>
+			<a href="index.php"><img src="images/logo.png" class="img-responsive" alt="" /></a>
 		</div>
 		<div class="head-nav">
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="plans.html">Hosting Plans</a></li>
-						<li><a href="domain.html">Domain</a></li>
+						<li class="active"><a href="index.php">Trang Chủ</a></li>
+						<li><a href="<?=base_url('plans');?>">Người Tìm Việc</a></li>
+						<li><a href="domain.html">Nhà tuyển Dụng</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="services.html">Services</a></li>
 						<li><a href="pages.html">Pages</a></li>
