@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Quamax A Web Hosting Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title><?=$title; ?></title>
 <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="<?=base_url();?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <?php
 	$this->load->view('layout/header');
-	$this->load->view('layout/content');
+	$this->load->view($content);
 	$this->load->view('layout/footer');
 ?>
 
