@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li><a href="index.php">Trang Chủ</a></li>
+						<li><a href="<?=base_url('home'); ?>">Trang Chủ</a></li>
 						<li class="active"><a href="plans">Người Tìm Việc</a></li>
 						<li><a href="domain.php">Domain</a></li>
 						<li><a href="about.php">About</a></li>
