@@ -26,14 +26,11 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('index');
-<<<<<<< HEAD
-		
-=======
+
 	}	
 	public function vieclam()
 	{
 		$this->load->view('welcome_message');
->>>>>>> 6c831d08f60ac2f6c23a2961fced0c9201fa051e
 	}
 	
 }
