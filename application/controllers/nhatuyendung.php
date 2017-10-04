@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Domain extends CI_Controller {
+class Nhatuyendung extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,9 @@ class Domain extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('nhatuyendung');
+		$data['title'] = 'Trang nhà tuyển dụng';
+		$data['content'] = 'layout/nhatuyendung';
+		$this->load->view('index', $data);
 
 	}	
 	public function nguoitimviec()
