@@ -27,6 +27,7 @@ class Home extends CI_Controller {
 	{
 		$data['title'] = 'Trang Tìm việc Online';
 		$data['content'] = 'layout/content';
+		$data['active'] = 1;
 		$this->load->view('index', $data);
 		
 	}	

@@ -27,6 +27,7 @@ class Nguoitimviec extends CI_Controller {
 	{
 		$data['title'] = 'Trang Tìm việc Online';
 		$data['content'] = 'layout/nguoitimviec';
+		$data['active'] = 2;
 		$this->load->view('index', $data);
 		
 	}	
