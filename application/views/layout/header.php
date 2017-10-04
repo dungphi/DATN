@@ -7,7 +7,7 @@
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li <?php if($active == 1) echo 'class="active"'; ?></l>><a href="index.php">Trang Chủ</a></li>
+						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="index.php">Trang Chủ</a></li>
 						<li <?php if($active == 2) echo 'class="active"'; ?>><a href="<?=base_url('nguoitimviec'); ?>">Người Tìm Việc</a></li>
 						<li <?php if($active == 3) echo 'class="active"'; ?>><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng</a></li>
 						<li><a href="about.html">About</a></li>
