@@ -5,7 +5,7 @@
 					<div class="callbacks_container">
 					  	<ul class="rslides" id="slider">
 							<li>
-								<img src="images/5.jpg" class="img-responsive" alt="">
+								<img src="<?=base_url(); ?>images/5.jpg" class="img-responsive" alt="">
 								
 							</li>
 							<li>

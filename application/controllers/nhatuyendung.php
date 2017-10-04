@@ -25,16 +25,16 @@ class Domain extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('domain');
+		$this->load->view('nhatuyendung');
 
 	}	
-	public function plans()
+	public function nguoitimviec()
 	{
-		$this->load->view('plans');
+		$this->load->view('nguoitimviec');
 	}
-	public function domain()
+	public function nhatuyendung()
 	{
-		$this->load->view('domain');
+		$this->load->view('nhatuyendung');
 	}
 	
 }

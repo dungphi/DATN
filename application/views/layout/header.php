@@ -7,9 +7,9 @@
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="<?=base_url('home/plans'); ?>">Hosting Plans</a></li>
-						<li><a href="<?=base_url('domain'); ?>">Domain</a></li>
+						<li class="active"><a href="index.php">Trang Chủ</a></li>
+						<li><a href="<?=base_url('nguoitimviec'); ?>">Người Tìm Việc</a></li>
+						<li><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng</a></li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="services.html">Services</a></li>
 						<li><a href="pages.html">Pages</a></li>

@@ -25,17 +25,22 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('index');
-
+		$data['title'] = 'Trang Tìm việc Online';
+		$data['content'] = 'layout/content';
+		$this->load->view('index', $data);
+		
 	}	
-	public function plans()
+	public function nguoitimviec()
 	{
-		$this->load->view('plans');
+		$data['title'] = 'Tiêu đề trang';
+		$data['content'] = 'layout/nguoitimviec';
+		$this->load->view('index', $data);
 	}
-	public function domain()
+	public function nhatuyendung()
 	{
-
-		$this->load->view('domain');
+		$data['title'] = 'Tiêu đề trang';
+		$this->load->view('nhatuyendung');
+		$this->load->view('index', $data);
 
 	}
 	

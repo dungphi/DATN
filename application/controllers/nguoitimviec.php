@@ -23,11 +23,26 @@ class Plans extends CI_Controller {
 		$this->load->helper('url');
 		
 	}
-	
 	public function index()
 	{
-		$this->load->view('plans');
+		$data['title'] = 'Trang Tìm việc Online';
+		$data['content'] = 'layout/content';
+		$this->load->view('index', $data);
+		
+	}	
+	public function nguoitimviec()
+	{
+		$data['title'] = 'Tiêu đề trang';
+		$data['content'] = 'layout/nguoitimviec';
+		$this->load->view('index', $data);
+	}
+	public function nhatuyendung()
+	{
+		$data['title'] = 'Tiêu đề trang';
+		$this->load->view('nhatuyendung');
+		$this->load->view('index', $data);
 
 	}
+	
 	
 }
