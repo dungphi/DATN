@@ -25,26 +25,66 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-span.menu {
+span.menu {						/*menu*/
   display: none;
 }
-.header {
-  text-align: center;
-  padding: 2em 0 0;
+.header { 
+  padding: 1em 0  0;
 }
+.logo a {
+	margin:auto;
+  	float:left;	
+	}
+.input_s{						/*Tìm kiếm*/
+	width:25em;
+	margin:0 0 1em 4.5em;
+	float: left;
+	}
+.btn_s{
+	color:#009;
+	font-size: 1.3em;
+	margin:0 4.5em 1em 0;
+	float: left;
+	}
+.dangtin a{					/*dangtin*/
+  color: #fff;
+  background:#F60;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding:0.1em;
+  margin-boton:1em;
+  float: left;
+	}
+.dangnhap a{
+	color:#009;
+  font-size: 1em;
+  margin:0 0 1em 3em;
+  float:left;
+	}
+.dangky a{
+	color:#009;
+	font-size: 1em;
+  margin:0 0 1em 1em;
+	float:left;
+	}
 .head-nav ul li a {
   display: inline-block;
   color: #fff;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.35em;
   font-weight: 700;
   font-family: Overlock-Regular;
-  padding: 1.2em 1.5em;
+  padding: 1em 1.7em ;
+  
 }
 .head-nav {
-  background: #F54785;
-  padding: 0em 0;
-  margin: 2em 0 0;
+  text-align: center;
+  background: #CCC;
+  padding:0;
+  margin-top: 1em;
+  clear:both;
+
 }
 .head-nav ul{
 	padding:0;
@@ -54,9 +94,13 @@ span.menu {
 	display: inline-block;
 	
 }
-.head-nav ul li a:hover, .head-nav ul li.active a {
-  color: #fff;
-  background:#63b8bd;
+.head-nav ul li a:hover{								/*even menu*/
+	color: #000;
+  background:none;
+	}
+.head-nav ul li.active a {
+  color: #000;
+  background:#99C;
 }
 .banner img {
   width: 100%;
@@ -959,7 +1003,7 @@ ul.list_3 ul li .dt-sc-button {
 	padding:4em 0;
 }
 
-/*--pricing--*/
+											/*--pricing--*/
 .pricing-tables{
 	padding:3em 0;
 }
@@ -1433,7 +1477,7 @@ h4.domain-head {
 	padding: 10em 0px;
 }
 }
-/*--responsive design--*/
+													     /*--responsive design--*/
 @media (max-width:768px){
 .head-nav ul li{
 	display:block;
@@ -1467,22 +1511,22 @@ h4.domain-head {
 .head-nav {
   margin: 1em 0 0;
 }
-.header {
+.header {  												
   text-align: center;
   padding: 1.5em 0 0;
 }
  span.menu{
 	display:block;
-	color:#fff;
+	color: #fff;
 	font-size:1.3em;
 	text-transform:uppercase;
 	text-align:right;
 	cursor:pointer;
 }
-.head-nav ul li a:hover, .head-nav ul li.active a {
-  color: #63b8bd;
+/*.head-nav ul li a:hover, .head-nav ul li.active a {
+  color: #F90;
   background:none;
-}
+}*/
 .lorem-top {
   float: left;
   width: 50%;
@@ -2122,9 +2166,24 @@ ul.list_3 li span {
 a.b-home {
 	font-size: 0.8125em;
 }
-.logo img {
-  width: 55%;
+.logo a{	
+  width:50%;
+  margin:0 2em;
+ 			                       /*logo*/
+	
 }
+.input_s{
+	width:75%;
+	margin:0 0 0.5em 2.7em;
+}
+.btn_s{
+	width:75%;
+	margin:0 0 1em 2.5em;
+}
+.dangtin a{
+	width:75%;
+	margin:0 2.3em 1em;
+	}
 .head-nav ul {
   top: 7.95em;
 }

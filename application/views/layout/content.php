@@ -5,17 +5,19 @@
 					<div class="callbacks_container">
 					  	<ul class="rslides" id="slider">
 							<li>
-								<img src="<?=base_url(); ?>images/5.jpg" class="img-responsive" alt="">
+								<img src="<?=base_url(); ?>images/viec1.jpg" class="img-responsive" alt="">
 								
 							</li>
 							<li>
-								<img src="images/1.jpg" class="img-responsive" alt="">
+								<img src="<?=base_url(); ?>images/viec2.jpg" class="img-responsive" alt="">
 								
 							</li>
 							<li>
-								<img src="images/8.jpg" class="img-responsive" alt="">
+								<img src="<?=base_url(); ?>images/viec3.jpg" class="img-responsive" alt="">
 								
 							</li>
+                            
+                            
 						</ul>
 			  		</div>
 				 </div>
@@ -29,22 +31,25 @@
 
 <div class="lo-rm">
 	<div class="col-md-6 lorem-top">
+    	<a href="<?=base_url('nguoitimviec'); ?>">
 		<div class="lorem-left">
-			<h3>Nhà tuyển dụng</h3>
-			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an </p>
+			<h3>Người Tìm Việc</h3>
+			<p>Hơn 45,000 nhân sự cần tìm việc làm với đầy đủ thông tin, kinh nghiệm làm việc,ngành nghề,  mức lương,... được cập nhật 24/7 tại Việc Làm Online </p>
 		</div>
 		<div class="lorem-right">
-			<img src="images/4.png" class="img-responsive" alt="" />
+			<!--dang lam-->
+			<img src="<?=base_url(); ?>images/tvl.png" class="img-responsive" alt="" />
 		</div>
 			<div class="clearfix"> </div>
 	</div>
 		<div class="col-md-6 lorem-top1">
+       		 <a href="<?=base_url('nhatuyendung'); ?>">
 		<div class="lorem-left">
-			<h3>Người tìm việc</h3>
-			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an </p>
+			<h3>Nhà Tuyển Dụng</h3>
+			<p>Tìm việc nhanh với hơn 200,000 bản tin tìm việc làm thuộc gần 50 nhóm ngành nghề khác nhau với đầy đủ các lĩnh vực cập nhật 24/7 tại Việc Làm Online </p>
 		</div>
 		<div class="lorem-right">
-			<img src="images/3.png" class="img-responsive" alt="" />
+			<img src="<?=base_url(); ?>images/ntd.png" class="img-responsive" alt="" />
 		</div>
 			<div class="clearfix"> </div>
 	</div>
