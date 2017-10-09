@@ -23,7 +23,7 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->helper('url');
 		
 	}
-	public function trangchu()
+	public function index()
 	{
 		$data['title'] = 'Trang Tìm việc';
 		$data['content'] = 'layout/nguoitimviec';

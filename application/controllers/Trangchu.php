@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nguoitimviec extends CI_Controller {
+class Trangchu extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,9 +25,9 @@ class Nguoitimviec extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['title'] = 'Trang Tìm việc';
-		$data['content'] = 'layout/nguoitimviec';
-		$data['active'] = 2;
+		$data['title'] = 'Trang Tìm việc Online';
+		$data['content'] = 'layout/content';
+		$data['active'] = 1;
 		$this->load->view('trangchu', $data);
 		
 	}	
@@ -44,6 +44,5 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->view('trangchu', $data);
 
 	}
-	
 	
 }
