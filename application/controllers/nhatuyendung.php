@@ -23,12 +23,12 @@ class Nhatuyendung extends CI_Controller {
 		$this->load->helper('url');
 		
 	}
-	public function trangchu()
+	public function index()
 	{
 		$data['title'] = 'Trang nhà tuyển dụng';
 		$data['content'] = 'layout/nhatuyendung';
 		$data['active'] = 3;
-		$this->load->view('trangchu', $data);
+		$this->load->view('index', $data);
 
 	}	
 	public function nguoitimviec()
