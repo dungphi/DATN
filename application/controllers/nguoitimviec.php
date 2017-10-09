@@ -23,25 +23,25 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->helper('url');
 		
 	}
-	public function index()
+	public function trangchu()
 	{
 		$data['title'] = 'Trang Tìm việc';
 		$data['content'] = 'layout/nguoitimviec';
 		$data['active'] = 2;
-		$this->load->view('index', $data);
+		$this->load->view('trangchu', $data);
 		
 	}	
 	public function nguoitimviec()
 	{
 		$data['title'] = 'Tiêu đề trang';
 		$data['content'] = 'layout/nguoitimviec';
-		$this->load->view('index', $data);
+		$this->load->view('trangchu', $data);
 	}
 	public function nhatuyendung()
 	{
 		$data['title'] = 'Tiêu đề trang';
 		$this->load->view('nhatuyendung');
-		$this->load->view('index', $data);
+		$this->load->view('trangchu', $data);
 
 	}
 	
