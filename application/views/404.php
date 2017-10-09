@@ -58,13 +58,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
 	<div class="header">
 		<div class="logo">
-			<a href="index.php"><img src="images/logo.png" class="img-responsive" alt="" /></a>
+			<a href="trangchu.php"><img src="images/logo.png" class="img-responsive" alt="" /></a>
 		</div>
 		<div class="head-nav">
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li><a href="index.php">Home</a></li>
+						<li><a href="trangchu.php">Home</a></li>
 						<li><a href="nguoitimviec.php">Hosting Plans</a></li>
 						<li><a href="nhatruyendung.php">Domain</a></li>
 						<li><a href="about.php">About</a></li>
@@ -93,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="error-404 text-center">
 			<h1>404</h1>
 			<p>this link dead link</p>
-			<a class="b-home" href="index.php">Back to Home</a>
+			<a class="b-home" href="trangchu.php">Back to Home</a>
 		</div>
 	</div>
 	</div>
