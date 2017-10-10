@@ -66,10 +66,18 @@
 		<div class="container">
 			<h3>Feature Services</h3>
 			<div class="feature-top">
+			<?php
+				foreach($vieclam as $tam)
+				{
+			?>
 				<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/9.png" class="img-responsive" alt="">
-					<p>with the release Letraset sheets Lorem Ipsum passages containing of Letraset sheets  </p>
+					<p><?=$tam['ten_viec']; ?></p>
+					
 				</div>
+			<?php
+				}
+			?>
 				<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/10.png" class="img-responsive" alt="">
 					<p> Letraset sheets with the release Letraset sheets Lorem Ipsum containing Lorem Ipsum passages</p>
