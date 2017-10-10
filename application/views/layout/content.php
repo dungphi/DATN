@@ -65,38 +65,38 @@
 			<h3>Feature Services</h3>
 			<div class="feature-top">
 				<div class="col-md-3 service-left">
-					<img src="images/9.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/9.png" class="img-responsive" alt="">
 					<p>with the release Letraset sheets Lorem Ipsum passages containing of Letraset sheets  </p>
 				</div>
 				<div class="col-md-3 service-left">
-					<img src="images/10.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/10.png" class="img-responsive" alt="">
 					<p> Letraset sheets with the release Letraset sheets Lorem Ipsum containing Lorem Ipsum passages</p>
 				</div>
 				<div class="col-md-3 service-left">
-					<img src="images/11.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/11.png" class="img-responsive" alt="">
 					<p>containing Lorem sheets containing Lorem Ipsum passages, and more release Letraset rece</p>
 				</div>
 				<div class="col-md-3 service-left">
-					<img src="images/12.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/12.png" class="img-responsive" alt="">
 					<p>with the release of Letraset sheets Letraset sheets Lorem Ipsum containing containing Lorem</p>
 				</div>
 					<div class="clearfix"> </div>
 			</div>
 			<div class="feature-top">
 				<div class="col-md-3 service-left">
-					<img src="images/5.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/5.png" class="img-responsive" alt="">
 					<p>containing Lorem sheets containing Lorem Ipsum passages, and more release Letraset rece</p>
 				</div>
 				<div class="col-md-3 service-left">
-					<img src="images/6.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/6.png" class="img-responsive" alt="">
 					<p>with the release Letraset sheets Lorem Ipsum passages containing of Letraset sheets  </p>
 				</div>
 				<div class="col-md-3 service-left">
-					<img src="images/7.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/7.png" class="img-responsive" alt="">
 					<p>with the release of Letraset sheets Letraset sheets Lorem Ipsum containing containing Lorem</p>
 				</div>
 				<div class="col-md-3 service-left">
-					<img src="images/8.png" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/8.png" class="img-responsive" alt="">
 					<p> Letraset sheets with the release Letraset sheets Lorem Ipsum containing Lorem Ipsum passages</p>
 				</div>
 					<div class="clearfix"> </div>
@@ -112,7 +112,7 @@
 				
 				<h5>Welcome To Our Business Company Site</h5>
 				<div class="hello-1">
-					<img src="images/7.jpg" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/7.jpg" class="img-responsive" alt="">
 				</div>
 				<div class="hello-2">
 					<h4>Mescuml dia sed integer alies dolore ipasum ame mod ictor utligulat.</h4>
@@ -123,7 +123,7 @@
 			<div class="col-md-4 hello-right">
 				<h5>What We Offer</h5>
 				<div class="hello-3">
-					<img src="images/1.jpg" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/1.jpg" class="img-responsive" alt="">
 				</div>
 				<h4>Mes cuml diased commete ipsum</h4>
 				<p>Dolor nunc vule putateulr ips dol consec.Donecsemp ertet laciniate ultricie.Dolor nunc vule putateulr ips dol consec.Donec semp ertet laciniate ultricie upien dicomete dolo lectus fgilla itollicil tua ludin dolor nec met quam accumsan dolorecondime.</p>
@@ -143,21 +143,21 @@
 							<ul class="slides">
 								<li>
 									<div class="what-top">
-									<img src="images/man.jpg" class="img-responsive" alt="">
+									<img src="<?=base_url(); ?>images/man.jpg" class="img-responsive" alt="">
 										<h5>John Buch</h5>
 										<p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 									</div>
 								</li>
 								<li>
 									<div class="what-top">
-										<img src="images/women.jpg" class="img-responsive" alt="">
+										<img src="<?=base_url(); ?>images/women.jpg" class="img-responsive" alt="">
 										<h5>Nickie Bella</h5>
 										<p>Lorem Ipsum has been the simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 									</div>
 								</li>
 								<li>
 									<div class="what-top">
-										<img src="images/man.jpg" class="img-responsive" alt="">
+										<img src="<?=base_url(); ?>images/man.jpg" class="img-responsive" alt="">
 										<h5>John Buch</h5>
 										<p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 									</div>
@@ -191,18 +191,18 @@
 			<h2>Latest News</h2>
 				<div class="col-md-4 devic-left">
 				
-					<img src="images/4.jpg" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/4.jpg" class="img-responsive" alt="">
 					
 					<h4><span>25/</span>March</h4>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever </p>
 				</div>
 				<div class="col-md-4 devic-left">
-					<img src="images/3.jpg" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/3.jpg" class="img-responsive" alt="">
 					<h4><span>25/</span>April</h4>
 					<p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
 				</div>
 				<div class="col-md-4 devic-left">
-					<img src="images/6.jpg" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/6.jpg" class="img-responsive" alt="">
 					<h4><span>25/</span>May</h4>
 					<p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
 				</div>

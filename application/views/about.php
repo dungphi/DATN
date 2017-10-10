@@ -212,7 +212,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>For Members</h3>
 				<li><a href="#">Forums</a></li>
 				<li><a href="#">Promotions</a></li>
-				<li><a href="login.php">Sign In</a></li>
+				<li><a href="dangnhap.php">Sign In</a></li>
 				<li><a href="#">News</a></li>
 			</div>
 			<div class="col-md-3 soci">
