@@ -3,17 +3,20 @@
 <html>
 <head>
 <title><?=$title; ?></title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?=base_url(); ?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="<?=base_url(); ?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Quamax Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-       <script type="text/javascript" src="js/easing.js"></script>
+<!--<script src="<?=base_url(); ?>js/jquery.min.js" type="text/javascript"></script>-->
+<script src="<?=base_url(); ?>js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="<?=base_url(); ?>js/jquery-migrate-3.0.0.js" type="text/javascript"></script>
+<script src="<?=base_url(); ?>js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?=base_url(); ?>js/move-top.js"></script>
+       <script type="text/javascript" src="<?=base_url(); ?>js/easing.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -35,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$().UItoTop({ easingType: 'easeOutQuart' });
 });
 </script>
-<script src="js/responsiveslides.min.js"></script>
+<script src="<?=base_url(); ?>js/responsiveslides.min.js"></script>
 <script>
     $(function () {
       $("#slider").responsiveSlides({

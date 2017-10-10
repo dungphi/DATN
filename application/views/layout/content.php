@@ -36,6 +36,7 @@
 			<h3>Người Tìm Việc</h3>
 			<p>Hơn 45,000 nhân sự cần tìm việc làm với đầy đủ thông tin, kinh nghiệm làm việc,ngành nghề,  mức lương,... được cập nhật 24/7 tại Việc Làm Online </p>
 		</div>
+		</a>
 		<div class="lorem-right">
 			<!--dang lam-->
 			<img src="<?=base_url(); ?>images/tvl.png" class="img-responsive" alt="" />
@@ -43,11 +44,12 @@
 			<div class="clearfix"> </div>
 	</div>
 		<div class="col-md-6 lorem-top1">
-       		 <a href="<?=base_url('nhatuyendung'); ?>">
-		<div class="lorem-left">
-			<h3>Nhà Tuyển Dụng</h3>
-			<p>Tìm việc nhanh với hơn 200,000 bản tin tìm việc làm thuộc gần 50 nhóm ngành nghề khác nhau với đầy đủ các lĩnh vực cập nhật 24/7 tại Việc Làm Online </p>
-		</div>
+       		<a href="<?=base_url('nhatuyendung'); ?>">
+			<div class="lorem-left">
+				<h3>Nhà Tuyển Dụng</h3>
+				<p>Tìm việc nhanh với hơn 200,000 bản tin tìm việc làm thuộc gần 50 nhóm ngành nghề khác nhau với đầy đủ các lĩnh vực cập nhật 24/7 tại Việc Làm Online </p>
+			</div>
+			</a>
 		<div class="lorem-right">
 			<img src="<?=base_url(); ?>images/ntd.png" class="img-responsive" alt="" />
 		</div>
