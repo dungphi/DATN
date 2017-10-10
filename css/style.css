@@ -1370,7 +1370,7 @@ a.b-home:hover {
 }
 .checkbox input {
 	position: absolute;
-	left: -9999px;
+	/*left: -9999px;*/
 }
 .checkbox input:checked + i:after {
 	opacity: 1;
