@@ -20,13 +20,14 @@ class Trangchu extends CI_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
-		
+		$this->load->model('viec_lam');
 	}
 	public function index()
 	{
 		$data['title'] = 'Trang Tìm việc Online';
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
+		$data['vieclam'] = $this->viec_lam->vieclam();
 		$this->load->view('trangchu', $data);
 		
 	}	
