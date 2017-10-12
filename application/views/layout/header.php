@@ -2,7 +2,7 @@
 	<div class="header">
     	
 			<div class="logo">
-				<a href="trangchu.php"><img src="images/logo.png" /></a>
+				<a href="index.php"><img src="images/logo.png" /></a>
 			</div>
             <div class="input_s" >
                 <input type="text" class="form-control" id="input-keyword" name="tu_khoa" placeholder="Nhập tên công việc, vị trí, kỹ năng...">
@@ -14,28 +14,19 @@
              </div>
              
              <div class="dangtin" >
-             	<a href="trangchu.php"><img src="images/dangtin.png"/>ĐĂNG TIN MIỄN PHÍ </a>
+             	<a href="index.php"><img src="images/dangtin.png"/>ĐĂNG TIN MIỄN PHÍ </a>
              </div>
              <div class="dangnhap" >
-<<<<<<< HEAD
-             	<a href="trangchu.php"><img src="images/login.png"/>Đăng Nhập </a>
-             </div>
-             <div class="dangky" >
-             	<a href="trangchu.php"><img src="images/add_user.png"/>Đăng ký </a>
-             </div>
-        
-=======
              	<a href="#" data-toggle="modal" data-target="#dangnhap"><img src="images/login.png"/>Đăng Nhập </a>
              </div>
              <div class="dangky" >
-             	<a href="index.php"><img src="images/add_user.png"/>Đăng ký </a>
+             	<a href="index.php"><img src="images/add_user.png"/>Đăng Ký </a>
              </div>        
->>>>>>> c38165b75b9ebeb746ec0fa048b37d1f662598d9
 		<div class="head-nav">
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="<?=base_url(); ?>"><img src="images/home.png"/>Trang Chủ</a></li>
+						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="<?=base_url(); ?>"><img src="images/home.png"/> Trang Chủ</a></li>
 						<li <?php if($active == 2) echo 'class="active"'; ?>><a href="<?=base_url('nguoitimviec'); ?>">Người Tìm Việc</a></li>
 						<li <?php if($active == 3) echo 'class="active"'; ?>><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng</a></li>
 						<li><a href="about.html">Dịch Vụ Lao Động</a></li>
@@ -55,7 +46,8 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						<h4 class="modal-title" id="myModalLabel">Đăng Nhập</h4>
+                        
 					</div>
 					<div class="modal-body">
 						<form class="form-horizontal" role="form">
@@ -74,15 +66,15 @@
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<div class="checkbox">
-										<label><input type="checkbox" checked> Remember me </label>
+										<label><input type="checkbox" checked> Nhớ Mật Khẩu </label>
 									</div>
 								</div>
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+						<button type="button" class="btn btn-primary">Đăng Nhập</button>
 					</div>
 				</div>
 			</div>

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Quamax A Web Hosting Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
+<title>Quamax A Web Hosting Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
 <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="<?=base_url();?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,53 +87,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- script-for-nav -->
 	</div>
 <!-- header -->
-<!-- register -->
-<div class="main-1">
-	<div class="container">	
-			<div class="register">
-		  	  <form> 
-				 <div class="register-top-grid">
-					<h3>PERSONAL INFORMATION</h3>
-					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
-						<span>First Name<label>*</label></span>
-						<input type="text"> 
-					 </div>
-					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						<span>Last Name<label>*</label></span>
-						<input type="text"> 
-					 </div>
-					 <div class="wow fadeInRight" data-wow-delay="0.4s">
-						 <span>Email Address<label>*</label></span>
-						 <input type="text"> 
-					 </div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
-					   </a>
-					 </div>
-				     <div class="register-bottom-grid">
-						    <h3>LOGIN INFORMATION</h3>
-							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>Password<label>*</label></span>
-								<input type="password">
-							 </div>
-							 <div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Confirm Password<label>*</label></span>
-								<input type="password">
-							 </div>
-					 </div>
-				</form>
+<!-- login -->
+<div class="login-page">
+		<div class="container">
+			<div class="account_grid">
+				<div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
+					<h3>NEW CUSTOMERS</h3>
+					<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+					<a class="acount-btn" href="register.php">Create an Account</a>
+			   </div>
+			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+					<h3>REGISTERED CUSTOMERS</h3>
+					<p>If you have an account with us, please log in.</p>
+					<form>
+						<div>
+							<span>Email Address<label>*</label></span>
+							<input type="text"> 
+						</div>
+						<div>
+							<span>Password<label>*</label></span>
+							<input type="password"> 
+						</div>
+						<a class="forgot" href="#">Forgot Your Password?</a>
+						<input type="submit" value="Login">
+					</form>
+			   </div>	
 				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
-					   <input type="submit" value="submit">
-					   <div class="clearfix"> </div>
-				   </form>
-				</div>
-		   </div>
-	</div>
-	</div>
-	<!-- register -->
+			</div>
+		</div>
+		</div>
+<!-- login -->
 <!-- footer -->
 	<div class="footer">
 		<div class="container">

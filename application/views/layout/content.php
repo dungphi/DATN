@@ -1,4 +1,5 @@
 <!-- banner -->
+<div class="header-top">
 		<div class="banner">		
 			<div class="header-slider">
 				<div class="slider">
@@ -36,11 +37,10 @@
 			<h3>Người Tìm Việc</h3>
 			<p>Hơn 45,000 nhân sự cần tìm việc làm với đầy đủ thông tin, kinh nghiệm làm việc,ngành nghề,  mức lương,... được cập nhật 24/7 tại Việc Làm Online </p>
 		</div>
-		</a>
+		
 		<div class="lorem-right">
-			<!--dang lam-->
 			<img src="<?=base_url(); ?>images/tvl.png" class="img-responsive" alt="" />
-		</div>
+		</div></a>
 			<div class="clearfix"> </div>
 	</div>
 		<div class="col-md-6 lorem-top1">
@@ -49,10 +49,10 @@
 				<h3>Nhà Tuyển Dụng</h3>
 				<p>Tìm việc nhanh với hơn 200,000 bản tin tìm việc làm thuộc gần 50 nhóm ngành nghề khác nhau với đầy đủ các lĩnh vực cập nhật 24/7 tại Việc Làm Online </p>
 			</div>
-			</a>
+			
 		<div class="lorem-right">
 			<img src="<?=base_url(); ?>images/ntd.png" class="img-responsive" alt="" />
-		</div>
+		</div> </a>
 			<div class="clearfix"> </div>
 	</div>
 
@@ -60,11 +60,13 @@
 </div>
 </div>
 </div>
+
 <!-- lorem -->
+</div>
 	<!-- Feature -->
 <div class="Feature">
 		<div class="container">
-			<h3>Feature Services</h3>
+			<h3>Tin Nổi Bật</h3>
 			<div class="feature-top">
 			<?php
 				foreach($vieclam as $tam)
@@ -72,27 +74,39 @@
 			?>
 				<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/9.png" class="img-responsive" alt="">
-					<p><?=$tam['ten_viec']; ?></p>
+					<h3>Tuyển <?=$tam['ten_viec']; ?></h3>
 					
 				</div>
 			<?php
 				}
 			?>
+            
+            <?php
+				foreach($nguoitimviec as $tam)
+				
+				{
+			?>
 				<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/10.png" class="img-responsive" alt="">
-					<p> Letraset sheets with the release Letraset sheets Lorem Ipsum containing Lorem Ipsum passages</p>
-				</div>
-				<div class="col-md-3 service-left">
+					<h3><?=$tam['ten']?> ,giới tính <?=$tam['gioi_tinh']; ?>,ở <?=$tam['dia_chi']; ?></h3>
+                </div>
+            <?php
+				}
+			?>
+			
+			<!--	<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/11.png" class="img-responsive" alt="">
-					<p>containing Lorem sheets containing Lorem Ipsum passages, and more release Letraset rece</p>
+					<h3> chua xong</h3>
 				</div>
+            
+				
 				<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/12.png" class="img-responsive" alt="">
 					<p>with the release of Letraset sheets Letraset sheets Lorem Ipsum containing containing Lorem</p>
-				</div>
+				</div>-->
 					<div class="clearfix"> </div>
 			</div>
-			<div class="feature-top">
+		<!--	<div class="feature-top">
 				<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/5.png" class="img-responsive" alt="">
 					<p>containing Lorem sheets containing Lorem Ipsum passages, and more release Letraset rece</p>
@@ -110,10 +124,43 @@
 					<p> Letraset sheets with the release Letraset sheets Lorem Ipsum containing Lorem Ipsum passages</p>
 				</div>
 					<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
+			</div>-->
+		</div> 
+	</div>    
 	<!-- Feature -->
+    
+    <ul id="flexiselDemo3">
+    	<li><div class="feature-top">
+			<?php
+				foreach($vieclam as $tam)
+				{
+			?>
+				<div class="col-md-3 service-left">
+					<img src="<?=base_url(); ?>images/login.png" class="img-responsive" alt="">
+					<h3>Tuyển <?=$tam['ten_viec']; ?></h3>
+					
+				</div>
+			<?php
+				}
+			?> </div>
+            </li>
+    <li><img src="images/3.jpg" /></li>
+    <li><img src="images/4.jpg" /></li>                                              
+</ul>    
+<div class="clearout">
+</div>
+
+    <script>
+    $("#flexiselDemo3").flexisel({
+        visibleItems: 3,
+        itemsToScroll: 1,         
+        autoPlay: {
+            enable: true,
+            interval: 5000,
+            pauseOnHover: true
+        }        
+    });
+    </script>
 	<!-- hello -->
 	<div class="hello">
 		<div class="container">

@@ -21,6 +21,7 @@ class Trangchu extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('viec_lam');
+		$this->load->model('nguoi_tim_viec');
 	}
 	public function index()
 	{
@@ -28,6 +29,7 @@ class Trangchu extends CI_Controller {
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
 		$data['vieclam'] = $this->viec_lam->vieclam();
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->vieclam();
 		$this->load->view('trangchu', $data);
 		
 	}	
