@@ -72,7 +72,7 @@
 				{
 			?>
 				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/9.png" class="img-responsive" alt="">
+					<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="">
 					<h3>Tuyển <?=$tam['ten_viec']; ?></h3>
 					
 				</div>
