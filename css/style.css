@@ -107,7 +107,7 @@ span.menu {						/*menu*/
 }
 .lo-rm {
   position: absolute;
-  top: -190px;
+  bottom: 10px;
   z-index: 999;
 }
 .lorem {
@@ -1405,7 +1405,7 @@ div.register-bottom-grid {
   padding: 4em 0em;
 }
 /*--responsive design--*/
-@media (max-width:1024px){
+@media (max-width:992px){
 .lorem-top {
   padding: 1.5em;
 }
@@ -1413,10 +1413,10 @@ div.register-bottom-grid {
   padding: 1.5em;
 }
 .lorem {
-  min-height: 105px;
+  min-height: 480px;
 }
 .lo-rm {
-  top: -180px;
+  bottom: 10px;
 }
 .lorem h3 {
   font-size: 1.7em;
@@ -1527,19 +1527,19 @@ h4.domain-head {
   color: #F90;
   background:none;
 }*/
-.lorem-top {
+/*.lorem-top {
   float: left;
   width: 50%;
 }
 .lorem-top1 {
   float: left;
   width: 50%;
-}
+}*/
 .lo-rm {
-  top: -140px;
+  bottom: 10px;
 }
 .lorem {
-  min-height: 95px;
+  min-height: 500px;
 }
 .service-left {
   float: left;
@@ -1663,10 +1663,10 @@ h4.domain-head {
   font-size: 0.9em;
 }
 .lo-rm {
-  top: -124px;
+  bottom: 10px;
 }
 .lorem {
-  min-height: 83px;
+  min-height: 520px;
 }
 .Feature h3 {
   font-size: 1.7em;
@@ -1746,7 +1746,7 @@ h4.domain-head {
 }
 /*--responsive design--*/
 @media (max-width:480px){
-.lorem h3 {
+/*.lorem h3 {
   font-size: 1.1em;
 }
 .lorem-top1 {
@@ -1754,13 +1754,13 @@ h4.domain-head {
 }
 .lorem-top {
   padding: 1em;
-}
-.lo-rm {
+}*/
+/*.lo-rm {
   top: -90px;
 }
 .lorem {
   min-height: 140px;
-}
+}*/
 .service-left {
   float: left;
   width: 50%;
@@ -1933,7 +1933,7 @@ a.b-home {
 }
 /*--responsive design--*/
 @media (max-width:320px){
-.lorem-top1 {
+/*.lorem-top1 {
   float: left;
   width: 100%;
 }
@@ -1946,7 +1946,7 @@ a.b-home {
 }
 .lorem {
   min-height: 317px;
-}
+}*/
 .Feature p {
   font-size: 0.875em;
 }

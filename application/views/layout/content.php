@@ -1,67 +1,66 @@
 <!-- banner -->
-<div class="header-top">
-		<div class="banner">		
-			<div class="header-slider">
-				<div class="slider">
-					<div class="callbacks_container">
-					  	<ul class="rslides" id="slider">
-							<li>
-								<img src="<?=base_url(); ?>images/viec1.jpg" class="img-responsive" alt="">
-								
-							</li>
-							<li>
-								<img src="<?=base_url(); ?>images/viec2.jpg" class="img-responsive" alt="">
-								
-							</li>
-							<li>
-								<img src="<?=base_url(); ?>images/viec3.jpg" class="img-responsive" alt="">
-								
-							</li>
-                            
-                            
-						</ul>
-			  		</div>
-				 </div>
+
+<div class="banner">		
+	<div class="header-slider">
+		<div class="slider">
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>
+						<img src="<?=base_url(); ?>images/viec1.jpg" class="img-responsive" alt="">
+
+					</li>
+					<li>
+						<img src="<?=base_url(); ?>images/viec2.jpg" class="img-responsive" alt="">
+
+					</li>
+					<li>
+						<img src="<?=base_url(); ?>images/viec3.jpg" class="img-responsive" alt="">
+
+					</li>
+
+
+				</ul>
 			</div>
-		</div>
-		<!-- banner -->	
+		 </div>
+	</div>
+</div>
+<!-- banner -->	
 
 <!-- lorem -->
 <div class="container">
-<div class="lorem">
+	<div class="lorem">
+		<div class="lo-rm">
+			<div class="col-md-6 lorem-top">
+				<a href="<?=base_url('nguoitimviec'); ?>">
+					<div class="lorem-left">
+						<h3>Người Tìm Việc</h3>
+						<p>Hơn 45,000 nhân sự cần tìm việc làm với đầy đủ thông tin, kinh nghiệm làm việc,ngành nghề, mức lương,... được cập nhật 24/7 tại Việc Làm Online </p>
+					</div>
 
-<div class="lo-rm">
-	<div class="col-md-6 lorem-top">
-    	<a href="<?=base_url('nguoitimviec'); ?>">
-		<div class="lorem-left">
-			<h3>Người Tìm Việc</h3>
-			<p>Hơn 45,000 nhân sự cần tìm việc làm với đầy đủ thông tin, kinh nghiệm làm việc,ngành nghề,  mức lương,... được cập nhật 24/7 tại Việc Làm Online </p>
-		</div>
-		
-		<div class="lorem-right">
-			<img src="<?=base_url(); ?>images/tvl.png" class="img-responsive" alt="" />
-		</div></a>
-			<div class="clearfix"> </div>
-	</div>
-		<div class="col-md-6 lorem-top1">
-       		<a href="<?=base_url('nhatuyendung'); ?>">
-			<div class="lorem-left">
-				<h3>Nhà Tuyển Dụng</h3>
-				<p>Tìm việc nhanh với hơn 200,000 bản tin tìm việc làm thuộc gần 50 nhóm ngành nghề khác nhau với đầy đủ các lĩnh vực cập nhật 24/7 tại Việc Làm Online </p>
+					<div class="lorem-right">
+						<img src="<?=base_url(); ?>images/tvl.png" class="img-responsive" alt=""/>
+					</div>
+				</a>
+				<div class="clearfix"> </div>
 			</div>
-			
-		<div class="lorem-right">
-			<img src="<?=base_url(); ?>images/ntd.png" class="img-responsive" alt="" />
-		</div> </a>
+			<div class="col-md-6 lorem-top1">
+				<a href="<?=base_url('nhatuyendung'); ?>">
+					<div class="lorem-left">
+						<h3>Nhà Tuyển Dụng</h3>
+						<p>Tìm việc nhanh với hơn 200,000 bản tin tìm việc làm thuộc gần 50 nhóm ngành nghề khác nhau với đầy đủ các lĩnh vực cập nhật 24/7 tại Việc Làm Online </p>
+					</div>
+
+					<div class="lorem-right">
+						<img src="<?=base_url(); ?>images/ntd.png" class="img-responsive" alt=""/>
+					</div>
+				</a>
+				<div class="clearfix"> </div>
+			</div>
+
 			<div class="clearfix"> </div>
+		</div>
 	</div>
-
-		<div class="clearfix"> </div>
-</div>
-</div>
-</div>
-
-<!-- lorem -->
+	<!-- lorem -->
 </div>
 	<!-- Feature -->
 <div class="Feature">
