@@ -63,7 +63,7 @@
 	<!-- lorem -->
 </div>
 	<!-- Feature -->
-<div class="Feature">
+<!--<div class="Feature">
 		<div class="container">
 			<h3>Tin Nổi Bật</h3>
 			<div class="feature-top">
@@ -91,7 +91,7 @@
                 </div>
             <?php
 				}
-			?>
+			?>-->
 			
 			<!--	<div class="col-md-3 service-left">
 					<img src="<?=base_url(); ?>images/11.png" class="img-responsive" alt="">
@@ -127,31 +127,48 @@
 		</div> 
 	</div>    
 	<!-- Feature -->
-    
+    <div class=Demo3>
+    <h3>Tin Nổi Bật</h3>
     <ul id="flexiselDemo3">
-    	<li><div class="feature-top">
+    	
 			<?php
 				foreach($vieclam as $tam)
 				{
+			
 			?>
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/3.png" class="img-responsive" alt="">
-					<h3>Tuyển <?=$tam['ten_viec']; ?></h3>
+            	<li>
+					<div class="tintuyendung">
+						<img src="<?=base_url(); ?>images/9.jpg" class="img-rounded" alt="" width="250" height="150">
+						<h4>Tuyển <?=$tam['ten_viec']; ?></h4>
 					
-				</div>
+                </li>
 			<?php
 				}
-			?> </div>
-            </li>
-    <li><img src="images/3.jpg" /></li>
-    <li><img src="images/4.jpg" /></li>                                              
-</ul>    
+			?> 
+        
+         
+			<?php
+				foreach($nguoitimviec as $tam)
+				{
+			?>
+            	<li>
+					<div class="tintimviec">
+						<img src="<?=base_url(); ?>images/3.jpg" class="img-rounded" alt="" width="250" height="150">
+						<h4><?=$tam['ten']?>, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h4>
+					
+					</div>
+                </li>
+			<?php
+				}
+			?> 
+                                                         
+	</ul>    
 <div class="clearout">
 </div>
-
+ </div>
     <script>
     $("#flexiselDemo3").flexisel({
-        visibleItems: 3,
+        visibleItems: 5,
         itemsToScroll: 1,         
         autoPlay: {
             enable: true,

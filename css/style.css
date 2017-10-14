@@ -8,14 +8,14 @@ h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html,body{
- font-family: "Times New Roman", OpenSans-Regular;
+ font-family: Times New Roman,;
 }
 @font-face{
-   font-family: Overlock-Regular;
+   font-family: Times New Roman;
     src: url(../fonts/Overlock-Regular.ttf) format('truetype');
 }
 @font-face{
-   font-family: OpenSans-Regular;
+   font-family: Times New Roman, ;
     src: url(../fonts/OpenSans-Regular.ttf) format('truetype');
 }
 body a{
@@ -58,16 +58,24 @@ span.menu {						/*menu*/
 	}
 .dangnhap a{
 	color:#009;
-  font-size: 1em;
-  margin:0 0 1em 3em;
-  float:left;
+  	font-size: 1em;
+  	margin:0 0 1em 3em;
+ 	float:left;
 	}
 .dangky a{
 	color:#009;
 	font-size: 1em;
-  margin:0 0 1em 1em;
+  	margin:0 0 1em 1em;
 	float:left;
 	}
+.Demo3 li h4{
+	color:#06F;
+	margin:0.5em 2em;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 700;
+	font-family: Times New Roman;
+}
 .head-nav ul li a {
   display: inline-block;
   color: #fff;
@@ -469,6 +477,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 .callbacks_nav {
 	  	
 }
+
 }
 @media(max-width:640px){
 .callbacks_tabs a:after {
@@ -483,6 +492,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 @media(max-width:320px){
+
 .callbacks_nav {
 	
 }
@@ -1479,6 +1489,7 @@ h4.domain-head {
 }
 													     /*--responsive design--*/
 @media (max-width:768px){
+
 .head-nav ul li{
 	display:block;
 	float:none;
@@ -1653,6 +1664,7 @@ h4.domain-head {
 }
 /*--responsive design--*/
 @media (max-width:640px){
+
 .lorem h3 {
   font-size: 1.5em;
 }
@@ -1761,6 +1773,7 @@ h4.domain-head {
 .lorem {
   min-height: 140px;
 }*/
+
 .service-left {
   float: left;
   width: 50%;
@@ -2203,15 +2216,11 @@ a.b-home {
   padding: 0;
 }
 }
-																	/* */
-#flexiselDemo1, #flexiselDemo2, #flexiselDemo3 {
+																	/*tin noi bat */
+#flexiselDemo3 {
 display:none;
 }
 
-.nbs-flexisel-container {
-    position:relative;
-    max-width:100%;
-}
 .nbs-flexisel-ul {
     position:relative;
     width:99999px;
@@ -2254,8 +2263,20 @@ display:none;
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
+}                          
+
+.Demo3 h3{
+	color:#F30;
+	margin:1em 3em 0.5em;
+	text-align: center;
+	font-size: 1.8em;
+	font-weight: 700;
+	font-family: Times New Roman;
 }
 
+.Demo3 li img{
+	padding:0 1em;
+}
 /*** Navigation ***/
 
 .nbs-flexisel-nav-left,
@@ -2278,7 +2299,7 @@ display:none;
 }
 
 .nbs-flexisel-nav-left:before {
-    content: "<"
+    content: " <"
 }
 
 .nbs-flexisel-nav-left.disabled {
@@ -2290,7 +2311,7 @@ display:none;
 }
 
 .nbs-flexisel-nav-right:before {
-    content: ">"
+    content: "> "
 }
 
 .nbs-flexisel-nav-right.disabled {
