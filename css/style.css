@@ -8,16 +8,16 @@ h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html,body{
- font-family: Times New Roman,;
+ font-family: 'Times New Roman';
 }
-@font-face{
+/*@font-face{
    font-family: Times New Roman;
     src: url(../fonts/Overlock-Regular.ttf) format('truetype');
 }
 @font-face{
    font-family: Times New Roman, ;
     src: url(../fonts/OpenSans-Regular.ttf) format('truetype');
-}
+}*/
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -2258,7 +2258,7 @@ display:none;
     margin-bottom: 10px;
 }                          
 .Demo3 {
-	margin:0 4.7em;
+	/*margin:0 4.7em;*/
 }
 .Demo3 h3{
 	color:#F30;
@@ -2266,7 +2266,7 @@ display:none;
 	text-align: center;
 	font-size: 1.8em;
 	font-weight: 700;
-	font-family: Times New Roman;
+	/*font-family: "Times New Roman";*/
 }
 .Demo3 li h4{
 	color:#06F;
@@ -2274,7 +2274,7 @@ display:none;
 	text-align: left;
 	font-size: 1.4em;
 	font-weight: 700;
-	font-family: Times New Roman;
+	/*font-family: "Times New Roman";*/
 }
 .Demo3 li img{
 	padding:0 0.5em;

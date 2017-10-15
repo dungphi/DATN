@@ -127,7 +127,7 @@
 		</div> 
 	</div>    
 	<!-- Feature -->
-    <div class=Demo3>
+    <div class="container Demo3" ><!--class=Demo3>-->
     <h3>Tin Nổi Bật</h3>
     <ul id="flexiselDemo3">
     	
