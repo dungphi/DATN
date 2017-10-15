@@ -2,7 +2,7 @@
 	<div class="header">
     	
 			<div class="logo">
-				<a href="index.php"><img src="images/logo.png" /></a>
+				<a href="index.php"><img src="images/logo.png" width="300px"/></a>
 			</div>
             <div class="input_s" >
                 <input type="text" class="form-control" id="input-keyword" name="tu_khoa" placeholder="Nhập tên công việc, vị trí, kỹ năng...">
