@@ -140,7 +140,7 @@
 					<div class="tintuyendung">
 						<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-rounded" alt="" width="250" height="150">
 						<h4><?=$tam['ten_viec']; ?></h4>
-                        <p> <?=$tam['ten_cty'];?></p>
+                        <h5> <?=$tam['ten_cty'];?></h5>
 					</div>
 					
                 </li>
