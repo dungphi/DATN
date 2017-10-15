@@ -25,7 +25,7 @@ class Trangchu extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['title'] = 'Trang Tìm việc Online';
+		$data['title'] = 'Trang việc làm Online';
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
 		$data['vieclam'] = $this->viec_lam->vieclam();

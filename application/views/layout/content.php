@@ -138,8 +138,9 @@
 			?>
             	<li>
 					<div class="tintuyendung">
-						<img src="<?=base_url(); ?>images/9.jpg" class="img-rounded" alt="" width="250" height="150">
-						<h4>Tuyển <?=$tam['ten_viec']; ?></h4>
+						<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-rounded" alt="" width="250" height="150">
+						<h4><?=$tam['ten_viec']; ?></h4>
+                        <p> <?=$tam['ten_cty'];?></p>
 					
                 </li>
 			<?php
@@ -153,7 +154,7 @@
 			?>
             	<li>
 					<div class="tintimviec">
-						<img src="<?=base_url(); ?>images/3.jpg" class="img-rounded" alt="" width="250" height="150">
+						<img src="<?=base_url($tam['avatar']); ?>" class="img-rounded" alt="" width="250" height="150">
 						<h4><?=$tam['ten']?>, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h4>
 					
 					</div>

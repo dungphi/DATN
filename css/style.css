@@ -10,14 +10,7 @@ p {margin: 0;}
 html,body{
  font-family: 'Times New Roman';
 }
-/*@font-face{
-   font-family: Times New Roman;
-    src: url(../fonts/Overlock-Regular.ttf) format('truetype');
-}
-@font-face{
-   font-family: Times New Roman, ;
-    src: url(../fonts/OpenSans-Regular.ttf) format('truetype');
-}*/
+
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -128,7 +121,7 @@ span.menu {						/*menu*/
 }
 .lorem h3 {
   color: #fff;
-  font-size: 2em;
+  font-size: 1.8em;
   margin: 0;
   font-weight: 700;
   font-family: Overlock-Regular;
@@ -138,7 +131,7 @@ span.menu {						/*menu*/
   color: #fff;
   font-size: 1em;
   line-height: 1.8em;
-  margin: 1em 0;
+  margin: 1em 0.4em;
     font-family: OpenSans-Regular;
 }
 .lorem-top{
@@ -2262,7 +2255,7 @@ display:none;
 }
 .Demo3 h3{
 	color:#F30;
-	margin:1em 3em 0.5em;
+	margin:1em 0 0.5em;
 	text-align: center;
 	font-size: 1.8em;
 	font-weight: 700;
