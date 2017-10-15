@@ -139,8 +139,8 @@
             	<li>
 					<div class="tintuyendung">
 						<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-rounded" alt="" width="250" height="150">
-						<h4><?=$tam['ten_viec']; ?></h4>
-                        <h5> <?=$tam['ten_cty'];?></h5>
+						<h4 class="text" data-toggle="tooltip" title="<?=$tam['ten_viec']; ?>"><?=$tam['ten_viec']; ?></h4>
+                        <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten_cty']; ?>"> <?=$tam['ten_cty'];?></h5>
 					</div>
 					
                 </li>
@@ -168,7 +168,7 @@
 <div class="clearout">
 </div>
  </div>
-    <script>
+<script>
     $("#flexiselDemo3").flexisel({
         visibleItems: 5,
         itemsToScroll: 1,         
@@ -178,7 +178,10 @@
             pauseOnHover: true
         }        
     });
-    </script>
+	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip(); 
+	});
+</script>
 	<!-- hello -->
 	<div class="hello">
 		<div class="container">
