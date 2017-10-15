@@ -68,14 +68,7 @@ span.menu {						/*menu*/
   	margin:0 0 1em 1em;
 	float:left;
 	}
-.Demo3 li h4{
-	color:#06F;
-	margin:0.5em 2em;
-	text-align: center;
-	font-size: 1.5em;
-	font-weight: 700;
-	font-family: Times New Roman;
-}
+
 .head-nav ul li a {
   display: inline-block;
   color: #fff;
@@ -2264,7 +2257,9 @@ display:none;
     margin-top: 10px;
     margin-bottom: 10px;
 }                          
-
+.Demo3 {
+	margin:0 4.7em;
+}
 .Demo3 h3{
 	color:#F30;
 	margin:1em 3em 0.5em;
@@ -2273,9 +2268,16 @@ display:none;
 	font-weight: 700;
 	font-family: Times New Roman;
 }
-
+.Demo3 li h4{
+	color:#06F;
+	margin:0.3em;
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: 700;
+	font-family: Times New Roman;
+}
 .Demo3 li img{
-	padding:0 1em;
+	padding:0 0.5em;
 }
 /*** Navigation ***/
 
