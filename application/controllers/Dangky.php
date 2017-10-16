@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nhatuyendung extends CI_Controller {
+class Dangky extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,11 +25,11 @@ class Nhatuyendung extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['title'] = 'Trang nhà tuyển dụng';
-		$data['content'] = 'layout/nhatuyendung';
-		$data['active'] = 3;
+		$data['title'] = 'Đăng Ký';
+		$data['content'] = 'layout/dangky';
+		$data['active']=0;
 		$this->load->view('trangchu', $data);
-
+		
 	}	
 	
 }

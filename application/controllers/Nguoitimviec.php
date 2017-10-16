@@ -30,11 +30,6 @@ class Nguoitimviec extends CI_Controller {
 		$data['active'] = 2;
 		$this->load->view('trangchu', $data);
 		
-	}	
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d700d2e8387ac4fd3be17e9ea8aacefd6ef43fd
-	
+	}		
 	
 }
