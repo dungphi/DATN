@@ -31,13 +31,6 @@ class Nhatuyendung extends CI_Controller {
 		$this->load->view('trangchu', $data);
 
 	}	
-	public function nguoitimviec()
-	{
-		$this->load->view('nguoitimviec');
-	}
-	public function nhatuyendung()
-	{
-		$this->load->view('nhatuyendung');
-	}
+
 	
 }

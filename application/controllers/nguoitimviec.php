@@ -31,19 +31,7 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}	
-	public function nguoitimviec()
-	{
-		$data['title'] = 'Tiêu đề trang';
-		$data['content'] = 'layout/nguoitimviec';
-		$this->load->view('trangchu', $data);
-	}
-	public function nhatuyendung()
-	{
-		$data['title'] = 'Tiêu đề trang';
-		$this->load->view('nhatuyendung');
-		$this->load->view('trangchu', $data);
 
-	}
 	
 	
 }
