@@ -32,6 +32,6 @@
 				<div class="clearfix"> </div>
 		<p>Copyrights © 2017 VieclamOnline. All rights reserved | Design by <a href="https://www.facebook.com/dupitran">DuPi</a></p>
 		</div>
-		<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
+		<a href="#top" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>
 	</div>
 <!-- footer -->

@@ -2329,3 +2329,19 @@ display:none;
   .text + .tooltip.top > .tooltip-arrow {
       border-top: 5px solid #2F2F2F;
   }
+.dk-form {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.dang-ky {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.dangky-form {
+	
+	background: #C3C3C3;
+	font-size: 18px;
+}
+.dangky-form span{
+	padding-left: 30px;
+}

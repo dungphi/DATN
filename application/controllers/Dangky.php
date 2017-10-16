@@ -26,7 +26,7 @@ class Dangky extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Đăng Ký';
-		$data['content'] = 'layout/Dangky';
+		$data['content'] = 'layout/dangky';
 		$data['active']=0;
 		$this->load->view('trangchu', $data);
 		

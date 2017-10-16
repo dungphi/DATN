@@ -32,5 +32,4 @@ class Nhatuyendung extends CI_Controller {
 
 	}	
 	
-	
 }
