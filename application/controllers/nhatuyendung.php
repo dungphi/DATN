@@ -31,6 +31,10 @@ class Nhatuyendung extends CI_Controller {
 		$this->load->view('trangchu', $data);
 
 	}	
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 6d700d2e8387ac4fd3be17e9ea8aacefd6ef43fd
 	
 }

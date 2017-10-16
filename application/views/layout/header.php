@@ -20,7 +20,7 @@
              	<a href="#" data-toggle="modal" data-target="#dangnhap"><img src="images/login.png"/>Đăng Nhập </a>
              </div>
              <div class="dangky" >
-             	<a href="index.php"><img src="images/add_user.png"/>Đăng Ký </a>
+             	<a href="<?=base_url('Dangky'); ?>"><img src="images/add_user.png"/>Đăng Ký </a>
              </div>        
 		<div class="head-nav">
 			<div class="container">
