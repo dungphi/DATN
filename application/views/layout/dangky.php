@@ -2,21 +2,22 @@
 	<div class="row">
 		<div class="col-sm-6 dk-form">
 			<div class="dangky-form">
-				<center><img src="<?=base_url('images/tk-ntv.png'); ?>" width="60%"/></center>
-				<span class="glyphicon glyphicon-ok"> Nội dung hiển thị</span><br>
-				<span class="glyphicon glyphicon-ok"> Nội dung hiển thị</span><br>
-				<span class="glyphicon glyphicon-ok"> Nội dung hiển thị</span><br>
-				<button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
+				<center><img src="<?=base_url('images/tk-ntv.png'); ?>" width="50%"/></center>
+				<span class="glyphicon glyphicon-ok"> Hàng trăm ngàn việc làm đang tuyển dụng</span><br>
+				<span class="glyphicon glyphicon-ok"> Tạo hồ sơ trực tuyến nhanh</span><br>
+				<span class="glyphicon glyphicon-ok"> Hàng ngàn nhà tuyển dụng tìm thấy bạn</span><br>
+				<a href=<?=base_url('dangky/dangkyntv'); ?>><button type="button" class="btn btn-primary btn-lg btn-block">ĐĂNG KÝ NGƯỜI TÌM VIỆC</button></a>   <!-- target="_blank"-->
 			</div>
 		</div>
 		<div class="col-sm-6 dk-form">
 			<div class="dangky-form">
-				<center><img src="<?=base_url('images/tk-ntd.png'); ?>" width="60%"/></center>
-				<span class="glyphicon glyphicon-ok"> Nội dung hiển thị</span><br>
-				<span class="glyphicon glyphicon-ok"> Nội dung hiển thị</span><br>
-				<span class="glyphicon glyphicon-ok"> Nội dung hiển thị</span><br>
-				<button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
+				<center><img src="<?=base_url('images/tk-ntd.png'); ?>" width="50%"/></center>
+				<span class="glyphicon glyphicon-ok"> Đăng tin tuyển dụng miễn phí</span><br>
+				<span class="glyphicon glyphicon-ok"> Lọc tìm hàng trăm ngàn hồ sơ ứng viên</span><br>
+				<span class="glyphicon glyphicon-ok"> Hệ thống quản lý tuyển dụng thông minh</span><br>
+				<button type="button" class="btn btn-primary btn-lg btn-block ">ĐĂNG KÝ NHÀ TUYỂN DỤNG</button>
 			</div>
 		</div>
 	</div>
+    <a href=<?=base_url('dangky/dangkyntv'); ?>>abc</a>
 </div>

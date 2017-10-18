@@ -32,4 +32,55 @@ class Dangky extends CI_Controller {
 		
 	}	
 	
+	public function dangkyntv()
+	{
+		$data['title'] = 'Đăng Ký Người Tìm Việc';
+		$data['content'] = 'layout/dangkyntv';
+		$data['active']=0;
+		$this->load->model('nguoi_tim_viec');
+		if($this->input->post('dangky'))
+		{
+			$ho = $this->input->post('ho');
+			$ten = $this->input->post('ten');
+			$email = $this->input->post('email');
+			$dt = $this->input->post('dt');
+			$pass = $this->input->post('pass');
+			$repass = $this->input->post('repass');
+			$check_mail = $this->nguoi_tim_viec->check_mail($email);
+			if($check_mail == TRUE)
+			{
+				if($pass == $repass)
+				{
+					$db = array(
+						'ho' => $ho,
+						'ten' => $ten,
+						'phone' => $dt,
+						'pass' => $pass,
+						
+					);
+					$this->nguoi_tim_viec->dangky($db);
+					echo '<script>alert("Đăng ký thành công")</script>';
+				}
+				else
+				{
+					echo '<script>alert("Mật khẩu không dúng")</script>';
+				}
+			}
+			else
+			{
+				echo '<script>alert("Email đã tồn tại")</script>';
+			}
+		}
+		$this->load->view('trangchu', $data);
+		
+	}
+	public function dkntv()
+	{
+		$data['title'] = 'Đăng Ký Người Tìm Việc';
+		$data['content'] = 'layout/dangkyntv';
+		$data['active']=0;
+		$this->load->view('trangchu', $data);
+		
+	}
 }
+?>

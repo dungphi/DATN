@@ -2,7 +2,7 @@
 	<div class="header" id="top">
     	
 			<div class="logo">
-				<a href="index.php"><img src="images/logo.png" width="300px"/></a>
+				<a href="index.php"><img src="<?=base_url('images/logo.png'); ?>" width="250px"/></a>
 			</div>
             <div class="input_s" >
                 <input type="text" class="form-control" id="input-keyword" name="tu_khoa" placeholder="Nhập tên công việc, vị trí, kỹ năng...">
@@ -14,19 +14,19 @@
              </div>
              
              <div class="dangtin" >
-             	<a href="index.php"><img src="images/dangtin.png"/>ĐĂNG TIN MIỄN PHÍ </a>
+             	<a href="index.php"><img src="<?=base_url('images/dangtin.png'); ?>"/>ĐĂNG TIN MIỄN PHÍ </a>
              </div>
              <div class="dangnhap" >
-             	<a href="#" data-toggle="modal" data-target="#dangnhap"><img src="images/login.png"/>Đăng Nhập </a>
+             	<a href="#" data-toggle="modal" data-target="#dangnhap"><img src="<?=base_url('images/login.png'); ?>"/>Đăng Nhập </a>
              </div>
              <div class="dangky" >
-             	<a href="<?=base_url('Dangky'); ?>"><img src="images/add_user.png"/>Đăng Ký </a>
+             	<a href="<?=base_url('Dangky'); ?>"><img src="<?=base_url('images/add_user.png'); ?>"/>Đăng Ký </a>
              </div>        
 		<div class="head-nav">
 			<div class="container">
 				<span class="menu">Menu</span>
 					<ul class="cl-effect-7">
-						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="<?=base_url(); ?>"><img src="images/home.png"/> Trang Chủ</a></li>
+						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="<?=base_url(); ?>"><img src="<?=base_url('images/home.png'); ?>"/> Trang Chủ</a></li>
 						<li <?php if($active == 2) echo 'class="active"'; ?>><a href="<?=base_url('nguoitimviec'); ?>">Người Tìm Việc</a></li>
 						<li <?php if($active == 3) echo 'class="active"'; ?>><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng</a></li>
 						<li><a href="about.html">Dịch Vụ Lao Động</a></li>
