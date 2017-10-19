@@ -1281,7 +1281,6 @@ a.b-home:hover {
 .register-top-grid h3{
   color: #63B8BD;
   font-size: 1.4em;
-  padding-bottom:10px;
   margin-top:10px;
   font-weight: 700;
   font-family: "Times New Roman", Times, serif;
@@ -1297,22 +1296,22 @@ a.b-home:hover {
 .register-top-grid div, .register-bottom-grid div {
 	width: 48%;
 	float: left;
-	margin: 10px 0;
+	margin: 15px 0;
 }
 .register-top-grid span, .register-bottom-grid span {
 	color:#000;
-	font-size: 0.85em;
+	font-size: 1.2em;
 	padding-bottom: 0.2em;
 	display: block;
-	text-transform: uppercase;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"],.register-top-grid input[type="password"], .register-bottom-grid input[type="password"]{
-	border: 1px solid #F00;
+.register-top-grid input[type="text"], .register-top-grid input[type="email"], .register-bottom-grid input[type="text"],.register-top-grid input[type="password"], .register-bottom-grid input[type="password"]{
+	border: 1px solid #F60;
 	outline-color:#0FF;
 	width: 96%;
 	font-size: 1em;
 	padding: 0.5em;
 }
+	
 /*.checkbox {
 	margin-bottom: 4px;
 	padding-left: 27px;
@@ -1377,18 +1376,19 @@ a.b-home:hover {
 }
 /*.checkbox input:checked + i:after {
 	opacity: 1;
-}*/
+}
 .news-letter:hover {
 	color:#00BFF0;
-}
-.register-but{
+}*/
+.register{
 	margin-top:1em;
 }
-.register-but form input[type="submit"] {
+.register form input[type="submit"] {
   background:#F60;
   color: #FFF;
   font-size: 1.4em;
-  padding: 0.5em 1.5em;
+  padding: 0.5em 1em;
+  margin-top:0.5em;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;

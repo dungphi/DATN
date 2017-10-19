@@ -8,7 +8,7 @@
                 <input type="text" class="form-control" id="input-keyword" name="tu_khoa" placeholder="Nhập tên công việc, vị trí, kỹ năng...">
             </div>
             <div class="btn_s" >
-                <button type="submit" class="btn"> <img src="images/search.png" /> Tìm Kiếm
+                <button type="submit" class="btn"> <img src="<?=base_url('images/search.png'); ?>" /> Tìm Kiếm
                                             
                 </button>
              </div>
