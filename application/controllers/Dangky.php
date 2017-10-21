@@ -45,8 +45,8 @@ class Dangky extends CI_Controller {
 			$this->form_validation->set_rules('ten', 'Tên', 'required', array('required' => 'Bạn chưa nhập %s.'));
 			$this->form_validation->set_rules('dt', 'Số điện thoại', 'required|min_length[10]|max_length[11]|integer', array('required' => 'Bạn chưa nhập %s.', 'min_length'=>"Tối thiểu 10 số", 'max_length'=>'Tối đa 11 số', 'integer'=>'Phải là số'));
 			$this->form_validation->set_rules('email', 'Email', 'required|valid_email', array('required' => 'Bạn chưa nhập %s.'));
-			$this->form_validation->set_rules('pass', 'Mật khẩu', 'required|md5', array('required' => 'Bạn chưa nhập %s.'));
-			$this->form_validation->set_rules('repass', 'Nhập lại mật khẩu', 'required|md5', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('pass', 'Mật khẩu', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('repass', 'Nhập lại mật khẩu', 'required', array('required' => 'Bạn chưa nhập %s.'));
 			
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
 			if($this->form_validation->run() == TRUE)
@@ -67,7 +67,7 @@ class Dangky extends CI_Controller {
 							'ten' => $ten,
 							'email' => $email,
 							'phone' => $dt,
-							'pass' => $pass,
+							'pass' => md5($pass),
 
 						);
 						$this->nguoi_tim_viec->dangky($db);
