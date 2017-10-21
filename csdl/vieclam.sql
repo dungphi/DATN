@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 15, 2017 lúc 08:17 AM
+-- Thời gian đã tạo: Th10 21, 2017 lúc 02:52 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `nguoi_tim_viec`;
 CREATE TABLE IF NOT EXISTS `nguoi_tim_viec` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ho` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -42,18 +43,19 @@ CREATE TABLE IF NOT EXISTS `nguoi_tim_viec` (
   `muc_luong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `chung_chi` text COLLATE utf8mb4_unicode_ci,
-  `gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
+  `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoi_tim_viec`
 --
 
-INSERT INTO `nguoi_tim_viec` (`id`, `ten`, `email`, `phone`, `ngay_sinh`, `dia_chi`, `bang_cap`, `ky_nang`, `kinh_nghiem`, `muc_luong`, `avatar`, `chung_chi`, `gioi_tinh`, `active`) VALUES
-(1, 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'tp hcm', 'Đại học', 'Kỹ Thuật máy tính', NULL, NULL, 'images/hoso/9.jpg', NULL, 'nam', 1),
-(2, 'Trường', 'truong@gmail.com', '0123456789', '1990-11-02', 'HCM', 'Phổ Thông', NULL, NULL, '3000000d-5000000d', 'images/hoso/12.jpg', NULL, 'nam', 1);
+INSERT INTO `nguoi_tim_viec` (`id`, `ho`, `ten`, `email`, `phone`, `ngay_sinh`, `dia_chi`, `bang_cap`, `ky_nang`, `kinh_nghiem`, `muc_luong`, `avatar`, `chung_chi`, `gioi_tinh`, `active`, `pass`) VALUES
+(1, '', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'tp hcm', 'Đại học', 'Kỹ Thuật máy tính', NULL, NULL, 'images/hoso/9.jpg', NULL, 'nam', 1, ''),
+(2, '', 'Trường', 'truong@gmail.com', '0123456789', '1990-11-02', 'HCM', 'Phổ Thông', NULL, NULL, '3000000d-5000000d', 'images/hoso/12.jpg', NULL, 'nam', 1, '');
 
 -- --------------------------------------------------------
 
@@ -68,6 +70,7 @@ CREATE TABLE IF NOT EXISTS `nha_tuyen_dung` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dia_chi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ms_thue` int(11) DEFAULT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -76,9 +79,9 @@ CREATE TABLE IF NOT EXISTS `nha_tuyen_dung` (
 -- Đang đổ dữ liệu cho bảng `nha_tuyen_dung`
 --
 
-INSERT INTO `nha_tuyen_dung` (`id`, `ten_cty`, `email`, `phone`, `dia_chi`, `active`) VALUES
-(1, 'Công Ty Cổ Phần Ống Thép Việt Đức', 'vietduc@gmail.com', '0123456789', 'TP HCM', 1),
-(2, 'CÔNG TY TNHH HƯNG THỊNH', 'hungthinh@gmail.com', '0123456678', 'Tp HCM', 1);
+INSERT INTO `nha_tuyen_dung` (`id`, `ten_cty`, `email`, `phone`, `dia_chi`, `ms_thue`, `active`) VALUES
+(1, 'Công Ty Cổ Phần Ống Thép Việt Đức', 'vietduc@gmail.com', '0123456789', 'TP HCM', NULL, 1),
+(2, 'CÔNG TY TNHH HƯNG THỊNH', 'hungthinh@gmail.com', '0123456678', 'Tp HCM', NULL, 1);
 
 -- --------------------------------------------------------
 
