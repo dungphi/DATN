@@ -32,10 +32,10 @@ class Dangky extends CI_Controller {
 		
 	}	
 	
-	public function dangkyntv()
+	public function dknguoitimviec()
 	{
 		$data['title'] = 'Đăng Ký Người Tìm Việc';
-		$data['content'] = 'layout/dangkyntv';
+		$data['content'] = 'layout/dknguoitimviec';
 		$data['active']=0;
 		$this->load->model('nguoi_tim_viec');
 		if($this->input->post('dangky'))
@@ -77,10 +77,17 @@ class Dangky extends CI_Controller {
 	public function dkntv()
 	{
 		$data['title'] = 'Đăng Ký Người Tìm Việc';
-		$data['content'] = 'layout/dangkyntv';
+		$data['content'] = 'layout/dknguoitimviec';
 		$data['active']=0;
 		$this->load->view('trangchu', $data);
 		
+	}
+	public function dknhatuyendung()
+	{
+		$data['title'] = 'Đăng Ký Nhà Tuyển Dụng';
+		$data['content'] = 'layout/dknhatuyendung';
+		$data['active']=0;
+		$this->load->view('trangchu', $data);
 	}
 }
 ?>
