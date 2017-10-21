@@ -8,6 +8,7 @@ h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html,body{
+ background-color:rgba(255, 250, 229, 1);
  font-family: 'Times New Roman';
 }
 
@@ -1285,6 +1286,14 @@ a.b-home:hover {
   font-weight: 700;
   font-family: "Times New Roman", Times, serif;
 }
+.register-mid-grid h3 {
+  color: #63B8BD;
+  font-size: 1.4em;
+  padding-bottom: 10px;
+  margin-top:10px;
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
+}
 .register-bottom-grid h3 {
   color: #63B8BD;
   font-size: 1.4em;
@@ -1293,18 +1302,18 @@ a.b-home:hover {
   font-weight: 700;
   font-family: "Times New Roman", Times, serif;
 }
-.register-top-grid div, .register-bottom-grid div {
+.register-top-grid div,.register-mid-grid div, .register-bottom-grid div {
 	width: 48%;
 	float: left;
 	margin: 15px 0;
 }
-.register-top-grid span, .register-bottom-grid span {
+.register-top-grid span,.register-mid-grid span, .register-bottom-grid span {
 	color:#000;
 	font-size: 1.2em;
 	padding-bottom: 0.2em;
 	display: block;
 }
-.register-top-grid input[type="text"], .register-top-grid input[type="email"], .register-bottom-grid input[type="text"],.register-top-grid input[type="password"], .register-bottom-grid input[type="password"]{
+.register-top-grid input[type="text"], .register-top-grid input[type="email"],.register-mid-grid input[type="text"], .register-bottom-grid input[type="text"],.register-top-grid input[type="password"], .register-bottom-grid input[type="password"]{
 	border: 1px solid #F60;
 	outline-color:#0FF;
 	width: 96%;
@@ -1381,9 +1390,10 @@ a.b-home:hover {
 	color:#00BFF0;
 }*/
 .register{
-	margin-top:1em;
+	background-color:#666;
+	margin:1em;
 }
-.register form input[type="submit"] {
+.register form input[type="submit"] {body
   background:#F60;
   color: #FFF;
   font-size: 1.4em;
@@ -1402,7 +1412,7 @@ a.b-home:hover {
 	background:#F00;
 }
 div.register-bottom-grid {
-	margin-top:2.5em;
+	margin-top:2em;
 }
 .main-1 {
   padding: 4em 0em;
@@ -2151,10 +2161,10 @@ ul.list_3 li span {
 .login-page {
   padding: 2em 0em 0;
 }
-.register-top-grid h3, .register-bottom-grid h3 {
+.register-top-grid h3,.register-mid-grid h3 .register-bottom-grid h3 {
   font-size: 1.3em;
 }
-.register-top-grid div, .register-bottom-grid div {
+.register-top-grid div,.register-mid-grid div, .register-bottom-grid div {
   width: 100%;
 }
 .register-but form input[type="submit"] {

@@ -23,7 +23,7 @@
 					 
 					 </div>
                      <div class="clearfix"> </div>
-                  <div class="register-top-grid">
+                  <div class="register-mid-grid">
 					<h3>THÔNG TIN CÔNG TY</h3>
 					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 						<span>Tên Công ty<label>*</label></span>
