@@ -6,7 +6,7 @@
 					<h3>THÔNG TIN CÁ NHÂN</h3>
 					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 						<span>Họ<label>*</label></span>
-						<input type="text" name="ho" placeholder="Họ" pattern="[A-Za-z]{10}"> 
+						<input type="text" name="ho" placeholder="Họ" pattern="[A-Za-z]"> 
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 						<span>Tên<label>*</label></span>

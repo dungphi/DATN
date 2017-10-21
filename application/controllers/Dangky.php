@@ -40,36 +40,52 @@ class Dangky extends CI_Controller {
 		$this->load->model('nguoi_tim_viec');
 		if($this->input->post('dangky'))
 		{
-			$ho = $this->input->post('ho');
-			$ten = $this->input->post('ten');
-			$email = $this->input->post('email');
-			$dt = $this->input->post('dt');
-			$pass = $this->input->post('pass');
-			$repass = $this->input->post('repass');
-			$check_mail = $this->nguoi_tim_viec->check_mail($email);
-			if($check_mail == TRUE)
+			//kiểm tra dữ liệu nhập
+			$this->form_validation->set_rules('ho', 'Họ', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('ten', 'Tên', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('dt', 'Số điện thoại', 'required|min_length[10]|max_length[11]|integer', array('required' => 'Bạn chưa nhập %s.', 'min_length'=>"Tối thiểu 10 số", 'max_length'=>'Tối đa 11 số', 'integer'=>'Phải là số'));
+			$this->form_validation->set_rules('email', 'Email', 'required|valid_email', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('pass', 'Mật khẩu', 'required|md5', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('repass', 'Nhập lại mật khẩu', 'required|md5', array('required' => 'Bạn chưa nhập %s.'));
+			
+			date_default_timezone_set('Asia/Ho_Chi_Minh');
+			if($this->form_validation->run() == TRUE)
 			{
-				if($pass == $repass)
+				$ho = $this->input->post('ho');
+				$ten = $this->input->post('ten');
+				$email = $this->input->post('email');
+				$dt = $this->input->post('dt');
+				$pass = $this->input->post('pass');
+				$repass = $this->input->post('repass');
+				$check_mail = $this->nguoi_tim_viec->check_mail($email);
+				if($check_mail == TRUE)
 				{
-					$db = array(
-						'ho' => $ho,
-						'ten' => $ten,
-						'phone' => $dt,
-						'pass' => $pass,
-						
-					);
-					$this->nguoi_tim_viec->dangky($db);
-					echo '<script>alert("Đăng ký thành công")</script>';
+					if($pass == $repass)
+					{
+						$db = array(
+							'ho' => $ho,
+							'ten' => $ten,
+							'email' => $email,
+							'phone' => $dt,
+							'pass' => $pass,
+
+						);
+						$this->nguoi_tim_viec->dangky($db);
+						echo '<script>alert("Đăng ký thành công")</script>';
+					}
+					else
+					{
+						echo '<script>alert("Mật khẩu không dúng")</script>';
+					}
 				}
 				else
 				{
-					echo '<script>alert("Mật khẩu không dúng")</script>';
+					echo '<script>alert("Email đã tồn tại")</script>';
 				}
 			}
 			else
-			{
-				echo '<script>alert("Email đã tồn tại")</script>';
-			}
+				$this->session->set_flashdata('flash_message', 'Lỗi đăng ký');
+
 		}
 		$this->load->view('trangchu', $data);
 		
