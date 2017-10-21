@@ -35,13 +35,11 @@
 							 </div>
 					 </div>
 				
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   
+					<div class="clearfix"> </div>
+					<div class="register-but">
 					   <input type="submit" name="dangky" class="btn btn-primary btn-lg" value="Đăng Ký">
 					   <div class="clearfix"> </div>
-				  
-				</div> 
+					</div> 
                 </form>
 		   </div>
 	</div>
