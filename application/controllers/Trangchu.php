@@ -33,5 +33,33 @@ class Trangchu extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}	
-	
+	public function dangnhap()
+	{
+		$this->load->model('nguoi_tim_viec');
+		//$this->load->model('nha_tuyen_dung');
+		if(isset($_POST['dangnhap']))
+		{
+			$tuychon = $this->input->post('tuychon');
+			$email = $this->input->post('email');
+			$pass = md5($this->input->post('pass'));
+			if($tuychon == 1)
+			{
+				$check = $this->nguoi_tim_viec->dangnhap($email,$pass);
+				if($check == TRUE)
+				{
+					$this->session->set_userdata("login", $email);
+					//echo $_SESSION['login'];
+					redirect(base_url());
+				}
+			}
+		}
+	}
+	public function dangxuat()
+	{
+		//đăng xuất
+		$this->session->unset_userdata("login");
+		redirect(base_url());
+		//view
+		
+	}
 }

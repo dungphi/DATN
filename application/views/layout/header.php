@@ -2,7 +2,7 @@
 	<div class="header" id="top">
     	
 			<div class="logo">
-				<a href="index.php"><img src="<?=base_url('images/logo.png'); ?>" width="250px"/></a>
+				<a href="<?=base_url(); ?>"><img src="<?=base_url('images/logo.png'); ?>" width="250px"/></a>
 			</div>
             <div class="input_s" >
                 <input type="text" class="form-control" id="input-keyword" name="tu_khoa" placeholder="Nhập tên công việc, vị trí, kỹ năng...">
@@ -16,12 +16,39 @@
              <div class="dangtin" >
              	<a href="index.php"><img src="<?=base_url('images/dangtin.png'); ?>"/>ĐĂNG TIN MIỄN PHÍ </a>
              </div>
+			<?php
+				if(isset($_SESSION['login']))
+				{
+			?>
+			<div class="btn-group thongtin">
+				<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+			<?php echo $_SESSION['login']; ?> <span class="caret"></span>
+			</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a>
+					</li>
+					<li><a href="#">Another action</a>
+					</li>
+					<li><a href="#">Something else here</a>
+					</li>
+					<li class="divider"></li>
+					<li><a href="<?=base_url('trangchu/dangxuat'); ?>">Đăng xuất</a>
+					</li>
+				</ul>
+			</div>
+			<?php
+				}
+				else {
+			?>
              <div class="dangnhap" >
              	<a href="#" data-toggle="modal" data-target="#dangnhap"><img src="<?=base_url('images/login.png'); ?>"/>Đăng Nhập </a>
              </div>
              <div class="dangky" >
              	<a href="<?=base_url('Dangky'); ?>"><img src="<?=base_url('images/add_user.png'); ?>"/>Đăng Ký </a>
-             </div>        
+             </div>  
+			<?php
+				}
+			?>
 		<div class="head-nav">
 			<div class="container">
 				<span class="menu">Menu</span>
@@ -43,40 +70,40 @@
 		<!-- Modal đăng nhập-->
 		<div class="modal fade" id="dangnhap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<h4 class="modal-title" id="myModalLabel">Đăng Nhập</h4>
-                        
-					</div>
-					<div class="modal-body">
-						<form class="form-horizontal" role="form">
+				<form class="form-horizontal" role="form" action="<?=base_url('trangchu/dangnhap'); ?>" enctype="multipart/form-data" method="post">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title" id="myModalLabel">Đăng Nhập</h4>
+						</div>
+						<div class="modal-body">
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+									<input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 								<div class="col-sm-10">
-									<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+									<input type="password" name="pass" class="form-control" id="inputPassword3" placeholder="Password">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
-									<div class="checkbox">
-										<label><input type="checkbox" checked> Nhớ Mật Khẩu </label>
+									<div class="radio">
+										<label><input type="radio" name="tuychon" value="1" checked> Người tìm việc </label>
+										<label><input type="radio" name="tuychon" value="2"> Nhà tuyển dụng </label>
 									</div>
 								</div>
 							</div>
-						</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+							<button type="submit" name="dangnhap" class="btn btn-primary">Đăng Nhập</button>
+						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-						<button type="button" class="btn btn-primary">Đăng Nhập</button>
-					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 		<!-- script-for-nav -->

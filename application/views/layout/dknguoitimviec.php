@@ -6,7 +6,7 @@
 					<h3>THÔNG TIN CÁ NHÂN</h3>
 					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 						<span>Họ <label>*</label></span>
-						<input type="text" name="ho" placeholder="Họ" pattern="[A-Za-z]{2,}" value="<?php echo set_value('ho')?>"> 
+						<input type="text" name="ho" placeholder="Họ" value="<?php echo set_value('ho')?>"> 
 						<?php echo form_error('ho', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">

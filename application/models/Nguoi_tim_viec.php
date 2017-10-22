@@ -30,10 +30,27 @@ class Nguoi_tim_viec extends CI_Model{
 			return TRUE;
 		}
 	}
+	public function dangnhap($email, $pass)
+	{
+		$this->db->select('*');
+		$this->db->from('nguoi_tim_viec');
+		$this->db->where('email', $email);
+		$this->db->where('pass', $pass);
+		$kq = $this->db->get()->row_array();
+		if(count($kq) == 0)
+		{
+			return FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}
+	}
 	public function dangky($db = array())
 	{
 		$this->db->insert('nguoi_tim_viec',$db);
 	}
+	
 	//public function phim_play($id)
 //	{
 //		$this->db->select('*');
