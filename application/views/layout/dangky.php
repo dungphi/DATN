@@ -6,7 +6,7 @@
 				<span class="glyphicon glyphicon-ok"> Hàng trăm ngàn việc làm đang tuyển dụng</span><br>
 				<span class="glyphicon glyphicon-ok"> Tạo hồ sơ trực tuyến nhanh</span><br>
 				<span class="glyphicon glyphicon-ok"> Hàng ngàn nhà tuyển dụng tìm thấy bạn</span><br>
-				<a href=<?=base_url('Dangky/dknguoitimviec'); ?>><button type="button" class="btn btn-primary btn-lg btn-block">ĐĂNG KÝ NGƯỜI TÌM VIỆC</button></a>   <!-- target="_blank"-->
+				<a href=<?=base_url('Dangky/dknguoitimviec'); ?>><button type="button" class="btn btn-primary btn-lg btn-block" name="btndkntv">ĐĂNG KÝ NGƯỜI TÌM VIỆC</button></a>   <!-- target="_blank"-->
 			</div>
 		</div>
 		<div class="col-sm-6 dk-form">
@@ -15,7 +15,7 @@
 				<span class="glyphicon glyphicon-ok"> Đăng tin tuyển dụng miễn phí</span><br>
 				<span class="glyphicon glyphicon-ok"> Lọc tìm hàng trăm ngàn hồ sơ ứng viên</span><br>
 				<span class="glyphicon glyphicon-ok"> Hệ thống quản lý tuyển dụng thông minh</span><br>
-				<a href=<?=base_url('Dangky/dknhatuyendung'); ?>><button type="button" class="btn btn-primary btn-lg btn-block ">ĐĂNG KÝ NHÀ TUYỂN DỤNG</button></a>
+				<a href=<?=base_url('Dangky/dknhatuyendung'); ?>><button type="button" class="btn btn-primary btn-lg btn-block " name="btndkntd">ĐĂNG KÝ NHÀ TUYỂN DỤNG</button></a>
 			</div>
 		</div>
 	</div>

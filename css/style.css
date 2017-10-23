@@ -25,51 +25,86 @@ span.menu {						/*menu*/
 .header { 
   padding: 1em 0  0;
 }
-.logo a {
-  	float:left;	
+.logo img{
+	margin:0 0.5em 0.5em 1em;
+  	float:left;
+	width:20%;	
 	}
 .input_s{						/*Tìm kiếm*/
-	width:25em;
-	margin:0 0 1em 4.5em;
+	width:30%;
+	margin:0 0 1em 2em;
 	float: left;
 	}
 .btn_s{
 	color:#009;
 	font-size: 1.3em;
-	margin:0 4.5em 1em 0;
+	margin:0 2em 1em 0;
 	float: left;
 	}
-.dangtin a{					/*dangtin*/
-  color: #fff;
-  background:#F60;
-  text-decoration: none;
-  font-size: 1.2em;
-  font-weight: 700;
-  padding:0.1em;
-  margin-boton:1em;
-  float: left;
+#top .form-group .search {
+	margin-left: 2em;
+    /*padding: 12px 50px 12px 16px;*/
+	border-color:#3FF;
+    border-width: 1px;
+	border-radius: 2px;
+	width:93%;
+}
+.timkiem {
+	
+	margin:0 2em 0;	}
+#top .group-nganh-nghe{
+	float:left;
+	margin:0 0 1em;
 	}
+#top .group-tu-khoa{
+	float:left;
+	margin:0 0 1em;
+	width:30%;
+	}
+#top .group-tinh-thanh{
+	margin:0 0 1em;
+	float:left;
+	}
+.select2-hidden-accessible{
+	border-width: 1px;
+	border-color:#3FF;
+	margin-left:-2px;
+	border-radius: 2px;
+}
+#btn_search{
+	border-width:1px;
+	border-color:#3FF;
+	background-color:#Fff;
+	border-radius: 2px;
+	margin:0 -1em 1em;
+	float:left;
+}
 .dangnhap a{
 	color:#009;
   	font-size: 1em;
-  	margin:0 0 1em 3em;
- 	float:left;
+	padding:0 1em;
+	margin:0.5em 0;
+	border-right: 0.1em solid #009;
+ 	float:right;
 	}
 .dangky a{
 	color:#009;
 	font-size: 1em;
-  	margin:0 0 1em 1em;
-	float:left;
+	padding:0 1em;
+	margin:0.5em 0;
+	float:right;
 	}
 
 .head-nav ul li a {
   display: inline-block;
-  color: #fff;
+  color:#000;
   text-decoration: none;
   font-size: 1.35em;
   font-weight: 700;
-  font-family: Overlock-Regular;
-  padding: 1em 1.7em ;
+  padding: 1em 1.5em ;
+  border-right:#FFF solid 2px;
+  border-left:#FFF solid 2px;
+
   
 }
 .head-nav {
@@ -83,17 +118,19 @@ span.menu {						/*menu*/
 .head-nav ul{
 	padding:0;
 	margin: 0;
+	
 }
 .head-nav ul li {
 	display: inline-block;
 	
 }
 .head-nav ul li a:hover{								/*even menu*/
-	color: #000;
+  color: #a90000;
   background:none;
-	}
+
+}
 .head-nav ul li.active a {
-  color: #000;
+  color:#a90000;
   background:#99C;
 }
 .banner img {
@@ -106,7 +143,7 @@ span.menu {						/*menu*/
 }
 .lorem {
   background-color: #eee;
-  padding: 0em 0 0;
+  padding: 0;
   position: relative;
   min-height: 109px;
 }
@@ -124,15 +161,13 @@ span.menu {						/*menu*/
   font-size: 1.8em;
   margin: 0;
   font-weight: 700;
-  font-family: Overlock-Regular;
   letter-spacing: 1px;
 }
 .lorem p {
   color: #fff;
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.8em;
   margin: 1em 0.4em;
-    font-family: OpenSans-Regular;
 }
 .lorem-top{
   background-color: #63b8bd;
@@ -142,7 +177,7 @@ span.menu {						/*menu*/
   background-color: #F54785;
   padding: 2em;
 }
-.Feature h3 {
+/*.Feature h3 {
   font-size: 2em;
   color: #fff;
   margin: 0 0 2em;
@@ -169,7 +204,7 @@ span.menu {						/*menu*/
   text-align: center;
   padding: 3em 0;
   background:#63b8bd;
-}
+}*/
 .testimonials h3 {
   font-size: 2em;
   color: #fff;
@@ -452,18 +487,76 @@ ul.callbacks_tabs.callbacks1_tabs {
    background: transparent url("../images/right.png") no-repeat left top;
   right: 0;
 }
+@media(max-width:1202px){
+.head-nav ul li a {
+	padding: 0.8em 0.5em;
+}
+#top .form-group .search {
+	width:89%;
+}
+#top .group-tu-khoa{
+	width:23%;
+}
 /*-- responsive-mediaquries --*/
 @media(max-width:1024px){
 .caption {
 	width: 100%;
 	left: 0%;
 }
-}
-@media(max-width:768px){
-.callbacks_nav {
-	  	
-}
 
+.head-nav ul li a {
+	padding:0.8em 0.5em;
+}
+#top .form-group .search {
+	width:88%;
+}
+#top .group-tu-khoa{
+	width:21%;
+}
+}
+@media(max-width:996px){
+.head-nav ul li a {
+	padding: 0.8em 0.5em;
+	font-size:1em;
+}
+#top .form-group .search {
+	width:87%;
+}
+.logo img{
+	margin:0;
+  	float:left;
+	width:20%;	
+	}
+.dangnhap a{
+	font-size:0.8em;
+	padding-right:0.5em;
+}
+.dangky a{
+	padding-left:0.5em;
+	padding-right: 0;
+	font-size:0.9em;
+}
+}
+@media(max-width:846px){
+/*.timkiem{
+	float:none;
+	}
+.logo img{
+	margin:0;
+	text-align:center;
+	width:40%;
+	float:none;	
+	}
+.dangnhap a{
+	font-size:1em;
+	text-align:center;
+	float:none;
+}
+.dangky a{
+	text-align: center;
+	font-size:1em;
+	float:none;
+}	*/
 }
 @media(max-width:640px){
 .callbacks_tabs a:after {
@@ -1390,10 +1483,10 @@ a.b-home:hover {
 	color:#00BFF0;
 }*/
 .register{
-	background-color:#666;
-	margin:1em;
+	background:#069;
+	margin-top:1em;
 }
-.register form input[type="submit"] {body
+.register form input[type="submit"] {
   background:#F60;
   color: #FFF;
   font-size: 1.4em;
@@ -1421,18 +1514,25 @@ div.register-bottom-grid {
 @media (max-width:992px){
 .lorem-top {
   padding: 1.5em;
+  float: left;
+  width: 49%;
 }
 .lorem-top1 {
   padding: 1.5em;
+  float: left;
+  width: 51%;
 }
 .lorem {
-  min-height: 480px;
+  min-height: 120px;
 }
 .lo-rm {
   bottom: 10px;
 }
 .lorem h3 {
   font-size: 1.7em;
+}
+.lorem p {
+  font-size: 1em;
 }
 .hello h3 {
   font-size: 2em;
@@ -1489,6 +1589,22 @@ h4.domain-head {
 .main {
 	padding: 10em 0px;
 }
+.footer-left {
+  float: left;
+  width: 24%;
+  padding: 0 5px;
+}
+.soci {
+  float: left;
+  width: 27%;
+}
+.soci li {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+.footer {
+  padding: 2em 0;
+}
 }
 													     /*--responsive design--*/
 @media (max-width:768px){
@@ -1520,41 +1636,58 @@ h4.domain-head {
 .head-nav span.menu {
   display: block;
   text-align: center;
+  font-size:1.5em;
   padding: 0.5em;
 }
 .head-nav {
-  margin: 1em 0 0;
+  margin:0;
 }
 .header {  												
   text-align: center;
   padding: 1.5em 0 0;
 }
  span.menu{
-	display:block;
-	color: #fff;
-	font-size:1.3em;
-	text-transform:uppercase;
-	text-align:right;
-	cursor:pointer;
-}
-/*.head-nav ul li a:hover, .head-nav ul li.active a {
-  color: #F90;
+  display:block;
+  color:#000;
   background:none;
-}*/
-/*.lorem-top {
+}
+.lorem-top {
   float: left;
-  width: 50%;
+  width: 49%;
 }
 .lorem-top1 {
   float: left;
   width: 50%;
-}*/
+}
 .lo-rm {
   bottom: 10px;
 }
 .lorem {
-  min-height: 500px;
+  min-height: 200px;	
 }
+/*font-size:1.3em;
+text-transform:uppercase;
+text-align:right;
+cursor:pointer;*/
+.footer-left {
+  float: left;
+  width: 24%;
+  padding: 0 5px;
+}
+.soci {
+  float: left;
+  width: 27%;
+}
+.soci li {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+.footer {
+  padding: 2em 0;
+}
+
+}
+/*.head-nav ul li a:hover, .head-nav ul li.active a {
 .service-left {
   float: left;
   width: 25%;
@@ -1674,6 +1807,15 @@ h4.domain-head {
 .lorem-left {
   padding: 0.5em 0 0;
 }
+.lorem-top {
+  float: left;
+  width: 50%;
+}
+.lorem-top1 {
+  float: left;
+  width: 50%;
+}
+
 .lorem p {
   font-size: 0.9em;
 }
@@ -1681,13 +1823,7 @@ h4.domain-head {
   bottom: 10px;
 }
 .lorem {
-  min-height: 520px;
-}
-.Feature h3 {
-  font-size: 1.7em;
-}
-.Feature p {
-  font-size: 0.9em;
+  min-height: 200px;
 }
 .hello h3 {
   font-size: 1.7em;
@@ -1759,23 +1895,26 @@ h4.domain-head {
   font-size: 0.5em;
 }
 }
-/*--responsive design--*/
-@media (max-width:480px){
-/*.lorem h3 {
-  font-size: 1.1em;
-}
+@media (max-width:540px){
 .lorem-top1 {
-  padding: 1em;
+  padding: 0.5em;
+  width: 50%;
 }
 .lorem-top {
-  padding: 1em;
-}*/
-/*.lo-rm {
-  top: -90px;
+  padding: 0.5em;
+  width: 50%;
 }
+}
+
+/*--responsive design--*/
+@media (max-width:480px){
+.lorem h3 {
+  font-size: 1.1em;
+}
+
 .lorem {
-  min-height: 140px;
-}*/
+  min-height: 230px;
+}
 
 .service-left {
   float: left;
@@ -1947,32 +2086,53 @@ a.b-home {
   margin: 0.1em 0;
 }
 }
-/*--responsive design--*/
-@media (max-width:320px){
-/*.lorem-top1 {
-  float: left;
-  width: 100%;
+@media (max-width:420px){
+.lorem-top1 {
+  padding: 0.5em;
+  width: 50%;
 }
 .lorem-top {
-  float: left;
-  width: 100%;
-}
-.lo-rm {
-  top: -61px;
+  padding: 0.5em;
+  width: 49%; 
 }
 .lorem {
-  min-height: 317px;
-}*/
-.Feature p {
-  font-size: 0.875em;
+  min-height: 270px;
 }
+.lorem h3 {
+  font-size: 1em;
+}
+.lorem p {
+ font-size: 0.8em;
+}
+}
+@media (max-width:398px){
+.lorem-top1 {
+  padding: 0.5em;
+  width: 50%;
+}
+.lorem-top {
+  padding: 0.5em;
+  width: 50%; 
+}
+.lorem {
+  min-height: 50px;
+}
+.lo-rm {
+  bottom: 0.2em;
+}
+.lorem h3 {
+  font-size: 1.4em;
+}
+.lorem p {
+ font-size: 0em;
+}
+}
+/*--responsive design--*/
+@media (max-width:320px){
 .service-left {
   float: left;
   width: 100%;
   padding: 0 10px;
-}
-.lorem h3 {
-  font-size: 1.3em;
 }
 .hello p {
   font-size: 0.875em;
@@ -2185,6 +2345,7 @@ a.b-home {
 .logo a{	
   width:50%;
   margin:0 2em;
+  
  			                       /*logo*/
 	
 }
@@ -2361,3 +2522,4 @@ display:none;
 .dangky-form span{
 	padding-left: 30px;
 }
+
