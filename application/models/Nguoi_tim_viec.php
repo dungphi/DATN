@@ -12,7 +12,7 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec');
 		$this->db->order_by('id', 'desc'); //asc
-		$this->db->limit('2');
+		//$this->db->limit('2');
 		return $this->db->get()->result_array();
 	}
 	public function check_mail($email)

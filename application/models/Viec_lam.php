@@ -12,7 +12,7 @@ class Viec_lam extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('viec_lam,nha_tuyen_dung');
 		$this->db->where('viec_lam.id_ntd = nha_tuyen_dung.id');
-		$this->db->order_by('viec_lam.id', 'desc'); //asc
+		$this->db->order_by('nha_tuyen_dung.id', 'desc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}

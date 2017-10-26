@@ -3,18 +3,18 @@
 		<div class="col-sm-6 dk-form">
 			<div class="dangky-form">
 				<center><img src="<?=base_url('images/tk-ntv.png'); ?>" width="50%"/></center>
-				<span class="glyphicon glyphicon-ok"> Hàng trăm ngàn việc làm đang tuyển dụng</span><br>
-				<span class="glyphicon glyphicon-ok"> Tạo hồ sơ trực tuyến nhanh</span><br>
-				<span class="glyphicon glyphicon-ok"> Hàng ngàn nhà tuyển dụng tìm thấy bạn</span><br>
+				<span class="glyphicon glyphicon-ok"></span> Hàng trăm ngàn việc làm đang tuyển dụng<br>
+				<span class="glyphicon glyphicon-ok"></span> Tạo hồ sơ trực tuyến nhanh<br>
+				<span class="glyphicon glyphicon-ok"></span> Hàng ngàn nhà tuyển dụng tìm thấy bạn<br>
 				<a href=<?=base_url('Dangky/dknguoitimviec'); ?>><button type="button" class="btn btn-primary btn-lg btn-block" name="btndkntv">ĐĂNG KÝ NGƯỜI TÌM VIỆC</button></a>   <!-- target="_blank"-->
 			</div>
 		</div>
 		<div class="col-sm-6 dk-form">
 			<div class="dangky-form">
 				<center><img src="<?=base_url('images/tk-ntd.png'); ?>" width="50%"/></center>
-				<span class="glyphicon glyphicon-ok"> Đăng tin tuyển dụng miễn phí</span><br>
-				<span class="glyphicon glyphicon-ok"> Lọc tìm hàng trăm ngàn hồ sơ ứng viên</span><br>
-				<span class="glyphicon glyphicon-ok"> Hệ thống quản lý tuyển dụng thông minh</span><br>
+				<span class="glyphicon glyphicon-ok"></span> Đăng tin tuyển dụng miễn phí<br>
+				<span class="glyphicon glyphicon-ok"></span> Lọc tìm hàng trăm ngàn hồ sơ ứng viên<br>
+				<span class="glyphicon glyphicon-ok"></span> Hệ thống quản lý tuyển dụng thông minh<br>
 				<a href=<?=base_url('Dangky/dknhatuyendung'); ?>><button type="button" class="btn btn-primary btn-lg btn-block " name="btndkntd">ĐĂNG KÝ NHÀ TUYỂN DỤNG</button></a>
 			</div>
 		</div>
