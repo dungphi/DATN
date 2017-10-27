@@ -31,4 +31,10 @@ class Nha_tuyen_dung extends CI_Model{
 			return TRUE;
 		}
 	}
+		public function dangkyntd($db1 = array(),$db2 =array())
+	{
+		$this->db->insert('nha_tuyen_dung',$db1);
+		$this->db->insert('lien_he',$db2);
+		
+	}
 }
