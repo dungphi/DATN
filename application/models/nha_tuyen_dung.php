@@ -9,9 +9,8 @@ class Nha_tuyen_dung extends CI_Model{
 	public function vieclam()
 	{
 		$this->db->select('*');
-		$this->db->from('lien_he,nha_tuyen_dung');
-		$this->db->where('lien_he.id_ntd = nha_tuyen_dung.id');
-		$this->db->order_by('nha_tuyen_dung.id', 'desc'); //asc
+		$this->db->from('nha_tuyen_dung');
+		$this->db->order_by('id', 'desc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}
@@ -19,7 +18,7 @@ class Nha_tuyen_dung extends CI_Model{
 		public function check_mail($email)
 	{
 		$this->db->select('*');
-		$this->db->from('lien_he');
+		$this->db->from('nha_tuyen_dung');
 		$this->db->where('email', $email);
 		$kq = $this->db->get()->row_array();
 		if(count($kq) != 0)
@@ -31,10 +30,9 @@ class Nha_tuyen_dung extends CI_Model{
 			return TRUE;
 		}
 	}
-		public function dangkyntd($db1 = array(),$db2 =array())
+		public function dangkyntd($db = array())
 	{
-		$this->db->insert('nha_tuyen_dung',$db1);
-		$this->db->insert('lien_he',$db2);
+		$this->db->insert('nha_tuyen_dung',$db);
 		
 	}
 }

@@ -136,22 +136,19 @@ class Dangky extends CI_Controller {
 				{
 					if($pass == $repass)
 					{
-						$db1 = array(
+						$db = array(
+							'ten_lh' => $hoten,
+							'email_lh' => $email_lh,
+							'sdt_lh' => $dtlh,
 							'ten_cty' => $tenct,
 							'ms_thue' => $mst,
 							'dia_chi' => $diachi,
-							'phone' => $dtct,
-						);
-						$db2 = array(
-							'ho_ten' => $hoten,
-							'email_lh' => $email_lh,
-							'sdt_lh' => $dtlh,
 							'email' => $email,
+							'phone' => $dtct,
 							'pass' => md5($pass),
 
 						);
-						$this->nha_tuyen_dung->dangkyntd($db1);
-						$this->nha_tuyen_dung->dangkyntd($db2);
+						$this->nha_tuyen_dung->dangkyntd($db);
 						echo '<script>alert("Đăng ký thành công")</script>';
 					}
 					else

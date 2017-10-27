@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 21, 2017 lúc 02:52 PM
+-- Thời gian đã tạo: Th10 27, 2017 lúc 03:53 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -21,6 +21,23 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `vieclam`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `lien_he`
+--
+
+DROP TABLE IF EXISTS `lien_he`;
+CREATE TABLE IF NOT EXISTS `lien_he` (
+  `id` int(11) NOT NULL,
+  `id_ntd` int(11) NOT NULL,
+  `ho_ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_lh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sdt_lh` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -47,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `nguoi_tim_viec` (
   `active` tinyint(4) NOT NULL DEFAULT '1',
   `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoi_tim_viec`
@@ -55,7 +72,9 @@ CREATE TABLE IF NOT EXISTS `nguoi_tim_viec` (
 
 INSERT INTO `nguoi_tim_viec` (`id`, `ho`, `ten`, `email`, `phone`, `ngay_sinh`, `dia_chi`, `bang_cap`, `ky_nang`, `kinh_nghiem`, `muc_luong`, `avatar`, `chung_chi`, `gioi_tinh`, `active`, `pass`) VALUES
 (1, '', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'tp hcm', 'Đại học', 'Kỹ Thuật máy tính', NULL, NULL, 'images/hoso/9.jpg', NULL, 'nam', 1, ''),
-(2, '', 'Trường', 'truong@gmail.com', '0123456789', '1990-11-02', 'HCM', 'Phổ Thông', NULL, NULL, '3000000d-5000000d', 'images/hoso/12.jpg', NULL, 'nam', 1, '');
+(2, '', 'Trường', 'truong@gmail.com', '0123456789', '1990-11-02', 'HCM', 'Phổ Thông', NULL, NULL, '3000000d-5000000d', 'images/hoso/12.jpg', NULL, 'nam', 1, ''),
+(3, 'Thanh', 'Thuy', 'thuy@gmail.com', '0123456777', '1992-10-19', 'HCM', 'Trung Cap', NULL, NULL, NULL, 'images/hoso/avatar.png', NULL, 'Nu', 1, ''),
+(8, 'Trần', 'Phi', 'phi@gmail.com', '01239876543', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -71,17 +90,22 @@ CREATE TABLE IF NOT EXISTS `nha_tuyen_dung` (
   `phone` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dia_chi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ms_thue` int(11) DEFAULT NULL,
+  `ten_lh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_lh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sdt_lh` int(11) NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nha_tuyen_dung`
 --
 
-INSERT INTO `nha_tuyen_dung` (`id`, `ten_cty`, `email`, `phone`, `dia_chi`, `ms_thue`, `active`) VALUES
-(1, 'Công Ty Cổ Phần Ống Thép Việt Đức', 'vietduc@gmail.com', '0123456789', 'TP HCM', NULL, 1),
-(2, 'CÔNG TY TNHH HƯNG THỊNH', 'hungthinh@gmail.com', '0123456678', 'Tp HCM', NULL, 1);
+INSERT INTO `nha_tuyen_dung` (`id`, `ten_cty`, `email`, `phone`, `dia_chi`, `ms_thue`, `ten_lh`, `email_lh`, `pass`, `sdt_lh`, `active`) VALUES
+(1, 'Công Ty Cổ Phần Ống Thép Việt Đức', 'vietduc@gmail.com', '0123456789', 'TP HCM', NULL, '', '', 'c4ca4238a0b923820dcc509a6f75849b', 0, 1),
+(2, 'CÔNG TY TNHH HƯNG THỊNH', 'hungthinh@gmail.com', '0123456678', 'Tp HCM', NULL, '', '', 'c4ca4238a0b923820dcc509a6f75849b', 0, 1),
+(4, 'a', 'a@gmail.com', '0987654321', 'tp hcm', 1, 'a', 'a@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 987654321, 1);
 
 -- --------------------------------------------------------
 
@@ -92,6 +116,7 @@ INSERT INTO `nha_tuyen_dung` (`id`, `ten_cty`, `email`, `phone`, `dia_chi`, `ms_
 DROP TABLE IF EXISTS `viec_lam`;
 CREATE TABLE IF NOT EXISTS `viec_lam` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_ntd` int(11) NOT NULL,
   `ten_viec` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nganh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `bang_cap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -105,7 +130,6 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
   `yeu_cau` text COLLATE utf8mb4_unicode_ci,
   `chuc_vu` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hinh_anh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_ntd` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -113,9 +137,9 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
 -- Đang đổ dữ liệu cho bảng `viec_lam`
 --
 
-INSERT INTO `viec_lam` (`id`, `ten_viec`, `nganh`, `bang_cap`, `kinh_nghiem`, `muc_luong`, `vi_tri`, `mo_ta`, `ngay_dk`, `ngay_hh`, `active`, `yeu_cau`, `chuc_vu`, `hinh_anh`, `id_ntd`) VALUES
-(1, 'Tuyển giám đốc kinh doanh', 'CEO', 'Đại học', '2 năm', '10000000', 'Tp hcm', NULL, '2017-10-10', '2017-10-31', 1, NULL, 'Giám đốc', 'images/vieclam/3.jpg', 1),
-(2, ' Tuyển kỹ thuật viên', 'Điện tử', 'Đại học', '2 năm', '10000000', 'Tp hcm', NULL, '2017-10-10', '2017-10-31', 1, NULL, 'Ky Thuat Vien', 'images/vieclam/4.jpg', 2);
+INSERT INTO `viec_lam` (`id`, `id_ntd`, `ten_viec`, `nganh`, `bang_cap`, `kinh_nghiem`, `muc_luong`, `vi_tri`, `mo_ta`, `ngay_dk`, `ngay_hh`, `active`, `yeu_cau`, `chuc_vu`, `hinh_anh`) VALUES
+(1, 1, 'Tuyển giám đốc kinh doanh', 'CEO', 'Đại học', '2 năm', '10000000', 'Tp hcm', NULL, '2017-10-10', '2017-10-31', 1, NULL, 'Giám đốc', 'images/vieclam/3.jpg'),
+(2, 2, ' Tuyển kỹ thuật viên', 'Điện tử', 'Đại học', '2 năm', '10000000', 'Tp hcm', NULL, '2017-10-10', '2017-10-31', 1, NULL, 'Ky Thuat Vien', 'images/vieclam/4.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
