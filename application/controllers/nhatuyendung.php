@@ -20,7 +20,9 @@ class Nhatuyendung extends CI_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->load->helper('url');
+		$this->load->model('viec_lam');
+		$this->load->model('nguoi_tim_viec');
+		$this->load->model('ho_so_ntv');
 		
 	}
 	public function index()
@@ -28,6 +30,9 @@ class Nhatuyendung extends CI_Controller {
 		$data['title'] = 'Trang nhà tuyển dụng';
 		$data['content'] = 'layout/nhatuyendung';
 		$data['active'] = 3;
+		$data['vieclam'] = $this->viec_lam->vieclam();
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
 		$this->load->view('trangchu', $data);
 
 	}	

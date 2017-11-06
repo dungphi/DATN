@@ -7,7 +7,7 @@ class Nguoi_tim_viec extends CI_Model{
 	parent::__construct();
 	}
 
-	public function vieclam()
+	public function nguoitimviec()
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec');

@@ -62,71 +62,7 @@
 	</div>
 	<!-- lorem -->
 </div>
-	<!-- Feature -->
-<!--<div class="Feature">
-		<div class="container">
-			<h3>Tin Nổi Bật</h3>
-			<div class="feature-top">
-			<?php
-				foreach($vieclam as $tam)
-				{
-			?>
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="">
-					<h3>Tuyển <?=$tam['ten_viec']; ?></h3>
-					
-				</div>
-			<?php
-				}
-			?>
-            
-            <?php
-				foreach($nguoitimviec as $tam)
-				
-				{
-			?>
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/10.png" class="img-responsive" alt="">
-					<h3><?=$tam['ten']?> ,giới tính <?=$tam['gioi_tinh']; ?>,ở <?=$tam['dia_chi']; ?></h3>
-                </div>
-            <?php
-				}
-			?>-->
-			
-			<!--	<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/11.png" class="img-responsive" alt="">
-					<h3> chua xong</h3>
-				</div>
-            
-				
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/12.png" class="img-responsive" alt="">
-					<p>with the release of Letraset sheets Letraset sheets Lorem Ipsum containing containing Lorem</p>
-				</div>-->
-					<div class="clearfix"> </div>
-			</div>
-		<!--	<div class="feature-top">
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/5.png" class="img-responsive" alt="">
-					<p>containing Lorem sheets containing Lorem Ipsum passages, and more release Letraset rece</p>
-				</div>
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/6.png" class="img-responsive" alt="">
-					<p>with the release Letraset sheets Lorem Ipsum passages containing of Letraset sheets  </p>
-				</div>
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/7.png" class="img-responsive" alt="">
-					<p>with the release of Letraset sheets Letraset sheets Lorem Ipsum containing containing Lorem</p>
-				</div>
-				<div class="col-md-3 service-left">
-					<img src="<?=base_url(); ?>images/8.png" class="img-responsive" alt="">
-					<p> Letraset sheets with the release Letraset sheets Lorem Ipsum containing Lorem Ipsum passages</p>
-				</div>
-					<div class="clearfix"> </div>
-			</div>-->
-		</div> 
-	</div>    
-	<!-- Feature -->
+
     <div class="container Demo3" ><!--class=Demo3>-->
     <h3>Tin Nổi Bật</h3>
     <ul id="flexiselDemo3">
@@ -139,7 +75,7 @@
             	<li>
 					<div class="tintuyendung">
 						<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-rounded" alt="" width="250" height="150">
-						<h4 class="text" data-toggle="tooltip" title="<?=$tam['ten_viec']; ?>"><?=$tam['ten_viec']; ?></h4>
+						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
                         <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten_cty']; ?>"> <?=$tam['ten_cty'];?></h5>
 					</div>
 					
@@ -150,14 +86,17 @@
         
          
 			<?php
-				foreach($nguoitimviec as $tam)
+				foreach($hosotimviec as $tam)
 				{
+					
+    
 			?>
             	<li>
 					<div class="tintimviec">
 						<img src="<?=base_url($tam['avatar']); ?>" class="img-rounded" alt="" width="250" height="150">
-						<h4><?=$tam['ten']?>, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h4>
-					
+						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                        <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?>"><?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h5>
+                        
 					</div>
                 </li>
 			<?php
@@ -168,6 +107,30 @@
 <div class="clearout">
 </div>
  </div>
+ <!-- hàm tính tuổi-->
+ <?php
+ function getAge($birthdate = '0000-00-00')
+	{
+    if ($birthdate == '0000-00-00') return 'Unknown';
+ 
+    $bits = explode('-', $birthdate);
+    $age = date('Y') - $bits[0] - 1;
+ 
+    $arr[1] = 'm';
+    $arr[2] = 'd';
+ 
+    for ($i = 1; $arr[$i]; $i++) {
+        $n = date($arr[$i]);
+        if ($n < $bits[$i])
+            break;
+        if ($n > $bits[$i]) {
+            ++$age;
+            break;
+        }
+    }
+    return $age;
+	}
+    ?>
 <script>
     $("#flexiselDemo3").flexisel({
         visibleItems: 5,
@@ -182,91 +145,123 @@
 		$('[data-toggle="tooltip"]').tooltip(); 
 	});
 </script>
-	<!-- hello -->
-	<div class="hello">
-		<div class="container">
-		<h3>HELLO THERE!</h3>
-			<div class="col-md-8 hello-left">
-				
-				<h5>Welcome To Our Business Company Site</h5>
-				<div class="hello-1">
-					<img src="<?=base_url(); ?>images/7.jpg" class="img-responsive" alt="">
-				</div>
-				<div class="hello-2">
-					<h4>Mescuml dia sed integer alies dolore ipasum ame mod ictor utligulat.</h4>
-					<p>Mes cuml dia sed in lacus ut eniascet ingerto aliiqt es site amet eismod ictor ut ligulate ameti dapibus ticdu nt mtsen lusto dolor ltissim comes cuml dia sed inertio lacusueni ascet dolingerto aliiqt sit amet eism com odictor ut ligulate cot ameti dapibu emo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit sed quia consequuntur</p>
-				</div>
+	<!-- baidang -->
+    <div class="baidang">
+        <div class="container">
+            
+            <div lass= "row">
+                <div class="col-xs-9 col-sm-9 col-md-9 ">
+                    <div class="baidang_left">
+                    	<h3>Thông tin tìm việc làm,tuyển dụng trên Toàn Quốc</h3>
+                    <?php
+                   	 foreach($vieclam as $tam)
+                    	{
+                    ?>
+                        <div class="row">
+                        	<div class="baituyendung">
+                        		<div class="col-xs-2 col-sm-2 col-md-2 hinhanh">
+                            		<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100">
+                        		</div>
+                        		<div class="col-xs-9 col-sm-9 col-md-9 thongtin">
+                                    <h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                                    <h5 class="text"  title="<?=$tam['ten_cty'];?>"><?=$tam['ten_cty'];?></h5>
+                               
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                        <p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                        <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                        <p class="glyphicon glyphicon-list-alt"> <?= $tam['bang_cap'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                        <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                    </div>
+                            
+                        		</div> 
+                                <div class="col-xs-1 col-sm-1 col-md-1 thongtin"> 
+                                	<p class="glyphicon glyphicon-star-empty"> </p>
+                                </div>  	
+                        	</div>
+                    	</div>
+					<?php
+					}
+					?>
+                    
+					<?php
+						foreach($hosotimviec as $tam)
+							{
+					?>
+							<div class="row">
+                            <div class= "hosotimviec">
+								<div class="col-md-2 hinhanh">
+									<img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="">
+								</div>
+								<div class=" col-md-9 thongtin">
+									<h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                        			<h5 class="text"  title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm</h5>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                        					<p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                            <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                            <p class="glyphicon glyphicon-list-alt"> <?= $tam['bang_cap'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                            <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+									
+								</div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 thongtin"> 
+                                	<p class="glyphicon glyphicon-star-empty"> </p>
+                                </div>	
+								</div>
+								</div>
+						   
+						<?php
+							}
+						?> 
+                        </div>
 					<div class="clearfix"> </div>
-			</div>
-			<div class="col-md-4 hello-right">
-				<h5>What We Offer</h5>
-				<div class="hello-3">
-					<img src="<?=base_url(); ?>images/1.jpg" class="img-responsive" alt="">
-				</div>
-				<h4>Mes cuml diased commete ipsum</h4>
-				<p>Dolor nunc vule putateulr ips dol consec.Donecsemp ertet laciniate ultricie.Dolor nunc vule putateulr ips dol consec.Donec semp ertet laciniate ultricie upien dicomete dolo lectus fgilla itollicil tua ludin dolor nec met quam accumsan dolorecondime.</p>
-				<div class="clearfix"> </div>
-			</div>
-				<div class="clearfix"> </div>
-		</div>
-	</div>
-	<!-- hello -->
-	
-	<!-- testimonials -->
-	<div class="testimonials">
-		<div class="container">
-			<h3>SUCCESS STORIES</h3>
-			<section class="slider">
-						<div class="flexslider">
-							<ul class="slides">
-								<li>
-									<div class="what-top">
-									<img src="<?=base_url(); ?>images/man.jpg" class="img-responsive" alt="">
-										<h5>John Buch</h5>
-										<p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-									</div>
-								</li>
-								<li>
-									<div class="what-top">
-										<img src="<?=base_url(); ?>images/women.jpg" class="img-responsive" alt="">
-										<h5>Nickie Bella</h5>
-										<p>Lorem Ipsum has been the simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-									</div>
-								</li>
-								<li>
-									<div class="what-top">
-										<img src="<?=base_url(); ?>images/man.jpg" class="img-responsive" alt="">
-										<h5>John Buch</h5>
-										<p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-									</div>
-								</li>
-								<div class="clearfix"> </div>
-							</ul>
-						</div>
-					</section>
-					<!-- FlexSlider -->
-							  <script defer src="js/jquery.flexslider.js"></script>
-							  <script type="text/javascript">
-								$(function(){
-								  SyntaxHighlighter.all();
-								});
-								$(window).load(function(){
-								  $('.flexslider').flexslider({
-									animation: "slide",
-									start: function(slider){
-									  $('body').removeClass('loading');
-									}
-								  });
-								});
-							  </script>
-						<!-- FlexSlider -->
-		</div>
-	</div>
-	<!-- testimonials -->
+                      
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 baidang_right">
+                <h3>Tin quảng cáo</h3>
+                	<?php
+				foreach($hosotimviec as $tam)
+				{
+					
+    
+			?>
+            		<div class="hosotimviec">
+					<div class="hinhanhqc">
+						<img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="" width="200">
+                    </div>
+                    <div class="thongtinqc">
+                    
+						<h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                        <h5 class="text"  title="<?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?>"><?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h5>
+                        
+					</div>
+                    </div>
+               
+			<?php
+				}
+			?> 
+                <div class="clearfix"> </div>
+                </div>
+            </div>
+         </div>
+	</div>        	
+	<!-- bài đăng-->
 	<!-- device -->
 	<div class="device">
 		<div class="container">
-			<h2>Latest News</h2>
+			<h2>Cẩm nang nghề nghiệp</h2>
 				<div class="col-md-4 devic-left">
 				
 					<img src="<?=base_url(); ?>images/4.jpg" class="img-responsive" alt="">

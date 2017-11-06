@@ -91,7 +91,7 @@
 					</li>
 					<li><a href="#"><span  class="glyphicon glyphicon-user"></span> Thông tin cá nhân</a>
 					</li>
-					<li><a href="#"><span  class="glyphicon glyphicon-compressed"></span> Đổi mật khẩu</a>
+					<li><a href="<?=base_url('nguoitimviec/thongtinntv'); ?>"><span  class="glyphicon glyphicon-compressed"></span> Quản lý tài khoản</a>
 					</li>
 					<li class="divider"></li>
 					<li><a href="<?=base_url('trangchu/dangxuat'); ?>"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a>

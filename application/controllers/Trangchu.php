@@ -22,6 +22,7 @@ class Trangchu extends CI_Controller {
 		parent::__construct();
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
+		$this->load->model('ho_so_ntv');
 	}
 	public function index()
 	{
@@ -29,14 +30,15 @@ class Trangchu extends CI_Controller {
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
 		$data['vieclam'] = $this->viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->vieclam();
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
 		$this->load->view('trangchu', $data);
 		
 	}	
 	public function dangnhap()
 	{
 		$this->load->model('nguoi_tim_viec');
-		//$this->load->model('nha_tuyen_dung');
+		$this->load->model('nha_tuyen_dung');
 		if(isset($_POST['dangnhap']))
 		{
 			$tuychon = $this->input->post('tuychon');
@@ -50,6 +52,28 @@ class Trangchu extends CI_Controller {
 					$this->session->set_userdata("login", $email);
 					//echo $_SESSION['login'];
 					redirect(base_url());
+				}
+				else
+				{	
+					$this->session->set_flashdata('notice','Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu');
+				}
+			}
+			else
+			{
+				
+				$check = $this->nha_tuyen_dung->dangnhap($email,$pass);
+				if($check == TRUE)
+				{
+					$this->session->set_userdata("login", $email);
+					//echo $_SESSION['login'];
+					redirect(base_url());
+				}
+				else
+				{
+					echo '<script>alert("Email hoặc Mật khẩu không đúng")</script>';
+					
+					
+					
 				}
 			}
 		}

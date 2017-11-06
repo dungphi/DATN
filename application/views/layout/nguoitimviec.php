@@ -1,152 +1,105 @@
-<div class="about_grid">
-	<div class="container">
-		<h4 class="tz-title-4 tzcolor-blue">
-            <p class="tzweight_Bold"><span class="m_1">Follow<br></span>Steps</p>
-        </h4>
-		<div class="plans_grid">
-		    <div class="col-md-4">
-				<ul class="project_box">
-				  <li class="mini-post-meta1">1</li>
-				  <li class="desc"><h5><a href="#">Choose Your Plan</a></h5>
-				  	 <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</p>
-				  </li>	
-				  <div class="clearfix"> </div>
-				</ul>
-			</div>
-			<div class="col-md-4">
-				<ul class="project_box">
-				  <li class="mini-post-meta1">2</li>
-				  <li class="desc"><h5><a href="#">Creative Your Account</a></h5>
-				  	 <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</p>
-				  </li>	
-				  <div class="clearfix"> </div>
-				</ul>
-			</div>
-			<div class="col-md-4">
-				<ul class="project_box">
-				  <li class="mini-post-meta1">3</li>
-				  <li class="desc"><h5><a href="#">Launch Your Hosting</a></h5>
-				  	 <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</p>
-				  </li>	
-				  <div class="clearfix"> </div>
-				</ul>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-     </div>
-</div>
-<div class="about_grid1">
-	<div class="container">
-	        <h4 class="tz-title-4 tzcolor-blue">
-               <p class="tzweight_Bold"><span class="m_1">Our<br></span>Hosting</p>
-            </h4>
-        	 <div class="col-md-3 thumb_2">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>5<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Standard Plan</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-		     </div>
-             <div class="col-md-3 thumb_2">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>6<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Advanced Plan</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-		     </div>	
-	         <div class="col-md-3 thumb_2">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>8<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Business Plan</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-		    </div>
-	        <div class="col-md-3 thumb_2">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>9<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Gold Plan</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-		    </div>	
-		    <div class="clearfix"> </div>						
-	 </div>
-</div>
-<div class="about_grid">
-	<div class="container">
-		<h4 class="tz-title-4 tzcolor-blue">
-            <p class="tzweight_Bold"><span class="m_1">Hosting<br></span>3 Column</p>
-        </h4>
-		<div class="col-md-4">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>11<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Next Gen Host</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-			
-		     </div>
-             <div class="col-md-4">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>12<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Resellers Hosting</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-		     </div>	
-	         <div class="col-md-4">
-							<div class="pricing-table-grid plan_box">
-								<h3><span class="dollar">$</span>10<br><span class="month">Per Month</span></h3>
-								<ul>
-									<li><span>Grid Web Hosting</span></li>
-									<li><a href="#">10GB Disk Space</a></li>
-									<li><a href="#">1TB Bandwidth</a></li>
-									<li><a href="#">Free DDoS Protection</a></li>
-									<li><a href="#">Free Daily Backups</a></li>
-									<li><a href="#">Managed Hosting</a></li>
-								</ul>
-								<a class="order-btn" href="login.php">Sign Up</a>
-							</div>
-		    </div>
-		    <div class="clearfix"> </div>
-	</div>
-</div>
+	<!-- baidang -->
+    <div class="baidang">
+        <div class="container">
+            
+            <div lass= "row">
+                <div class="col-xs-9 col-sm-9 col-md-9 ">
+                    <div class="baidang_left">
+                    	<h3>Hồ sơ người tìm việc trên Toàn Quốc</h3>
+                   
+                    
+					<?php
+						foreach($hosotimviec as $tam)
+							{
+					?>
+							<div class="row">
+                            <div class= "hosotimviec">
+								<div class="col-md-2 hinhanh">
+									<img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="">
+								</div>
+								<div class=" col-md-9 thongtin">
+									<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                       				<h5 class="text" data-toggle="tooltip" title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm</h5>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                        					<p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                            <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                            <p class="glyphicon glyphicon-list-alt"> <?= $tam['bang_cap'];?></p>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                            <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+									
+								</div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 thongtin"> 
+                                	<p class="glyphicon glyphicon-star-empty"> </p>
+                                </div>	
+								</div>
+								</div>
+						   
+						<?php
+							}
+						?> 
+                        </div>
+					<div class="clearfix"> </div>
+                      
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 baidang_right">
+                <h3>Tin quảng cáo</h3>
+                	<?php
+				foreach($hosotimviec as $tam)
+				{
+					
+    
+			?>
+            		<div class="hosotimviec">
+					<div class="hinhanhqc">
+						<img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="" width="200">
+                    </div>
+                    <div class="thongtinqc">
+                    
+						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                        <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?>"><?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h5>
+                        
+					</div>
+                    </div>
+               
+			<?php
+				}
+			?> 
+                <div class="clearfix"> </div>
+                </div>
+            </div>
+         </div>
+	</div>        	
+	<!-- bài đăng-->
+      
+ <!-- hàm tính tuổi-->
+ <?php
+ function getAge($birthdate = '0000-00-00')
+	{
+    if ($birthdate == '0000-00-00') return 'Unknown';
+ 
+    $bits = explode('-', $birthdate);
+    $age = date('Y') - $bits[0] - 1;
+ 
+    $arr[1] = 'm';
+    $arr[2] = 'd';
+ 
+    for ($i = 1; $arr[$i]; $i++) {
+        $n = date($arr[$i]);
+        if ($n < $bits[$i])
+            break;
+        if ($n > $bits[$i]) {
+            ++$age;
+            break;
+        }
+    }
+    return $age;
+	}
+    ?>      
+

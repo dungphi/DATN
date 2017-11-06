@@ -30,6 +30,23 @@ class Nha_tuyen_dung extends CI_Model{
 			return TRUE;
 		}
 	}
+	
+		public function dangnhap($email, $pass)
+	{
+		$this->db->select('*');
+		$this->db->from('nha_tuyen_dung');
+		$this->db->where('email', $email);
+		$this->db->where('pass', $pass);
+		$kq = $this->db->get()->row_array();
+		if(count($kq) == 0)
+		{
+			return FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}
+	}
 		public function dangkyntd($db = array())
 	{
 		$this->db->insert('nha_tuyen_dung',$db);
