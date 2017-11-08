@@ -18,6 +18,19 @@ class Ho_so_ntv extends CI_Model{
 	
 	
 	}
+	//CHUA XONG
+	public function hosochitiet($id)
+	{
+		$this->db->select('*');
+		$this->db->from('nguoi_tim_viec,ho_so_tim_viec');
+		$this->db->where('nguoi_tim_viec.id = ho_so_tim_viec.id_ntv'); 
+		$this->db->where('nguoi_tim_viec.id',"$id");
+		//$this->db->limit('6');
+		return $this->db->get()->result_array();
+	
+	
+	}
+	
 	
 	//public function phim_play($id)
 //	{

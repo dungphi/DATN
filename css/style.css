@@ -60,11 +60,12 @@ span.menu {						/*menu*/
 }
 .timkiem {
 	
-	margin:0 2em 0;	}
+	margin:0 2em 0;	
+}
 #top .group-nganh-nghe{
 	float:left;
 	margin:0 0 1em;
-	}
+}
 #top .group-tu-khoa{
 	float:left;
 	margin:0 0 1em;
@@ -1853,15 +1854,56 @@ display:none;
     text-overflow: ellipsis;
 	margin-left:0.5em;
 }
-Tooltip 
-  .text + .tooltip > .tooltip-inner {
+/*Tooltip */
+.text + .tooltip > .tooltip-inner {
       background-color: rgba(136,136,136,0.80); 
       color: #FFFFFF; 
       border: 1px solid #000; 
       padding: 2px;
       font-size: 14px;
-  }*/
+  }
   /* Tooltip on top */
   .text + .tooltip.top > .tooltip-arrow {
       border-top: 3px solid #2F2F2F;
   }
+.header-right {
+    float: right;
+	margin-right:1em;
+}
+							/* chi tiết*/
+.tieu-de {
+	padding:10px;
+	margin:30px 10px 20px;
+	background-color:#fff;
+}
+.tieu-de h3 {
+	font-size:24px;
+	font-weight:800;
+}
+.thong-tin {
+	margin-left: 10px;
+	padding:10px;
+	background-color:#FFF;
+	
+}
+.thong-tin h4 {
+	padding-bottom:10px;
+	font-weight:700;
+}
+.thong-tin-khac {
+	margin: 0 -15px 20px 10px;
+	padding:10px;
+	background-color:#fff;
+	border-top:1px solid #EFEFEF;
+	border-bottom:1px solid #EFEFEF;
+}
+.tro-ve{
+		margin: 0 -15px 20px 10px;
+}
+.avatar {
+	margin:0 10px 20px 0;
+	padding:10px;
+	background-color:#FFF;
+}
+
+

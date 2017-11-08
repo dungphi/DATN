@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Thongtinchitiet extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,25 +21,25 @@ class Home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('viec_lam');
-		$this->load->model('nguoi_tim_viec');
+		$this->load->model('ho_so_ntv');
 	}
 	public function index()
 	{
-		$data['title'] = 'Trang quản trị';
-		$data['content'] = 'admin/home';
-		$data['active'] = 1;
+		$data['title'] = 'Thông Tin Chi tiết';
+		$data['content'] = 'layout/thongtinntv';
+		$data['active'] = 0;
 		$data['vieclam'] = $this->viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$this->load->view('admin/layout', $data);
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
+		$this->load->view('trangchu', $data);
 		
-	}	
-	public function dangnhap()
+	}	// CHUA XONG
+	public function chitiet($id)
 	{
 		$this->load->model('nguoi_tim_viec');
-		//$this->load->model('nha_tuyen_dung');
+		$this->load->model('nha_tuyen_dung');
 		if(isset($_POST['dangnhap']))
 		{
-			$tuychon = $this->input->post('tuychon');
+			$tuychon = $this->input->post('id');
 			$email = $this->input->post('email');
 			$pass = md5($this->input->post('pass'));
 			if($tuychon == 1)
@@ -50,6 +50,28 @@ class Home extends CI_Controller {
 					$this->session->set_userdata("login", $email);
 					//echo $_SESSION['login'];
 					redirect(base_url());
+				}
+				else
+				{	
+					$this->session->set_flashdata('notice','Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu');
+				}
+			}
+			else
+			{
+				
+				$check = $this->nha_tuyen_dung->dangnhap($email,$pass);
+				if($check == TRUE)
+				{
+					$this->session->set_userdata("login", $email);
+					//echo $_SESSION['login'];
+					redirect(base_url());
+				}
+				else
+				{
+					echo '<script>alert("Email hoặc Mật khẩu không đúng")</script>';
+					
+					
+					
 				}
 			}
 		}
