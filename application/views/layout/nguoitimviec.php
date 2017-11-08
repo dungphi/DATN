@@ -15,10 +15,10 @@
 							<div class="row">
                             <div class= "hosotimviec">
 								<div class="col-md-2 hinhanh">
-									<img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="">
+									<a href="<?=base_url('nguoitimviec/thongtinntv/'.$tam['id_ntv']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt=""></a>
 								</div>
 								<div class=" col-md-9 thongtin">
-									<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+									<a href="<?=base_url('nguoitimviec/thongtinntv/'.$tam['id_ntv']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
                        				<h5 class="text" data-toggle="tooltip" title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm</h5>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
                         					<p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>

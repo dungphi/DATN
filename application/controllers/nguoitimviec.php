@@ -36,11 +36,12 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}	
-	public function thongtinntv()
+	public function thongtinntv($id)
 	{
 		$data['title'] = 'Thông tin Tìm việc';
 		$data['content'] = 'layout/thongtinntv';
 		$data['active'] = 0;
+		$data['thongtin'] = $this->ho_so_ntv->hosochitiet($id);
 		$this->load->view('trangchu', $data);
 		
 	}		

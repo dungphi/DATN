@@ -2,9 +2,9 @@
 	<div class="tieu-de">
     	<div class="row">
         	<div class=" col-xs-9 col-sm-9 col-md-9 ">
-            	<h3> Tiêu Đề</h3>
-                <h4> Tên</h4>
-                <h5> ngày cập nhật</h5>
+            	<h3><?=$thongtin['tieu_de']; ?></h3>
+                <h4><?=$thongtin['ten']; ?></h4>
+                <h5><?=date('d-m-Y', strtotime($thongtin['ngay_dk'])); ?></h5>
             
             </div>
             <div class=" col-xs-3 col-sm-3 col-md-3">

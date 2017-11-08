@@ -11,8 +11,8 @@ class Ho_so_ntv extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec,ho_so_tim_viec');
-		$this->db->where('nguoi_tim_viec.id = ho_so_tim_viec.id_ntv and ho_so_tim_viec.vip=1');
-		$this->db->order_by('nguoi_tim_viec.id', 'desc'); //asc
+		$this->db->where('nguoi_tim_viec.id_ntv = ho_so_tim_viec.id_ntv and ho_so_tim_viec.vip=1');
+		$this->db->order_by('nguoi_tim_viec.id_ntv', 'desc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	
@@ -23,10 +23,10 @@ class Ho_so_ntv extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec,ho_so_tim_viec');
-		$this->db->where('nguoi_tim_viec.id = ho_so_tim_viec.id_ntv'); 
-		$this->db->where('nguoi_tim_viec.id',"$id");
+		$this->db->where('nguoi_tim_viec.id_ntv = ho_so_tim_viec.id_ntv'); 
+		$this->db->where('ho_so_tim_viec.id_ntv', $id); 
 		//$this->db->limit('6');
-		return $this->db->get()->result_array();
+		return $this->db->get()->row_array();
 	
 	
 	}
