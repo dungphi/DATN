@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Timkiem extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,26 +22,40 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
+		$this->load->model('ho_so_ntv');
+		$this->load->model('nganh_nghe');
+		$this->load->model('dia_diem');
+		$this->load->model('tim_kiem');
 	}
 	public function index()
 	{
-		if(!isset($_SESSION['admin']))
+		$data['title'] = 'Tìm kiếm việc làm';
+		$dat = array();
+		if($this->input->get('nganh_nghe') != 0)
 		{
-			redirect(base_url('admin/login'));
+			$data['id_nn'] = $dat['nganh'] = $this->input->get('nganh_nghe');
 		}
-		$data['title'] = 'Trang quản trị';
-		$data['home'] = 'class="active"';
-		$data['content'] = 'admin/home';
-		$data['active'] = 1;
+		if($this->input->get('tinh_thanh') != 0)
+		{
+			$data['id_dd'] = $dat['vi_tri'] = $this->input->get('tinh_thanh');
+		}
+		$data['tu_khoa'] = $tu_khoa = $this->input->get('tu_khoa');
+		
+		$data['content'] = 'layout/timkiem';
+		$data['active'] = 0;
 		$data['vieclam'] = $this->viec_lam->vieclam();
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$this->load->view('admin/layout', $data);
-
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$data['timkiem'] = $this->tim_kiem->timkiem($tu_khoa,$dat);
+		$this->load->view('trangchu', $data);
+		
 	}	
 	public function dangnhap()
 	{
 		$this->load->model('nguoi_tim_viec');
-		//$this->load->model('nha_tuyen_dung');
+		$this->load->model('nha_tuyen_dung');
 		if(isset($_POST['dangnhap']))
 		{
 			$tuychon = $this->input->post('tuychon');
@@ -55,6 +69,28 @@ class Home extends CI_Controller {
 					$this->session->set_userdata("login", $email);
 					//echo $_SESSION['login'];
 					redirect(base_url());
+				}
+				else
+				{	
+					$this->session->set_flashdata('notice','Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu');
+				}
+			}
+			else
+			{
+				
+				$check = $this->nha_tuyen_dung->dangnhap($email,$pass);
+				if($check == TRUE)
+				{
+					$this->session->set_userdata("login", $email);
+					//echo $_SESSION['login'];
+					redirect(base_url());
+				}
+				else
+				{
+					echo '<script>alert("Email hoặc Mật khẩu không đúng")</script>';
+					
+					
+					
 				}
 			}
 		}

@@ -5,16 +5,23 @@
 			<a href="<?=base_url(); ?>"><img src="<?=base_url('images/logo.png'); ?>" width="250px"/></a>
 		</div>
       <div class="timkiem">
-      <form class="form-inline" action="#" method="get">
+      <form class="form-inline" action="<?=base_url('timkiem') ?>" method="get">
 		<input type="hidden" id="project-id">
          	<div class="form-group group-tu-khoa">
-               <input class="form-control search" name="tu_khoa" placeholder="Nhập từ khóa ..." type="text" value="" autocomplete="off">
+               <input class="form-control search" name="tu_khoa" placeholder="Nhập từ khóa ..." type="text" value="<?php if(isset($tu_khoa)) echo($tu_khoa); ?>" autocomplete="off">
          	</div>
          	<div class="form-group group-nganh-nghe">
-                 <select class="select2-selectbox form-control select2-hidden-accessible" name="nganh_nghe" tabindex="-1" aria-hidden="true">
-                 		<option value="0">Chọn ngành nghề</option>
-                        <option value="10">Bán hàng</option>
-                        <option value="11">Tư vấn bảo hiểm</option>
+            	<select class="select2-selectbox form-control select2-hidden-accessible" name="nganh_nghe" tabindex="-1" aria-hidden="true">
+					<option value="0">Chọn ngành nghề</option>
+				<?php
+					foreach($nganhnghe as $nn)
+					{
+				?>
+                 	<option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
+				<?php
+					}
+				?>
+                        <!--<option value="11">Tư vấn bảo hiểm</option>
                         <option value="12">Báo chí/Biên tập viên</option>
                         <option value="13">Bất động sản</option>
                         <option value="14">Biên dịch/Phiên dịch</option>
@@ -23,7 +30,7 @@
                         <option value="17">Công nghệ thông tin</option>
                         <option value="18">Dầu khí/Địa chất</option>
                         <option value="19">Dệt may</option>
-                        <option value="20">Bảo vệ/Vệ sĩ/An ninh</option>
+                        <option value="20">Bảo vệ/Vệ sĩ/An ninh</option>-->
                	</select>
             <!--   <span class="select2 select2-container select2-container--open select2-placeholder-selected" dir="ltr" style="width: 160px;">
                 	<span class="selection">
@@ -38,8 +45,15 @@
          <div class="form-group group-tinh-thanh">
          	<select class="select2-selectbox form-control select2-hidden-accessible" name="tinh_thanh" tabindex="-1" aria-hidden="true">
          		<option value="0">Chọn tỉnh thành</option>
-         		<option value="1">Hồ Chí Minh</option>
-         		<option value="2">Hà Nội</option>
+			<?php
+				foreach($diadiem as $dd)
+				{
+			?>
+         		<option value="<?=$dd['id_dd']?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd']?></option>
+			<?php
+				}
+			?>
+         		<!--<option value="2">Hà Nội</option>
          		<option value="3">An Giang</option>
          		<option value="4">Bạc Liêu</option>
          		<option value="5">Bà Rịa-Vũng Tàu</option>
@@ -47,7 +61,7 @@
          		<option value="7">Bắc Giang</option>
          		<option value="8">Bắc Ninh</option>
          		<option value="9">Bến Tre</option>
-         		<option value="10">Bình Dương</option>
+         		<option value="10">Bình Dương</option>-->
                 
         	</select>
          	<!--<span class="select2 select2-container select2-container--default select2-placeholder-selected" dir="ltr" style="width: 160px;">

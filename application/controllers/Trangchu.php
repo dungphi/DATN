@@ -23,6 +23,8 @@ class Trangchu extends CI_Controller {
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('ho_so_ntv');
+		$this->load->model('nganh_nghe');
+		$this->load->model('dia_diem');
 	}
 	public function index()
 	{
@@ -32,6 +34,8 @@ class Trangchu extends CI_Controller {
 		$data['vieclam'] = $this->viec_lam->vieclam();
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
 		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 		
 	}	

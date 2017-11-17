@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+    <title><?=$title?></title>
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
@@ -64,16 +64,16 @@
             <div class="content">
 
                 <!-- Simple login form -->
-                <form action="<?php echo site_url("admin/login")?>" method="post">
+                <form action="<?php echo site_url("admin/login")?>" method="post" enctype="multipart/form-data">
                     <div class="panel panel-body login-form">
                         <div class="text-center">
                             <div class="icon-object border-slate-300 text-slate-300"><a class="navbar-brand" href="index.html"><img src="<?=base_url("assets/admin/logo/logo.png")?>" alt=""></a></div>
-                            <h5 class="content-group">Login to Administrator
+                            <h5 class="content-group">Đăng nhập trang quản trị
                             </h5>
                         </div>
 
                         <div class="form-group has-feedback has-feedback-left">
-                            <input type="text" class="form-control" placeholder="Username" name="user_name">
+                            <input type="text" class="form-control" placeholder="Username" name="user">
 
                             <div class="form-control-feedback">
                                 <i class="icon-user text-muted"></i>
@@ -81,20 +81,16 @@
                         </div>
 
                         <div class="form-group has-feedback has-feedback-left">
-                            <input type="password" class="form-control" placeholder="Password" name="user_pass">
+                            <input type="password" class="form-control" placeholder="Password" name="pass">
                             <div class="form-control-feedback">
                                 <i class="icon-lock2 text-muted"></i>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Login <i
+                            <button type="submit" name="dangnhap" class="btn btn-primary btn-block">Login <i
                                     class="icon-circle-right2 position-right"></i></button>
                         </div>
-
-<!--                        <div class="text-center">-->
-<!--                            <a href="login_password_recover.html">Forgot password?</a>-->
-<!--                        </div>-->
                     </div>
                 </form>
                 <!-- /simple login form -->
@@ -102,8 +98,7 @@
 
                 <!-- Footer -->
                 <div class="footer text-muted text-center">
-                    &copy; 2016. <a href="#">Ariweb.net</a> by <a href="https:fb.com//nguyenthanhdat1294"
-                                                                             target="_blank">Mr.lis</a>
+                    &copy; 2016. <a href="#">Trần Dũng Phi</a>
                 </div>
                 <!-- /footer -->
 
