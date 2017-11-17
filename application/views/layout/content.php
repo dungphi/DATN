@@ -1,6 +1,6 @@
 <!-- banner -->
 
-<div class="banner">		
+<div class="banner">
 	<div class="header-slider">
 		<div class="slider">
 			<div class="callbacks_container">
@@ -208,7 +208,7 @@
                                             <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-list-alt"> <?= $tam['bang_cap'];?></p>
+                                            <p class="glyphicon glyphicon-list-alt"> <?= $tam['trinh_do'];?></p>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
                                             <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>

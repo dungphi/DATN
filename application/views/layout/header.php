@@ -249,7 +249,7 @@
 				else {
 			?>
             <div class="dangky" >
-             	<a href="<?=base_url('Dangky'); ?>"><span class="glyphicon glyphicon-user"></span> Đăng Ký </a>
+             	<a href="<?=base_url('Dangky'); ?>"><span class="fa fa-user-plus"></span> Đăng Ký </a>
              </div>
              <div class="dangnhap" >
              	<a href="#" data-toggle="modal" data-target="#dangnhap"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập </a>
@@ -262,11 +262,11 @@
 			<div class="container">
 				<span class="menu"><span class="glyphicon glyphicon-list"></span> Menu</span>
 					<ul class="cl-effect-7">
-						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="<?=base_url(); ?>"><span class="glyphicon glyphicon-home"></span> Trang Chủ</a></li>
-						<li <?php if($active == 2) echo 'class="active"'; ?>><a href="<?=base_url('nguoitimviec'); ?>"> Người Tìm Việc <span class="glyphicon glyphicon-send"></span></a></li>
-						<li <?php if($active == 3) echo 'class="active"'; ?>><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng <span class="glyphicon glyphicon-file"></span></a></li>
-						<li><a href="<?=base_url('thongtinchitiet');?>">Dịch Vụ Lao Động <span class="glyphicon glyphicon-sort"></span></a></li>
-						<li><a href="#">Tài Liệu Tham Khảo <span class="glyphicon glyphicon-book"></span></a></li>
+						<li <?php if($active == 1) echo 'class="active"'; ?></l><a href="<?=base_url(); ?>"><span class="fa fa-home nav_icon"></span> Trang Chủ</a></li>
+						<li <?php if($active == 2) echo 'class="active"'; ?>><a href="<?=base_url('nguoitimviec'); ?>"> Người Tìm Việc <span class="fa fa-id-card-o nav_icon "></span></a></li>
+						<li <?php if($active == 3) echo 'class="active"'; ?>><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng <span class="fa fa-file-text-o nav_icon"></span></a></li>
+						<li><a href="<?=base_url('thongtinchitiet');?>">Dịch Vụ Lao Động <span class="fa fa-handshake-o"></span></a></li>
+						<li><a href="#">Tài Liệu Tham Khảo <span class="fa fa-book nav_icon"></span></a></li>
 						<!--
                         <li><a href="pages.html">Pages</a></li>
 						<li><a href="404.html">Blog</a></li>
@@ -323,6 +323,7 @@
 				});
 				});
 			</script>
+            
 		<!-- script-for-nav -->
 	</div>
 <!-- header -->
