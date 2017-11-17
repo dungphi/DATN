@@ -89,12 +89,6 @@
         <p class="navbar-text"><span class="label bg-success">Online</span></p>
 
         <ul class="nav navbar-nav navbar-right">	
-			<li>
-				<a class="langicon" href="<?php echo base_url('admin/vn');?>"><img src="<?php echo base_url()?>/assets/admin/images/icon-lang/vn.png" alt="" class="img-responsive"></a>
-			</li>
-			<li>
-				<a class="langicon" href="<?php echo base_url('admin/en');?>"><img src="<?php echo base_url()?>/assets/admin/images/icon-lang/eng.png" alt="" class="img-responsive"></a>
-			</li>
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle" data-toggle="dropdown">
                     <img src="<?=base_url()?>assets/admin/images/demo/users/face11.jpg" alt="">
@@ -107,7 +101,7 @@
                     <li><a href="#"><i class="icon-coins"></i> My balance</a></li>
                     <li><a href="#"><span class="badge bg-teal-400 pull-right"><?php if(isset($num)) {echo $num;} ?></span> <i class="icon-comment-discussion"></i> Messages</a></li>
                     <li class="divider"></li>
-                    <li><a href="<?=site_url("/admin/login/logout/")?>" onclick="return check_logout();"><i class="icon-switch2"></i> Logout</a></li>
+                    <li><a href="<?=base_url("/admin/login/dangxuat/")?>" onclick="return check_logout();"><i class="icon-switch2"></i> Đăng xuất</a></li>
                 </ul>
             </li>
         </ul>

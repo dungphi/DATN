@@ -40,6 +40,17 @@
                             <li <?php if(isset($ntd_add)) {echo $ntd_add;} ?>><a href="<?php echo base_url("admin/admin/add")?>"><i class="fa fa-user-plus"></i> Thêm mới</a></li>
                         </ul>
                     </li>
+					<li <?php if(isset($vl_index)) {echo $vl_index;} ?>>
+                        <a href="#"><i class="fa fa-user-secret"></i> <span>Việc làm</span></a>
+                        <ul>
+                            <li <?php if(isset($vl_ds)) {echo $vl_ds;} ?>><a href="<?php echo base_url("admin/vieclam")?>"><i class="fa fa-users"></i> Danh sách</a></li>
+                            <li <?php if(isset($vl_them)) {echo $vl_them;} ?>><a href="<?php echo base_url("admin/vieclam/them")?>"><i class="fa fa-user-plus"></i> Thêm mới</a></li>
+                            <li <?php if(isset($vl_nn)) {echo $vl_nn;} ?>><a href="<?php echo base_url("admin/vieclam/nn")?>"><i class="fa fa-user-plus"></i> Ngành nghề</a></li>
+                            <li <?php if(isset($vl_ml)) {echo $vl_ml;} ?>><a href="<?php echo base_url("admin/vieclam/ml")?>"><i class="fa fa-user-plus"></i> Mức lương</a></li>
+                            <li <?php if(isset($vl_kn)) {echo $vl_kn;} ?>><a href="<?php echo base_url("admin/vieclam/kn")?>"><i class="fa fa-user-plus"></i> Kinh nghiệm</a></li>
+                            <li <?php if(isset($vl_dd)) {echo $vl_dd;} ?>><a href="<?php echo base_url("admin/vieclam/dd")?>"><i class="fa fa-user-plus"></i> Địa điểm</a></li>
+                        </ul>
+                    </li>
 
                     <!-- /page kits -->
 
