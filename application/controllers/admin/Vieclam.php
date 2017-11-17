@@ -31,10 +31,9 @@ class Vieclam extends CI_Controller {
 		}
 		$data['title'] = 'Danh sách việc làm';
 		$data['vl_ds'] = 'class="active"';
-		$data['content'] = 'admin/home';
+		$data['content'] = 'admin/vieclam/list';
 		$data['active'] = 1;
 		$data['vieclam'] = $this->viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
 		$this->load->view('admin/layout', $data);
 
 	}
