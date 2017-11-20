@@ -22,6 +22,7 @@ class Vieclam extends CI_Controller {
 		parent::__construct();
 		$this->load->model('viec_lam');
 		$this->load->model('nganh_nghe');
+		$this->load->model('dia_diem');
 	}
 	public function index()
 	{
@@ -37,6 +38,7 @@ class Vieclam extends CI_Controller {
 		$this->load->view('admin/layout', $data);
 
 	}
+	
 	//Ngành nghề
 	public function nn()
 	{
@@ -89,4 +91,57 @@ class Vieclam extends CI_Controller {
 			die(json_encode(0));
 	}
 	// kết thúc ngành nghề
+	
+	//start Địa điểm
+		public function dd()
+	{
+		if(!isset($_SESSION['admin']))
+		{
+			redirect(base_url('admin/login'));
+		}
+		$data['title'] = 'Danh sách địa điểm';
+		$data['vl_dd'] = 'class="active"';
+		$data['content'] = 'admin/vieclam/diadiem';
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$this->load->view('admin/layout', $data);
+
+	}
+	public function them_dd()
+	{
+		$nganhghe = $this->input->post('diadiem');
+		$kq = $this->dia_diem->them_diadiem($diadiem);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_dd()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->dia_diem->xoa_diadiem($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function chinhsua_dd()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->dia_diem->chinhsua_dd($id);
+		if(isset($kq))
+			die(json_encode($kq));
+		else
+			die(json_encode(0));
+	}
+	public function luu_dd()
+	{
+		$id = $this->input->post('id');
+		$nganhnghe = $this->input->post('diadiem');
+		$kq = $this->dia_diem->luudiadiem($id, $diadiem);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	//end địa điểm
 }

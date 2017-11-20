@@ -24,25 +24,31 @@
             <div class=" row thong-tin">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                 	<h4><i class="fa fa-laptop fa-lg fa-fw "></i> <b>Số lượng: </b><?=$thongtin['so_luong']; ?></h4>
-                    <h4><i class="fa fa-signal fa-lg fa-fw "></i> <b>Kinh nghiệm: </b><?=$thongtin['kinh_nghiem']; ?></h4>
-                    <h4><i class="fa fa-graduation-cap fa-lg fa-fw "></i> <b>Yêu cầu bằng cấp: </b> <?=$thongtin['bang_cap']; ?></h4>
-                    <h4><i class="fa fa-transgender fa-lg fa-fw "></i> <b>Yêu cầu giới tính: </b><?=$thongtin['yc_gioi_tinh']; ?></h4>
-                    <h4><i class="fa fa-list-alt fa-lg fa-fw "></i> <b>Ngành nghề: </b><?=$thongtin['nganh']; ?></h4>
+                    <h4><i class="fa fa-signal fa-lg fa-fw "></i> <b>Kinh nghiệm: </b><?=$thongtin['ten_kn']; ?></h4>
+                    <h4><i class="fa fa-graduation-cap fa-lg fa-fw "></i> <b>Yêu cầu bằng cấp: </b> <?=$thongtin['trinh_do']; ?></h4>
+                    <h4><i class="fa fa-transgender fa-lg fa-fw "></i> <b>Yêu cầu giới tính: </b><?=$thongtin['gioi_tinh']; ?></h4>
+                    <h4><i class="fa fa-list-alt fa-lg fa-fw "></i> <b>Ngành nghề: </b><?=$thongtin['ten_nn']; ?></h4>
                    	
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                 	<h4><i class="fa fa-money fa-lg fa-fw " ></i> <b>Mức lương: </b><?=$thongtin['muc_luong']; ?></h4>
                     <h4><i class="fa fa-medkit fa-lg fa-fw "></i> <b>Chức vụ: </b><?=$thongtin['chuc_vu']; ?></h4>
-                    <h4><i class="fa fa-map-marker  fa-lg fa-fw "></i> <b> Địa điểm làm việc: </b> <?=$thongtin['dia_diem_lv'];?></h4>
+                    <h4><i class="fa fa-map-marker  fa-lg fa-fw "></i> <b> Địa điểm làm việc: </b> <?=$thongtin['ten_dd'];?></h4>
                     <h4><i class="fa fa-laptop fa-lg fa-fw "></i> <b>Hình thức làm việc: </b><?=$thongtin['hinh_thuc_lv']; ?></h4>
                 </div>
              </div>
              <div class="clearfix"></div>
+             <?php if($thongtin['mo_ta']!="")
+			 			{
+			 ?>
              <div class="thong-tin-khac">
              	<h3>Mô tả công việc</h3>
                 <h4><?=$thongtin['mo_ta'];?></h4>
                 <h5></h5>
              </div>
+             <?php
+						}
+			 ?>
              <button type="button" class="btn btn-default btn-lg btn-block tro-ve" name="tro-ve" value="">
              	<a href="<?=base_url('nhatuyendung');?>"><span class="glyphicon glyphicon-arrow-left"></span> Trở về trang Nhà tuyển dụng </a>
              </button>

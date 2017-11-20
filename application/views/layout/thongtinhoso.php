@@ -24,7 +24,7 @@
             <div class=" row thong-tin">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <h4><i class="fa fa-suitcase fa-lg fa-fw "></i> <b>Cấp bậc hiện tại: </b><?=$thongtin['chuc_vu_ht']; ?></h4>
-                    <h4><i class="fa fa-signal fa-lg fa-fw "></i> <b>Kinh nghiệm: </b><?=$thongtin['kinh_nghiem']; ?></h4>
+                    <h4><i class="fa fa-signal fa-lg fa-fw "></i> <b>Kinh nghiệm: </b><?=$thongtin['ten_kn']; ?></h4>
                     <h4><i class="fa fa-graduation-cap fa-lg fa-fw "></i> <b>Trình độ cao nhất: </b> <?=$thongtin['trinh_do']; ?></h4>
                     <h4><i class="fa fa-commenting-o fa-lg fa-fw "></i> <b>Ngoại ngữ:  </b><?=$thongtin['ngoai_ngu']; ?></h4>
                     <h4><i class="fa fa-transgender fa-lg fa-fw "></i> <b>Giới tính: </b><?=$thongtin['gioi_tinh']; ?></h4>
@@ -33,8 +33,8 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <h4><i class="fa fa-medkit fa-lg fa-fw "></i> <b>Cấp bậc mong muốn: </b><?=$thongtin['chuc_vu_mm']; ?></h4>
-                    <h4><i class="fa fa-map-marker  fa-lg fa-fw "></i> <b> Địa điểm làm việc: </b> <?=$thongtin['dia_diem_lam_viec'];?></h4>
-                    <h4><i class="fa fa-list-alt fa-lg fa-fw "></i> <b>Ngành nghề: </b><?=$thongtin['nganh_nghe']; ?></h4>
+                    <h4><i class="fa fa-map-marker  fa-lg fa-fw "></i> <b> Địa điểm làm việc: </b> <?=$thongtin['ten_dd'];?></h4>
+                    <h4><i class="fa fa-list-alt fa-lg fa-fw "></i> <b>Ngành nghề: </b><?=$thongtin['ten_nn']; ?></h4>
                     <h4><i class="fa fa-money fa-lg fa-fw " ></i> <b>Mức lương mong muốn: </b><?=$thongtin['muc_luong']; ?></h4>
                     <h4><i class="fa fa-laptop fa-lg fa-fw "></i> <b>Hình thức làm việc: </b><?=$thongtin['hinh_thuc_lam_viec']; ?></h4>
                 </div>
@@ -61,4 +61,3 @@
         	
     </div>
 </div>
- 

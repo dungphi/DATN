@@ -167,16 +167,16 @@
                                     <h5 class="text"  title="<?=$tam['ten_cty'];?>"><?=$tam['ten_cty'];?></h5>
                                
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                        <p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>
+                                        <p class="glyphicon glyphicon-map-marker"></p> <?= $tam['ten_dd'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                        <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
+                                        <p class="glyphicon glyphicon-usd"></p> <?= $tam['muc_luong'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                        <p class="glyphicon glyphicon-list-alt"> <?= $tam['bang_cap'];?></p>
+                                        <p class="glyphicon glyphicon-list-alt"></p> <?= $tam['trinh_do'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                        <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                        <p class="glyphicon glyphicon-time"></p> <?= $tam['ngay_dk'];?>
                                     </div>
                             
                         		</div> 
@@ -200,18 +200,18 @@
 								</div>
 								<div class=" col-md-9 thongtin">
 									<h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
-                        			<h5 class="text"  title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm</h5>
+                        			<h5 class="text"  title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm</h5>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                        					<p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>
+                        					<p class="glyphicon glyphicon-map-marker"></p> <?= $tam['ten_dd'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
+                                            <p class="glyphicon glyphicon-usd"></p> <?= $tam['muc_luong'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-list-alt"> <?= $tam['trinh_do'];?></p>
+                                            <p class="glyphicon glyphicon-list-alt"></p> <?= $tam['trinh_do'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                            <p class="glyphicon glyphicon-time"></p> <?= $tam['ngay_dk'];?>
                                     </div>
                                     <div class="clearfix"> </div>
 									
@@ -244,7 +244,7 @@
                     <div class="thongtinqc">
                     
 						<h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
-                        <h5 class="text"  title="<?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?>"><?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h5>
+                        <h5 class="text"  title="<?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['ten_dd']; ?>"><?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['ten_dd']; ?></h5>
                         
 					</div>
                     </div>

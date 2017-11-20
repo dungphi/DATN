@@ -41,7 +41,7 @@
 					 </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
 						<span>Địa chỉ *</span>
-						<input type="text" name="dcct" placeholder="Điện thoại công ty" value="<?php echo set_value('dcct')?>">
+						<input type="text" name="dcct" placeholder="Địa chỉ công ty" value="<?php echo set_value('dcct')?>">
 						<?php echo form_error('dcct', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>   
 					 </div>
 					

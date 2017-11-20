@@ -23,6 +23,7 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('ho_so_ntv');
+		$this->load->model('nganh_nghe');
 		
 	}
 	public function index()
