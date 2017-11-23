@@ -15,22 +15,22 @@
 							<div class="row">
                             <div class= "hosotimviec">
 								<div class="col-md-2 hinhanh">
-									<a href="<?=base_url('nguoitimviec/thongtinntv/'.$tam['id_ntv']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt=""></a>
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt=""></a>
 								</div>
 								<div class=" col-md-9 thongtin">
-									<a href="<?=base_url('nguoitimviec/thongtinntv/'.$tam['id_ntv']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
-                       				<h5 class="text" data-toggle="tooltip" title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['kinh_nghiem']; ?> kinh nghiệm</h5>
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
+                       				<h5 class="text" data-toggle="tooltip" title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm</h5>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                        					<p class="glyphicon glyphicon-map-marker"> <?= $tam['dia_chi'];?></p>
+                        					<span class="glyphicon glyphicon-map-marker"></span><?= $tam['ten_dd'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-usd"> <?= $tam['muc_luong'];?></p>
+                                            <p class="glyphicon glyphicon-usd"></p> <?= $tam['muc_luong'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-list-alt"> <?= $tam['bang_cap'];?></p>
+                                            <p class="glyphicon glyphicon-list-alt"></p> <?= $tam['trinh_do'];?>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                            <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                            <p class="glyphicon glyphicon-time"></p> <?= $tam['ngay_dk'];?>
                                     </div>
                                     <div class="clearfix"> </div>
 									

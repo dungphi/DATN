@@ -39,6 +39,7 @@ class Vieclam extends CI_Controller {
 		$this->load->view('admin/index', $data);
 
 	}
+<<<<<<< HEAD
 	public function active_vl()
 	{
 		$id = $this->input->post('id');
@@ -53,6 +54,9 @@ class Vieclam extends CI_Controller {
 			die(json_encode(0));
 	}
 	//kết thúc việc làm
+=======
+	
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 	//Ngành nghề
 	public function nn()
 	{
@@ -101,19 +105,38 @@ class Vieclam extends CI_Controller {
 			die(json_encode(0));
 	}
 	// kết thúc ngành nghề
+<<<<<<< HEAD
 	//địa điểm
 	public function dd()
 	{
+=======
+	
+	//start Địa điểm
+		public function dd()
+	{
+		if(!isset($_SESSION['admin']))
+		{
+			redirect(base_url('admin/login'));
+		}
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 		$data['title'] = 'Danh sách địa điểm';
 		$data['vl_dd'] = 'class="active"';
 		$data['content'] = 'admin/vieclam/diadiem';
 		$data['diadiem'] = $this->dia_diem->diadiem();
+<<<<<<< HEAD
 		$this->load->view('admin/index', $data);
+=======
+		$this->load->view('admin/layout', $data);
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 
 	}
 	public function them_dd()
 	{
+<<<<<<< HEAD
 		$diadiem = $this->input->post('diadiem');
+=======
+		$nganhghe = $this->input->post('diadiem');
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 		$kq = $this->dia_diem->them_diadiem($diadiem);
 		if(isset($kq))
 			die(json_encode(1));
@@ -132,7 +155,11 @@ class Vieclam extends CI_Controller {
 	public function chinhsua_dd()
 	{
 		$id = $this->input->post('id');
+<<<<<<< HEAD
 		$kq = $this->dia_diem->chinhsua_diadiem($id);
+=======
+		$kq = $this->dia_diem->chinhsua_dd($id);
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 		if(isset($kq))
 			die(json_encode($kq));
 		else
@@ -141,12 +168,21 @@ class Vieclam extends CI_Controller {
 	public function luu_dd()
 	{
 		$id = $this->input->post('id');
+<<<<<<< HEAD
 		$diadiem = $this->input->post('diadiem');
 		$kq = $this->dia_diem->luu_diadiem($id, $diadiem);
+=======
+		$nganhnghe = $this->input->post('diadiem');
+		$kq = $this->dia_diem->luudiadiem($id, $diadiem);
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 		if(isset($kq))
 			die(json_encode(1));
 		else
 			die(json_encode(0));
 	}
+<<<<<<< HEAD
 	//kết thúc địa điểm
+=======
+	//end địa điểm
+>>>>>>> 01fc3629827a60029113f6dd13ab660ab55f1f5a
 }

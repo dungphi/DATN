@@ -20,7 +20,7 @@ class Nhatuyendung extends CI_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('viec_lam');
+		$this->load->model('Viec_lam');
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('ho_so_ntv');
 		
@@ -30,11 +30,20 @@ class Nhatuyendung extends CI_Controller {
 		$data['title'] = 'Trang nhà tuyển dụng';
 		$data['content'] = 'layout/nhatuyendung';
 		$data['active'] = 3;
-		$data['vieclam'] = $this->viec_lam->vieclam();
+		$data['vieclam'] = $this->Viec_lam->vieclam();
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
 		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
 		$this->load->view('trangchu', $data);
 
 	}	
+	public function thongtinvieclam($id)
+	{
+		$data['title'] = 'Thông tin Việc làm';
+		$data['content'] = 'layout/thongtinvieclam';
+		$data['active'] = 0;
+		$data['thongtin'] = $this->Viec_lam->vieclamchitiet($id);
+		$this->load->view('trangchu', $data);
+		
+	}
 	
 }

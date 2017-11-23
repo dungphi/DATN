@@ -33,7 +33,7 @@ class Timkiem extends CI_Controller {
 		$dat = array();
 		if($this->input->get('nganh_nghe') != 0)
 		{
-			$data['id_nn'] = $dat['nganh'] = $this->input->get('nganh_nghe');
+			$data['id_nn'] = $dat['id_nn'] = $this->input->get('nganh_nghe');
 		}
 		if($this->input->get('tinh_thanh') != 0)
 		{

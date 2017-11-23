@@ -1871,39 +1871,88 @@ display:none;
 	margin-right:1em;
 }
 							/* chi tiết*/
+.back {
+	margin-top:20px;
+}
 .tieu-de {
-	padding:10px;
-	margin:30px 10px 20px;
+	padding:10px 20px;
+	margin:10px 10px 20px;
 	background-color:#fff;
+	border:1px solid yellowgreen;
 }
 .tieu-de h3 {
-	font-size:24px;
+	font-size:32px;
 	font-weight:800;
+	color:#63C;
 }
+.tieu-de h4 {
+	font-size:20px;
+	font-weight:600;
+	color:#F00;
+}
+.td-right{
+	float:right;
+	
+}
+.luu-vl{ 
+	margin-bottom:20px;
+   background-color: #fafafa;
+   height: 38px;
+   line-height: 38px;    
+   border: 1px solid #e0e0e0;    
+   padding: 0 13px;    
+   cursor: pointer;   
+   border-radius: 2px;    
+   font-size: 14px;    
+   display: inline-block;    
+   color: #757575;}
 .thong-tin {
 	margin-left: 10px;
 	padding:10px;
 	background-color:#FFF;
+	border:1px solid yellowgreen;
+	border-bottom:0.1px solid #EFEFEF;
 	
 }
 .thong-tin h4 {
 	padding-bottom:10px;
-	font-weight:700;
+	
+}
+.thong-tin h4 i {
+	color:#F63;
 }
 .thong-tin-khac {
 	margin: 0 -15px 20px 10px;
 	padding:10px;
 	background-color:#fff;
-	border-top:1px solid #EFEFEF;
-	border-bottom:1px solid #EFEFEF;
+	border:1px solid yellowgreen;
+	border-top:0.5px solid #EFEFEF;
+}
+.thong-tin-khac h3{
+	color:#333;
+	font-size:30px;
+	font-weight:800;
+		
 }
 .tro-ve{
-		margin: 0 -15px 20px 10px;
+	margin: 0 -15px 20px 10px;
+	border:1px solid yellowgreen;
 }
 .avatar {
 	margin:0 10px 20px 0;
-	padding:10px;
+	padding:20px 10px;
 	background-color:#FFF;
+	border:1px solid yellowgreen;
 }
 
+.avatar h4{
+	color:#999;
+	font-size:26px;
+	font-weight::700;
+	text-align:center;
+	padding:10px 10px 0;
+}
+.avatar h5{
+	font-size:16px;
+}
 
