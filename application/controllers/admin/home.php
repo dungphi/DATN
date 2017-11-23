@@ -20,22 +20,22 @@ class Home extends CI_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
+		if(!isset($_SESSION['admin']))
+		{
+			redirect(base_url('admin/login'));
+		}
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
 	}
 	public function index()
 	{
-		if(!isset($_SESSION['admin']))
-		{
-			redirect(base_url('admin/login'));
-		}
 		$data['title'] = 'Trang quản trị';
 		$data['home'] = 'class="active"';
 		$data['content'] = 'admin/home';
 		$data['active'] = 1;
 		$data['vieclam'] = $this->viec_lam->vieclam();
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$this->load->view('admin/layout', $data);
+		$this->load->view('admin/index', $data);
 
 	}	
 	public function dangnhap()
