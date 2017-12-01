@@ -40,7 +40,7 @@
 							<th>Tiêu đề</th>
 							<th>Nhà tuyển dụng</th>
 							<th>Ngành nghề</th>
-							<th>Vị trí</th>
+							<th>Địa điểm</th>
 							<th>Ngày hết hạn</th>
 							<th>Active</th>
 							<th>Chỉnh sửa</th>

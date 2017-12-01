@@ -27,6 +27,9 @@ class Vieclam extends CI_Controller {
 		$this->load->model('viec_lam');
 		$this->load->model('nganh_nghe');
 		$this->load->model('dia_diem');
+		$this->load->model('kinh_nghiem');
+		$this->load->model('muc_luong');
+		$this->load->model('trinh_do');
 	}
 	//việc làm
 	public function index()
@@ -149,5 +152,145 @@ class Vieclam extends CI_Controller {
 			die(json_encode(0));
 	}
 	//kết thúc địa điểm
+	//Kinh nghiệm
+	public function kn()
+	{
+		$data['title'] = 'Danh sách kinh nghiệm';
+		$data['content'] = 'admin/vieclam/kinhnghiem';
+		$data['kinhnghiem'] = $this->kinh_nghiem->kinhnghiem();
+		$this->load->view('admin/index', $data);
 
+	}
+	public function them_kn()
+	{
+		$kinhnghiem = $this->input->post('kinhnghiem');
+		$kq = $this->kinh_nghiem->them_kinhnghiem($kinhnghiem);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_kn()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->kinh_nghiem->xoa_kinhnghiem($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function chinhsua_kn()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->kinh_nghiem->chinhsua_kinhnghiem($id);
+		if(isset($kq))
+			die(json_encode($kq));
+		else
+			die(json_encode(0));
+	}
+	public function luu_kn()
+	{
+		$id = $this->input->post('id');
+		$kinhnghiem = $this->input->post('kinhnghiem');
+		$kq = $this->kinh_nghiem->luu_kinhnghiem($id, $kinhnghiem);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	//kết thúc kinh nghiệm
+	//mức lương
+	public function ml()
+	{
+		$data['title'] = 'Danh sách mức lương';
+		$data['content'] = 'admin/vieclam/mucluong';
+		$data['mucluong'] = $this->muc_luong->mucluong();
+		$this->load->view('admin/index', $data);
+
+	}
+	public function them_ml()
+	{
+		$mucluong = $this->input->post('mucluong');
+		$kq = $this->muc_luong->them_mucluong($mucluong);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_ml()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->muc_luong->xoa_mucluong($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function chinhsua_ml()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->muc_luong->chinhsua_mucluong($id);
+		if(isset($kq))
+			die(json_encode($kq));
+		else
+			die(json_encode(0));
+	}
+	public function luu_ml()
+	{
+		$id = $this->input->post('id');
+		$mucluong = $this->input->post('mucluong');
+		$kq = $this->muc_luong->luu_mucluong($id, $mucluong);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	//kết thúc mức lương
+	//trình độ
+	public function td()
+	{
+		$data['title'] = 'Danh sách trình độ';
+		$data['content'] = 'admin/vieclam/trinhdo';
+		$data['trinhdo'] = $this->trinh_do->trinhdo();
+		$this->load->view('admin/index', $data);
+
+	}
+	public function them_td()
+	{
+		$trinhdo = $this->input->post('trinhdo');
+		$kq = $this->trinh_do->them_trinhdo($trinhdo);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_td()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->trinh_do->xoa_trinhdo($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function chinhsua_td()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->trinh_do->chinhsua_trinhdo($id);
+		if(isset($kq))
+			die(json_encode($kq));
+		else
+			die(json_encode(0));
+	}
+	public function luu_td()
+	{
+		$id = $this->input->post('id');
+		$trinhdo = $this->input->post('trinhdo');
+		$kq = $this->trinh_do->luu_trinhdo($id, $trinhdo);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	//kết thúc trình độ
 }

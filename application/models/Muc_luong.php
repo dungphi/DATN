@@ -1,55 +1,44 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nganh_nghe extends CI_Model{
+class Muc_luong extends CI_Model{
 
 	public function __construct() {
 	parent::__construct();
 	}
 
-	public function nganhnghe()
+	public function mucluong()
 	{
 		$this->db->select('*');
-		$this->db->from('nganh_nghe');
-		$this->db->order_by('ten_nn', 'asc'); //asc
+		$this->db->from('muc_luong');
+		$this->db->order_by('muc_luong', 'asc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}
-	public function them_nganhnghe($nganhghe)
+	public function them_mucluong($mucluong)
 	{
 		$data = array(
-			'ten_nn' => $nganhghe
+			'muc_luong' => $mucluong
 		);
-		return $this->db->insert('nganh_nghe',$data);
+		return $this->db->insert('muc_luong',$data);
 	}
-	public function xoa_nganhnghe($id)
+	public function xoa_mucluong($id)
 	{
-		$this->db->where('id_nn', $id);
-		return $this->db->delete('nganh_nghe');
+		$this->db->where('id_ml', $id);
+		return $this->db->delete('muc_luong');
 	}
-	public function chinhsua_nganhnghe($id)
+	public function chinhsua_mucluong($id)
 	{
 		$this->db->select('*');
-		$this->db->from('nganh_nghe');
-		$this->db->where('id_nn', $id); 
+		$this->db->from('muc_luong');
+		$this->db->where('id_ml', $id); 
 		return $this->db->get()->row_array();
 	}
-	public function luu_nganhnghe($id,$ten_nn){
+	public function luu_mucluong($id,$muc_luong){
         $data = array(
-            'ten_nn' => $ten_nn,
+            'muc_luong' => $muc_luong,
         );
-        $this->db->where('id_nn',$id);
-        return $this->db->update('nganh_nghe',$data);
+        $this->db->where('id_ml',$id);
+        return $this->db->update('muc_luong',$data);
     }
-	//public function phim_play($id)
-//	{
-//		$this->db->select('*');
-//		$this->db->from('phim');
-//		$this->db->where('idphim', $id);
-//		return $this->db->get()->row_array();
-//	}
-//
-//	public function countAll(){
-//		return $this->db->count_all($this->_table); 
-//	}
 }

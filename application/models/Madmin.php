@@ -1,25 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Model{
+class Madmin extends CI_Model{
 
 	public function __construct() {
 	parent::__construct();
 	}
 
-	public function nguoitimviec()
+	public function danhsach()
 	{
 		$this->db->select('*');
-		$this->db->from('nguoi_tim_viec');
-		$this->db->order_by('id_ntv', 'desc'); //asc
-		//$this->db->limit('2');
+		$this->db->from('admin');
 		return $this->db->get()->result_array();
 	}
-	public function check_mail($email)
+	public function check_user($user)
 	{
 		$this->db->select('*');
-		$this->db->from('nguoi_tim_viec');
-		$this->db->where('email', $email);
+		$this->db->from('admin');
+		$this->db->where('user', $user);
 		$kq = $this->db->get()->row_array();
 		if(count($kq) != 0)
 		{
@@ -46,20 +44,20 @@ class Admin extends CI_Model{
 			return TRUE;
 		}
 	}
-	public function dangky($db = array())
+	public function them_ad($db = array())
 	{
-		$this->db->insert('nguoi_tim_viec',$db);
+		return $this->db->insert('admin',$db);
 	}
-	
-	//public function phim_play($id)
-//	{
-//		$this->db->select('*');
-//		$this->db->from('phim');
-//		$this->db->where('idphim', $id);
-//		return $this->db->get()->row_array();
-//	}
-//
-//	public function countAll(){
-//		return $this->db->count_all($this->_table); 
-//	}
+	public function xoa_ad($id)
+	{
+		$this->db->where('id_admin', $id);
+		return $this->db->delete('admin');
+	}
+	public function chinhsua($id)
+	{
+		$this->db->select('*');
+		$this->db->from('admin');
+		$this->db->where('id_admin', $id);
+		return $this->db->get()->row_array();
+	}
 }
