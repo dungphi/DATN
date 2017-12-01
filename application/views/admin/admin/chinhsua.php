@@ -27,7 +27,7 @@
 	<div class="row-fluid sortable">
 		<div class="box span12">
 			<div class="box-header" data-original-title>
-				<h2><i class="halflings-icon white edit"></i><span class="break"></span>Form Elements</h2>
+				<h2><i class="halflings-icon white edit"></i><span class="break"></span>Chỉnh sửa tài khoản</h2>
 				<div class="box-icon">
 					<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 					<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -35,150 +35,37 @@
 				</div>
 			</div>
 			<div class="box-content">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="<?=base_url('admin/quantri/chinhsua/'.$admin['id_admin'])?>" method="post" enctype="multipart/form-data">
 					<fieldset>
 					  <div class="control-group">
-						<label class="control-label" for="focusedInput">Focused input</label>
+						<label class="control-label" for="focusedInput">Tên</label>
 						<div class="controls">
-						  <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…">
+						  <input name="ten" class="input-xlarge focused" id="focusedInput" type="text" value="<?=$admin['ten']?>">
 						</div>
 					  </div>
 					  <div class="control-group">
-						<label class="control-label">Uneditable input</label>
+						<label class="control-label" for="focusedInput">User</label>
 						<div class="controls">
-						  <span class="input-xlarge uneditable-input">Some value here</span>
+						  <input name="user" class="input-xlarge focused" id="focusedInput" type="text" value="<?=$admin['user']?>">
 						</div>
 					  </div>
 					  <div class="control-group">
-						<label class="control-label" for="disabledInput">Disabled input</label>
-						<div class="controls">
-						  <input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="Disabled input here…" disabled="">
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="control-label" for="optionsCheckbox2">Disabled checkbox</label>
+						<label class="control-label" for="optionsCheckbox2">Active</label>
 						<div class="controls">
 						  <label class="checkbox">
-							<input type="checkbox" id="optionsCheckbox2" value="option1" disabled="">
-							This is a disabled checkbox
+							<input name="active" type="checkbox" id="optionsCheckbox2" value="1" <?php if($admin['active'] == 1) echo('checked'); ?> >
+							Chọn để kích hoạt tài khoản
 						  </label>
 						</div>
 					  </div>
 					  <div class="control-group warning">
-						<label class="control-label" for="inputWarning">Input with warning</label>
+						<label class="control-label" for="inputWarning">Đổi Mật khẩu</label>
 						<div class="controls">
-						  <input type="text" id="inputWarning">
-						  <span class="help-inline">Something may have gone wrong</span>
-						</div>
-					  </div>
-					  <div class="control-group error">
-						<label class="control-label" for="inputError">Input with error</label>
-						<div class="controls">
-						  <input type="text" id="inputError">
-						  <span class="help-inline">Please correct the error</span>
-						</div>
-					  </div>
-					  <div class="control-group success">
-						<label class="control-label" for="inputSuccess">Input with success</label>
-						<div class="controls">
-						  <input type="text" id="inputSuccess">
-						  <span class="help-inline">Woohoo!</span>
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="control-label" for="selectError3">Plain Select</label>
-						<div class="controls">
-						  <select id="selectError3">
-							<option>Option 1</option>
-							<option>Option 2</option>
-							<option>Option 3</option>
-							<option>Option 4</option>
-							<option>Option 5</option>
-						  </select>
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="control-label" for="selectError">Modern Select</label>
-						<div class="controls">
-						  <select id="selectError" data-rel="chosen">
-							<option>Option 1</option>
-							<option>Option 2</option>
-							<option>Option 3</option>
-							<option>Option 4</option>
-							<option>Option 5</option>
-						  </select>
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="control-label" for="selectError1">Multiple Select / Tags</label>
-						<div class="controls">
-						  <select id="selectError1" multiple data-rel="chosen">
-							<option>Option 1</option>
-							<option selected>Option 2</option>
-							<option>Option 3</option>
-							<option>Option 4</option>
-							<option>Option 5</option>
-						  </select>
-						</div>
-					  </div>
-					  <div class="control-group">
-						<label class="control-label" for="selectError2">Group Select</label>
-						<div class="controls">
-							<select data-placeholder="Your Favorite Football Team" id="selectError2" data-rel="chosen">
-								<option value=""></option>
-								<optgroup label="NFC EAST">
-								  <option>Dallas Cowboys</option>
-								  <option>New York Giants</option>
-								  <option>Philadelphia Eagles</option>
-								  <option>Washington Redskins</option>
-								</optgroup>
-								<optgroup label="NFC NORTH">
-								  <option>Chicago Bears</option>
-								  <option>Detroit Lions</option>
-								  <option>Green Bay Packers</option>
-								  <option>Minnesota Vikings</option>
-								</optgroup>
-								<optgroup label="NFC SOUTH">
-								  <option>Atlanta Falcons</option>
-								  <option>Carolina Panthers</option>
-								  <option>New Orleans Saints</option>
-								  <option>Tampa Bay Buccaneers</option>
-								</optgroup>
-								<optgroup label="NFC WEST">
-								  <option>Arizona Cardinals</option>
-								  <option>St. Louis Rams</option>
-								  <option>San Francisco 49ers</option>
-								  <option>Seattle Seahawks</option>
-								</optgroup>
-								<optgroup label="AFC EAST">
-								  <option>Buffalo Dennis Jis</option>
-								  <option>Miami Dolphins</option>
-								  <option>New England Patriots</option>
-								  <option>New York Jets</option>
-								</optgroup>
-								<optgroup label="AFC NORTH">
-								  <option>Baltimore Ravens</option>
-								  <option>Cincinnati Bengals</option>
-								  <option>Cleveland Browns</option>
-								  <option>Pittsburgh Steelers</option>
-								</optgroup>
-								<optgroup label="AFC SOUTH">
-								  <option>Houston Texans</option>
-								  <option>Indianapolis Colts</option>
-								  <option>Jacksonville Jaguars</option>
-								  <option>Tennessee Titans</option>
-								</optgroup>
-								<optgroup label="AFC WEST">
-								  <option>Denver Broncos</option>
-								  <option>Kansas City Chiefs</option>
-								  <option>Oakland Raiders</option>
-								  <option>San Diego Chargers</option>
-								</optgroup>
-						  </select>
+							<button class="btn btn-warning" data-toggle="modal" data-target="#modal_pass">Đổi mật khẩu</button>
 						</div>
 					  </div>
 					  <div class="form-actions">
-						<button type="submit" class="btn btn-primary">Save changes</button>
+						<button type="submit" name="luu" class="btn btn-primary">Save changes</button>
 						<button class="btn">Cancel</button>
 					  </div>
 					</fieldset>
@@ -190,4 +77,67 @@
 </div><!--/.fluid-container-->
 
 <!-- end: Content -->
-
+<div id="modal_pass" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h6 class="modal-title">Đổi mật khẩu</h6>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="mk" class="control-label">Mật khẩu cũ</label>
+                        <div class="controls">
+                            <input type="password" class="form-control" id="mk" placeholder="Mật khẩu cũ" />
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <label for="pass" class="control-label">Mật khẩu mới</label>
+                        <div class="controls">
+                            <input type="password" class="form-control" id="pass" placeholder="Mật khẩu mới" />
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <label for="repass" class="control-label">Nhập lại mật khẩu mới</label>
+                        <div class="controls">
+                            <input type="password" class="form-control" id="repass" placeholder="Nhập lại mật khẩu mới" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info lis-data" onclick="return luu_pass(<?=$admin['id_admin']?>);"> Lưu</button>
+                <button type="button" class="btn btn-link" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function luu_pass(id){
+        var mk   = $('#mk').val();
+        var pass   = $('#pass').val();
+        var repass   = $('#repass').val();
+        $.ajax({
+            dataType: "json",
+            type:"POST",
+            url:"<?=base_url('admin/quantri/luu_pass'); ?>",
+            data:{id:id,mk:mk,pass:pass,repass:repass},
+            success: function(result){
+                if(result == 1){
+                    alert("Lưu thành công");
+					setTimeout(function(){
+                        	location.reload();
+                        },1000);
+                }else if(result == 2){
+                    alert("Mật khẩu cũ không đúng!");
+                }else if(result == 3){
+					alert("Mật khẩu mới không trùng khớp!");
+				}
+				else{
+					alert("Lỗi!")
+				}
+            }
+        });
+    }
+</script>

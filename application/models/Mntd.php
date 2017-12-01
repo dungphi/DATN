@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Madmin extends CI_Model{
+class Mntd extends CI_Model{
 
 	public function __construct() {
 	parent::__construct();
@@ -10,7 +10,7 @@ class Madmin extends CI_Model{
 	public function danhsach()
 	{
 		$this->db->select('*');
-		$this->db->from('admin');
+		$this->db->from('nha_tuyen_dung');
 		return $this->db->get()->result_array();
 	}
 	public function check_user($user)
@@ -28,29 +28,12 @@ class Madmin extends CI_Model{
 			return TRUE;
 		}
 	}
-	public function check_pass($pass,$id)
-	{
-		$this->db->select('*');
-		$this->db->from('admin');
-		$this->db->where('pass', md5($pass));
-		$this->db->where('id_admin', $id);
-		$kq = $this->db->get()->row_array();
-		if(count($kq) == 0)
-		{
-			return FALSE;
-		}
-		else
-		{
-			return TRUE;
-		}
-	}
 	public function dangnhap($user, $pass)
 	{
 		$this->db->select('*');
 		$this->db->from('admin');
 		$this->db->where('user', $user);
 		$this->db->where('pass', $pass);
-		$this->db->where('active', 1);
 		$kq = $this->db->get()->row_array();
 		if(count($kq) == 0)
 		{
@@ -79,7 +62,7 @@ class Madmin extends CI_Model{
 	}
 	public function capnhat($data=array(),$id)
 	{
-		$this->db->where('id_admin',$id);
-        return $this->db->update('admin',$data);
+		$this->db->where('id_ntd',$id);
+        return $this->db->update('nha_tuyen_dung',$data);
 	}
 }

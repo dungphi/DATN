@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Quantri extends CI_Controller {
+class Ntd extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,14 +24,14 @@ class Quantri extends CI_Controller {
 		{
 			redirect(base_url('admin/login'));
 		}
-		$this->load->model('madmin');
+		$this->load->model('mntd');
 	}
 	public function index()
 	{
 		
-		$data['title'] = 'Danh sách quản trị viên';
-		$data['content'] = 'admin/admin/danhsach';
-		$data['admin'] = $this->madmin->danhsach();
+		$data['title'] = 'Danh sách nhà tuyển dụng';
+		$data['content'] = 'admin/ntd/danhsach';
+		$data['ntd'] = $this->mntd->danhsach();
 		$this->load->view('admin/index', $data);
 
 	}
@@ -39,27 +39,6 @@ class Quantri extends CI_Controller {
 	{
 		$data['title'] = 'Chỉnh sửa quản trị viên';
 		$data['content'] = 'admin/admin/chinhsua';
-		if(isset($_POST['luu']))
-		{
-			$ten = $this->input->post('ten');
-			$user = $this->input->post('user');
-			if(isset($_POST['active']))
-				$active = $this->input->post('active');
-			else
-				$active = 0;
-			if($ten != '' && $user != '')
-			{
-				$dat = array(
-					'ten' => $ten,
-					'user' => $user,
-				);
-				$kq = $this->madmin->capnhat($dat, $id);
-				if(isset($kq))
-					echo '<script>alert("Lưu thành công!")</script>';
-				else
-					echo '<script>alert("Lỗi!")</script>';
-			}
-		}
 		$data['admin'] = $this->madmin->chinhsua($id);
 		$this->load->view('admin/index', $data);
 
@@ -100,31 +79,17 @@ class Quantri extends CI_Controller {
 		else
 			die(json_encode(0));
 	}
-	public function luu_pass()
+	public function active()
 	{
 		$id = $this->input->post('id');
-		$mk = $this->input->post('mk');
-		$pass = $this->input->post('pass');
-		$repass = $this->input->post('repass');
-		if($this->madmin->check_pass($mk,$id) == TRUE)
-		{
-			if($pass == $repass)
-			{
-				$dat = array(
-				'pass' => md5($pass)
-				);
-				$kq = $this->madmin->capnhat($dat, $id);
-				if(isset($kq))
-					die(json_encode(1));
-				else
-					die(json_encode(0));
-				
-			}
-			else
-				die(json_encode(3));
-		}
+		$active = $this->input->post('active');
+		$dat = array(
+			'active' => $active
+		);
+		$kq = $this->mntd->capnhat($dat, $id);
+		if(isset($kq))
+			die(json_encode(1));
 		else
-			die(json_encode(2));
+			die(json_encode(0));
 	}
 }
-?>

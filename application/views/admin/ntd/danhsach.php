@@ -15,13 +15,13 @@
 			<a href="<?=base_url() ?>">Home</a>
 			<i class="icon-angle-right"></i>
 		</li>
-		<li><a href="#">Admin</a>
+		<li><a href="#">Nhà tuyển dụng</a>
 	</ul>
 
 	<div class="row-fluid sortable">
 		<div class="box span12">
 			<div class="box-header" data-original-title>
-				<h2><i class="halflings-icon list white"></i><span class="break"></span>Danh sách quản trị viên</h2>
+				<h2><i class="halflings-icon list white"></i><span class="break"></span>Danh sách nhà tuyển dụng</h2>
 				<div class="box-icon">
 					<a href="javascript:void(0)" data-toggle="modal" data-target="#modal_add_title"><i class="halflings-icon white plus"></i></a>
 					<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
@@ -33,28 +33,32 @@
 				<table class="table table-striped table-bordered bootstrap-datatable datatable">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Tên</th>
-							<th>User</th>
+							<th>Tên công ty</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th>Địa chỉ</th>
+							<th>Mã số thuế</th>
 							<th>Active</th>
 							<th>Chỉnh sửa</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
-						foreach($admin as $ad)
+						foreach($ntd as $tmp)
 						{
 						?>
 						<tr>
-							<td><?=$ad['id_admin'] ?></td>
-							<td><?=$ad['ten'] ?></td>
-							<td><?=$ad['user'] ?></td>
-							<td><input type="checkbox" id="active_<?=$ad['id_admin'] ?>" value="1" <?php if($ad['active'] == '1') echo "checked"; ?> onclick="return update_info(<?=$ad['id_admin']?>)" ></td>
+							<td><?=$tmp['ten_cty'] ?></td>
+							<td><?=$tmp['email'] ?></td>
+							<td><?=$tmp['phone'] ?></td>
+							<td><?=$tmp['dia_chi'] ?></td>
+							<td><?=$tmp['ms_thue'] ?></td>
+							<td><input type="checkbox" id="active_<?=$tmp['id_ntd'] ?>" value="1" <?php if($tmp['active'] == '1') echo "checked"; ?> onclick="return update_info(<?=$tmp['id_ntd']?>)" ></td>
 							<td class="center">
-								<a class="btn btn-info" href="<?=base_url('admin/quantri/chinhsua/'.$ad['id_admin']) ?>">
+								<a class="btn btn-info" href="<?=base_url('admin/ntd/chinhsua/'.$tmp['id_ntd']) ?>">
 									<i class="halflings-icon white edit"></i>  
 								</a>
-								<a class="btn btn-danger" onclick="return xoa_ad(<?=$ad['id_admin']?>)" href="javascript:void(0)">
+								<a class="btn btn-danger" onclick="return xoa_ntd(<?=$tmp['id_ntd']?>)" href="javascript:void(0)">
 									<i class="halflings-icon white trash"></i> 
 								</a>
 							</td>
@@ -94,24 +98,6 @@
                 }
             });
         }
-    }
-	function update_info(id){
-        var value = 0;
-        if($("#active_"+id).is(":checked") == true){
-            value =1;
-        };
-        $.ajax({
-            method:"POST",
-            url:"<?=base_url('admin/ntd/active'); ?>",
-            data:{id:id,active:value},
-			success: function(result)
-			{
-				if(result == 1)
-					alert('Hoàn tất!');
-				else
-					alert('Lỗi!');
-			}
-        });
     }
 </script>
 <div id="modal_add_title" class="modal fade">
