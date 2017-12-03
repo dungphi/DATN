@@ -10,7 +10,14 @@ class Tim_kiem extends CI_Model{
 	public function timkiem($tu_khoa,$data=array())
 	{
 		$this->db->select('*');
-		$this->db->from('viec_lam');
+		$this->db->from('nha_tuyen_dung,viec_lam,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
+		$this->db->where('nha_tuyen_dung.id_ntd = viec_lam.id_ntd');
+		$this->db->where('viec_lam.id_nn = nganh_nghe.id_nn'); 
+		$this->db->where('viec_lam.id_ddlv = dia_diem.id_dd');
+		$this->db->where('viec_lam.id_kinh_nghiem = kinh_nghiem.id_kn');
+		$this->db->where('viec_lam.id_muc_luong = muc_luong.id_ml');
+		$this->db->where('viec_lam.yc_gioi_tinh = gioi_tinh.id_gt');
+		$this->db->where('viec_lam.id_trinh_do = trinh_do.id_td');
 		$this->db->like('tieu_de', $tu_khoa);
 		$this->db->where($data);
 		return $this->db->get()->result_array();

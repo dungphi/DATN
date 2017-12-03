@@ -48,7 +48,7 @@ span.menu {						/*menu*/
 .dangky-form span{
 	padding-left: 2em;
 }
-.input_s{}						/*Tìm kiếm*/
+.input_s{}								/*Tìm kiếm*/
 
 #top .form-group .search {
 	margin-left: 2em;
@@ -89,6 +89,37 @@ span.menu {						/*menu*/
 	margin:0 -1em 1em;
 	float:left;
 }
+/**/
+.kinh_nghiem,.trinh_do,.muc_luong,.gioi_tinh,.tinh_thanh,.hinh_thuc_lam_viec,.nganh_nghe,.tu_khoa,.btn_tim_kiem {
+	border-radius: 0px;
+	margin-top:15px;
+	border-width:2px;
+	}
+.btn_tk{
+	border-radius: 0px;
+	margin-top:15px;
+	border-right-width:2px;
+	}
+.tieude_tk{
+	margin-top: 20px;
+	background-color:#71bf44;
+	padding:10px;
+	font-size:24px;
+	font-weight: 800;
+	color:#FFF;
+	}
+.timkiemvl{
+	background-color:#FFF;
+	padding:10px 30px;
+	
+	}
+.btn_tim_kiem{
+	margin-top:0
+	}
+.baidang-timkiem{
+	margin-top:20px;
+	background-color:#F3F3F3;
+	}
 .dangnhap a{
 	color:#009;
   	font-size: 1em;

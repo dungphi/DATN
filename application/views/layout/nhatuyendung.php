@@ -29,7 +29,7 @@
                                         <p class="glyphicon glyphicon-list-alt"> <?= $tam['trinh_do'];?></p>
                                     </div>
                                     <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                        <p class="glyphicon glyphicon-time"> <?= $tam['ngay_dk'];?></p>
+                                        <p class="glyphicon glyphicon-time"> <?=date('d-m-Y', strtotime($tam['ngay_dk'])); ?></p>
                                     </div>
                             
                         		</div> 
