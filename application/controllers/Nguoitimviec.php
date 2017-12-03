@@ -85,7 +85,13 @@ class Nguoitimviec extends CI_Controller {
 		$data['title'] = 'Thông tin Tìm việc';
 		$data['content'] = 'layout/thongtinhoso';
 		$data['active'] = 0;
-		$data['thongtin'] = $this->ho_so_ntv->hosochitiet($id);
+		$data['thongtin'] = $thongtin = $this->ho_so_ntv->hosochitiet($id);
+		$view = $thongtin['luot_xem'];
+		$view++;
+		$dat = array(
+			'luot_xem' => $view
+			);
+		$this-> ho_so_ntv -> capnhatluotxem($dat,$id);
 		$this->load->view('trangchu', $data);
 		
 	}		

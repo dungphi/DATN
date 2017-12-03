@@ -44,8 +44,6 @@ class Timkiem extends CI_Controller {
 		$data['content'] = 'layout/timkiem';
 		$data['active'] = 0;
 		$data['vieclam'] = $this->viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$data['timkiem'] = $this->tim_kiem->timkiem($tu_khoa,$dat);
