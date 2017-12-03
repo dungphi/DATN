@@ -33,7 +33,7 @@ class Trangchu extends CI_Controller {
 		$data['active'] = 1;
 		$data['vieclam'] = $this->viec_lam->vieclam();
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(5,0);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);

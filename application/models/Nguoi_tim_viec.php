@@ -59,7 +59,7 @@ class Nguoi_tim_viec extends CI_Model{
 //		return $this->db->get()->row_array();
 //	}
 //
-//	public function countAll(){
-//		return $this->db->count_all($this->_table); 
-//	}
+	public function countAll(){
+		return $this->db->count_all('nguoi_tim_viec'); 
+	}
 }

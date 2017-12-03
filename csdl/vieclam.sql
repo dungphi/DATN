@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 03, 2017 lúc 01:51 AM
+-- Thời gian đã tạo: Th12 03, 2017 lúc 03:42 AM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_admin`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -41,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Đang đổ dữ liệu cho bảng `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `ten`, `user`, `pass`) VALUES
-(1, 'Thiệu', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `admin` (`id_admin`, `ten`, `user`, `pass`, `active`) VALUES
+(1, 'Thiệu', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 -- --------------------------------------------------------
 
@@ -333,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
   `so_luong` int(11) NOT NULL DEFAULT '1',
   `ngay_dk` date NOT NULL,
   `ngay_hh` date NOT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `active_vl` tinyint(4) NOT NULL DEFAULT '1',
   `yc_gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'Không yêu cầu',
   `chuc_vu` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hinh_anh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -347,7 +348,7 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
 -- Đang đổ dữ liệu cho bảng `viec_lam`
 --
 
-INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `id_nn`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`) VALUES
+INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `id_nn`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`) VALUES
 (1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', 'Giám đốc', 'images/vieclam/3.jpg', 0, '500 người', 'Nhân viên chính thức'),
 (2, 2, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', 'Ky Thuat Vien', 'images/vieclam/4.jpg', 0, '50-100 người', 'Nhân viên chính thức'),
 (3, 4, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', 'nhân viên', 'images/vieclam/hinhanh.png', 0, '10-50 người', 'Nhân viên chính thức');
