@@ -53,4 +53,7 @@ $route['default_controller'] = 'trangchu';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['nguoitimviec/(:num)'] = 'nguoitimviec/index/$1';
+
+//admin
 $route['admin'] = 'admin/home/index';

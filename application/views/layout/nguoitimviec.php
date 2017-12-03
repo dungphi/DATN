@@ -43,6 +43,7 @@
 						   
 						<?php
 							}
+							echo $this->pagination->create_links();
 						?> 
                         </div>
 					<div class="clearfix"> </div>
