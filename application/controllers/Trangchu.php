@@ -53,7 +53,7 @@ class Trangchu extends CI_Controller {
 				$check = $this->nguoi_tim_viec->dangnhap($email,$pass);
 				if($check == TRUE)
 				{
-					$this->session->set_userdata("login", $email);
+					$this->session->set_userdata("nguoitimviec", $email);
 					//echo $_SESSION['login'];
 					redirect(base_url());
 				}
@@ -68,7 +68,7 @@ class Trangchu extends CI_Controller {
 				$check = $this->nha_tuyen_dung->dangnhap($email,$pass);
 				if($check == TRUE)
 				{
-					$this->session->set_userdata("login", $email);
+					$this->session->set_userdata("nhatuyendung", $email);
 					//echo $_SESSION['login'];
 					redirect(base_url());
 				}
