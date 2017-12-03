@@ -10,6 +10,7 @@ class Viec_lam extends CI_Model{
 	public function vieclam()
 	{
 		$this->db->select('*');
+
 		$this->db->from('nha_tuyen_dung,viec_lam,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
 		$this->db->where('nha_tuyen_dung.id_ntd = viec_lam.id_ntd');
 		$this->db->where('viec_lam.id_nn = nganh_nghe.id_nn'); 
@@ -22,6 +23,13 @@ class Viec_lam extends CI_Model{
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}
+	public function capnhat_vl($data=array(),$id)
+	{
+		$this->db->where('id_vl',$id);
+        return $this->db->update('viec_lam',$data);
+	}
+
+		
 	public function vieclamchitiet($id)
 	{
 		$this->db->select('*');

@@ -15,10 +15,10 @@ class Nganh_nghe extends CI_Model{
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}
-	public function them_nganhnghe($nganhghe)
+	public function them_nganhnghe($nganhnghe)
 	{
 		$data = array(
-			'ten_nn' => $nganhghe
+			'ten_nn' => $nganhnghe
 		);
 		return $this->db->insert('nganh_nghe',$data);
 	}

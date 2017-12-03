@@ -1,87 +1,78 @@
-<!-- Main content -->
-<div class="content-wrapper">
+<noscript>
+	<div class="alert alert-block span10">
+		<h4 class="alert-heading">Warning!</h4>
+		<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+	</div>
+</noscript>
 
-    <!-- Page header -->
-    <div class="page-header page-header-default">
-        <div class="page-header-content">
-            <div class="page-title">
-                <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Việc làm</span> - <?=$title?></h4>
-            </div>
+<!-- start: Content -->
+<div id="content" class="span10">
 
-            <div class="heading-elements">
-                <div class="heading-btn-group">
-                    <a href="javascript:void(0)" data-toggle="modal" data-target="#modal_add_title" class="btn btn-link btn-float has-text"><i class="icon-add"></i><span>Thêm địa điểm</span></a>
-                    <!--<a href="#" class="btn btn-link btn-float has-text"><i class="icon-database-export"></i><span>Export</span></a>-->
-                </div>
-            </div>
-        </div>
 
-        <div class="breadcrumb-line">
-            <ul class="breadcrumb">
-                <li><a href="<?=base_url('admin')?>"><i class="icon-home2 position-left"></i> Home</a></li>
-                <li><a href="<?=base_url('admin/vieclam')?>">Việc làm</a></li>
-                <li class="active"><?=$title?></li>
-            </ul>
-        </div>
-    </div>
-    <!-- /page header -->
-    <!-- Content area -->
-    <div class="content">
-        <div class="col-md-6">
-            <!-- HTML sourced data -->
-            <div class="panel panel-flat">
-                <div class="panel-heading">
-                    <h5 class="panel-title"><?=$title?></h5>
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home"></i>
+			<a href="<?=base_url('admin') ?>">Home</a>
+			<i class="icon-angle-right"></i>
+		</li>
+		<li>
+			<a href="<?=base_url('admin/vieclam') ?>">Việc làm</a>
+			<i class="icon-angle-right"></i>
+		</li>
+		<li><a href="#">Tỉnh thành</a>
+	</ul>
 
-                    <div class="heading-elements">
-                        <ul class="icons-list">
-                            <li><a data-action="collapse"></a></li>
-                            <li><a data-action="reload"></a></li>
-                            <li><a data-action="close"></a></li>
-                        </ul>
-                    </div>
-                </div>
+	<div class="row-fluid sortable">
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="halflings-icon list white"></i><span class="break"></span>Danh sách tỉnh thành</h2>
+				<div class="box-icon">
+					<a href="javascript:void(0)" data-toggle="modal" data-target="#modal_add_title"><i class="halflings-icon white plus"></i></a>
+					<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<table class="table table-striped table-bordered bootstrap-datatable datatable">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Tỉnh thành</th>
+							<th>Chỉnh sửa</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach($diadiem as $dd)
+						{
+						?>
+						<tr>
+							<td><?=$dd['id_dd'] ?></td>
+							<td><?=$dd['ten_dd'] ?></td>
+							<td class="center">
+								<a class="btn btn-info" onclick="return chinhsua_dd(<?=$dd['id_dd'] ?>);" data-toggle="modal" data-target="#modal_edit">
+									<i class="halflings-icon white edit"></i>  
+								</a>
+								<a class="btn btn-danger" onclick="return xoa_dd(<?=$dd['id_dd']?>)" href="javascript:void(0)">
+									<i class="halflings-icon white trash"></i> 
+								</a>
+							</td>
+						</tr>
+						<?php
+						}
+			   			?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--/span-->
 
-                <div class="panel-body">
-                </div>
+	</div>
 
-                <table class="table datatable-html">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Địa điểm</th>
-                        <th class="text-center">Chỉnh sửa</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($diadiem as $dd) {?>
-                            <tr>
-                                <td><?=$dd['id_dd']?></td>
-                                <td><?=$dd['ten_dd']?></td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li>
-                                                <a onclick="return xoa_dd(<?=$dd['id_dd']?>)" href="javascript:void(0)"><i class="icon-bin"></i> Xóa</a></li>
-                                                <li><a onclick="return chinhsua_dd(<?=$dd['id_dd'] ?>);" data-toggle="modal" data-target="#modal_edit"><i class="icon-pencil7"></i> Chỉnh sửa</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        <?php }?>
-                    </tbody>
-                </table>
-            </div>
-            <!-- /HTML sourced data -->
-        </div>
-    </div>
-    <!-- /content area -->
-</div>
+</div> <!--/.fluid-container-->
 
-<!-- /main content -->
+<!-- end: Content -->
 <script type="text/javascript">
     function chinhsua_dd(id){
         $.ajax({
@@ -92,9 +83,9 @@
             success: function(result){
                 var html        = '<form class="form-horizontal">';
                     html        +=  '<div class="form-group">';
-                    html        +=      '<label for="nganh_nghe" class="col-sm-3 control-label">Ngành nghề</label>';
+                    html        +=      '<label for="nganh_nghe" class="col-sm-3 control-label">Địa điểm</label>';
                     html        +=      '<div class="col-sm-9">';
-                    html        +=          '<input type="text" class="form-control" id="nganh_nghe" placeholder="Ngành nghề" value="'+result.ten_dd+'" required>';
+                    html        +=          '<input type="text" class="form-control" id="nganh_nghe" placeholder="Địa điểm" value="'+result.ten_dd+'" required>';
                     html        +=          '<input type="text" class="hidden" id="id" value="'+result.id+'">';
                     html        +=      '</div>';
                     html        +=   '</div>';
@@ -115,7 +106,7 @@
                     if(result == 1){
                         alert("Xóa thành công");
                         setTimeout(function(){
-                            location.reload();
+                        	location.reload();
                         },1000);
                     }
                 }
@@ -124,22 +115,20 @@
     }
     function luu_dd(){
         var id      = $('.lis-data').attr('data-id');
-        var nganhnghe   = $('#nganh_nghe').val();
-
-        $('.tag_i').html('<i class="icon-spidder2 spidder"></i> ');
+        var diadiem   = $('#nganh_nghe').val();
         $.ajax({
             dataType: "json",
             type:"POST",
             url:"<?=base_url('/admin/vieclam/luu_dd'); ?>",
-            data:{id:id,nganhnghe:nganhnghe},
+            data:{id:id,diadiem:diadiem},
             success: function(result){
                 if(result == 1){
-                    $('.tag_i').html('<i class="fa fa-check text-success" aria-hidden="true"></i> ');
+                    alert("Lưu thành công");
                     setTimeout(function(){
-                        location.reload();
-                    }, 2000);
+                    	location.reload();
+                    }, 1000);
                 }else{
-                    $('.tag_i').html('<i class="fa fa-ban text-danger" aria-hidden="true"></i>');
+                    alert("Lỗi!");
                 }
             }
         });
@@ -152,7 +141,7 @@
         <div class="modal-content">
             <div class="modal-header bg-info">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h6 class="modal-title">Chỉnh sửa ngành nghề</h6>
+                <h6 class="modal-title">Chỉnh sửa địa điểm</h6>
             </div>
             <div class="modal-body" id="modal-body">
             </div>
@@ -168,14 +157,14 @@
         <div class="modal-content">
             <div class="modal-header bg-info">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h6 class="modal-title">Thêm ngành nghề</h6>
+                <h6 class="modal-title">Thêm địa điểm</h6>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="nganhnghe" class="col-sm-3 control-label">Ngành nghề</label>
+                        <label for="diadiem" class="col-sm-3 control-label">Địa điểm</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="nganhnghe" placeholder="Ngành nghề" />
+                            <input type="text" class="form-control" id="diadiem" placeholder="Địa điểm" />
                         </div>
                     </div>
                 </form>
@@ -189,21 +178,20 @@
 </div>
 <script type="text/javascript">
     function them_dd(){
-        var nganhnghe   = $('#nganhnghe').val();
-        $('.tag_i').html('<i class="icon-spidder2 spidder"></i> ');
+        var diadiem   = $('#diadiem').val();
         $.ajax({
             dataType: "json",
             type:"POST",
             url:"<?=base_url('admin/vieclam/them_dd'); ?>",
-            data:{nganhnghe:nganhnghe},
+            data:{diadiem:diadiem},
             success: function(result){
                 if(result == 1){
-                    $('.tag_i').html('<i class="fa fa-check text-success" aria-hidden="true"></i> ');
+                    alert("Thêm thành công");
                     setTimeout(function(){
-                        location.reload();
-                    }, 2000);
+                    	location.reload();
+                    }, 1000);
                 }else{
-                    $('.tag_i').html('<i class="fa fa-ban text-danger" aria-hidden="true"></i>');
+                    $alert("Lỗi");
                 }
             }
         });

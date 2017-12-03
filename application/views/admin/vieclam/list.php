@@ -11,15 +11,15 @@
 
             <div class="heading-elements">
                 <div class="heading-btn-group">
-                    <a href="<?php echo base_url("admin/recruiter")?>/add" class="btn btn-link btn-float has-text"><i class="icon-add"></i><span><?=$this->lang->line('add_new'); ?></span></a>
+                    <a href="<?php echo base_url("admin/vieclam/them_vl")?>/add" class="btn btn-link btn-float has-text"><i class="icon-add"></i><span>Thêm việc làm</span></a>
                     <a href="#" class="btn btn-link btn-float has-text"><i class="icon-database-export"></i><span>Export</span></a>
                 </div>
             </div>
         </div>
         <div class="breadcrumb-line">
             <ul class="breadcrumb">
-                <li><a href="<?=site_url("/admin")?>"><i class="icon-home2 position-left"></i> <?=$this->lang->line('home'); ?></a></li>
-                <li><a href="<?=site_url("/admin/recruiter")?>"><?=$this->lang->line('recruit'); ?></a></li>
+                <li><a href="<?=site_url("admin")?>"><i class="icon-home2 position-left"></i> Home</a></li>
+                <li><a href="<?=site_url("/admin/vieclam")?>">Việc làm</a></li>
                 <li class="active"><?=$title?></li>
             </ul>
         </div>
@@ -48,30 +48,27 @@
             <table class="table datatable-html">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th><?=$this->lang->line('title'); ?></th>
-                    <th><?=$this->lang->line('deadline'); ?></th>
-                    <th>Langid</th>
-                    <th><?=$this->lang->line('option'); ?></th>
-                    <th class="text-center"><?=$this->lang->line('action'); ?></th>
+                    <th>Tiêu đề</th>
+                    <th>Ngành nghề</th>
+                    <th>Nhà tuyển dụng</th>
+                    <th>Vị trí</th>
+                    <th>Ngày hết hạn</th>
+                    <th>active</th>
+                    <th class="text-center">Chỉnh sửa</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(isset($recruiter) && is_array($recruiter)):?>
-                    <?php foreach($recruiter as $item):
-                    ?>
+				<?php 
+					foreach($vieclam as $vl)
+					{
+				?>
                     <tr>
-                        <td><?=$item->pro_id ?></td>
-                        <td><?=$item->pro_name?></td>
-                        <td><?=$item->deadline?></td>
-                        <td><?=returnLangType($item->LangId)?></td>
-                        <td><input type="checkbox" id="pronew_<?=$item->pro_id?>" value="1" <?php if($item->new == 1): echo"checked"; endif;?> onclick="return update_info('pronew_<?=$item->pro_id?>',<?=$item->pro_id?>,'new')" > new
-                            <br>
-                            <input type="checkbox" id="prohome_<?=$item->pro_id?>" value="1" <?php if($item->home == 1): echo"checked"; endif;?> onclick="return update_info('prohome_<?=$item->pro_id?>',<?=$item->pro_id?>,'home')" > home
-                            <br>
-                            <input type="checkbox" id="vip<?=$item->pro_id?>" value="1" <?php if($item->vip == 1): echo"checked"; endif;?> onclick="return update_info('vip<?=$item->pro_id?>',<?=$item->pro_id?>,'vip')" > vip
-                            <br>
-                            <input type="checkbox" id="prostatus_<?=$item->pro_id?>" value="1" <?php if($item->pro_status == 1): echo"checked"; endif;?> onclick="return update_info('prostatus_<?=$item->pro_id?>',<?=$item->pro_id?>,'pro_status')" > active
+                        <td><?=$vl['tieu_de'] ?></td>
+                        <td><?=$vl['ten_nn'] ?></td>
+                        <td><?=$vl['ten_cty'] ?></td>
+                        <td><?=$vl['ten_dd'] ?></td>
+                        <td><?=$vl['ngay_hh'] ?></td>
+                        <td><input type="checkbox" id="pronew_<?=$vl['id_vl'] ?>" value="1" <?php if($vl['active'] == 1) echo "checked"; ?> onclick="return update_info(<?=$vl['id_vl']?>)" >
                         </td>
                         <td class="text-center">
                             <ul class="icons-list">
@@ -80,14 +77,16 @@
                                         <i class="icon-menu9"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a onclick="return check_del()" href="<?=site_url()?>/admin/recruiter/del/<?=$item->pro_id?>.html"><i class="icon-bin"></i> <?=$this->lang->line('del'); ?></a></li>
-                                        <li><a href="<?=base_url()?>admin/recruiter/edit/<?=$item->pro_id?>"><i class="icon-pencil7"></i> <?=$this->lang->line('edit'); ?></a></li>
+                                        <li><a onclick="return check_del()" href="javascript:void(0)"><i class="icon-bin"></i> Xóa</a></li>
+                                        <li><a href="<?=base_url()?>admin/vieclam/chinhsua/<?=$vl['id_vl'] ?>"><i class="icon-pencil7"></i> Chỉnh sửa</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </td>
                     </tr>
-                <?php endforeach; endif;?>
+                <?php 
+					}
+				?>
                 </tbody>
             </table>
         </div>
@@ -96,7 +95,7 @@
     <!-- /content area -->
 </div>
 <script type="text/javascript">
-    function update_info(id,id_pro,type){
+    function update_info(id){
         var value = 0;
         if($("#"+id).is(":checked") == true){
             value =1;

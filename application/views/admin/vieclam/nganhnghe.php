@@ -1,87 +1,79 @@
-<!-- Main content -->
-<div class="content-wrapper">
+<noscript>
+	<div class="alert alert-block span10">
+		<h4 class="alert-heading">Warning!</h4>
+		<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+	</div>
+</noscript>
 
-    <!-- Page header -->
-    <div class="page-header page-header-default">
-        <div class="page-header-content">
-            <div class="page-title">
-                <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Việc làm</span> - <?=$title?></h4>
-            </div>
+<!-- start: Content -->
+<div id="content" class="span10">
 
-            <div class="heading-elements">
-                <div class="heading-btn-group">
-                    <a href="javascript:void(0)" data-toggle="modal" data-target="#modal_add_title" class="btn btn-link btn-float has-text"><i class="icon-add"></i><span>Thêm ngành nghề</span></a>
-                    <!--<a href="#" class="btn btn-link btn-float has-text"><i class="icon-database-export"></i><span>Export</span></a>-->
-                </div>
-            </div>
-        </div>
 
-        <div class="breadcrumb-line">
-            <ul class="breadcrumb">
-                <li><a href="<?=base_url('admin')?>"><i class="icon-home2 position-left"></i> Home</a></li>
-                <li><a href="<?=base_url('admin/vieclam')?>">Việc làm</a></li>
-                <li class="active"><?=$title?></li>
-            </ul>
-        </div>
-    </div>
-    <!-- /page header -->
-    <!-- Content area -->
-    <div class="content">
-        <div class="col-md-6">
-            <!-- HTML sourced data -->
-            <div class="panel panel-flat">
-                <div class="panel-heading">
-                    <h5 class="panel-title"><?=$title?></h5>
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home"></i>
+			<a href="<?=base_url('admin') ?>">Home</a>
+			<i class="icon-angle-right"></i>
+		</li>
+		<li>
+			<a href="<?=base_url('admin/vieclam') ?>">Việc làm</a>
+			<i class="icon-angle-right"></i>
+		</li>
+		<li><a href="#">Ngành nghề</a>
+	</ul>
 
-                    <div class="heading-elements">
-                        <ul class="icons-list">
-                            <li><a data-action="collapse"></a></li>
-                            <li><a data-action="reload"></a></li>
-                            <li><a data-action="close"></a></li>
-                        </ul>
-                    </div>
-                </div>
+	<div class="row-fluid sortable">
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="halflings-icon list white"></i><span class="break"></span>Danh sách ngành nghề</h2>
+				<div class="box-icon">
+					<a href="javascript:void(0)" data-toggle="modal" data-target="#modal_add_title"><i class="halflings-icon white plus"></i></a>
+					<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<table class="table table-striped table-bordered bootstrap-datatable datatable">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Ngành nghề</th>
+							<th>Chỉnh sửa</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach($nganhnghe as $nn)
+						{
+						?>
+						<tr>
+							<td><?=$nn['id_nn'] ?></td>
+							<td><?=$nn['ten_nn'] ?></td>
+							<td class="center">
+								<a class="btn btn-info" onclick="return chinhsua_nn(<?=$nn['id_nn'] ?>);" data-toggle="modal" data-target="#modal_edit">
+									<i class="halflings-icon white edit"></i>  
+								</a>
+								<a class="btn btn-danger" onclick="return xoa_nn(<?=$nn['id_nn']?>)" href="javascript:void(0)">
+									<i class="halflings-icon white trash"></i> 
+								</a>
+							</td>
+						</tr>
+						<?php
+						}
+			   			?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--/span-->
 
-                <div class="panel-body">
-                </div>
+	</div>
 
-                <table class="table datatable-html">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Ngành nghề</th>
-                        <th class="text-center">Chỉnh sửa</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($nganhnghe as $nn) {?>
-                            <tr>
-                                <td><?=$nn['id_nn']?></td>
-                                <td><?=$nn['ten_nn']?></td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li>
-                                                <a onclick="return xoa_nn(<?=$nn['id_nn']?>)" href="javascript:void(0)"><i class="icon-bin"></i> Xóa</a></li>
-                                                <li><a onclick="return chinhsua_nn(<?=$nn['id_nn'] ?>);" data-toggle="modal" data-target="#modal_edit"><i class="icon-pencil7"></i> Chỉnh sửa</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        <?php }?>
-                    </tbody>
-                </table>
-            </div>
-            <!-- /HTML sourced data -->
-        </div>
-    </div>
-    <!-- /content area -->
-</div>
+</div> <!--/.fluid-container-->
 
-<!-- /main content -->
+<!-- end: Content -->
+
 <script type="text/javascript">
     function chinhsua_nn(id){
         $.ajax({
@@ -115,7 +107,7 @@
                     if(result == 1){
                         alert("Xóa thành công");
                         setTimeout(function(){
-                            location.reload();
+                        	location.reload();
                         },1000);
                     }
                 }
@@ -125,8 +117,6 @@
     function luu_nn(){
         var id      = $('.lis-data').attr('data-id');
         var nganhnghe   = $('#nganh_nghe').val();
-
-        $('.tag_i').html('<i class="icon-spinner2 spinner"></i> ');
         $.ajax({
             dataType: "json",
             type:"POST",
@@ -134,12 +124,12 @@
             data:{id:id,nganhnghe:nganhnghe},
             success: function(result){
                 if(result == 1){
-                    $('.tag_i').html('<i class="fa fa-check text-success" aria-hidden="true"></i> ');
+                    alert("Lưu thành công");
                     setTimeout(function(){
-                        location.reload();
-                    }, 2000);
+                    	location.reload();
+                    }, 1000);
                 }else{
-                    $('.tag_i').html('<i class="fa fa-ban text-danger" aria-hidden="true"></i>');
+                    alert("Lỗi!");
                 }
             }
         });
@@ -157,7 +147,7 @@
             <div class="modal-body" id="modal-body">
             </div>
             <div class="modal-footer">
-                <a class="tag_i"></a><button type="button" data-id="" data-lang="" class="btn btn-info lis-data" onclick="luu_nn();"> Lưu lại</button>
+                <button type="button" data-id="" data-lang="" class="btn btn-info lis-data" onclick="luu_nn();"> Lưu lại</button>
                 <button type="button" class="btn btn-link" data-dismiss="modal">Đóng</button>
             </div>
         </div>
@@ -181,7 +171,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a class="tag_i"></a><button type="button" class="btn btn-info lis-data" onclick="return them_nn();"> Thêm</button>
+                <button type="button" class="btn btn-info lis-data" onclick="return them_nn();"> Thêm</button>
                 <button type="button" class="btn btn-link" data-dismiss="modal">Đóng</button>
             </div>
         </div>
@@ -190,7 +180,6 @@
 <script type="text/javascript">
     function them_nn(){
         var nganhnghe   = $('#nganhnghe').val();
-        $('.tag_i').html('<i class="icon-spinner2 spinner"></i> ');
         $.ajax({
             dataType: "json",
             type:"POST",
@@ -198,12 +187,12 @@
             data:{nganhnghe:nganhnghe},
             success: function(result){
                 if(result == 1){
-                    $('.tag_i').html('<i class="fa fa-check text-success" aria-hidden="true"></i> ');
+                    alert("Thêm thành công");
                     setTimeout(function(){
-                        location.reload();
-                    }, 2000);
+                    	location.reload();
+                    }, 1000);
                 }else{
-                    $('.tag_i').html('<i class="fa fa-ban text-danger" aria-hidden="true"></i>');
+                    alert("Lỗi!");
                 }
             }
         });

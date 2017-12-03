@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('viec_lam');
-		$this->load->model('admin');
+		$this->load->model('madmin');
 	}
 	public function index()
 	{
@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 		{
 			$user = $this->input->post('user');
 			$pass = md5($this->input->post('pass'));
-			$check = $this->admin->dangnhap($user,$pass);
+			$check = $this->madmin->dangnhap($user,$pass);
 			if($check == TRUE)
 			{
 				$this->session->set_userdata("admin", $user);
