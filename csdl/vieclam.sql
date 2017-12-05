@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 03, 2017 lúc 03:42 AM
+-- Thời gian đã tạo: Th12 05, 2017 lúc 02:17 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -99,7 +99,7 @@ INSERT INTO `gioi_tinh` (`id_gt`, `gioi_tinh`) VALUES
 
 DROP TABLE IF EXISTS `ho_so_tim_viec`;
 CREATE TABLE IF NOT EXISTS `ho_so_tim_viec` (
-  `id_hoso` int(11) NOT NULL,
+  `id_hoso` int(11) NOT NULL AUTO_INCREMENT,
   `id_ntv` int(11) NOT NULL,
   `vip` tinyint(4) NOT NULL DEFAULT '0',
   `luot_xem` int(11) NOT NULL DEFAULT '0',
@@ -118,16 +118,19 @@ CREATE TABLE IF NOT EXISTS `ho_so_tim_viec` (
   `chuc_vu_ht` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `chuc_vu_mm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_hoso`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `ho_so_tim_viec`
 --
 
 INSERT INTO `ho_so_tim_viec` (`id_hoso`, `id_ntv`, `vip`, `luot_xem`, `tieu_de`, `id_nn`, `id_ddlv`, `id_kinh_nghiem`, `id_trinh_do`, `ngay_dk`, `id_muc_luong`, `hon_nhan`, `chung_chi`, `ngoai_ngu`, `hinh_thuc_lam_viec`, `muc_tieu`, `chuc_vu_ht`, `chuc_vu_mm`) VALUES
-(1, 2, 1, 0, 'Tìm việc chăm em bé, giúp việc nhà hoặc nuôi bệnh tại TPHCM', 7, 3, 1, 7, '2017-10-31', 2, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
-(2, 1, 1, 0, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, 1, '2017-10-31', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
-(3, 3, 1, 0, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, 1, '2017-10-31', 4, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên');
+(1, 2, 1, 2, 'Tìm việc chăm em bé, giúp việc nhà hoặc nuôi bệnh tại TPHCM', 7, 3, 1, 7, '2017-10-31', 2, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(2, 1, 1, 1, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, 1, '2017-10-31', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(3, 3, 1, 3, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, 1, '2017-10-31', 4, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(4, 8, 0, 7, 'Kĩ sư máy tính, iT,mạng máy tính.', 4, 1, 3, 1, '2017-12-03', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(5, 4, 0, 4, 'Nhân Viên Sale', 6, 1, 3, 1, '2017-12-03', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(6, 5, 1, 5, 'Nhân Viên Bán Hàng', 7, 3, 1, 5, '2017-12-03', 2, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên');
 
 -- --------------------------------------------------------
 
@@ -254,7 +257,9 @@ INSERT INTO `nguoi_tim_viec` (`id_ntv`, `ho`, `ten`, `email`, `phone`, `ngay_sin
 (1, 'Thanh', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'Tp HCM', 'images/hoso/9.jpg', 1, 1, ''),
 (2, 'Phan Anh', 'Trường', 'truong@gmail.com', '0123456789', '1990-10-03', 'HCM', 'images/hoso/12.jpg', 1, 1, ''),
 (3, 'Thanh', 'Thùy', 'thuy@gmail.com', '0123456777', '1997-10-19', 'HCM', 'images/hoso/avatar.png', 2, 1, ''),
-(8, 'Trần', 'Phi', 'phi@gmail.com', '01239876543', NULL, 'Ha Noi', 'images/hoso/avatar.png', 1, 1, '202cb962ac59075b964b07152d234b70');
+(8, 'Trần', 'Phi', 'phi@gmail.com', '01239876543', '1990-02-11', 'Ha Noi', 'images/hoso/avatar.png', 1, 1, '202cb962ac59075b964b07152d234b70'),
+(4, 'Nguyễn Vũ Vân ', 'Anh', 'vananh@gmail.com', '0987654321', '1996-02-01', 'Hồ Chí Minh', 'images/hoso/avatar.png', 2, 1, ''),
+(5, 'Nguyễn Tấn ', 'Thành', 'thanh@gmail.com', '0987654321', '1998-03-02', 'Hồ Chí Minh', 'images/hoso/avatar.png', 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -323,7 +328,7 @@ DROP TABLE IF EXISTS `viec_lam`;
 CREATE TABLE IF NOT EXISTS `viec_lam` (
   `id_vl` int(11) NOT NULL AUTO_INCREMENT,
   `id_ntd` int(11) NOT NULL,
-  `id_nn` int(11) NOT NULL,
+  `id_nganh` int(11) NOT NULL,
   `id_kinh_nghiem` int(11) DEFAULT NULL,
   `id_muc_luong` int(11) DEFAULT NULL,
   `id_ddlv` int(11) NOT NULL COMMENT 'dia_diem_lam_viec',
@@ -348,10 +353,10 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
 -- Đang đổ dữ liệu cho bảng `viec_lam`
 --
 
-INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `id_nn`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`) VALUES
-(1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', 'Giám đốc', 'images/vieclam/3.jpg', 0, '500 người', 'Nhân viên chính thức'),
-(2, 2, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', 'Ky Thuat Vien', 'images/vieclam/4.jpg', 0, '50-100 người', 'Nhân viên chính thức'),
-(3, 4, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', 'nhân viên', 'images/vieclam/hinhanh.png', 0, '10-50 người', 'Nhân viên chính thức');
+INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`) VALUES
+(1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', 'Giám đốc', 'images/vieclam/3.jpg', 1, '500 người', 'Nhân viên chính thức'),
+(2, 2, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', 'Ky Thuat Vien', 'images/vieclam/4.jpg', 2, '50-100 người', 'Nhân viên chính thức'),
+(3, 4, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', 'nhân viên', 'images/vieclam/hinhanh.png', 8, '10-50 người', 'Nhân viên chính thức');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
