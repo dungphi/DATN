@@ -82,4 +82,11 @@ class Madmin extends CI_Model{
 		$this->db->where('id_admin',$id);
         return $this->db->update('admin',$data);
 	}
+	public function edit($user)
+	{
+		$this->db->select('*');
+		$this->db->from('admin');
+		$this->db->where('user', $user);
+		return $this->db->get()->row_array();
+	}
 }

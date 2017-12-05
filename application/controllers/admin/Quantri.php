@@ -126,5 +126,34 @@ class Quantri extends CI_Controller {
 		else
 			die(json_encode(2));
 	}
+	public function edit()
+	{
+		$data['title'] = 'Chỉnh sửa quản trị viên';
+		$data['content'] = 'admin/admin/chinhsua';
+		$user = $_SESSION['admin'];
+		if(isset($_POST['luu']))
+		{
+			$ten = $this->input->post('ten');
+			$user = $this->input->post('user');
+			if(isset($_POST['active']))
+				$active = $this->input->post('active');
+			else
+				$active = 0;
+			if($ten != '' && $user != '')
+			{
+				$dat = array(
+					'ten' => $ten,
+					'user' => $user,
+				);
+				$kq = $this->madmin->capnhat($dat, $id);
+				if(isset($kq))
+					echo '<script>alert("Lưu thành công!")</script>';
+				else
+					echo '<script>alert("Lỗi!")</script>';
+			}
+		}
+		$data['admin'] = $this->madmin->edit($user);
+		$this->load->view('admin/index', $data);
+	}
 }
 ?>
