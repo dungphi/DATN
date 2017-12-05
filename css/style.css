@@ -19,6 +19,9 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+.pagination{
+	margin-bottom:0px;
+	}
 span.menu {						/*menu*/
   display: none;
 }
@@ -117,7 +120,7 @@ span.menu {						/*menu*/
 	margin-top:0
 	}
 .baidang-timkiem{
-	margin-top:20px;
+	margin:20px 0;
 	background-color:#F3F3F3;
 	}
 .dangnhap a{
@@ -254,10 +257,23 @@ span.menu {						/*menu*/
 .device {
   padding: 3em 0;
 }
-/*bài đăng*/
+									/*bài đăng*/
+.btn_xemthemhoso{
+	font-weight:700;
+	padding:10px 5px;
+	border-radius:1px;
+	color:#71bf44;
+	border:3px solid #71bf44;
+}
+.xemthemhoso a{
+	text-decoration:none;
+}
+.btn_xemthemhoso:hover{
+	color:#096;
+	border:3px solid #096;
+}
 .baidang {
   padding: 2em 0;
-
 }
 .baidang_left {
 	padding-top:1em;
@@ -267,6 +283,7 @@ span.menu {						/*menu*/
 	white-space: nowrap; 
  	overflow: hidden;
 	text-overflow: ellipsis;
+	margin-bottom:20px;
 }
 .baidang_left h4{
 	font-size:18px;
@@ -297,7 +314,13 @@ span.menu {						/*menu*/
 	margin:4px 0;
 }
 .thongtin {
-	margin:1em 0;
+	margin:1em 0px;
+	
+}
+.thongtindangnhap {
+	clear:both;
+	margin:0em 10px;
+	
 }
 .baidang_right{
 	float:right;
@@ -1986,4 +2009,82 @@ display:none;
 .avatar h5{
 	font-size:16px;
 }
+											/*Trung tâm Quản lý*/
+.trungtamquanly{
+	background-color:#eeeeee;
+	margin:20px 0;
+	border:1px solid #CCC;	
+}
+.taohoso{
+	margin:20px 0 0;
+}
+.btn_taohoso{
+	border-radius:1px;
+	padding:10px 0;
+	font-weight:800;
+	font-size:20px
+	
+}
+.quanly ul li a {
+	padding:15px 7px;
+	color:#666;
+	font-size:15px;
+	font-weight:800;
+	}
+.quanly ul li.active a {
+  color:#FFF;
+  background:#999;
+}
+.quanly ul li a:hover{								
+  color: #FFF;
+  background:#71bf44;
 
+}
+.t-menu{
+	padding:7px 15px;
+	color:#fff;
+	background-color:#337ab7;
+}															/* Quản Lý TK*/
+.qltk h3{
+	margin-top:25px;
+	text-align:center;
+	font-size:32px;
+	font-weight:900;
+	color:#337ab7;													
+	
+}
+.ttdangnhap, .ttcanhan{
+	padding: 15px 25px;
+	background-color:#eeeeee;
+	border: 1px solid #CCC;
+	margin: 30px 0px;
+}
+.ttdangnhap h3, .ttcanhan h3{
+	color:#898989;
+	font-weight:900;
+	padding: 15px 0px 20px;
+	border-bottom:1px solid #CCC;
+}
+.ttdangnhap h3 i, .ttcanhan h3 i{
+	color:#337ab7;
+	
+}
+.ttemail,.ttsdt,.ttmatkhau,.tt{
+	padding-top:15px;
+	font-size:18px;
+}
+.ttemail p,.ttsdt p,.ttmatkhau p,.tt p{
+	color:#898989;
+}
+.btn_edit{
+	color:#71bf44;
+}
+.btn_edit:hover{
+	color:#22924c;
+}
+.btn_chinhsua{
+	padding:10px;
+	color:#FFF;
+	font-size:16px;
+	border-radius:1px;
+}

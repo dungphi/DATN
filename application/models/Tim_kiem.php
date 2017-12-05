@@ -12,7 +12,7 @@ class Tim_kiem extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('nha_tuyen_dung,viec_lam,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
 		$this->db->where('nha_tuyen_dung.id_ntd = viec_lam.id_ntd');
-		$this->db->where('viec_lam.id_nn = nganh_nghe.id_nn'); 
+		$this->db->where('viec_lam.id_nganh = nganh_nghe.id_nn'); 
 		$this->db->where('viec_lam.id_ddlv = dia_diem.id_dd');
 		$this->db->where('viec_lam.id_kinh_nghiem = kinh_nghiem.id_kn');
 		$this->db->where('viec_lam.id_muc_luong = muc_luong.id_ml');

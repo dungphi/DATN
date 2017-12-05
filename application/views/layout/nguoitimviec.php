@@ -45,6 +45,7 @@
 							}
 							echo $this->pagination->create_links();
 						?> 
+                        
                         </div>
 					<div class="clearfix"> </div>
                       
@@ -54,7 +55,8 @@
                 	<?php
 				foreach($hosotimviec as $tam)
 				{
-					
+					if($tam['vip']=='1')
+					{
     
 			?>
             		<div class="hosotimviec">
@@ -70,6 +72,7 @@
                     </div>
                
 			<?php
+					}
 				}
 			?> 
                 <div class="clearfix"> </div>

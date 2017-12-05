@@ -23,16 +23,61 @@ class Nhatuyendung extends CI_Controller {
 		$this->load->model('Viec_lam');
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('ho_so_ntv');
-		
+		$this->load->model('nganh_nghe');
+		$this->load->model('dia_diem');
 	}
 	public function index()
-	{
+	{	
+		if($this->uri->segment(2))
+			$batdau = $this->uri->segment(2);
+		else
+			$batdau =0;
 		$data['title'] = 'Trang nhà tuyển dụng';
 		$data['content'] = 'layout/nhatuyendung';
 		$data['active'] = 3;
-		$data['vieclam'] = $this->Viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec();
+		//cấu hình phân trang
+		$config['per_page'] = 2;
+		$config['uri_segment'] = 2;
+		$config['num_links'] = 5;
+		
+		$data['vieclam'] = $this->Viec_lam->vieclam($config['per_page'],$batdau);
+		
+		//phân trang
+		$config['total_rows'] = $this->Viec_lam->countAll();
+        $config['base_url'] = base_url()."nhatuyendung";
+
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul><!--pagination-->';
+
+		$config['first_link'] = 'Trang đầu';
+		$config['first_tag_open'] = '<li class="prev page">';
+		$config['first_tag_close'] = '</li>';
+
+		$config['last_link'] = 'Trang cuối';
+		$config['last_tag_open'] = '<li class="next page">';
+		$config['last_tag_close'] = '</li>';
+
+		$config['next_link'] = 'Sau';
+		$config['next_tag_open'] = '<li class="next page">';
+		$config['next_tag_close'] = '</li>';
+
+		$config['prev_link'] = 'Trước';
+		$config['prev_tag_open'] = '<li class="prev page">';
+		$config['prev_tag_close'] = '</li>';
+
+		$config['cur_tag_open'] = '<li class="active"><a href="">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		$config['num_tag_open'] = '<li class="page">';
+		$config['num_tag_close'] = '</li>';
+
+		// $config['display_pages'] = FALSE;
+		// 
+		$config['anchor_class'] = 'follow_link';  
+        $this->load->library('pagination', $config);
+		
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 
 	}	
@@ -41,7 +86,13 @@ class Nhatuyendung extends CI_Controller {
 		$data['title'] = 'Thông tin Việc làm';
 		$data['content'] = 'layout/thongtinvieclam';
 		$data['active'] = 0;
-		$data['thongtin'] = $this->Viec_lam->vieclamchitiet($id);
+		$data['thongtin'] = $thongtin = $this->Viec_lam->vieclamchitiet($id);
+		$view = $thongtin['luot_xem'];
+		$view++;
+		$dat = array(
+			'luot_xem' => $view
+			);
+		$this-> Viec_lam -> capnhatluotxem($dat,$id);
 		$this->load->view('trangchu', $data);
 		
 	}

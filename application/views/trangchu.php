@@ -88,6 +88,10 @@ $(document).ready(function(){
 <?php
 	$this->load->view('layout/header');
 	$this->load->view($content);
+	if(isset($trungtamquanly))
+		{
+			$this->load->view($trungtamquanly);	
+		}
 	$this->load->view('layout/footer');
 ?>
 

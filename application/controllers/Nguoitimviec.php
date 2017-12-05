@@ -24,7 +24,7 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('ho_so_ntv');
 		$this->load->model('nganh_nghe');
-		
+		$this->load->model('dia_diem');
 	}
 	public function index()
 	{	
@@ -35,10 +35,9 @@ class Nguoitimviec extends CI_Controller {
 		$data['title'] = 'Trang Tìm việc';
 		$data['content'] = 'layout/nguoitimviec';
 		$data['active'] = 2;
-		$data['vieclam'] = $this->viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
+		
 		//cấu hình phân trang
-		$config['per_page'] = 2;
+		$config['per_page'] = 3;
 		$config['uri_segment'] = 2;
 		$config['num_links'] = 5;
 		
@@ -77,6 +76,8 @@ class Nguoitimviec extends CI_Controller {
 		$config['anchor_class'] = 'follow_link';  
         $this->load->library('pagination', $config);
 		
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 		
 	}	
@@ -95,5 +96,6 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}		
+	
 	
 }

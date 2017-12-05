@@ -43,62 +43,15 @@ class Timkiem extends CI_Controller {
 		
 		$data['content'] = 'layout/timkiem';
 		$data['active'] = 0;
-		$data['vieclam'] = $this->viec_lam->vieclam();
+		$data['vieclam'] = $this->viec_lam->vieclam(5,0);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$data['timkiem'] = $this->tim_kiem->timkiem($tu_khoa,$dat);
 		$this->load->view('trangchu', $data);
 		
 	}	
-	public function dangnhap()
-	{
-		$this->load->model('nguoi_tim_viec');
-		$this->load->model('nha_tuyen_dung');
-		if(isset($_POST['dangnhap']))
-		{
-			$tuychon = $this->input->post('tuychon');
-			$email = $this->input->post('email');
-			$pass = md5($this->input->post('pass'));
-			if($tuychon == 1)
-			{
-				$check = $this->nguoi_tim_viec->dangnhap($email,$pass);
-				if($check == TRUE)
-				{
-					$this->session->set_userdata("login", $email);
-					//echo $_SESSION['login'];
-					redirect(base_url());
-				}
-				else
-				{	
-					$this->session->set_flashdata('notice','Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu');
-				}
-			}
-			else
-			{
-				
-				$check = $this->nha_tuyen_dung->dangnhap($email,$pass);
-				if($check == TRUE)
-				{
-					$this->session->set_userdata("login", $email);
-					//echo $_SESSION['login'];
-					redirect(base_url());
-				}
-				else
-				{
-					echo '<script>alert("Email hoặc Mật khẩu không đúng")</script>';
-					
-					
-					
-				}
-			}
-		}
-	}
-	public function dangxuat()
-	{
-		//đăng xuất
-		$this->session->unset_userdata("login");
-		redirect(base_url());
-		//view
+	
 		
-	}
+	
+	
 }

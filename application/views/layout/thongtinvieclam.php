@@ -1,7 +1,7 @@
 <div class="container">
 		
 	<button type="button" class="btn btn-link back">
-		<a href="<?=base_url('nhatuyendung');?>"><i class="fa fa-undo fa-lg fa-fw "></i> Trở về trang Nhà tuyển dụng </a>
+		<a href="<?=base_url('nhatuyendung');?>"><i class="fa fa-history fa-lg fa-fw "></i> Trở về trang Nhà tuyển dụng </a>
     </button>
 	<div class="tieu-de">
     	<div class="row">

@@ -52,4 +52,7 @@ class Nha_tuyen_dung extends CI_Model{
 		$this->db->insert('nha_tuyen_dung',$db);
 		
 	}
+	public function countAll(){
+		return $this->db->count_all('nha_tuyen_dung'); 
+	}
 }

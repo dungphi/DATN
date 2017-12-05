@@ -54,18 +54,18 @@
 				{
 			?>
 			
-			<div class="btn-group thongtin">
+			<div class="btn-group thongtindangnhap">
 				<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-			<?php echo $_SESSION['login']; ?> <span  class="glyphicon glyphicon-cog"></span><!--<span class="caret">-->
-			</button>
+					<?php echo $_SESSION['nguoitimviec']; ?> <span  class="glyphicon glyphicon-cog"></span><!--<span class="caret">-->
+				</button>
 				<ul class="dropdown-menu" role="menu">
-                	<li><a href="<?=base_url('trungtamquanly'); ?>"><i  class="fa fa-user-o fa-lg fa-fw"></i> Quản lý tài khoản</a>
+                	<li><a href="<?=base_url('Quanlynguoitimviec/quanlytaikhoan'); ?>"><i  class="fa fa-user-o fa-lg fa-fw"></i> Quản lý tài khoản</a>
 					</li>
-					<li><a href="#"><i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý hồ sơ</a>
+					<li><a href="<?=base_url('Quanlynguoitimviec/quanlyhoso'); ?>"><i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý hồ sơ</a>
 					</li>
-					<li><a href="<?=base_url('#'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã lưu</a>
+					<li><a href="<?=base_url('Quanlynguoitimviec/vieclamdaluu'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã lưu</a>
 					</li>
-                    <li><a href="<?=base_url('#'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Nhà tuyển dụng xem hồ sơ</a>
+                    <li><a href="<?=base_url('Quanlynguoitimviec/ntdxemhoso'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Nhà tuyển dụng xem hồ sơ</a>
 					<li class="divider"></li>
 					<li><a href="<?=base_url('trangchu/dangxuat'); ?>"><i class="fa fa-sign-out fa-lg fa-fw"></i> Đăng xuất</a>
 					</li>

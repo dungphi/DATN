@@ -152,7 +152,7 @@
             <div lass= "row">
                 <div class="col-xs-9 col-sm-9 col-md-9 ">
                     <div class="baidang_left">
-                    	<h3>Thông tin tìm việc làm,tuyển dụng trên Toàn Quốc</h3>
+                    	<h3>Thông tin tuyển dụng trên Toàn Quốc</h3>
                     <?php
                    	 foreach($vieclam as $tam)
                     	{
@@ -188,7 +188,12 @@
 					<?php
 					}
 					?>
-                    
+                    <div class="clearfix"> </div>
+                    </div>
+                        
+					
+                    <div class="baidang_left">
+                    	<h3>Hồ sơ người tìm việc trên Toàn Quốc</h3>
 					<?php
 						foreach($hosotimviec as $tam)
 							{
@@ -226,8 +231,13 @@
 							}
 						?> 
                         </div>
+                        
 					<div class="clearfix"> </div>
-                      
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 xemthemhoso">
+                		<a href=<?=base_url('nguoitimviec'); ?>>
+                        	<button type="submit" class="btn btn_default btn-block btn_xemthemhoso" onclick=""> <i class="fa fa-plus fa-lg fa-fw"></i> XEM THÊM HỒ SƠ NGƯỜI TÌM VIỆC
+                    		</button></a>
+                </div>
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-3 baidang_right">
                 <h3>Tin quảng cáo</h3>
@@ -253,6 +263,7 @@
 				}
 			?> 
                 <div class="clearfix"> </div>
+                
                 </div>
             </div>
          </div>
@@ -280,6 +291,7 @@
 					<p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
 				</div>
 				<div class="clearfix"> </div>
+                
 		</div>
 	</div>
 	<!-- device -->

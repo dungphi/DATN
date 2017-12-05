@@ -31,9 +31,9 @@ class Trangchu extends CI_Controller {
 		$data['title'] = 'Trang việc làm Online';
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
-		$data['vieclam'] = $this->viec_lam->vieclam();
+		$data['vieclam'] = $this->viec_lam->vieclam(3,0);
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(5,0);
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(3,0);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
@@ -85,7 +85,7 @@ class Trangchu extends CI_Controller {
 	public function dangxuat()
 	{
 		//đăng xuất
-		$this->session->unset_userdata("login");
+		$this->session->unset_userdata("nguoitimviec");
 		redirect(base_url());
 		//view
 		
