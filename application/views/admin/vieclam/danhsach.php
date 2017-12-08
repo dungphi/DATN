@@ -59,9 +59,6 @@
 							<td><?=$vl['ngay_hh'] ?></td>
 							<td><input type="checkbox" id="active_<?=$vl['id_vl'] ?>" value="1" <?php if($vl['active_vl'] == '1') echo "checked"; ?> onclick="return update_info(<?=$vl['id_vl']?>)" ></td>
 							<td class="center">
-								<a class="btn btn-info" href="#">
-									<i class="halflings-icon white edit"></i>  
-								</a>
 								<a class="btn btn-danger" href="#">
 									<i class="halflings-icon white trash"></i> 
 								</a>

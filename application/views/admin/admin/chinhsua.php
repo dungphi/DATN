@@ -38,15 +38,15 @@
 				<form class="form-horizontal" action="<?=base_url('admin/quantri/chinhsua/'.$admin['id_admin'])?>" method="post" enctype="multipart/form-data">
 					<fieldset>
 					  <div class="control-group">
-						<label class="control-label" for="focusedInput">Tên</label>
+						<label class="control-label" for="ten">Tên</label>
 						<div class="controls">
-						  <input name="ten" class="input-xlarge focused" id="focusedInput" type="text" value="<?=$admin['ten']?>">
+						  <input name="ten" class="input-xlarge focused" id="ten" type="text" value="<?=$admin['ten']?>">
 						</div>
 					  </div>
 					  <div class="control-group">
-						<label class="control-label" for="focusedInput">User</label>
+						<label class="control-label" for="user">User</label>
 						<div class="controls">
-						  <input name="user" class="input-xlarge focused" id="focusedInput" type="text" value="<?=$admin['user']?>">
+						  <input name="user" class="input-xlarge focused" id="user" type="text" value="<?=$admin['user']?>">
 						</div>
 					  </div>
 					  <div class="control-group">
@@ -65,8 +65,8 @@
 						</div>
 					  </div>
 					  <div class="form-actions">
-						<button type="submit" name="luu" class="btn btn-primary">Save changes</button>
-						<button class="btn">Cancel</button>
+						<button type="submit" name="luu" class="btn btn-primary">Lưu</button>
+						<a class="btn" href="<?=base_url('admin/quantri')?>">Thoát</a>
 					  </div>
 					</fieldset>
 				  </form>

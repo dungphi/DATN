@@ -1,8 +1,8 @@
 <?php
 	if(isset($_SESSION['admin']))
 	{
-		$admin = $this->madmin>edit($_SESSION['admin']);
-		echo($admin);
+		$user = $_SESSION['admin'];
+		$ad = $this->madmin->edit($user);
 	}
 ?>
 
@@ -270,14 +270,14 @@
 					<!-- start: User Dropdown -->
 					<li class="dropdown">
 						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="halflings-icon white user"></i> Admin
+							<i class="halflings-icon white user"></i> <?=$ad['ten']?>
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li class="dropdown-menu-title">
 								<span>Account Settings</span>
 							</li>
-							<li><a href="<?=base_url('admin/quantri/edit')?>"><i class="halflings-icon user"></i> Chỉnh sửa</a></li>
+							<li><a href="<?=base_url('admin/quantri/chinhsua/'.$ad['id_admin'])?>"><i class="halflings-icon user"></i> Chỉnh sửa</a></li>
 							<li><a href="<?=base_url('admin/login/dangxuat') ?>"><i class="halflings-icon off"></i> Đăng xuất</a></li>
 						</ul>
 					</li>

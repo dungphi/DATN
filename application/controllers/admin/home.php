@@ -26,15 +26,13 @@ class Home extends CI_Controller {
 		}
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
+		$this->load->model('madmin');
 	}
 	public function index()
 	{
 		$data['title'] = 'Trang quản trị';
 		$data['home'] = 'class="active"';
 		$data['content'] = 'admin/home';
-		$data['active'] = 1;
-		$data['vieclam'] = $this->viec_lam->vieclam();
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
 		$this->load->view('admin/index', $data);
 
 	}	

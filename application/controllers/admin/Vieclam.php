@@ -30,6 +30,7 @@ class Vieclam extends CI_Controller {
 		$this->load->model('kinh_nghiem');
 		$this->load->model('muc_luong');
 		$this->load->model('trinh_do');
+		$this->load->model('madmin');
 	}
 	//việc làm
 	public function index()
@@ -38,7 +39,7 @@ class Vieclam extends CI_Controller {
 		$data['title'] = 'Danh sách việc làm';
 		$data['vl_ds'] = 'class="active"';
 		$data['content'] = 'admin/vieclam/danhsach';
-		$data['vieclam'] = $this->viec_lam->vieclam();
+		$data['vieclam'] = $this->viec_lam->vieclam(0,0);
 		$this->load->view('admin/index', $data);
 
 	}

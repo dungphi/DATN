@@ -78,12 +78,12 @@
 
 <!-- end: Content -->
 <script type="text/javascript">
-    function xoa_ad(id){
+    function xoa_ntd(id){
         if (confirm("Bạn có muốn xóa không?")) {
             $.ajax({
                 dataType: "json",
                 type:"POST",
-                url:"<?=base_url('admin/quantri/xoa_ad'); ?>",
+                url:"<?=base_url('admin/ntd/xoa'); ?>",
                 data:{id:id},
                 success: function(result){
                     if(result == 1){
@@ -100,74 +100,23 @@
         }
     }
 </script>
-<div id="modal_add_title" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-info">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h6 class="modal-title">Thêm Quản trị viên</h6>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="ten" class="col-sm-3 control-label">Tên</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="ten" placeholder="Tên" />
-                        </div>
-                    </div>
-					<div class="form-group">
-                        <label for="user" class="col-sm-3 control-label">User</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="user" placeholder="User" />
-                        </div>
-                    </div>
-					<div class="form-group">
-                        <label for="pass" class="col-sm-3 control-label">Mật khẩu</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" id="pass" placeholder="Mật khẩu" />
-                        </div>
-                    </div>
-					<div class="form-group">
-                        <label for="repass" class="col-sm-3 control-label">Nhập lại mật khẩu</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" id="repass" placeholder="Nhập lại mật khẩu" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-info lis-data" onclick="return them_ad();"> Thêm</button>
-                <button type="button" class="btn btn-link" data-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-</div>
 <script type="text/javascript">
-    function them_ad(){
-        var ten   = $('#ten').val();
-        var user   = $('#user').val();
-        var pass   = $('#pass').val();
-        var repass   = $('#repass').val();
+	function update_info(id){
+        var value = 0;
+        if($("#active_"+id).is(":checked") == true){
+            value =1;
+        };
         $.ajax({
-            dataType: "json",
-            type:"POST",
-            url:"<?=base_url('admin/quantri/them_ad'); ?>",
-            data:{ten:ten,user:user,pass:pass,repass:repass},
-            success: function(result){
-                if(result == 1){
-                    alert("Thêm thành công");
-                    setTimeout(function(){
-                    	location.reload();
-                    }, 1000);
-                }else if(result == 2){
-                    alert("Mật khẩu không đúng!");
-                }else if(result == 3){
-					alert("Tài khoản đã tồn tại!");
-				}
-				else{
-					alert("Lỗi!")
-				}
-            }
+            method:"POST",
+            url:"<?=base_url('admin/ntd/active'); ?>",
+            data:{id:id,active:value},
+			success: function(result)
+			{
+				if(result == 1)
+					alert('Hoàn tất!');
+				else
+					alert('Lỗi!');
+			}
         });
     }
 </script>

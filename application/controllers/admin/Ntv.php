@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ntd extends CI_Controller {
+class Ntv extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,15 +24,15 @@ class Ntd extends CI_Controller {
 		{
 			redirect(base_url('admin/login'));
 		}
-		$this->load->model('mntd');
+		$this->load->model('mntv');
 		$this->load->model('madmin');
 	}
 	public function index()
 	{
 		
-		$data['title'] = 'Danh sách nhà tuyển dụng';
-		$data['content'] = 'admin/ntd/danhsach';
-		$data['ntd'] = $this->mntd->danhsach();
+		$data['title'] = 'Danh sách người tìm việc';
+		$data['content'] = 'admin/ntv/danhsach';
+		$data['ntv'] = $this->mntv->danhsach();
 		$this->load->view('admin/index', $data);
 
 	}
@@ -66,20 +66,20 @@ class Ntd extends CI_Controller {
 				'sdt_lh' => $sdt_lh,
 				'active' => $active,
 			);
-			$kq = $this->mntd->capnhat($dat, $id);
+			$kq = $this->mntv->capnhat($dat, $id);
 			if(isset($kq))
 				echo '<script>alert("Lưu thành công!")</script>';
 			else
 				echo '<script>alert("Lỗi!")</script>';
 		}
-		$data['ntd'] = $this->mntd->chinhsua($id);
+		$data['ntd'] = $this->mntv->chinhsua($id);
 		$this->load->view('admin/index', $data);
 
 	}
 	public function xoa()
 	{
 		$id = $this->input->post('id');
-		$kq = $this->mntd->xoa($id);
+		$kq = $this->mntv->xoa($id);
 		if(isset($kq))
 			die(json_encode(1));
 		else
@@ -92,7 +92,7 @@ class Ntd extends CI_Controller {
 		$dat = array(
 			'active' => $active
 		);
-		$kq = $this->mntd->capnhat($dat, $id);
+		$kq = $this->mntv->capnhat($dat, $id);
 		if(isset($kq))
 			die(json_encode(1));
 		else
@@ -101,6 +101,7 @@ class Ntd extends CI_Controller {
 	public function luu_pass()
 	{
 		$id = $this->input->post('id');
+		$mk = $this->input->post('mk');
 		$pass = $this->input->post('pass');
 		$repass = $this->input->post('repass');
 		if($pass == $repass)
@@ -108,7 +109,7 @@ class Ntd extends CI_Controller {
 			$dat = array(
 			'pass' => md5($pass)
 			);
-			$kq = $this->mntd->capnhat($dat, $id);
+			$kq = $this->mntv->capnhat($dat, $id);
 			if(isset($kq))
 				die(json_encode(1));
 			else
