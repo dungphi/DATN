@@ -85,6 +85,15 @@ class Ntv extends CI_Controller {
 		else
 			die(json_encode(0));
 	}
+	public function xoa_hoso()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->mntv->xoa_hoso($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
 	public function active()
 	{
 		$id = $this->input->post('id');
@@ -93,6 +102,19 @@ class Ntv extends CI_Controller {
 			'active' => $active
 		);
 		$kq = $this->mntv->capnhat($dat, $id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function vip()
+	{
+		$id = $this->input->post('id');
+		$vip = $this->input->post('vip');
+		$dat = array(
+			'vip' => $vip
+		);
+		$kq = $this->mntv->capnhat_hoso($dat, $id);
 		if(isset($kq))
 			die(json_encode(1));
 		else
@@ -118,5 +140,13 @@ class Ntv extends CI_Controller {
 		}
 		else
 			die(json_encode(2));
+	}
+	public function hoso($id)
+	{
+		$data['title'] = 'Danh sách hồ sơ';
+		$data['content'] = 'admin/ntv/hoso';
+		$data['hoso'] = $this->mntv->hoso($id);
+		$data['ntv'] = $this->mntv->ntv($id);
+		$this->load->view('admin/index', $data);
 	}
 }
