@@ -58,7 +58,16 @@ class Nguoi_tim_viec extends CI_Model{
 //		$this->db->where('idphim', $id);
 //		return $this->db->get()->row_array();
 //	}
-//
+//	
+	public function chinhsuataikhoan($user)
+	{
+		$this->db->select('*');
+		$this->db->from('nguoi_tim_viec,gioi_tinh,ho_so_tim_viec');
+		$this->db->where('nguoi_tim_viec.id_gioi_tinh = gioi_tinh.id_gt');
+		$this->db->where('nguoi_tim_viec.id_ntv = ho_so_tim_viec.id_ntv');
+		$this->db->where('email', $user);
+		return $this->db->get()->row_array();
+	}
 	public function countAll(){
 		return $this->db->count_all('nguoi_tim_viec'); 
 	}

@@ -17,10 +17,11 @@
                     	<p> <?php echo $_SESSION['nguoitimviec']; ?></p>
                     </div>
                     <div class=" col-xs-2 col-sm-2 col-md-2">
-                    	<button class="btn btn-link btn_edit" onclick="">
-                        	<i class="fa fa-pencil fa-lg fa-fw"></i></br>
-                            <span class="txt hidden-xs">Chỉnh sửa</span>
-                        </button>
+                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+                            <button class="btn btn-link btn_edit" onclick="">
+                                <i class="fa fa-pencil fa-lg fa-fw"></i></br>
+                                <span class="txt hidden-xs">Chỉnh sửa</span>
+                            </button></a>
                     </div>
                 </div>
                 <div class="row ttsdt">
@@ -29,13 +30,14 @@
                     
                     </div>
                     <div class=" col-xs-6 col-sm-6 col-md-6">
-                    	<p> thông tin SDT</p>
+                    	<p> <?= $nguoitimviec['phone']; ?></p>
                     </div>
                     <div class=" col-xs-2 col-sm-2 col-md-2">
-                    	<button class="btn btn-link btn_edit" onclick="">
-                        	<i class="fa fa-pencil fa-lg fa-fw"></i></br>
-                            <span class="txt hidden-xs">Chỉnh sửa</span>
-                        </button>
+                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+                            <button class="btn btn-link btn_edit" onclick="">
+                                <i class="fa fa-pencil fa-lg fa-fw"></i></br>
+                                <span class="txt hidden-xs">Chỉnh sửa</span>
+                            </button></a>
                     </div>
                 </div>
                 <div class="row ttmatkhau">
@@ -47,14 +49,15 @@
                     	<p> ***********</p>
                     </div>
                     <div class=" col-xs-2 col-sm-2 col-md-2">
-                    	<button class="btn btn-link btn_edit" onclick="">
-                        	<i class="fa fa-pencil fa-lg fa-fw"></i></br>
-                            <span class="txt hidden-xs">Chỉnh sửa</span>
-                        </button>
+                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+                            <button class="btn btn-link btn_edit" onclick="">
+                                <i class="fa fa-pencil fa-lg fa-fw"></i></br>
+                                <span class="txt hidden-xs">Chỉnh sửa</span>
+                            </button></a>
                     </div>
                 </div>
             </div>
-     	<form action="">
+     	<form action="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
             <div class="ttcanhan">
             	<h3><i class="fa fa-user-circle-o fa-lg fa-fw"></i> Thông Tin Cá Nhân</h3>
                 <div class="row tt tthoten">
@@ -63,7 +66,7 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<p> <?= $nguoitimviec['ho']; ?> <?= $nguoitimviec['ten']; ?></p>
                     </div>
                 </div>
                 <div class="row tt ttngaysinh">
@@ -72,7 +75,7 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<p> <?= date('d-m-Y', strtotime($nguoitimviec['ngay_sinh'])); ?></p>
                     </div>
                 </div>
                 <div class="row tt ttgioitinh">
@@ -81,7 +84,7 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<p> <?= $nguoitimviec['gioi_tinh']; ?></p>
                     </div>
                 </div>
                 <div class="row tt tthonnhan">
@@ -90,7 +93,7 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<p><?= $nguoitimviec['hon_nhan']; ?></p>
                     </div>
                 </div>
                 <div class="row tt ttdiachi">
@@ -99,15 +102,16 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<p><?= $nguoitimviec['dia_chi']; ?></p>
                     </div>
                 </div>
                 <div class="row tt ttchinhsua">
-                    <div class=" col-xs-3 col-sm-3 col-md-3">
-                            <button class="btn btn-success btn-block btn_chinhsua" onclick="">
-                                <i class="fa fa-pencil fa-lg fa-fw"></i> 
-                                <span class="txt hidden-xs">Chỉnh sửa</span>
-                            </button>
+                    <div class=" col-xs-6 col-sm-4 col-md-3">
+                            
+                     	<button class="btn btn-success btn-block btn_chinhsua" >
+                        	<i class="fa fa-pencil fa-lg fa-fw"></i> 
+                         	<span class="txt ">Chỉnh sửa</span>
+                        </button>
                     </div>
                 </div>
                 

@@ -20,6 +20,10 @@ class Quanlynguoitimviec extends CI_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
+		if(!isset($_SESSION['nguoitimviec']))
+		{
+			redirect(base_url('dangnhap/NTV'));
+		}
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('ho_so_ntv');
@@ -33,6 +37,22 @@ public function quanlytaikhoan()
 		$data['content'] = 'nguoi_timviec/quanlytaikhoan';
 		$data['active'] = 5;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuataikhoan($user);
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$this->load->view('trangchu', $data);
+		
+	}
+	public function chinhsuataikhoan()
+	{
+		
+		$data['title'] = 'Chỉnh sửa tài khoản';
+		$data['content'] = 'nguoi_timviec/chinhsuataikhoan';
+		$data['active'] = 5;
+		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuataikhoan($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);

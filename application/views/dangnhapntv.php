@@ -4,7 +4,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Đăng nhập trang quản trị</title>
+	<title>Đăng nhập</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -55,13 +55,13 @@
 						<a href="<?=base_url() ?>"><i class="halflings-icon home"></i></a>
 						<a href="#"><i class="halflings-icon cog"></i></a>
 					</div>
-					<h2>Đăng nhập</h2>
-					<form class="form-horizontal" action="<?=base_url('trangchu/dangnhap') ?>" method="post" enctype="multipart/form-data">
+					<h2>Đăng nhập Người Tìm Việc</h2>
+					<form class="form-horizontal" action="<?=base_url('Dangnhap/NTV') ?>" method="post" enctype="multipart/form-data">
 						<fieldset>
 							
 							<div class="input-prepend" title="Username">
 								<span class="add-on"><i class="halflings-icon user"></i></span>
-								<input class="input-large span10" name="user" id="dangnhap" type="text" placeholder="Tài khoản"/>
+								<input class="email input-large span10" name="email" id="inputemail" type="text" placeholder="Email"/>
 							</div>
 							<div class="clearfix"></div>
 
@@ -70,10 +70,7 @@
 								<input class="input-large span10" name="pass" id="password" type="password" placeholder="Mật khẩu"/>
 							</div>
 							<div class="clearfix"></div>
-							<div class="radio">
-										<label><input type="radio" name="tuychon" value="1" checked> Người tìm việc </label>
-										<label><input type="radio" name="tuychon" value="2"> Nhà tuyển dụng </label>
-									</div>
+
 							<div class="button-login">	
 								<button type="submit" name="dangnhap" class="btn btn-primary">Đăng nhập</button>
 							</div>

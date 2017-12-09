@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class dangnhap extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,39 +20,36 @@ class Login extends CI_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('viec_lam');
-		$this->load->model('madmin');
+		$this->load->model('nguoi_tim_viec');
 	}
 	public function index()
 	{
-		$data['title'] = 'Đăng nhập';
+	
+	}
+	public function NTV()
+	{
+		$data['title'] = 'Đăng nhập Người Tìm Việc';
+		
 		if(isset($_POST['dangnhap']))
 		{
-			$user = $this->input->post('user');
+			$user = $this->input->post('email');
 			$pass = md5($this->input->post('pass'));
-			$check = $this->madmin->dangnhap($user,$pass);
+			$check = $this->nguoi_tim_viec->dangnhap($user,$pass);
 			if($check == TRUE)
 			{
-				$this->session->set_userdata("admin", $user);
-				//echo $_SESSION['login'];
-				redirect(base_url('admin'));
+				$this->session->set_userdata("nguoitimviec", $user);
+				echo $_SESSION['nguoitimviec'];
+				redirect(base_url('quanlynguoitimviec/quanlytaikhoan'));
 			}
 			else
 			{
-				echo '<script>alert("Tài khoản không dúng!")</script>';
+				echo '<script>alert("Tài khoản không đúng!")</script>';
 			}
 		}
-		$this->load->view('admin/login', $data);
+		$this->load->view('dangnhapntv');
 		
 	}	
 	
-	public function dangxuat()
-	{
-		//đăng xuất
-		$this->session->unset_userdata("admin");
-		redirect(base_url('admin/login'));
-		//view
-		
-	}
+	
 }
 ?>
