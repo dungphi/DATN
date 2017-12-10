@@ -150,7 +150,7 @@
         <div class="container">
             
             <div lass= "row">
-                <div class="col-xs-9 col-sm-9 col-md-9 ">
+                <div class="col-xs-12 col-sm-9 col-md-9 ">
                     <div class="baidang_left">
                     	<h3>Thông tin tuyển dụng trên Toàn Quốc</h3>
                     <?php
@@ -159,30 +159,32 @@
                     ?>
                         <div class="row">
                         	<div class="baituyendung">
-                        		<div class="col-xs-2 col-sm-2 col-md-2 hinhanh">
-                            		<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100">
+                        		<div class="col-sm-2 col-md-2 hinhanh">
+                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
                         		</div>
-                        		<div class="col-xs-9 col-sm-9 col-md-9 thongtin">
-                                    <h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+                        		<div class="col-xs-11 col-sm-9 col-md-9 thongtin">
+                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><h4> <?=$tam['tieu_de']; ?></h4></a>
                                     <h5 class="text"  title="<?=$tam['ten_cty'];?>"><?=$tam['ten_cty'];?></h5>
                                
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-5 col-sm-3 col-md-3"> 
                                         <p class="glyphicon glyphicon-map-marker"></p> <?= $tam['ten_dd'];?>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-5 col-sm-3 col-md-3"> 
                                         <p class="glyphicon glyphicon-usd"></p> <?= $tam['muc_luong'];?>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-5 col-sm-3 col-md-3"> 
                                         <p class="glyphicon glyphicon-list-alt"></p> <?= $tam['trinh_do'];?>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
-                                        <p class="glyphicon glyphicon-time"></p> <?= $tam['ngay_dk'];?>
+                                    <div class="col-xs-5 col-sm-3 col-md-3"> 
+                                        <p class="glyphicon glyphicon-time"></p> <?=date('d-m-Y', strtotime($tam['ngay_dk'])); ?>
                                     </div>
-                            
+                            	
                         		</div> 
-                                <div class="col-xs-1 col-sm-1 col-md-1 thongtin"> 
+                                
+                                <div class="col-xs-1 col-sm-1 col-md-1 thongtin luuvieclam"> 
                                 	<p class="glyphicon glyphicon-star-empty"> </p>
-                                </div>  	
+                                </div>
+                                <div class="clearfix"> </div>  	
                         	</div>
                     	</div>
 					<?php
@@ -201,22 +203,22 @@
 					?>
 							<div class="row">
                             <div class= "hosotimviec">
-								<div class="col-md-2 hinhanh">
-									<img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="">
+								<div class="col-sm-2 col-md-2 hinhanh">
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="hidden-xs img-responsive" alt=""></a>
 								</div>
-								<div class=" col-md-9 thongtin">
-									<h4 class="text"  title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+								<div class="col-xs-11 col-md-9 thongtin">
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
                         			<h5 class="text"  title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm</h5>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-6 col-sm-3 col-md-3"> 
                         					<p class="glyphicon glyphicon-map-marker"></p> <?= $tam['ten_dd'];?>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-6 col-sm-3 col-md-3"> 
                                             <p class="glyphicon glyphicon-usd"></p> <?= $tam['muc_luong'];?>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-6 col-sm-3 col-md-3"> 
                                             <p class="glyphicon glyphicon-list-alt"></p> <?= $tam['trinh_do'];?>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-md-3"> 
+                                    <div class="col-xs-6 col-sm-3 col-md-3"> 
                                             <p class="glyphicon glyphicon-time"></p> <?= $tam['ngay_dk'];?>
                                     </div>
                                     <div class="clearfix"> </div>
@@ -240,7 +242,7 @@
                     		</button></a>
                 </div>
                 </div>
-                <div class="col-xs-3 col-sm-3 col-md-3 baidang_right">
+                <div class="col-sm-3 col-md-3 hidden-xs baidang_right">
                 <h3>Tin quảng cáo</h3>
                 	<?php
 				foreach($hosotimviec as $tam)

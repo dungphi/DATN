@@ -29,6 +29,11 @@ class Quanlynguoitimviec extends CI_Controller {
 		$this->load->model('ho_so_ntv');
 		$this->load->model('nganh_nghe');
 		$this->load->model('dia_diem');
+		$this->load->model('muc_luong');
+		$this->load->model('kinh_nghiem');
+		$this->load->model('Trinh_do');
+		$this->load->model('hinh_thuc_lam_viec');
+		$this->load->model('cap_bac');
 	}
 public function quanlytaikhoan()
 	{
@@ -68,7 +73,22 @@ public function quanlytaikhoan()
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 		
-	}	
+	}
+	public function taohoso()
+	{
+		$data['title'] = 'Tạo hồ sơ';
+		$data['content'] = 'nguoi_timviec/taohoso';
+		$data['active'] = 6;
+		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['capbac'] = $this->cap_bac->capbac();
+		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
+		$data['trinhdo'] = $this->Trinh_do->trinhdo();
+		$data['kinhnghiem'] = $this->kinh_nghiem->kinhnghiem();
+		$data['mucluong'] = $this->muc_luong->mucluong();
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$this->load->view('trangchu', $data);
+	}
 	public function vieclamdaluu()
 	{
 		$data['title'] = 'Việc làm đã lưu';

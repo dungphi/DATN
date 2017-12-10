@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 05, 2017 lúc 02:17 PM
+-- Thời gian đã tạo: Th12 10, 2017 lúc 05:21 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -36,14 +36,40 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_admin`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `ten`, `user`, `pass`, `active`) VALUES
-(1, 'Thiệu', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1);
+(1, 'Thiệu', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
+(2, 'admin', 'admin1', '21232f297a57a5a743894a0e4a801fc3', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cap_bac`
+--
+
+DROP TABLE IF EXISTS `cap_bac`;
+CREATE TABLE IF NOT EXISTS `cap_bac` (
+  `id_cb` int(11) NOT NULL AUTO_INCREMENT,
+  `cap_bac` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_cb`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cap_bac`
+--
+
+INSERT INTO `cap_bac` (`id_cb`, `cap_bac`) VALUES
+(1, 'CTV'),
+(2, 'Nhân Viên'),
+(3, 'Trưởng nhóm'),
+(4, 'Trưởng phó phòng'),
+(5, 'Chuyên gia'),
+(6, 'Quản lý cấp cao');
 
 -- --------------------------------------------------------
 
@@ -94,6 +120,30 @@ INSERT INTO `gioi_tinh` (`id_gt`, `gioi_tinh`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `hinh_thuc_lam_viec`
+--
+
+DROP TABLE IF EXISTS `hinh_thuc_lam_viec`;
+CREATE TABLE IF NOT EXISTS `hinh_thuc_lam_viec` (
+  `id_htlv` int(11) NOT NULL AUTO_INCREMENT,
+  `hinh_thuc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_htlv`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hinh_thuc_lam_viec`
+--
+
+INSERT INTO `hinh_thuc_lam_viec` (`id_htlv`, `hinh_thuc`) VALUES
+(1, 'Nhân viên chính thức'),
+(2, 'Nhân viên thời vụ'),
+(3, 'Bán thời gian'),
+(4, 'Làm ngoài giờ'),
+(5, 'Thực tập & dự án');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `ho_so_tim_viec`
 --
 
@@ -126,9 +176,9 @@ CREATE TABLE IF NOT EXISTS `ho_so_tim_viec` (
 
 INSERT INTO `ho_so_tim_viec` (`id_hoso`, `id_ntv`, `vip`, `luot_xem`, `tieu_de`, `id_nn`, `id_ddlv`, `id_kinh_nghiem`, `id_trinh_do`, `ngay_dk`, `id_muc_luong`, `hon_nhan`, `chung_chi`, `ngoai_ngu`, `hinh_thuc_lam_viec`, `muc_tieu`, `chuc_vu_ht`, `chuc_vu_mm`) VALUES
 (1, 2, 1, 2, 'Tìm việc chăm em bé, giúp việc nhà hoặc nuôi bệnh tại TPHCM', 7, 3, 1, 7, '2017-10-31', 2, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
-(2, 1, 1, 1, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, 1, '2017-10-31', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
-(3, 3, 1, 3, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, 1, '2017-10-31', 4, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
-(4, 8, 0, 7, 'Kĩ sư máy tính, iT,mạng máy tính.', 4, 1, 3, 1, '2017-12-03', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(2, 1, 1, 2, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, 1, '2017-10-31', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(3, 3, 1, 4, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, 1, '2017-10-31', 4, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
+(4, 8, 0, 10, 'Kĩ sư máy tính, iT,mạng máy tính.', 4, 1, 3, 1, '2017-12-03', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
 (5, 4, 0, 4, 'Nhân Viên Sale', 6, 1, 3, 1, '2017-12-03', 3, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên'),
 (6, 5, 1, 5, 'Nhân Viên Bán Hàng', 7, 3, 1, 5, '2017-12-03', 2, 'độc thân', 'chưa cập nhật', 'chưa cập nhật', 'nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'nhân viên', 'nhân viên');
 
@@ -187,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `muc_luong` (
   `id_ml` int(11) NOT NULL AUTO_INCREMENT,
   `muc_luong` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_ml`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `muc_luong`
@@ -198,7 +248,12 @@ INSERT INTO `muc_luong` (`id_ml`, `muc_luong`) VALUES
 (2, '3-5 triệu'),
 (3, '5-7 triệu'),
 (4, '7-10 triệu'),
-(5, '10-12 triệu');
+(5, '10-12 triệu'),
+(6, '13-17 triệu'),
+(7, '17-20 triệu'),
+(8, '21-25 triệu'),
+(9, '26-30 triệu'),
+(10, 'Trên 30 triệu ');
 
 -- --------------------------------------------------------
 
@@ -354,9 +409,9 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
 --
 
 INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`) VALUES
-(1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', 'Giám đốc', 'images/vieclam/3.jpg', 1, '500 người', 'Nhân viên chính thức'),
+(1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', 'Giám đốc', 'images/vieclam/3.jpg', 2, '500 người', 'Nhân viên chính thức'),
 (2, 2, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', 'Ky Thuat Vien', 'images/vieclam/4.jpg', 2, '50-100 người', 'Nhân viên chính thức'),
-(3, 4, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', 'nhân viên', 'images/vieclam/hinhanh.png', 8, '10-50 người', 'Nhân viên chính thức');
+(3, 4, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', 'nhân viên', 'images/vieclam/hinhanh.png', 9, '10-50 người', 'Nhân viên chính thức');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

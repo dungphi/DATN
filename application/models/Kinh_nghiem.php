@@ -11,7 +11,7 @@ class Kinh_nghiem extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('kinh_nghiem');
-		$this->db->order_by('ten_kn', 'asc'); //asc
+		$this->db->order_by('id_kn', 'asc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}

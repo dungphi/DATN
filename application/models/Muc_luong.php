@@ -11,7 +11,7 @@ class Muc_luong extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('muc_luong');
-		$this->db->order_by('muc_luong', 'asc'); //asc
+		$this->db->order_by('id_ml', 'asc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}

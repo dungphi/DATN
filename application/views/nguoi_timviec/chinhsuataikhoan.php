@@ -2,9 +2,9 @@
 <div class="container">
 
     <div class="row">
-    	<div class="col-sm-8  col-md-9 quanlytaikhoan ">
-        	<div class="qltk">
-				<h3>Quản Lý Tài Khoản</h3>
+    	<div class="col-sm-8  col-md-9 chinhsuataikhoan ">
+        	<div class="cstk">
+				<h3>Chỉnh Sửa Tài Khoản</h3>
              </div> 
         <form action="">  		
             <div class="ttdangnhap">
@@ -128,9 +128,10 @@
                             </button>
                     </div>
                     <div class=" col-xs-3 col-sm-2 col-md-2">
-                            <button class="btn btn-success btn-block btn_huy" onclick="">
-                                <span class="txt">Hủy</span>
-                            </button>
+                         <a href="<?=base_url('quanlynguoitimviec/quanlytaikhoan');?>">
+                            <button class="btn btn-success btn-block btn_huy" type="submit">
+                                Hủy
+                            </button></a>
                      
                     </div>
                 </div>

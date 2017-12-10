@@ -11,7 +11,7 @@ class Trinh_do extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('trinh_do');
-		$this->db->order_by('trinh_do', 'asc'); //asc
+		$this->db->order_by('id_td', 'asc'); //asc
 		//$this->db->limit('6');
 		return $this->db->get()->result_array();
 	}
