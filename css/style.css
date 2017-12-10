@@ -2088,3 +2088,13 @@ display:none;
 	font-size:16px;
 	border-radius:1px;
 }
+.btn_huy{
+	padding:10px;
+	color:#FFF;
+	font-size:16px;
+	border-radius:1px;
+	background-color:#666;
+}
+.btn_huy:hover{
+	color:#333;
+}

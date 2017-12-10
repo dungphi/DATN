@@ -48,7 +48,7 @@
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
                    		<input type="password" name="passnew" placeholder="" value="<?php echo set_value('pass')?>">
-								<?php echo form_error('pass', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
+								<?php echo form_error('passnew', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                 </div>
                     <div class="row tt ttnhaplaimatkhau">
@@ -95,7 +95,8 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+  						<input type="radio" name="gioitinh" value="Nu"> Nữ
+  						<input type="radio" name="gioitinh" value="Nam"> Nam
                     </div>
                 </div>
                 <div class="row tt tthonnhan">
@@ -104,7 +105,8 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<input type="radio" name="honnhan" value="lapgiadinh"> Đã lập gia đình
+  						<input type="radio" name="honnhan" value="docthan"> Độc thân
                     </div>
                 </div>
                 <div class="row tt ttdiachi">
@@ -113,14 +115,23 @@
                     
                     </div>
                     <div class=" col-xs-8 col-sm-8 col-md-8">
-                    	<p> Thông tin</p>
+                    	<input type="text" name="dia_chi" placeholder="<?= $nguoitimviec['dia_chi']; ?>" value="<?php echo set_value('dia_chi')?>"> 
+						<?php echo form_error('dia_chi', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
+                    
                 </div>
                 <div class="row tt ttchinhsua">
-                    <div class=" col-xs-3 col-sm-3 col-md-3">
+                    <div class=" col-sm-4 col-md-3">
                             <button class="btn btn-success btn-block btn_chinhsua" onclick="">
-                                <span class="txt hidden-xs">Lưu Thay Đổi</span>
+                                <span class="txt">Lưu Thay Đổi</span>
+                          
                             </button>
+                    </div>
+                    <div class=" col-xs-3 col-sm-2 col-md-2">
+                            <button class="btn btn-success btn-block btn_huy" onclick="">
+                                <span class="txt">Hủy</span>
+                            </button>
+                     
                     </div>
                 </div>
                 

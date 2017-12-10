@@ -22,10 +22,7 @@ class dangnhap extends CI_Controller {
 		parent::__construct();
 		$this->load->model('nguoi_tim_viec');
 	}
-	public function index()
-	{
 	
-	}
 	public function NTV()
 	{
 		$data['title'] = 'Đăng nhập Người Tìm Việc';

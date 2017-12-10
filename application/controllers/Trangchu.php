@@ -27,13 +27,55 @@ class Trangchu extends CI_Controller {
 		$this->load->model('dia_diem');
 	}
 	public function index()
-	{
+	{	if($this->uri->segment(2))
+			$batdau = $this->uri->segment(2);
+		else
+			$batdau =0;
 		$data['title'] = 'Trang việc làm Online';
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
-		$data['vieclam'] = $this->viec_lam->vieclam(3,0);
+		//cấu hình phân trang
+		$config['per_page'] = 1;
+		$config['uri_segment'] = 2;
+		$config['num_links'] = 5;
+		
+		$data['vieclam'] = $this->viec_lam->vieclam($config['per_page'],$batdau);
+		
+		//phân trang
+		$config['total_rows'] = $this->viec_lam->countAll();
+        $config['base_url'] = base_url()."";
+
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul><!--pagination-->';
+
+		$config['first_link'] = 'Trang đầu';
+		$config['first_tag_open'] = '<li class="prev page">';
+		$config['first_tag_close'] = '</li>';
+
+		$config['last_link'] = 'Trang cuối';
+		$config['last_tag_open'] = '<li class="next page">';
+		$config['last_tag_close'] = '</li>';
+
+		$config['next_link'] = 'Sau';
+		$config['next_tag_open'] = '<li class="next page">';
+		$config['next_tag_close'] = '</li>';
+
+		$config['prev_link'] = 'Trước';
+		$config['prev_tag_open'] = '<li class="prev page">';
+		$config['prev_tag_close'] = '</li>';
+
+		$config['cur_tag_open'] = '<li class="active"><a href="">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		$config['num_tag_open'] = '<li class="page">';
+		$config['num_tag_close'] = '</li>';
+
+		// $config['display_pages'] = FALSE;
+		// 
+		$config['anchor_class'] = 'follow_link';  
+        $this->load->library('pagination', $config);
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(3,0);
+		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(5,2);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);

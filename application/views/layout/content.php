@@ -187,6 +187,7 @@
                     	</div>
 					<?php
 					}
+					echo $this->pagination->create_links();
 					?>
                     <div class="clearfix"> </div>
                     </div>
