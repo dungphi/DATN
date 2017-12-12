@@ -1,54 +1,90 @@
 <!-- header -->
-	<div class="header" id="top">
+<div class="header" id="top">
+	<div class="container">
     	
 		<div class="logo">
 			<a href="<?=base_url(); ?>"><img src="<?=base_url('images/logo.png'); ?>" width="250px"/></a>
 		</div>
-      <div class="timkiem">
-      <form class="form-inline" action="<?=base_url('timkiem') ?>" method="get">
-		<input type="hidden" id="project-id">
-         	<div class="form-group group-tu-khoa">
-               <input class="form-control search" name="tu_khoa" placeholder="Nhập từ khóa ..." type="text" value="<?php if(isset($tu_khoa)) echo($tu_khoa); ?>" autocomplete="off">
-         	</div>
-         	<div class="form-group group-nganh-nghe">
-            	<select class="select2-selectbox form-control select2-hidden-accessible" name="nganh_nghe" tabindex="-1" aria-hidden="true">
-					<option value="0">Chọn ngành nghề</option>
+		
+      <div class="timkiem hidden-sm hidden-xs">
+		  <form class="form-inline" action="<?=base_url('timkiem') ?>" method="get">
+			<input type="hidden" id="project-id">
+				<div class="form-group group-tu-khoa">
+				   <input class="form-control search" name="tu_khoa" placeholder="Nhập từ khóa ..." type="text" value="<?php if(isset($tu_khoa)) echo($tu_khoa); ?>" autocomplete="off">
+				</div>
+				<div class="form-group group-nganh-nghe">
+					<select class="select2-selectbox form-control select2-hidden-accessible" name="nganh_nghe" tabindex="-1" aria-hidden="true">
+						<option value="0">Chọn ngành nghề</option>
+					<?php
+						foreach($nganhnghe as $nn)
+						{
+					?>
+						<option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
+					<?php
+						}
+					?>
+
+					</select>
+
+				</div>
+			 <div class="form-group group-tinh-thanh">
+				<select class="select2-selectbox form-control select2-hidden-accessible" name="tinh_thanh" tabindex="-1" aria-hidden="true">
+					<option value="0">Chọn tỉnh thành</option>
 				<?php
-					foreach($nganhnghe as $nn)
+					foreach($diadiem as $dd)
 					{
 				?>
-                 	<option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
+					<option value="<?=$dd['id_dd']?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd']?></option>
 				<?php
 					}
 				?>
-                       
-               	</select>
-            
-            </div>
-         <div class="form-group group-tinh-thanh">
-         	<select class="select2-selectbox form-control select2-hidden-accessible" name="tinh_thanh" tabindex="-1" aria-hidden="true">
-         		<option value="0">Chọn tỉnh thành</option>
-			<?php
-				foreach($diadiem as $dd)
-				{
-			?>
-         		<option value="<?=$dd['id_dd']?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd']?></option>
-			<?php
-				}
-			?>
-         		
-                
-        	</select>
-         	
-    </div>
-    
-    <button type="submit" class=" btn btn-defaul" id="btn_search" >
-               <span  class="glyphicon glyphicon-search"></span>
-    </button>            
-                 
-     </form>
-      </div>      
-             
+				</select>
+			</div>
+
+			<button type="submit" class=" btn btn-defaul" id="btn_search" >
+					   <span  class="glyphicon glyphicon-search"></span>
+			</button>            
+		 </form>
+      </div>
+       <button type="button" class="btn btn-default hidden-lg hidden-md" style="float: left; margin-left: 20px;" onclick="openNav()">Tìm kiếm <span class="glyphicon glyphicon-search"></span></button> 
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<form role="form" action="<?=base_url('timkiem') ?>" method="get">
+				<div class="form-group">
+					<label for="timkiem">Tìm việc</label>
+					<input type="text" class="form-control" id="timkiem" placeholder="Nhập từ khóa ..." name="tu_khoa">
+				</div>
+				<div class="form-group">
+					<label for="chonnganhnghe">Chọn ngành nghề</label>
+					<select class="form-control" id="chonnganhnghe" name="nganh_nghe">
+						<option value="0">Chọn ngành nghề</option>
+						<?php
+						foreach($nganhnghe as $nn)
+						{
+						?>
+						<option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
+						<?php
+						}
+						?>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="chontinh">Chọn tỉnh thành</label>
+					<select class="form-control" id="chontinh" name="tinh_thanh">
+						<option value="0">Chọn tỉnh thành</option>
+						<?php
+					foreach($diadiem as $dd)
+					{
+					?>
+					<option value="<?=$dd['id_dd']?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd']?></option>
+					<?php
+					}
+					?>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-default">Tìm kiếm <span class="glyphicon glyphicon-search"></button>
+			</form>
+		</div>
 			<?php
 				if(isset($_SESSION['nguoitimviec']))
 				{
@@ -85,6 +121,7 @@
 			<?php
 				}
 			?>
+	</div>
 		<div class="head-nav">
 			<div class="container">
 				<span class="menu"><span class="glyphicon glyphicon-list"></span> Menu</span>
@@ -156,3 +193,16 @@
 		<!-- script-for-nav -->
 	</div>
 <!-- header -->
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("mySidenav").style.paddingLeft = "30px";
+    document.getElementById("mySidenav").style.paddingRight = "30px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("mySidenav").style.paddingLeft = "0";
+    document.getElementById("mySidenav").style.paddingRight = "0";
+}
+</script>
