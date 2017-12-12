@@ -80,17 +80,19 @@
 						}
 				?>
                 <div class="row">
-                	<div class="col-md-4">
-                    	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_chinhsuahoso">
-                            <i class="fa fa-edit fa-lg fa-fw"></i> CHỈNH SỬA
-                        </button>
+                	<div class="col-md-4 chinhsuahs">
+                    	<a href="<?=base_url('quanlynguoitimviec/chinhsuahoso');?>">
+                            <button type="submit" class="btn btn-info btn-block btn_qlhs btn_chinhsuahoso">
+                                <i class="fa fa-edit fa-lg fa-fw"></i> CHỈNH SỬA
+                            </button></a>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="col-xs-6 col-sm-6 col-md-3 xemhs">
+                    	<a href="<?=base_url('quanlynguoitimviec/xemhoso');?>">
                     	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xemhoso">
                             <i class="fa fa-eye fa-lg fa-fw"></i> XEM
-                        </button>
+                        </button></a>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="col-xs-6 col-sm-6 col-md-3 xoahs">
                     	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xoahoso">
                             <i class="fa fa-trash fa-lg fa-fw"></i> XÓA
                         </button>

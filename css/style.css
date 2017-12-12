@@ -130,7 +130,7 @@ span.menu {						/*menu*/
 	color:#FFF;
 	}
 .timkiemvl{
-	background-color:#FFF;
+	background-color:#eeeeee;
 	padding:10px 30px;
 	
 	}
@@ -2033,6 +2033,9 @@ display:none;
 	margin:20px 0;
 	border:1px solid #CCC;	
 }
+.btop{
+	border-top:1px solid #666;
+}
 .taohoso{
 	margin:20px 0 0;
 }
@@ -2070,7 +2073,7 @@ display:none;
 	color:#fff;
 	background-color:#337ab7;
 }															/* Quản Lý TK*/
-.qltk h3, .qlhs h3, .cstk h3, .ths h3{
+.qltk h3, .qlhs h3, .cstk h3, .ths h3,.cshs h3,.xhs h3{
 	margin-top:25px;
 	text-align:center;
 	font-size:32px;
@@ -2078,13 +2081,13 @@ display:none;
 	color:#337ab7;													
 	
 }
-.ttdangnhap, .ttcanhan, .tths, .tthoso, .tttaohoso, .tttongquan, .ttkinhnghiem, .tttrinhdo{
+.ttdangnhap, .ttcanhan, .tths, .tthoso, .tttaohoso, .tttongquan, .ttkinhnghiem, .tttrinhdo,.ttlienhe{
 	padding: 15px 25px;
 	background-color:#eeeeee;
 	border: 1px solid #CCC;
 	margin: 30px 0px;
 }
-.ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3,.tttrinhdo h3,.tthoso h3{
+.ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3,.tttrinhdo h3,.tthoso h3,.ttlienhe h3{
 	color:#898989;
 	font-weight:900;
 	padding: 15px 0px 20px;
@@ -2116,7 +2119,7 @@ display:none;
 .btn_huy{
 	margin-bottom:30px;
 }
-.taohoso a,.huy a{													/* Quản Lý HS*/
+.taohoso a,.huy a,.chinhsuahs a,.xemhs a,.xoahs a{													/* Quản Lý HS*/
 	text-decoration:none;
 }
 .sidenav {

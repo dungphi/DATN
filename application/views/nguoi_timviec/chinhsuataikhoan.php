@@ -26,7 +26,7 @@
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                    	<input type="text" class="form-control" name="dt" placeholder="<?= $nguoitimviec['phone']; ?>" value="<?php echo set_value('dt')?>"> 
+                    	<input type="text" class="form-control" name="dt" placeholder="" value="<?= $nguoitimviec['phone']; ?> <?php echo set_value('dt')?>"> 
 						<?php echo form_error('dt', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                     
@@ -71,12 +71,12 @@
                     
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
-                    	<input type="text" class="form-control" name="ho" placeholder="<?= $nguoitimviec['ho']; ?>" value="<?php echo set_value('ho')?>"> 
+                    	<input type="text" class="form-control" name="ho" placeholder="" value="<?= $nguoitimviec['ho']; ?><?php echo set_value('ho')?>"> 
 						<?php echo form_error('ho', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                     
                     <div class="col-xs-4 col-sm-4 col-md-4">
-                    	<input type="text" class="form-control" name="ten" placeholder="<?= $nguoitimviec['ten']; ?>" value="<?php echo set_value('ten')?>"> 
+                    	<input type="text" class="form-control" name="ten" placeholder="" value="<?= $nguoitimviec['ten']; ?><?php echo set_value('ten')?>"> 
 						<?php echo form_error('ten', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                 </div>

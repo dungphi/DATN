@@ -1,8 +1,8 @@
 <div class="container">
 
     <div class="row">
-    	<div class="col-sm-8  col-md-9 taohoso ">
-        	<div class="ths">
+    	<div class="col-sm-8  col-md-9 chinhsuahoso ">
+        	<div class="cshs">
 				<h3>Chỉnh Sửa Hồ Sơ</h3>
             </div>
         
@@ -19,7 +19,7 @@
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                    	<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value="<?php echo set_value('tieude')?>"> 
+                    	<input type="text" name="tieu_de" class="form-control" value="<?= $nguoitimviec['tieu_de'];?><?php echo set_value('tieude')?>"> 
 						 <?php echo form_error('tieude', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                     
@@ -31,13 +31,16 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="trinh_do" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn trình độ</option>
+                            <option value="<?=$nguoitimviec['id_td']; ?>"><?=$nguoitimviec['trinh_do']; ?></option>
                        	<?php
                             foreach($trinhdo as $td)
                             {
+								if ($nguoitimviec['id_td']!= $td['id_td'])
+								{
                         ?>
                             <option value="<?=$td['id_td']; ?>" <?php if(isset($id_td)) {if($id_td == $td['id_td']) echo 'selected';} ?>><?=$td['trinh_do'] ?></option>
 						<?php
+								}
                             }
                         ?>
                        
@@ -52,13 +55,16 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="kinh_nghiem" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn số năm</option>
+                            <option value="<?=$nguoitimviec['id_kn'];?>"><?=$nguoitimviec['ten_kn'];?></option>
                        	<?php
                             foreach($kinhnghiem as $kn)
                             {
+								if ($nguoitimviec['id_kn']!= $kn['id_kn'])
+								{
                         ?>
                             <option value="<?=$kn['id_kn']; ?>" <?php if(isset($id_kn)) {if($id_kn == $kn['id_kn']) echo 'selected';} ?>><?=$kn['ten_kn'] ?></option>
 						<?php
+								}
                             }
                         ?>
                        
@@ -73,13 +79,24 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="cap_hien_tai" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn cấp bậc</option>
+                        <?php
+							foreach($capbac as $cb)
+							{
+								if ($nguoitimviec['chuc_vu_ht']== $cb['cap_bac'])
+									{
+						?>
+                            <option value="<?=$cb['id_cb'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
                        	<?php
+									}
+							}
                             foreach($capbac as $cb)
                             {
+								if ($nguoitimviec['chuc_vu_ht']!= $cb['cap_bac'])
+								{
                         ?>
                             <option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
 						<?php
+								}
                             }
                         ?>
                        
@@ -94,15 +111,27 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="cap_mong_muon" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn cấp bậc</option>
                        	<?php
+							foreach($capbac as $cb)
+							{
+								if ($nguoitimviec['chuc_vu_mm']== $cb['cap_bac'])
+									{
+						?>
+                            <option value="<?=$cb['id_cb'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
+                       	<?php
+									}
+							}
                             foreach($capbac as $cb)
                             {
+								if ($nguoitimviec['chuc_vu_mm']!= $cb['cap_bac'])
+								{
                         ?>
                             <option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
 						<?php
+								}
                             }
                         ?>
+                       
                        
                			</select>
             
@@ -115,13 +144,16 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="nganh_nghe" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn ngành nghề</option>
+                            <option value="<?=$nguoitimviec['id_nn'];?>"><?=$nguoitimviec['ten_nn'];?></option>
                        	<?php
                             foreach($nganhnghe as $nn)
                             {
+								if ($nguoitimviec['id_nn']!= $nn['id_nn'])
+								{
                         ?>
                             <option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
 						<?php
+								}
                             }
                         ?>
                        
@@ -136,13 +168,16 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="dia_diem" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn nơi làm việc</option>
+                            <option value="<?=$nguoitimviec['id_ddlv'];?>"><?=$nguoitimviec['ten_dd'];?></option>
                          <?php
                             foreach($diadiem as $dd)
                             {
+								if ($nguoitimviec['id_ddlv']!= $dd['id_dd'])
+								{
                         ?>
                             <option value="<?=$dd['id_dd']; ?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd'] ?></option>
 						<?php
+								}
                             }
                         ?>
                      
@@ -157,13 +192,24 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="hinh_thuc" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn hình thức làm việc</option>
-                         <?php
+                        <?php
                             foreach($hinhthuc as $htlv)
                             {
+								if ($nguoitimviec['hinh_thuc_lam_viec']== $htlv['hinh_thuc'])
+								{
+                        ?>
+                            <option value="<?=$htlv['id_htlv'];?>"><?=$nguoitimviec['hinh_thuc_lam_viec'];?></option>
+                         <?php
+								}
+							}
+                            foreach($hinhthuc as $htlv)
+                            {
+								if ($nguoitimviec['hinh_thuc_lam_viec']!= $htlv['hinh_thuc'])
+								{
                         ?>
                             <option value="<?=$htlv['id_htlv']; ?>" <?php if(isset($id_htlv)) {if($id_htlv== $htlv['id_htlv']) echo 'selected';} ?>><?=$htlv['hinh_thuc'] ?></option>
 						<?php
+								}
                             }
                         ?>
                      
@@ -178,13 +224,16 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="muc_luong" tabindex="-1" aria-hidden="true">
-                            <option value="0">Chọn mức lương</option>
+                            <option value="<?=$nguoitimviec['id_muc_luong'];?>"><?=$nguoitimviec['muc_luong'];?></option>
                          <?php
                             foreach($mucluong as $ml)
-                            {
+                            {	
+								if ($nguoitimviec['id_muc_luong']!= $ml['id_ml'])
+								{
                         ?>
                             <option value="<?=$ml['id_ml']; ?>" <?php if(isset($id_ml)) {if($id_ml== $ml['id_ml']) echo 'selected';} ?>><?=$ml['muc_luong'] ?></option>
 						<?php
+								}
                             }
                         ?>
                      
@@ -198,9 +247,7 @@
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <textarea name="muc_tieu" placeholder="Gợi ý: 
-                   - Mục tiêu nghề nghiệp của bạn trong một vài năm tới là gì? VD: Tìm được môi trường làm việc giúp mình học hỏi thêm kinh nghiệm...
-                   - Mục tiêu nghề nghiệp của bạn trong dài hạn (5-10 năm tới) là gì? VD: Trở thành lãnh đạo cấp cao của công ty, có chuyên môn và thu nhập tốt.." class="form-control" value="<?php echo set_value('muctieu')?>" rows="7"></textarea>
+                        <textarea name="muc_tieu" placeholder="" class="form-control" value="<?=$nguoitimviec['muc_tieu'];?>" rows="7"></textarea>
                      
                     </div>
                 </div>

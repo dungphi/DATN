@@ -24,7 +24,7 @@
                         <li <?php if($active == 8) echo('class="active"'); ?>>
                             <a href="<?=base_url('Quanlynguoitimviec/ntdxemhoso'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Nhà tuyển dụng xem hồ sơ</a>
                         </li>
-                        <li class="divider"></li>
+                        <li class="btop"></li>
                         <li><a href="<?=base_url('trangchu/dangxuat'); ?>"><i class="fa fa-sign-out fa-lg fa-fw"></i> Đăng xuất</a>
                         </li>
                       </ul>

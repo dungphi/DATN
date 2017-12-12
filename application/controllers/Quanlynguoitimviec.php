@@ -70,7 +70,7 @@ public function quanlytaikhoan()
 		$data['active'] = 6;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuataikhoan($user);
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuahoso($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
@@ -90,6 +90,44 @@ public function quanlytaikhoan()
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
+	}
+	public function chinhsuahoso()
+	{
+		
+		$data['title'] = 'Chỉnh sửa hồ sơ';
+		$data['content'] = 'nguoi_timviec/chinhsuahoso';
+		$data['active'] = 6;
+		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuahoso($user);
+		$data['capbac'] = $this->cap_bac->capbac();
+		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
+		$data['trinhdo'] = $this->Trinh_do->trinhdo();
+		$data['kinhnghiem'] = $this->kinh_nghiem->kinhnghiem();
+		$data['mucluong'] = $this->muc_luong->mucluong();
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$this->load->view('trangchu', $data);
+		
+	}
+		public function xemhoso()
+	{
+		
+		$data['title'] = 'Xem hồ sơ';
+		$data['content'] = 'nguoi_timviec/xemhoso';
+		$data['active'] = 6;
+		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuahoso($user);
+		$data['capbac'] = $this->cap_bac->capbac();
+		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
+		$data['trinhdo'] = $this->Trinh_do->trinhdo();
+		$data['kinhnghiem'] = $this->kinh_nghiem->kinhnghiem();
+		$data['mucluong'] = $this->muc_luong->mucluong();
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$this->load->view('trangchu', $data);
+		
 	}
 	public function vieclamdaluu()
 	{
