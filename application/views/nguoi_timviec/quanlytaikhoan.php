@@ -110,7 +110,7 @@
                             
                      	<button class="btn btn-success btn-block btn_chinhsua" >
                         	<i class="fa fa-pencil fa-lg fa-fw"></i> 
-                         	<span class="txt ">Chỉnh sửa</span>
+                         	<b class="txt ">Chỉnh sửa</b>
                         </button>
                     </div>
                 </div>

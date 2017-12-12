@@ -69,6 +69,8 @@ public function quanlytaikhoan()
 		$data['content'] = 'nguoi_timviec/quanlyhoso';
 		$data['active'] = 6;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->chinhsuataikhoan($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);

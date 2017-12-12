@@ -20,10 +20,16 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.red{ color:#F00;}
+.red{ 
+	color:#F00!important;
+}
+.blue{ 
+	color:#337ab7!important;
+}
+.green{color:#090!important}
 .padding_right0{
-	padding-right:0px;
-	margin-right:0px
+	padding-right:0px!important;
+	margin-right:0px;
 }
 .pagination{
 	margin-bottom:0px;
@@ -2024,12 +2030,19 @@ display:none;
 .taohoso{
 	margin:20px 0 0;
 }
-.btn_taohoso, .btn_luuhoso{
+.btn_taohoso, .btn_luuhoso, .btn_red{
 	border-radius:1px;
 	padding:10px 0;
 	font-weight:800;
-	font-size:20px
+	font-size:20px;
 	
+}
+.btn_qlhs{
+	margin: 15px 0px 0px;
+	border-radius:1px;
+	padding:10px 0;
+	font-weight:800;
+	font-size:18px;
 }
 .quanly ul li a {
 	padding:15px 7px;
@@ -2059,13 +2072,13 @@ display:none;
 	color:#337ab7;													
 	
 }
-.ttdangnhap, .ttcanhan, .tths, .tthoso, .tttaohoso, .tttongquan, .ttkinhnghiem{
+.ttdangnhap, .ttcanhan, .tths, .tthoso, .tttaohoso, .tttongquan, .ttkinhnghiem, .tttrinhdo{
 	padding: 15px 25px;
 	background-color:#eeeeee;
 	border: 1px solid #CCC;
 	margin: 30px 0px;
 }
-.ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3{
+.ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3,.tttrinhdo h3,.tthoso h3{
 	color:#898989;
 	font-weight:900;
 	padding: 15px 0px 20px;
@@ -2079,7 +2092,7 @@ display:none;
 	padding-top:15px;
 	font-size:18px;
 }
-.ttemail p,.ttsdt p,.ttmatkhau p,.tt p{
+.ttemail p,.ttsdt p,.ttmatkhau p,.tt p,.tt span{
 	color:#898989;
 }
 .btn_edit{
@@ -2091,19 +2104,12 @@ display:none;
 .btn_chinhsua{
 	padding:10px;
 	color:#FFF;
-	font-size:16px;
+	font-size:18px;
 	border-radius:1px;
 }
 .btn_huy{
-	padding:10px;
-	color:#FFF;
-	font-size:16px;
-	border-radius:1px;
-	background-color:#666;
+	margin-bottom:30px;
 }
-.btn_huy:hover{
-	color:#333;
-}
-.taohoso a{													/* Quản Lý HS*/
+.taohoso a,.huy a{													/* Quản Lý HS*/
 	text-decoration:none;
 }

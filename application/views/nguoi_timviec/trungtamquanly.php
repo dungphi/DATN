@@ -1,7 +1,7 @@
         <div class="col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-0">
         		<div class="taohoso">
                 	<a href="<?=base_url('Quanlynguoitimviec/taohoso'); ?>">
-                		<button type="submit" class="btn btn-danger btn-block btn_taohoso"><i class="fa fa-edit fa-lg fa-fw"></i> TẠO HỒ SƠ
+                		<button type="submit" class="hidden-xs btn btn-danger btn-block btn_taohoso"><i class="fa fa-edit fa-lg fa-fw"></i> TẠO HỒ SƠ
                     	</button></a>
                 </div>
                 <div class="trungtamquanly">

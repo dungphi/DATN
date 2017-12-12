@@ -3,7 +3,7 @@
     <div class="row">
     	<div class="col-sm-8  col-md-9 taohoso ">
         	<div class="ths">
-				<h3>Tạo Hồ Sơ Trực tuyến</h3>
+				<h3>Chỉnh Sửa Hồ Sơ</h3>
             </div>
         
         	<div class="tt tttaohoso">
