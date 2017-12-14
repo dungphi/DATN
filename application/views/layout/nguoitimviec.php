@@ -15,10 +15,10 @@
 							<div class="row">
                             <div class= "hosotimviec">
 								<div class="col-md-2 hinhanh">
-									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="hidden-xs img-responsive" alt=""></a>
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_hs']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="hidden-xs img-responsive" alt=""></a>
 								</div>
 								<div class="col-xs-12 col-md-9 thongtin">
-									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_hs']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
                        				<h5 class="text" data-toggle="tooltip" title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm</h5>
                                     <div class="col-xs-5 col-sm-3 col-md-3"> 
                         					<span class="glyphicon glyphicon-map-marker"></span><?= $tam['ten_dd'];?>

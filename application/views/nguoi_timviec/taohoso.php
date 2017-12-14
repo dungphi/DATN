@@ -129,6 +129,27 @@
             
                     </div>
                 </div>
+                <div class="row tt hs_ngoaingu">
+                	<div class="col-sm-4 col-md-4">
+                    	<label class="">Ngoại ngữ</label>
+                    
+                    </div>
+                    <div class="col-sm-8 col-md-8">
+                    	<select class="form-control" name="ngoai_ngu" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn ngoại ngữ</option>
+                       	<?php
+                            foreach($ngoaingu as $nn)
+                            {
+                        ?>
+                            <option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if(isset($id_ngoai_ngu)) {if($id_nguoi_ngu == $nn['id_ngoai_ngu']) echo 'selected';} ?>><?=$nn['ten_ngoai_ngu'] ?></option>
+						<?php
+                            }
+                        ?>
+                       
+               			</select>
+            
+                    </div>
+                </div>
                 <div class="row tt hs_diadiem">
                 	<div class="col-sm-4 col-md-4">
                     	<label class="">Chọn nơi làm việc<i class="red">*</i></label>

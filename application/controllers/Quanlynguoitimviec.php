@@ -34,6 +34,7 @@ class Quanlynguoitimviec extends CI_Controller {
 		$this->load->model('Trinh_do');
 		$this->load->model('hinh_thuc_lam_viec');
 		$this->load->model('cap_bac');
+		$this->load->model('ngoai_ngu');
 	}
 public function quanlytaikhoan()
 	{
@@ -82,6 +83,7 @@ public function quanlytaikhoan()
 		$data['content'] = 'nguoi_timviec/taohoso';
 		$data['active'] = 6;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['ngoaingu'] = $this->ngoai_ngu->ngoaingu();
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
 		$data['trinhdo'] = $this->Trinh_do->trinhdo();

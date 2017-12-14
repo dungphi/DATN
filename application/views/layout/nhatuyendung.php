@@ -13,10 +13,10 @@
                         <div class="row">
                         	<div class="baituyendung">
                         		<div class="col-sm-2 col-md-2 hidden-xs hinhanh">
-                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
+                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
                         		</div>
                         		<div class="col-xs-11 col-sm-9 col-md-9 thongtin">
-                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><h4> <?=$tam['tieu_de']; ?></h4></a>
+                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>"><h4> <?=$tam['tieu_de']; ?></h4></a>
                                     <h5 > <?=$tam['ten_cty'];?></h5>
                                
                                     <div class="col-xs-6 col-sm-3 col-md-3"> 
@@ -44,9 +44,9 @@
 					?> 
                </div>
                <div class="clearfix"> </div>
-               </div
+               </div>
                
-            ></div>
+            </div>
          </div>
       </div>
               

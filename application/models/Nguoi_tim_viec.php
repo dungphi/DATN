@@ -71,7 +71,7 @@ class Nguoi_tim_viec extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec,ho_so_tim_viec,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
-		$this->db->where('nguoi_tim_viec.id_ntv = ho_so_tim_viec.id_ntv');
+		$this->db->where('nguoi_tim_viec.id_hs = ho_so_tim_viec.id_hoso');
 		$this->db->where('ho_so_tim_viec.id_nn = nganh_nghe.id_nn'); 
 		$this->db->where('ho_so_tim_viec.id_ddlv = dia_diem.id_dd');
 		$this->db->where('ho_so_tim_viec.id_kinh_nghiem = kinh_nghiem.id_kn');

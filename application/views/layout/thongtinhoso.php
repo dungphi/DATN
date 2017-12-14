@@ -12,17 +12,17 @@
             
             </div>
             <div class=" col-xs-3 col-sm-3 col-md-2 td-right">
-            	<a href="#" class="btn luu-vl"><i class="fa fa-star-o fa-lg fa-fw "></i> lưu hồ sơ</a>
-                <h5><i class="fa fa-eye fa-lg fa-fw "></i> lượt xem: <?=$thongtin['luot_xem']; ?></h5>
+            	<a href="#" class="btn luu-vl"><i class="fa fa-star-o fa-lg fa-fw "></i> <span class="hidden-xs">lưu hồ sơ</span></a>
+                <h5><i class="fa fa-eye fa-lg fa-fw "></i> <span class="hidden-xs">Lượt xem:</span> <?=$thongtin['luot_xem']; ?></h5>
                 
             </div>
         </div>
     </div>
     <div class="clearfix"></div>
 	<div class="row">
-    	<div class="col-xs-8 col-sm-8 col-md-8 ">
+    	<div class="col-sm-8 col-md-8 ">
             <div class=" row thong-tin">
-                <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="col-sm-6 col-md-6">
                     <h4><i class="fa fa-suitcase fa-lg fa-fw "></i> <b>Cấp bậc hiện tại: </b><?=$thongtin['chuc_vu_ht']; ?></h4>
                     <h4><i class="fa fa-signal fa-lg fa-fw "></i> <b>Kinh nghiệm: </b><?=$thongtin['ten_kn']; ?></h4>
                     <h4><i class="fa fa-graduation-cap fa-lg fa-fw "></i> <b>Trình độ cao nhất: </b> <?=$thongtin['trinh_do']; ?></h4>
@@ -31,7 +31,7 @@
                     <h4><i class="fa fa-venus-mars fa-lg fa-fw "></i> <b>Hôn nhân: </b><?=$thongtin['hon_nhan']; ?></h4>
                     
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="col-sm-6 col-md-6">
                     <h4><i class="fa fa-medkit fa-lg fa-fw "></i> <b>Cấp bậc mong muốn: </b><?=$thongtin['chuc_vu_mm']; ?></h4>
                     <h4><i class="fa fa-map-marker  fa-lg fa-fw "></i> <b> Địa điểm làm việc: </b> <?=$thongtin['ten_dd'];?></h4>
                     <h4><i class="fa fa-list-alt fa-lg fa-fw "></i> <b>Ngành nghề: </b><?=$thongtin['ten_nn']; ?></h4>

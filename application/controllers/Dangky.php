@@ -75,7 +75,7 @@ class Dangky extends CI_Controller {
 					}
 					else
 					{
-						echo '<script>alert("Mật khẩu không dúng")</script>';
+						echo '<script>alert("Mật khẩu không đúng")</script>';
 					}
 				}
 				else
