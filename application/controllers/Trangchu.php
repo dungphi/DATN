@@ -111,7 +111,7 @@ class Trangchu extends CI_Controller {
 				if($check == TRUE)
 				{
 					$this->session->set_userdata("nhatuyendung", $email);
-					//echo $_SESSION['login'];
+					echo $_SESSION['nhatuyendung'];
 					redirect(base_url());
 				}
 				else
@@ -128,6 +128,7 @@ class Trangchu extends CI_Controller {
 	{
 		//đăng xuất
 		$this->session->unset_userdata("nguoitimviec");
+		$this->session->unset_userdata("nhatuyendung");
 		redirect(base_url());
 		//view
 		

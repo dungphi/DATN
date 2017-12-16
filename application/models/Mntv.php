@@ -59,13 +59,13 @@ class Mntv extends CI_Model{
 	}
 	public function hoso ($id_ntv){
 		$this->db->from('nguoi_tim_viec, ho_so_tim_viec, nganh_nghe, dia_diem, kinh_nghiem, trinh_do, muc_luong');
-		$this->db->where('nguoi_tim_viec.id_ntv = ho_so_tim_viec.id_ntv');
+		$this->db->where('nguoi_tim_viec.id_hs = ho_so_tim_viec.id_hoso');
 		$this->db->where('nganh_nghe.id_nn = ho_so_tim_viec.id_nn');
 		$this->db->where('dia_diem.id_dd = ho_so_tim_viec.id_ddlv');
 		$this->db->where('kinh_nghiem.id_kn = ho_so_tim_viec.id_kinh_nghiem');
 		$this->db->where('trinh_do.id_td = ho_so_tim_viec.id_trinh_do');
 		$this->db->where('muc_luong.id_ml = ho_so_tim_viec.id_muc_luong');
-		$this->db->where('ho_so_tim_viec.id_ntv',$id_ntv);
+		$this->db->where('nguoi_tim_viec.id_ntv',$id_ntv);
 		return $this->db->get()->result_array();
 	}
 	public function ntv ($id_ntv){

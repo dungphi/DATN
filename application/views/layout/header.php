@@ -107,6 +107,28 @@
 					</li>
 				</ul>
 			</div>
+			<?php
+				}
+				elseif(isset($_SESSION['nhatuyendung']))
+				{
+			?>
+			<div class="btn-group thongtindangnhap">
+				<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+					<?php echo $_SESSION['nhatuyendung']; ?> <span  class="glyphicon glyphicon-cog"></span><!--<span class="caret">-->
+				</button>
+				<ul class="dropdown-menu" role="menu">
+                	<li><a href="<?=base_url('quanlynhatuyendung/quanlytaikhoan'); ?>"><i  class="fa fa-user-o fa-lg fa-fw"></i> Quản lý tài khoản</a>
+					</li>
+					<li><a href="<?=base_url('quanlynhatuyendung/quanlyvieclam'); ?>"><i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý việc làm</a>
+					</li>
+					<li><a href="<?=base_url('quanlynhatuyendung/ungviendaxem'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Ứng viên đã xem</a>
+					</li>
+                    <li><a href="<?=base_url('quanlynhatuyendung/dangtin'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Đăn tin tuyển dụng</a>
+					<li class="divider"></li>
+					<li><a href="<?=base_url('trangchu/dangxuat'); ?>"><i class="fa fa-sign-out fa-lg fa-fw"></i> Đăng xuất</a>
+					</li>
+				</ul>
+			</div>
   			<?php
 				}
 				else {

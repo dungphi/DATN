@@ -20,7 +20,7 @@ class Nha_tuyen_dung extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('nha_tuyen_dung');
 		$this->db->where('email', $email);
-		$kq = $this->db->get()->row_array();
+		$kq = $this->db->get()->result_array();
 		if(count($kq) != 0)
 		{
 			return FALSE;
@@ -51,6 +51,29 @@ class Nha_tuyen_dung extends CI_Model{
 	{
 		$this->db->insert('nha_tuyen_dung',$db);
 		
+	}
+	public function get($email)
+	{
+		$this->db->from('nha_tuyen_dung');
+		$this->db->where('email', $email);
+		return $this->db->get()->row_array();
+	}
+	public function check_pass($id,$pass)
+	{
+		$this->db->from('nha_tuyen_dung');
+		$this->db->where('id_ntd', $id);
+		$this->db->where('pass', md5($pass));
+		$kq = $this->db->get()->result_array();
+		if(count($kq) == 1)
+			return TRUE;
+		else
+			return FALSE;
+	}
+	
+	public function capnhat($id, $data=array())
+	{
+		$this->db->where('id_ntd',$id);
+        return $this->db->update('nha_tuyen_dung',$data);
 	}
 	public function countAll(){
 		return $this->db->count_all('nha_tuyen_dung'); 
