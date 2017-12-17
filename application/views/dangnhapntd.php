@@ -55,8 +55,8 @@
 						<a href="<?=base_url() ?>"><i class="halflings-icon home"></i></a>
 						<a href="#"><i class="halflings-icon cog"></i></a>
 					</div>
-					<h2>Đăng nhập Người Tìm Việc</h2>
-					<form class="form-horizontal" action="<?=base_url('Dangnhap/NTV') ?>" method="post" enctype="multipart/form-data">
+					<h2>Đăng nhập Nhà tuyển dụng</h2>
+					<form class="form-horizontal" action="<?=base_url('Dangnhap/NTD') ?>" method="post" enctype="multipart/form-data">
 						<fieldset>
 							
 							<div class="input-prepend" title="Username">

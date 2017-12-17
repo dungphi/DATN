@@ -22,7 +22,7 @@ class Quanlynhatuyendung extends CI_Controller {
 		parent::__construct();
 		if(!isset($_SESSION['nhatuyendung']))
 		{
-			redirect(base_url('dangnhap/NTV'));
+			redirect(base_url('dangnhap/NTD'));
 		}
 		$this->load->model('viec_lam');
 		$this->load->model('nguoi_tim_viec');
@@ -88,7 +88,7 @@ class Quanlynhatuyendung extends CI_Controller {
 				);
 				$kq = $this->nha_tuyen_dung->capnhat($id, $dat);
 				if(isset($kq))
-					$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");</script>';
+					$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.assign("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");</script>';
 				else
 					$data['thongbao'] = '<script>alert("Lỗi.")</script>';
 			}
@@ -109,15 +109,19 @@ class Quanlynhatuyendung extends CI_Controller {
 					);
 					$kq = $this->nha_tuyen_dung->capnhat($id, $dat);
 					if(isset($kq))
+<<<<<<< HEAD
 					{
 						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");</script>';
 						$this->session->set_userdata("nhatuyendung", $email);
 					}
+=======
+						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");function(){location.assign("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");}</script>';
+>>>>>>> a7332a8f4bf02a2ea376e56e433e63d1c0ee6ed7
 					else
 						$data['thongbao'] = '<script>alert("Lỗi.")</script>';
 				}
 				else
-					$data['thongbao'] = '<script>alert("Email này đã được sử dụng bởi một tài khoản khác.")</script>';
+					$data['thongbao'] = '<script>alert("Email này đã được người khác sử dụng.")</script>';
 			}
 		}
 		$data['title'] = 'Chỉnh sửa tài khoản';

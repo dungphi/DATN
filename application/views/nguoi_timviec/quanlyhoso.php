@@ -81,7 +81,7 @@
 				?>
                 <div class="row">
                 	<div class="col-md-4 chinhsuahs">
-                    	<a href="<?=base_url('quanlynguoitimviec/chinhsuahoso');?>">
+                    	<a href="<?=base_url('quanlynguoitimviec/chinhsuahoso/'.$nguoitimviec['id_hoso']);?>">
                             <button type="submit" class="btn btn-info btn-block btn_qlhs btn_chinhsuahoso">
                                 <i class="fa fa-edit fa-lg fa-fw"></i> CHỈNH SỬA
                             </button></a>

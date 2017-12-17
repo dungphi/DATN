@@ -101,7 +101,7 @@ class Trangchu extends CI_Controller {
 				}
 				else
 				{	
-					$this->session->set_flashdata('notice','Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu');
+					$data['dangnhap']='<script>alert("Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu!"); function(){location.assign("'.base_url('dangnhap/NTV').'");}</script>';
 				}
 			}
 			else
@@ -115,14 +115,14 @@ class Trangchu extends CI_Controller {
 					redirect(base_url());
 				}
 				else
-				{
-					echo '<script>alert("Email hoặc Mật khẩu không đúng")</script>';
-					
-					
-					
-				}
+				
+				'<script>alert("Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu!")</script>';
 			}
 		}
+		$data['title'] = 'Trang việc làm Online';
+		$data['content'] = 'layout/content';
+		$data['active'] = 1;
+		$this->load->view('trangchu', $data);
 	}
 	public function dangxuat()
 	{

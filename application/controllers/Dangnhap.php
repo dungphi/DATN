@@ -21,6 +21,7 @@ class dangnhap extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('nguoi_tim_viec');
+		$this->load->model('nha_tuyen_dung');
 	}
 	
 	public function NTV()
@@ -47,6 +48,29 @@ class dangnhap extends CI_Controller {
 		
 	}	
 	
+	public function NTD()
+	{
+		$data['title'] = 'Đăng nhập Nhà tuyển dụng';
+		
+		if(isset($_POST['dangnhap']))
+		{
+			$user = $this->input->post('email');
+			$pass = md5($this->input->post('pass'));
+			$check = $this->nha_tuyen_dung->dangnhap($user,$pass);
+			if($check == TRUE)
+			{
+				$this->session->set_userdata("nhatuyendung", $user);
+				echo $_SESSION['nhatuyendung'];
+				redirect(base_url('quanlynhatuyendung/quanlytaikhoan'));
+			}
+			else
+			{
+				echo '<script>alert("Tài khoản không đúng!")</script>';
+			}
+		}
+		$this->load->view('dangnhapntd');
+		
+	}	
 	
 }
 ?>
