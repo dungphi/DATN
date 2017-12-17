@@ -212,11 +212,30 @@ public function quanlytaikhoan()
 			
 			//
 			$tieude = $this->input->post('tieu_de');
+			$trinhdo = $this->input->post('trinh_do');
+			$kinhnghiem = $this->input->post('kinh_nghiem');
+			$caphientai = $this->input->post('cap_hien_tai');
+			$capmongmuon = $this->input->post('cap_mong_muon');
+			$nganhnghe = $this->input->post('nganh_nghe');
+			$diadiem = $this->input->post('dia_diem');
+			$hinhthuclv = $this->input->post('hinh_thuc');
+			$mucluong = $this->input->post('muc_luong');
+			$muctieu = $this->input->post('muc_tieu');
+			
 			if ($this->form_validation->run() == TRUE)
 			{
 				$dat = array(
 					
 					'tieu_de' => $tieude,
+					'id_trinh_do'=> $trinhdo,
+					'id_kinh_nghiem'=>$kinhnghiem,
+					'chuc_vu_ht'=>$caphientai,
+					'chuc_vu_mm'=>$capmongmuon,
+					'id_nn'=>$nganhnghe,
+					'id_ddlv' => $diadiem,
+					'hinh_thuc_lam_viec' => $hinhthuclv,
+					'id_muc_luong' => $mucluong,
+					'muc_tieu' => $muctieu,
 					);
 				$kq = $this->nguoi_tim_viec->capnhathoso($dat, $id);
 				if(isset($kq))

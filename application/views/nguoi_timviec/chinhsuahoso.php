@@ -252,7 +252,7 @@ if(isset($thongbao))
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <textarea name="muc_tieu" placeholder="" class="form-control" value="<?=$nguoitimviec['muc_tieu'];?>" rows="7"></textarea>
+                        <textarea name="muc_tieu" class="form-control" value="" rows="7"><?=$nguoitimviec['muc_tieu'];?></textarea>
                      
                     </div>
                 </div>
