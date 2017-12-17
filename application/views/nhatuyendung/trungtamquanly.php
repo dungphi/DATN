@@ -16,13 +16,13 @@
                             <a href="<?=base_url('Quanly/quanlytaikhoan'); ?>"> <i  class="fa fa-user-o fa-lg fa-fw"></i> Quản lý tài khoản</a>
                         </li>
                         <li <?php if($active == 6) echo('class="active"'); ?>>
-                            <a href="<?=base_url('Quanlynhatuyedung/quanlyhoso'); ?>"> <i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý hồ sơ</a></li>
+                            <a href="<?=base_url('Quanlynhatuyedung/quanlyhoso'); ?>"> <i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý việc làm</a></li>
                         <li <?php if($active == 7) echo('class="active"'); ?>>
-                            <a href="<?=base_url('Quanlynhatuyedung/vieclamdaluu/'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã lưu</a>
+                            <a href="<?=base_url('Quanlynhatuyedung/vieclamdaluu/'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Ứng viên đã xem</a>
                         </li>
                             
                         <li <?php if($active == 8) echo('class="active"'); ?>>
-                            <a href="<?=base_url('Quanlynhatuyedung/ntdxemhoso'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Nhà tuyển dụng xem hồ sơ</a>
+                            <a href="<?=base_url('Quanlynhatuyedung/ntdxemhoso'); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng tin tuyển dụng</a>
                         </li>
                         <li class="btop"></li>
                         <li><a href="<?=base_url('trangchu/dangxuat'); ?>"><i class="fa fa-sign-out fa-lg fa-fw"></i> Đăng xuất</a>
