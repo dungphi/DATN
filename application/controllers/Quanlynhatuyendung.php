@@ -53,15 +53,7 @@ class Quanlynhatuyendung extends CI_Controller {
 	}
 	public function chinhsuataikhoan($id)
 	{
-		
-		$data['title'] = 'Chỉnh sửa tài khoản';
-		$data['content'] = 'nhatuyendung/chinhsuataikhoan';
-		$data['active'] = 5;
-		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nhatuyendung'];
-		$data['nhatuyendung'] = $this->nha_tuyen_dung->get($user);
-		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
-		$data['diadiem'] = $this->dia_diem->diadiem();
 		if(isset($_POST['luu']))
 		{
 			$email = $this->input->post('email');
@@ -72,6 +64,15 @@ class Quanlynhatuyendung extends CI_Controller {
 			$ten_lh = $this->input->post('ten_lh');
 			$email_lh = $this->input->post('email_lh');
 			$sdt_lh = $this->input->post('sdt_lh');
+			//upload hình
+            $config['upload_path'] = 'images/vieclam/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $this->load->library("upload", $config);
+            if($this->upload->do_upload("avatar"))
+			{
+				$img = $this->upload->data();
+				$avatar = $config['upload_path'].$img['file_name'];
+			}
 			if($email == $user)
 			{
 				$dat = array(
@@ -83,6 +84,7 @@ class Quanlynhatuyendung extends CI_Controller {
 					'ten_lh' => $ten_lh,
 					'email_lh' => $email_lh,
 					'sdt_lh' => $sdt_lh,
+					'avatar' => $avatar,
 				);
 				$kq = $this->nha_tuyen_dung->capnhat($id, $dat);
 				if(isset($kq))
@@ -103,10 +105,14 @@ class Quanlynhatuyendung extends CI_Controller {
 						'ten_lh' => $ten_lh,
 						'email_lh' => $email_lh,
 						'sdt_lh' => $sdt_lh,
+						'avatar' => $avatar,
 					);
 					$kq = $this->nha_tuyen_dung->capnhat($id, $dat);
 					if(isset($kq))
-						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");function(){location.reload("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");}</script>';
+					{
+						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");</script>';
+						$this->session->set_userdata("nhatuyendung", $email);
+					}
 					else
 						$data['thongbao'] = '<script>alert("Lỗi.")</script>';
 				}
@@ -114,6 +120,13 @@ class Quanlynhatuyendung extends CI_Controller {
 					$data['thongbao'] = '<script>alert("Email này đã được sử dụng bởi một tài khoản khác.")</script>';
 			}
 		}
+		$data['title'] = 'Chỉnh sửa tài khoản';
+		$data['content'] = 'nhatuyendung/chinhsuataikhoan';
+		$data['active'] = 5;
+		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['nhatuyendung'] = $this->nha_tuyen_dung->get($user);
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 		
 	}

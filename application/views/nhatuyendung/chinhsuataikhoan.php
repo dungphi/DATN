@@ -12,11 +12,11 @@ if(isset($thongbao))
 				<div class="ttdangnhap">
 					<h3><i class="fa fa-lock fa-lg fa-fw"></i> Thông Tin Đăng Nhập<i class="red"> (Bắt buộc)</i></h3>
 					<div class="row ttemail">
-						<div class=" col-sm-4 col-md-4">
-							<label>Email<i class="red">*</i></label>
+						<div class="col-sm-4 col-md-4">
+							<label for="email">Email<i class="red">*</i></label>
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="email" class="form-control" name="email" value="<?= $nhatuyendung['email']; ?>" placeholder="Email">
+							<input type="email" class="form-control" name="email" id="email" value="<?= $nhatuyendung['email']; ?>" placeholder="Email">
 						</div>
 					</div>
 					<div class="row ttsdt">
@@ -24,7 +24,7 @@ if(isset($thongbao))
 							<label>Số Điện Thoại<i class="red">*</i></label>
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="phone" placeholder="Số điện thoại" value="<?= $nhatuyendung['phone']; ?>">
+							<input type="text" class="form-control" name="phone" id="phone" placeholder="Số điện thoại" value="<?= $nhatuyendung['phone']; ?>">
 						</div>
 					</div>
 					<div class="row tt ttnhaplaimatkhau">
@@ -38,13 +38,22 @@ if(isset($thongbao))
 				</div>
 				<div class="ttcanhan">
 					<h3><i class="fa fa-user-circle-o fa-lg fa-fw"></i> Thông Tin Doanh Nghiệp <i class="red">(Bắt buộc)</i></h3>
+					<div class="row">
+						<div class="col-sm-4">
+							<label for="avatar">Hình đại diện</label>
+						</div>
+						<div class="col-sm-8">
+							<label for="avatar" onClick="return chonhinh()"><img src="<?php if($nhatuyendung['avatar'] == '') {echo base_url('images/no-img.png');} else echo base_url().$nhatuyendung['avatar']; ?>" alt="" id="images" width="300px"></label>
+							<input name="avatar" id="avatar" type="file" class="hidden-lg hidden-md hidden-sm hidden-xs">
+						</div>
+					</div>
 					<div class="row tt tthoten">
 						<div class="  col-sm-4 col-md-4">
 							<label>Tên công ty<i class="red">*</i></label>
 
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="ten_cty" value="<?= $nhatuyendung['ten_cty']; ?>" placeholder="Tên công ty">
+							<input type="text" class="form-control" name="ten_cty" id="ten_cty" value="<?= $nhatuyendung['ten_cty']; ?>" placeholder="Tên công ty">
 						</div>
 					</div>
 					<div class="row tt ttngaysinh">
@@ -52,16 +61,16 @@ if(isset($thongbao))
 							<label>Đia chỉ<i class="red">*</i></label>
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="dia_chi" value="<?= $nhatuyendung['dia_chi']; ?>" placeholder="Địa chỉ">
+							<input type="text" class="form-control" name="dia_chi" id="dia_chi" value="<?= $nhatuyendung['dia_chi']; ?>" placeholder="Địa chỉ">
 						</div>
 					</div>
 					<div class="row tt ttgioitinh">
 						<div class="  col-sm-4 col-md-4">
-							<label>Mã số thuế<i class="red">*</i></label>
+							<label>Mã số thuế<i class="red"></i></label>
 
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" name="ms_thue" class="form-control" value="<?=$nhatuyendung['ms_thue'] ?>" placeholder="Mã số thuế">
+							<input type="text" name="ms_thue" id="ms_thue" class="form-control" value="<?=$nhatuyendung['ms_thue'] ?>" placeholder="Mã số thuế">
 						</div>
 					</div>
 					<div class="row tt tthonnhan">
@@ -75,11 +84,11 @@ if(isset($thongbao))
 					</div>
 					<div class="row tt ttdiachi">
 						<div class="  col-sm-4 col-md-4">
-							<label>Email liên hệ<i class="red">*</i></label>
+							<label>Email liên hệ<i class="red"></i></label>
 
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="email" class="form-control" name="email_lh" placeholder="Email liên hệ" value="<?=$nhatuyendung['email_lh']; ?>">
+							<input type="email" class="form-control" name="email_lh"  id="email_lh"placeholder="Email liên hệ" value="<?=$nhatuyendung['email_lh']; ?>">
 						</div>
 					</div>
 					<div class="row tt tthonnhan">
@@ -87,20 +96,20 @@ if(isset($thongbao))
 							<label>Điện thoại liên hệ</label>
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" name="sdt_lh" class="form-control" value="<?=$nhatuyendung['sdt_lh'] ?>" placeholder="Điện thoại liên hệ">
+							<input type="text" name="sdt_lh" id="sdt_lh" class="form-control" value="<?=$nhatuyendung['sdt_lh'] ?>" placeholder="Điện thoại liên hệ">
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-xs-5 col-xs-offset-2 col-sm-4 col-sm-offset-3 col-md-3 col-md-offset-3">
-						<button type="submit" class="btn btn-danger btn-block btn_red btn_luuchinhsua" name="luu">
+						<button type="submit" class="btn btn-danger btn-block btn_red btn_luuchinhsua" name="luu" id="luu">
                             <i class="fa fa-save fa-lg fa-fw"></i> LƯU
                         </button>
 					</div>
 					<div class="col-xs-3 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0 huy">
 						<a href="<?=base_url('Quanlynhatuyendung/quanlytaikhoan'); ?>">
-							<a type="submit" class="btn btn-danger btn-block btn_red btn_huy" href="<?=base_url('quanlynhatuyendung/quanlytaikhoan')?>">
+							<a class="btn btn-danger btn-block btn_red btn_huy" href="<?=base_url('quanlynhatuyendung/quanlytaikhoan')?>">
 								<i></i> HỦY
 							</a>
 						</a>
@@ -175,4 +184,59 @@ if(isset($thongbao))
             }
         });
     }
+	$(document).ready(function(){
+		$("#luu").click(function(event){
+			var email = $('#email').val();
+			var phone = $('#phone').val();
+			var ten_cty = $('#ten_cty').val();
+			var dia_chi = $('#dia_chi').val();
+			var ms_thue = $('#ms_thue').val();
+			var email_lh = $('#email_lh').val();
+			var sdt_lh = $('#sdt_lh').val();
+			var check_email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			var check_phone = /^([0-9]{10,11})$/;
+			var check_number = /^[0-9]+$/;
+			if(!check_email.test(email)){
+				event.preventDefault();
+				alert("Email không hợp lệ.");
+				document.getElementById("email").style.border = '1px solid red';
+			}else if(!check_phone.test(phone)){
+				event.preventDefault();
+				alert("Số điện thoại không hợp lệ.");
+				document.getElementById("phone").style.border = '1px solid red';
+			}else if(ten_cty == ''){
+				event.preventDefault();
+				alert("Bạn chưa nhập tên công ty.");
+				document.getElementById("ten_cty").style.border = '1px solid red';
+			}else if(dia_chi == ''){
+				event.preventDefault();
+				alert("Bạn chưa nhập địa chỉ.");
+				document.getElementById("dia_chi").style.border = '1px solid red';
+			}else if(!check_number.test(ms_thue)){
+				event.preventDefault();
+				alert("Mã số thuế là số.");
+				document.getElementById("ms_thue").style.border = '1px solid red';
+			}else if(!check_email.test(email_lh)){
+				event.preventDefault();
+				alert("Email không hợp lệ.");
+				document.getElementById("email_lh").style.border = '1px solid red';
+			}else if(!check_phone.test(sdt_lh)){
+				event.preventDefault();
+				alert("Số điện thoại không hợp lệ.");
+				document.getElementById("sdt_lh").style.border = '1px solid red';
+			}
+		});
+	});
+	function chonhinh() 
+	{
+	$('#avatar').change(function () {
+        if ( window.FileReader ) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#images').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    })
+	}
 </script>
