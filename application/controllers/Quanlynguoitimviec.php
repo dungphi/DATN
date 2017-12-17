@@ -96,7 +96,7 @@ public function quanlytaikhoan()
 					);
 					$kq = $this->nguoi_tim_viec->capnhat($dat, $id);
 					if(isset($kq))
-						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");function(){location.assign("'.base_url('Quanlynguoitimviec/quanlytaikhoan').'");}</script>';
+						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('Quanlynguoitimviec/quanlytaikhoan').'");</script>';
 					
 					else
 					
