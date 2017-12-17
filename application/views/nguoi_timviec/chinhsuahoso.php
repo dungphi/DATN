@@ -1,3 +1,7 @@
+<?php
+if(isset($thongbao))
+	echo $thongbao;
+?>
 <div class="container">
 
     <div class="row">
@@ -10,6 +14,7 @@
         		<i> - Yêu cầu viết tiếng Việt <label>có dấu</label>, không viết chữ in hoa (trừ chữ cái đầu câu).</i></br>
 				<i>- Các hồ sơ không đúng quy định, không đạt chất lượng, nội dung không nghiêm túc sẽ bị xóa không cần báo trước.</i>
         	</div>
+            <form action="<?= base_url('quanlynguoitimviec/chinhsuahoso/'.$nguoitimviec['id_hoso']);?>" method="post" enctype="multipart/form-data">
             <div class="tttongquan">
             	<h3><i class=""></i> Thông Tin Tổng Quan <i class="red">( Bắt buộc)</i></h3>
             
@@ -19,8 +24,8 @@
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                    	<input type="text" name="tieu_de" class="form-control" value="<?= $nguoitimviec['tieu_de'];?><?php echo set_value('tieude')?>"> 
-						 <?php echo form_error('tieude', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
+              			<input type="text" name="tieu_de" class="form-control" value="<?= $nguoitimviec['tieu_de'];?><?php set_value('tieu_de')?>"> 
+						<?php echo form_error('tieu_de', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                     
                 </div>
@@ -253,12 +258,13 @@
                 </div>
                 <div class="row tt" >
                     <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
-                        <button type="submit" class="btn btn-danger btn-block btn_luuhoso">
+                        <button type="submit" name="luuhoso" class="btn btn-danger btn-block btn_luuhoso">
                             <i class="fa fa-save fa-lg fa-fw"></i> LƯU
                         </button>
                     </div>
                  </div>
             </div> <!-- end tttongquan-->  
+            </form>
             <div class="ttkinhnghiem">
             	<h3><i class=""></i> Kinh Nghiệm Làm Việc <i>(Không bắt buộc)</i></h3>
             

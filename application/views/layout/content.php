@@ -1,5 +1,9 @@
 <!-- banner -->
 
+<?php
+if(isset($dangnhap))
+	echo $dangnhap;
+?>
 <div class="banner">
 	<div class="header-slider">
 		<div class="slider">

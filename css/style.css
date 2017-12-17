@@ -1953,21 +1953,27 @@ display:none;
 	border:1px solid #ccc;
 }
 .tieu-de h3 {
-	font-size:32px;
+	font-size:28px;
 	font-weight:800;
-	color:#63C;
+	color:#337ab7;
 }
 .tieu-de h4 {
 	font-size:20px;
 	font-weight:600;
-	color:#F00;
+	color:#999;
+}
+.ngay-cap-nhat,.ngay-het-han,.tt-phu{
+	font-size:18px;
 }
 .td-right{
 	float:right;
 	
 }
+.luotxem{
+	font-size:16px;
+}
 .luu-vl{ 
-	margin-bottom:20px;
+   margin-bottom:20px;
    background-color: #fafafa;
    height: 38px;
    line-height: 38px;    
@@ -1977,10 +1983,11 @@ display:none;
    border-radius: 2px;    
    font-size: 14px;    
    display: inline-block;    
-   color: #757575;}
+   color: #757575;
+   }
 .thong-tin {
-	margin-left: 10px;
-	padding:10px;
+	margin:10px 10px 0px;
+	padding:25px 10px 20px;
 	background-color:#eeeeee;
 	border:1px solid #ccc;
 	border-bottom:0.1px solid #ccc;
@@ -1994,7 +2001,7 @@ display:none;
 	color:#090;
 }
 .thong-tin-khac {
-	margin: 0 -15px 20px 10px;
+	margin: 0 10px 20px;
 	padding:10px;
 	background-color:#eeeeee;
 	border:1px solid #ccc;
@@ -2007,11 +2014,15 @@ display:none;
 		
 }
 .tro-ve{
-	margin: 0 -15px 20px 10px;
-	border:1px solid yellowgreen;
+	margin: 35px 0px 20px;
+	border:1px solid #ccc;
+	border-radius:1px;
+}
+.tro-ve a{
+	text-decoration:none;
 }
 .avatar {
-	margin:0 10px 20px 0;
+	margin:10px;
 	padding:20px 10px;
 	background-color:#eeeeee;
 	border:1px solid #ccc;

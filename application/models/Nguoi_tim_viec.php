@@ -20,7 +20,7 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec');
 		$this->db->where('email', $email);
-		$kq = $this->db->get()->row_array();
+		$kq = $this->db->get()->result_array();
 		if(count($kq) != 0)
 		{
 			return FALSE;
@@ -29,6 +29,17 @@ class Nguoi_tim_viec extends CI_Model{
 		{
 			return TRUE;
 		}
+	}
+	public function check_pass($id,$pass)
+	{
+		$this->db->from('nguoi_tim_viec');
+		$this->db->where('id_ntv', $id);
+		$this->db->where('pass', md5($pass));
+		$kq = $this->db->get()->result_array();
+		if(count($kq) == 1)
+			return TRUE;
+		else
+			return FALSE;
 	}
 	public function dangnhap($email, $pass)
 	{
@@ -59,7 +70,7 @@ class Nguoi_tim_viec extends CI_Model{
 //		return $this->db->get()->row_array();
 //	}
 //	
-	public function chinhsuataikhoan($user)
+	public function thongtinnguoidung($user)
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec,gioi_tinh');
@@ -67,7 +78,12 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->where('email', $user);
 		return $this->db->get()->row_array();
 	}
-	public function chinhsuahoso($user)
+	public function capnhat($data=array(),$id)
+	{
+		$this->db->where('id_ntv',$id);
+        return $this->db->update('nguoi_tim_viec',$data);
+	}
+	public function thongtinhoso($user)
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec,ho_so_tim_viec,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
@@ -82,10 +98,10 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->order_by('nguoi_tim_viec.id_ntv', 'desc');
 		return $this->db->get()->row_array();
 	}
-	public function xoa_hoso($user)
+	public function capnhathoso($data=array(),$id)
 	{
-		$this->db->where('id_hoso', $user);
-		return $this->db->delete('ho_so_tim_viec');
+		$this->db->where('id_hoso',$id);
+        return $this->db->update('ho_so_tim_viec',$data);
 	}
 	public function countAll(){
 		return $this->db->count_all('nguoi_tim_viec'); 

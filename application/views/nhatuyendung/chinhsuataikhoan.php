@@ -16,7 +16,7 @@ if(isset($thongbao))
 							<label>Email<i class="red">*</i></label>
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="email" class="form-control" name="email" value="<?= $nhatuyendung['email']; ?>" placeholder="Email">
+							<input type="email" class="form-control" name="email" value="<?= $nhatuyendung['email'];?>" placeholder="Email">
 						</div>
 					</div>
 					<div class="row ttsdt">
@@ -24,7 +24,7 @@ if(isset($thongbao))
 							<label>Số Điện Thoại<i class="red">*</i></label>
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="phone" placeholder="Số điện thoại" value="<?= $nhatuyendung['phone']; ?>">
+							<input type="text" class="form-control" name="phone" placeholder="Số điện thoại" value="<?= $nhatuyendung['phone'];?>">
 						</div>
 					</div>
 					<div class="row tt ttnhaplaimatkhau">
@@ -167,7 +167,7 @@ if(isset($thongbao))
                 }else if(result == 2){
 					alert("Mật khẩu mới không trùng khớp!");
 				}else if(result == 3){
-					alert("Mật khẩu cũ không dúng!");
+					alert("Mật khẩu cũ không đúng!");
 				}
 				else{
 					alert("Lỗi!")

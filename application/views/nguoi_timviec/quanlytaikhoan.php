@@ -17,7 +17,7 @@
                     	<p> <?php echo $_SESSION['nguoitimviec']; ?></p>
                     </div>
                     <div class=" col-xs-2 col-sm-2 col-md-2">
-                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan/'.$nguoitimviec['id_ntv']); ?>">
                             <button class="btn btn-link btn_edit" onclick="">
                                 <i class="fa fa-pencil fa-lg fa-fw"></i></br>
                                 <span class="txt hidden-xs">Chỉnh sửa</span>
@@ -33,7 +33,7 @@
                     	<p> <?= $nguoitimviec['phone']; ?></p>
                     </div>
                     <div class=" col-xs-2 col-sm-2 col-md-2">
-                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan/'.$nguoitimviec['id_ntv']); ?>">
                             <button class="btn btn-link btn_edit" onclick="">
                                 <i class="fa fa-pencil fa-lg fa-fw"></i></br>
                                 <span class="txt hidden-xs">Chỉnh sửa</span>
@@ -49,7 +49,7 @@
                     	<p> ***********</p>
                     </div>
                     <div class=" col-xs-2 col-sm-2 col-md-2">
-                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+                    	<a href="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan/'.$nguoitimviec['id_ntv']); ?>">
                             <button class="btn btn-link btn_edit" onclick="">
                                 <i class="fa fa-pencil fa-lg fa-fw"></i></br>
                                 <span class="txt hidden-xs">Chỉnh sửa</span>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-     	<form action="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan'); ?>">
+     	<form action="<?=base_url('Quanlynguoitimviec/chinhsuataikhoan/'.$nguoitimviec['id_ntv']); ?>">
             <div class="ttcanhan">
             	<h3><i class="fa fa-user-circle-o fa-lg fa-fw"></i> Thông Tin Cá Nhân</h3>
                 <div class="row tt tthoten">
