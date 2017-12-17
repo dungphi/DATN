@@ -109,14 +109,10 @@ class Quanlynhatuyendung extends CI_Controller {
 					);
 					$kq = $this->nha_tuyen_dung->capnhat($id, $dat);
 					if(isset($kq))
-<<<<<<< HEAD
 					{
 						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");</script>';
 						$this->session->set_userdata("nhatuyendung", $email);
 					}
-=======
-						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");function(){location.assign("'.base_url('quanlynhatuyendung/quanlytaikhoan').'");}</script>';
->>>>>>> a7332a8f4bf02a2ea376e56e433e63d1c0ee6ed7
 					else
 						$data['thongbao'] = '<script>alert("Lỗi.")</script>';
 				}
