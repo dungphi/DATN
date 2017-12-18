@@ -60,6 +60,14 @@
      	<form action="<?=base_url('quanlynhatuyendung/chinhsuataikhoan/'.$nhatuyendung['id_ntd']); ?>">
             <div class="ttcanhan">
             	<h3><i class="fa fa-user-circle-o fa-lg fa-fw"></i> Thông tin doanh nghiệp</h3>
+				<div class="row">
+					<div class="col-sm-4">
+						<label>Ảnh đại diện</label>
+					</div>
+					<div class="col-sm-8">
+						<img src="<?=base_url($nhatuyendung['avatar'])?>" width="300px" >
+					</div>
+				</div>
                 <div class="row tt tthoten">
                 	<div class=" col-xs-4 col-sm-4 col-md-4">
                     	<label>Tên công ty</label>
