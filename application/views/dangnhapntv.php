@@ -21,7 +21,8 @@
 	<link id="base-style-responsive" href="<?=base_url('assets/') ?>css/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
-	
+	<link href="<?=base_url(); ?>css/font-awesome.css" rel="stylesheet"/>
+	<link href="<?=base_url(); ?>css/font-awesome.min.css" rel="stylesheet"/>
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -52,10 +53,11 @@
 			<div class="row-fluid">
 				<div class="login-box">
 					<div class="icons">
-						<a href="<?=base_url() ?>"><i class="halflings-icon home"></i></a>
-						<a href="#"><i class="halflings-icon cog"></i></a>
+						<a href="<?=base_url('dangnhap/NTD');?>"><i class="fa fa-refresh fa-fw fa-lg"></i></a>
+                        <a href="<?=base_url() ?>"><i class="fa fa-home fa-fw fa-lg"></i></a>
+						
 					</div>
-					<h2>Đăng nhập Người Tìm Việc</h2>
+					<h2>Người Tìm Việc Đăng Nhập</h2>
 					<form class="form-horizontal" action="<?=base_url('Dangnhap/NTV') ?>" method="post" enctype="multipart/form-data">
 						<fieldset>
 							

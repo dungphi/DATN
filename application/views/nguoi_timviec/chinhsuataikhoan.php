@@ -48,6 +48,16 @@ if(isset($thongbao))
      		
             <div class="ttcanhan">
             	<h3><i class="fa fa-user-circle-o fa-lg fa-fw"></i> Thông Tin Cá Nhân <i class="red">(Bắt buộc)</i></h3>
+                <div class="row">
+					<div class="col-sm-4 tt">
+						<label for="avatar">Ảnh đại diện</label>
+					</div>
+					<div class="col-sm-8">
+						<label for="avatar" onClick="return chonhinh()"><img src="<?php if($nguoitimviec['avatar'] == '') {echo base_url('images/hoso/avatar.png');} else echo base_url().$nguoitimviec['avatar']; ?>" alt="" id="images" width="200px"></label>
+							<input name="avatar" id="avatar" type="file" class="hidden-lg hidden-md hidden-sm hidden-xs">
+							<input name="img_upload" id="avatar" type="text" class="hidden-lg hidden-md hidden-sm hidden-xs" value="<?=$nguoitimviec['avatar'];?>">
+                        </div>
+				</div>
                 <div class="row tt tthoten">
                 	<div class="  col-sm-4 col-md-4">
                     	<label>Họ Tên<i class="red">*</i></label>
@@ -129,9 +139,10 @@ if(isset($thongbao))
           </form>
                     <div class="col-xs-3 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-0 huy">
                     	<a href="<?=base_url('Quanlynguoitimviec/quanlytaikhoan'); ?>">
-                            <button type="submit" class="btn btn-danger btn-block btn_red btn_huy">
-                                <i></i> HỦY
-                            </button></a>
+                            <a class="btn btn-danger btn-block btn_red btn_huy" href="<?=base_url('quanlynguoitimviec/quanlytaikhoan')?>">
+								<i></i> HỦY
+							</a>
+                         </a>
                     </div>
                  </div>
             </div>
@@ -201,6 +212,18 @@ if(isset($thongbao))
             }
         });
     }
+function chonhinh() 
+	{
+	$('#avatar').change(function () {
+        if ( window.FileReader ) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#images').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    })
+	}
 </script>
 
  

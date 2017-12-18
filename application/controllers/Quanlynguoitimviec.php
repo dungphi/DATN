@@ -79,57 +79,75 @@ public function quanlytaikhoan()
 			$gioitinh = $this->input->post('gioi_tinh');
 			$honnhan = $this->input->post('hon_nhan');
 			$diachi = $this->input->post('dia_chi');
-		if($this->form_validation->run() == TRUE)
-		{
-			if($email == $user)
+			//upload hình
+            $config['upload_path'] = 'images/hoso/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $this->load->library("upload", $config);
+            if($this->upload->do_upload("avatar"))
 			{
-				$dat = array(
-					
-					'email' => $email,
-					'phone' => $sdt,
-					'ho' => $ho,
-					'ten' => $ten,
-					'ngay_sinh' => $ngaysinh,
-					'id_gioi_tinh' => $gioitinh,
-					'hon_nhan' => $honnhan,
-					'dia_chi' => $diachi,
-					);
-					$kq = $this->nguoi_tim_viec->capnhat($dat, $id);
-					if(isset($kq))
-						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('Quanlynguoitimviec/quanlytaikhoan').'");</script>';
-					
-					else
-					
-						$data['thongbao'] = '<script>alert("Lỗi.")</script>';
-				
+				$img = $this->upload->data();
+				$avatar = $config['upload_path'].$img['file_name'];
 			}
-			else
+			else 
 			{
-				if($this->nguoi_tim_viec->check_mail($email) == TRUE)
+				$avatar = $this->input->post('img_upload');
+ 				if($avatar == '')
+ 					$avatar = 'images/no-img.png';
+			}
+			
+			if($this->form_validation->run() == TRUE)
+			{
+				if($email == $user)
 				{
 					$dat = array(
+						
+						'email' => $email,
+						'phone' => $sdt,
+						'ho' => $ho,
+						'ten' => $ten,
+						'ngay_sinh' => $ngaysinh,
+						'id_gioi_tinh' => $gioitinh,
+						'hon_nhan' => $honnhan,
+						'dia_chi' => $diachi,
+						'avatar' => $avatar,
+						);
+						$kq = $this->nguoi_tim_viec->capnhat($dat, $id);
+						if(isset($kq))
+							$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.assign("'.base_url('Quanlynguoitimviec/quanlytaikhoan').'");</script>';
+						
+						else
+						
+							$data['thongbao'] = '<script>alert("Lỗi.")</script>';
 					
-					'email' => $email,
-					'phone' => $sdt,
-					'ho' => $ho,
-					'ten' => $ten,
-					'ngay_sinh' => $ngaysinh,
-					'id_gioi_tinh' => $gioitinh,
-					'hon_nhan' => $honnhan,
-					'dia_chi' => $diachi,
-					);	
-					$kq = $this->nguoi_tim_viec->capnhat($dat, $id);
-					if(isset($kq))
-						$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");function(){location.assign("'.base_url('quanlynguoitimviec/quanlytaikhoan').'");}</script>';
-					else
-						echo '<script>alert("Lỗi.")</script>';
 				}
-				else 
-					echo '<script>alert("Email này đã được người khác sử dụng.");</script>';
+				else
+				{
+					if($this->nguoi_tim_viec->check_mail($email) == TRUE)
+					{
+						$dat = array(
+						
+						'email' => $email,
+						'phone' => $sdt,
+						'ho' => $ho,
+						'ten' => $ten,
+						'ngay_sinh' => $ngaysinh,
+						'id_gioi_tinh' => $gioitinh,
+						'hon_nhan' => $honnhan,
+						'dia_chi' => $diachi,
+						'avatar' => $avatar,
+						);	
+						$kq = $this->nguoi_tim_viec->capnhat($dat, $id);
+						if(isset($kq))
+							$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.assign("'.base_url('quanlynguoitimviec/quanlytaikhoan').'");</script>';
+						else
+							$data['thongbao'] = '<script>alert("Lỗi.")</script>';
+					}
+					else 
+						$data['thongbao'] = '<script>alert("Email này đã được người khác sử dụng.");</script>';
+				}
 			}
-		}
 		else 
-			$this->session->set_flashdata('flash_message', 'Lỗi Cập Nhật');
+			$data['thongbao'] = '<script>alert("Lỗi.")</script>';
 		}
 		
 		$this->load->view('trangchu', $data);
@@ -222,6 +240,7 @@ public function quanlytaikhoan()
 			$mucluong = $this->input->post('muc_luong');
 			$muctieu = $this->input->post('muc_tieu');
 			
+			
 			if ($this->form_validation->run() == TRUE)
 			{
 				$dat = array(
@@ -239,14 +258,14 @@ public function quanlytaikhoan()
 					);
 				$kq = $this->nguoi_tim_viec->capnhathoso($dat, $id);
 				if(isset($kq))
-					$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");function(){location.assign("'.base_url('quanlynguoitimviec/xemhoso').'");}</script>';
+					$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.assign("'.base_url('quanlynguoitimviec/xemhoso').'");</script>';
 				else
-					echo '<script>alert("Lỗi.")</script>';
+					$data['thongbao'] ='<script>alert("Lỗi.")</script>';
 				
 			}
 			else 
 			{
-				$this->session->set_flashdata('flash_message', 'Lỗi Cập nhật');
+				$data['thongbao'] ='<script>alert("Lỗi cập nhật.")</script>';
 			}
 		}
 		$this->load->view('trangchu', $data);

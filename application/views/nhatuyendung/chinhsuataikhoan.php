@@ -16,7 +16,7 @@ if(isset($thongbao))
 							<label for="email">Email<i class="red">*</i></label>
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="email" class="form-control" name="email" id="email" value="<?= $nhatuyendung['email']; ?>" placeholder="Email">
+							<input type="email" class="form-control" name="email" id="email" value="<?= $nhatuyendung['email']; ?>" placeholder="">
 						</div>
 					</div>
 					<div class="row ttsdt">
@@ -24,7 +24,7 @@ if(isset($thongbao))
 							<label>Số Điện Thoại<i class="red">*</i></label>
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="phone" id="phone" placeholder="Số điện thoại" value="<?= $nhatuyendung['phone']; ?>">
+							<input type="text" class="form-control" name="phone" id="phone" placeholder="" value="<?= $nhatuyendung['phone']; ?>">
 						</div>
 					</div>
 					<div class="row tt ttnhaplaimatkhau">
@@ -39,13 +39,14 @@ if(isset($thongbao))
 				<div class="ttcanhan">
 					<h3><i class="fa fa-user-circle-o fa-lg fa-fw"></i> Thông Tin Doanh Nghiệp <i class="red">(Bắt buộc)</i></h3>
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-4 tt">
 							<label for="avatar">Hình đại diện</label>
 						</div>
 						<div class="col-sm-8">
-							<label for="avatar" onClick="return chonhinh()"><img src="<?php if($nhatuyendung['avatar'] == '') {echo base_url('images/no-img.png');} else echo base_url().$nhatuyendung['avatar']; ?>" alt="" id="images" width="300px"></label>
+							<label for="avatar" onClick="return chonhinh()"><img src="<?php if($nhatuyendung['avatar'] == '') {echo base_url('images/no-img.png');} else echo base_url().$nhatuyendung['avatar']; ?>" alt="" id="images" width="200px"></label>
 							<input name="avatar" id="avatar" type="file" class="hidden-lg hidden-md hidden-sm hidden-xs">
-						</div>
+							<input name="img_upload" id="avatar" type="text" class="hidden-lg hidden-md hidden-sm hidden-xs" value="<?=$nhatuyendung['avatar'];?>">
+                        </div>
 					</div>
 					<div class="row tt tthoten">
 						<div class="  col-sm-4 col-md-4">
@@ -53,7 +54,7 @@ if(isset($thongbao))
 
 						</div>
 						<div class="col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="ten_cty" id="ten_cty" value="<?= $nhatuyendung['ten_cty']; ?>" placeholder="Tên công ty">
+							<input type="text" class="form-control" name="ten_cty" id="ten_cty" value="<?= $nhatuyendung['ten_cty']; ?>" placeholder="">
 						</div>
 					</div>
 					<div class="row tt ttngaysinh">
@@ -61,7 +62,7 @@ if(isset($thongbao))
 							<label>Đia chỉ<i class="red">*</i></label>
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" class="form-control" name="dia_chi" id="dia_chi" value="<?= $nhatuyendung['dia_chi']; ?>" placeholder="Địa chỉ">
+							<input type="text" class="form-control" name="dia_chi" id="dia_chi" value="<?= $nhatuyendung['dia_chi']; ?>" placeholder="">
 						</div>
 					</div>
 					<div class="row tt ttgioitinh">
@@ -70,7 +71,7 @@ if(isset($thongbao))
 
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" name="ms_thue" id="ms_thue" class="form-control" value="<?=$nhatuyendung['ms_thue'] ?>" placeholder="Mã số thuế">
+							<input type="text" name="ms_thue" id="ms_thue" class="form-control" value="<?=$nhatuyendung['ms_thue'] ?>" placeholder="">
 						</div>
 					</div>
 					<div class="row tt tthonnhan">
@@ -79,7 +80,7 @@ if(isset($thongbao))
 
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" name="ten_lh" class="form-control" value="<?=$nhatuyendung['ten_lh'] ?>" placeholder="Người liên hệ">
+							<input type="text" name="ten_lh" class="form-control" value="<?=$nhatuyendung['ten_lh'] ?>" placeholder="">
 						</div>
 					</div>
 					<div class="row tt ttdiachi">
@@ -88,7 +89,7 @@ if(isset($thongbao))
 
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="email" class="form-control" name="email_lh"  id="email_lh"placeholder="Email liên hệ" value="<?=$nhatuyendung['email_lh']; ?>">
+							<input type="email" class="form-control" name="email_lh"  id="email_lh"placeholder="" value="<?=$nhatuyendung['email_lh']; ?>">
 						</div>
 					</div>
 					<div class="row tt tthonnhan">
@@ -96,7 +97,7 @@ if(isset($thongbao))
 							<label>Điện thoại liên hệ</label>
 						</div>
 						<div class="  col-sm-8 col-md-8">
-							<input type="text" name="sdt_lh" id="sdt_lh" class="form-control" value="<?=$nhatuyendung['sdt_lh'] ?>" placeholder="Điện thoại liên hệ">
+							<input type="text" name="sdt_lh" id="sdt_lh" class="form-control" value="<?=$nhatuyendung['sdt_lh'] ?>" placeholder="">
 						</div>
 					</div>
 				</div>
