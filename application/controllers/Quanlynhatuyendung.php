@@ -129,12 +129,21 @@ class Quanlynhatuyendung extends CI_Controller {
 		$data['title'] = 'Chỉnh sửa tài khoản';
 		$data['content'] = 'nhatuyendung/chinhsuataikhoan';
 		$data['active'] = 5;
-		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
 		$data['nhatuyendung'] = $this->nha_tuyen_dung->get($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 		
+	}
+	public function quanlyvieclam()
+	{
+		$user = $_SESSION['nhatuyendung'];
+		$data['title'] = 'Quản lý việc làm';
+		$data['content'] = 'nhatuyendung/quanlyvieclam';
+		$data['active'] = 6;
+		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
+		$this->load->view('trangchu', $data);
 	}
 	public function doi_pass()
 	{
