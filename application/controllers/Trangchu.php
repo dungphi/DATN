@@ -35,7 +35,7 @@ class Trangchu extends CI_Controller {
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
 		//cấu hình phân trang
-		$config['per_page'] = 1;
+		$config['per_page'] = 2;
 		$config['uri_segment'] = 2;
 		$config['num_links'] = 5;
 		
@@ -76,6 +76,7 @@ class Trangchu extends CI_Controller {
         $this->load->library('pagination', $config);
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
 		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(5,2);
+		$data['vieclamnoibat'] = $this->viec_lam->vieclamnoibat();
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
@@ -85,6 +86,9 @@ class Trangchu extends CI_Controller {
 	{
 		$this->load->model('nguoi_tim_viec');
 		$this->load->model('nha_tuyen_dung');
+		$data['title'] = 'Trang việc làm Online';
+		$data['content'] = 'layout/content';
+		$data['active'] = 1;
 		if(isset($_POST['dangnhap']))
 		{
 			$tuychon = $this->input->post('tuychon');
@@ -101,7 +105,7 @@ class Trangchu extends CI_Controller {
 				}
 				else
 				{	
-					$data['dangnhap']='<script>alert("Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu!"); function(){location.assign("'.base_url('dangnhap/NTV').'");}</script>';
+					$data['dangnhap']='<script>alert("Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu!");location.assign("'.base_url('dangnhap/NTV').'");</script>';
 				}
 			}
 			else
@@ -116,12 +120,9 @@ class Trangchu extends CI_Controller {
 				}
 				else
 				
-				'<script>alert("Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu!")</script>';
+				$data['dangnhap']='<script>alert("Đăng nhập không thành công, vui lòng kiểm tra lại tài khoản hoặc mật khẩu!")</script>';
 			}
 		}
-		$data['title'] = 'Trang việc làm Online';
-		$data['content'] = 'layout/content';
-		$data['active'] = 1;
 		$this->load->view('trangchu', $data);
 	}
 	public function dangxuat()

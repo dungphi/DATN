@@ -68,18 +68,20 @@ if(isset($dangnhap))
 </div>
 
     <div class="container Demo3" ><!--class=Demo3>-->
-    <h3>Tin Nổi Bật</h3>
+    <h3>Việc Làm Nổi Bật</h3>
     <ul id="flexiselDemo3">
     	
 			<?php
-				foreach($vieclam as $tam)
+				foreach($vieclamnoibat as $tam)
 				{
 			
 			?>
             	<li>
+                	
 					<div class="tintuyendung">
+                    	<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>">
 						<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-rounded" alt="" width="250" height="150">
-						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
+						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
                         <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten_cty']; ?>"> <?=$tam['ten_cty'];?></h5>
 					</div>
 					
@@ -163,11 +165,11 @@ if(isset($dangnhap))
                     ?>
                         <div class="row">
                         	<div class="baituyendung">
-                        		<div class="col-sm-2 col-md-2 hinhanh">
-                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
+                        		<div class="hidden-xs col-sm-2 col-md-2 hinhanh">
+                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
                         		</div>
                         		<div class="col-xs-11 col-sm-9 col-md-9 thongtin">
-                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><h4> <?=$tam['tieu_de']; ?></h4></a>
+                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>"><h4> <?=$tam['tieu_de']; ?></h4></a>
                                     <h5 class="text"  title="<?=$tam['ten_cty'];?>"><?=$tam['ten_cty'];?></h5>
                                
                                     <div class="col-xs-5 col-sm-3 col-md-3"> 
@@ -208,10 +210,10 @@ if(isset($dangnhap))
 							<div class="row">
                             <div class= "hosotimviec">
 								<div class="col-sm-2 col-md-2 hinhanh">
-									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="hidden-xs img-responsive" alt=""></a>
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_hs']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="hidden-xs img-responsive" alt=""></a>
 								</div>
 								<div class="col-xs-11 col-md-9 thongtin">
-									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_ntv']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
+									<a href="<?=base_url('nguoitimviec/thongtinhoso/'.$tam['id_hs']); ?>"><h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
                         			<h5 class="text"  title="<?=$tam['ho'];?> <?=$tam['ten'];?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm"><?=$tam['ten']?> <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?> <?=$tam['ten_kn']; ?> kinh nghiệm</h5>
                                     <div class="col-xs-6 col-sm-3 col-md-3"> 
                         					<p class="glyphicon glyphicon-map-marker"></p> <?= $tam['ten_dd'];?>
@@ -247,7 +249,7 @@ if(isset($dangnhap))
                 </div>
                 </div>
                 <div class="col-sm-3 col-md-3 hidden-xs baidang_right">
-                <h3>Tin quảng cáo</h3>
+                <h3>Hồ Sơ Nổi Bật</h3>
                 	<?php
 				foreach($hosotimviec as $tam)
 				{
@@ -280,25 +282,29 @@ if(isset($dangnhap))
 	<div class="device">
 		<div class="container">
 			<h2>Cẩm nang nghề nghiệp</h2>
-				<div class="col-md-4 devic-left">
+				<div class="col-sm-4 col-md-4 devic-left">
 				
-					<img src="<?=base_url(); ?>images/4.jpg" class="img-responsive" alt="">
+					<img src="<?=base_url(); ?>images/camnan/tham-quoc-quan.jpeg" class="" width="300" height="200" alt="">
 					
-					<h4><span>25/</span>March</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever </p>
+					<h4>Thẩm Quốc Quân: Từ chàng trai nghèo cho đến đối tác lớn của Jack Ma</h4>
+					<p>Từ khi còn nhỏ, chàng trai nghèo Thẩm Quốc Quân đã phải lăn lộn nhiều nghề để kiếm tiền. 10 năm sau khi khởi nghiệp, ông đã sở hữu khối tài sản khổng lồ và trở thành đối tác lớn của Jack Ma...</p>
 				</div>
-				<div class="col-md-4 devic-left">
-					<img src="<?=base_url(); ?>images/3.jpg" class="img-responsive" alt="">
-					<h4><span>25/</span>April</h4>
-					<p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
+				<div class="col-sm-4 col-md-4 devic-left">
+					<img src="<?=base_url(); ?>images/camnan/anh1.jpg" class="" width="300" height="200" alt="">
+					<h4>Bật mí 4 bí quyết chọn công việc phù hợp cho giới trẻ</h4>
+					<p>Nhiều bạn trẻ khi được hỏi “Bạn thích làm gì?” hoặc “Bạn muốn làm gì?”, câu trả lời nhận lại thường là “Tôi không biết!”, “Tôi chưa biết!” hoặc “Làm gì cũng được, miễn có việc!”...</p>
 				</div>
-				<div class="col-md-4 devic-left">
-					<img src="<?=base_url(); ?>images/6.jpg" class="img-responsive" alt="">
-					<h4><span>25/</span>May</h4>
-					<p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+				<div class="col-sm-4 col-md-4 devic-left">
+					<img src="<?=base_url(); ?>images/camnan/anh2.jpg" class="" width="300" height="200" alt="">
+					<h4>Những nỗi khổ của nhà tuyển dụng mùa cuối năm</h4>
+					<p> Cuối năm. Những tưởng các công ty rơi vào trạng thái bão hòa, tập trung tổng kết các hoạt động và tạm ngưng việc tuyển dụng thì các doanh nghiệp trong lĩnh vực nhà hàng – khách sạn lại thi đua “treo bảng cần người”... </p>
 				</div>
 				<div class="clearfix"> </div>
-                
+                <div class="col-xs-12 col-md-4 col-md-offset-4 xemthemhoso">
+                	<a href=<?=base_url('#'); ?>>
+                        	<button type="submit" class="btn btn_default btn-block btn_xemthemhoso" onclick=""> <i class="fa fa-plus fa-lg fa-fw"></i> XEM THÊM CẦM NAN NGHỀ NGHIỆP
+                    		</button></a>
+                </div>
 		</div>
 	</div>
 	<!-- device -->

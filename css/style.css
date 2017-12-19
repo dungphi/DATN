@@ -254,23 +254,17 @@ span.menu {						/*menu*/
   letter-spacing: 1px;
 }
 .device p {
-  font-size: 1em;
-  color: #999;
+  font-size: 1.2em;
+  color: #333;
   line-height: 1.8em;
   margin: 1em 0;
-  font-family: 'Open Sans', sans-serif;
 }
 .device h4 {
-  color: #F54785;
-  font-size: 1.7em;
+  color: #060;
+  font-size: 1.6em;
   margin: 1em 0 0;
-  font-family: Overlock-Regular;
   font-weight: 700;
   letter-spacing: 1px;
-}
-.device span {
- color: #63B8BD;
-  font-size: 2em;
 }
 .device {
   padding: 3em 0;
@@ -1212,9 +1206,6 @@ div.register-bottom-grid {
 .device h2 {
   font-size: 2em;
 }
-.device span {
-  font-size: 1.7em;
-}
 
 .about h3, .services h3 {
   font-size: 1.7em;
@@ -1347,9 +1338,7 @@ cursor:pointer;*/
   float: left;
   width: 33.33%;
 }
-.device span {
-  font-size: 1.5em;
-}
+
 .device h4 {
   font-size: 1.5em;
 }
@@ -1446,7 +1435,7 @@ cursor:pointer;*/
   font-size: 1.5em;
 }
 .device p {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .soci li {
   display: inline-block;
@@ -2092,13 +2081,13 @@ display:none;
 	color:#337ab7;													
 	
 }
-.ttdangnhap, .ttcanhan, .tths, .tthoso, .tttaohoso, .tttongquan, .ttkinhnghiem, .tttrinhdo,.ttlienhe{
+.ttdangnhap, .ttcanhan, .tths, .tthoso, .tttaohoso, .tttongquan, .ttkinhnghiem, .tttrinhdo,.ttlienhe,.ttxemhs,.ttbangcap{
 	padding: 15px 25px;
 	background-color:#eeeeee;
 	border: 1px solid #CCC;
 	margin: 30px 0px;
 }
-.ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3,.tttrinhdo h3,.tthoso h3,.ttlienhe h3{
+.ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3,.tttrinhdo h3,.tthoso h3,.ttlienhe h3,.ttbangcap h3{
 	color:#898989;
 	font-weight:900;
 	padding: 15px 0px 20px;

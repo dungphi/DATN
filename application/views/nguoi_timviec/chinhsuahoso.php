@@ -68,6 +68,7 @@ if(isset($thongbao))
 								{
                         ?>
                             <option value="<?=$kn['id_kn']; ?>" <?php if(isset($id_kn)) {if($id_kn == $kn['id_kn']) echo 'selected';} ?>><?=$kn['ten_kn'] ?></option>
+                       
 						<?php
 								}
                             }
@@ -90,7 +91,7 @@ if(isset($thongbao))
 								if ($nguoitimviec['chuc_vu_ht']== $cb['cap_bac'])
 									{
 						?>
-                            <option value="<?=$cb['id_cb'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
+                            <option value="<?=$cb['cap_bac'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
                        	<?php
 									}
 							}
@@ -99,7 +100,7 @@ if(isset($thongbao))
 								if ($nguoitimviec['chuc_vu_ht']!= $cb['cap_bac'])
 								{
                         ?>
-                            <option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
+                            <option value="<?=$cb['cap_bac']; ?>"><?=$cb['cap_bac'] ?></option>
 						<?php
 								}
                             }
@@ -122,7 +123,7 @@ if(isset($thongbao))
 								if ($nguoitimviec['chuc_vu_mm']== $cb['cap_bac'])
 									{
 						?>
-                            <option value="<?=$cb['id_cb'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
+                            <option value="<?=$cb['cap_bac'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
                        	<?php
 									}
 							}
@@ -131,7 +132,7 @@ if(isset($thongbao))
 								if ($nguoitimviec['chuc_vu_mm']!= $cb['cap_bac'])
 								{
                         ?>
-                            <option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
+                            <option value="<?=$cb['cap_bac']; ?>"><?=$cb['cap_bac'] ?></option>
 						<?php
 								}
                             }
@@ -203,7 +204,7 @@ if(isset($thongbao))
 								if ($nguoitimviec['hinh_thuc_lam_viec']== $htlv['hinh_thuc'])
 								{
                         ?>
-                            <option value="<?=$htlv['id_htlv'];?>"><?=$nguoitimviec['hinh_thuc_lam_viec'];?></option>
+                            <option value="<?=$htlv['hinh_thuc'];?>"><?=$nguoitimviec['hinh_thuc_lam_viec'];?></option>
                          <?php
 								}
 							}
@@ -212,7 +213,7 @@ if(isset($thongbao))
 								if ($nguoitimviec['hinh_thuc_lam_viec']!= $htlv['hinh_thuc'])
 								{
                         ?>
-                            <option value="<?=$htlv['id_htlv']; ?>" <?php if(isset($id_htlv)) {if($id_htlv== $htlv['id_htlv']) echo 'selected';} ?>><?=$htlv['hinh_thuc'] ?></option>
+                            <option value="<?=$htlv['hinh_thuc']; ?>"><?=$htlv['hinh_thuc'] ?></option>
 						<?php
 								}
                             }
@@ -252,7 +253,7 @@ if(isset($thongbao))
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <textarea name="muc_tieu" placeholder="" class="form-control" value="<?=$nguoitimviec['muc_tieu'];?>" rows="7"></textarea>
+                        <textarea name="muc_tieu" class="form-control" value="" rows="7"><?=$nguoitimviec['muc_tieu'];?></textarea>
                      
                     </div>
                 </div>
