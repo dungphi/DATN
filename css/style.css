@@ -2073,7 +2073,7 @@ display:none;
 	color:#fff;
 	background-color:#337ab7;
 }															/* Quản Lý TK*/
-.qltk h3, .qlhs h3, .cstk h3, .ths h3,.cshs h3,.xhs h3{
+.qltk h3, .qlhs h3, .cstk h3, .ths h3,.cshs h3,.xhs h3,.vldl h3{
 	margin-top:25px;
 	text-align:center;
 	font-size:32px;
@@ -2086,6 +2086,17 @@ display:none;
 	background-color:#eeeeee;
 	border: 1px solid #CCC;
 	margin: 30px 0px;
+}
+.luu-vieclam{
+	padding: 15px 25px;
+	background-color:#eeeeee;
+	border: 1px solid #CCC;
+	margin: 30px 0px;
+}
+.luu-vieclam h3{
+	color:#898989;
+	font-weight:900;
+	text-align:center;	
 }
 .ttdangnhap h3, .ttcanhan h3, .tttongquan h3,.ttkinhnghiem h3,.tttrinhdo h3,.tthoso h3,.ttlienhe h3,.ttbangcap h3{
 	color:#898989;

@@ -43,7 +43,7 @@ class Trangchu extends CI_Controller {
 		
 		//phân trang
 		$config['total_rows'] = $this->viec_lam->countAll();
-        $config['base_url'] = base_url()."";
+        $config['base_url'] = base_url();
 
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close'] = '</ul><!--pagination-->';

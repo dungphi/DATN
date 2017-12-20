@@ -254,6 +254,7 @@ if(isset($thongbao))
                     </div>
                     <div class="col-sm-8 col-md-8">
                         <textarea name="muc_tieu" class="form-control" value="" rows="7"><?=$nguoitimviec['muc_tieu'];?></textarea>
+                         <input type="date"class="hidden" name="ngay_dk" placeholder="" value="<?=date("Y-m-d");?>" />
                      
                     </div>
                 </div>

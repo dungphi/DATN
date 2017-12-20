@@ -17,13 +17,15 @@
             	<h3 class="red"> Bạn Chưa Có Hồ Sơ </h3>
                 <i> Tạo hồ sơ ngay để nâng cao cơ hội tìm việc phù hợp</i>
                 <div class="taohoso">
-                	<a href="<?=base_url('Quanlynguoitimviec/taohoso'); ?>">
+                	<a href="<?=base_url('Quanlynguoitimviec/taohoso/').$timviec['id_ntv']; ?>">
                         <button type="submit" class="btn btn-danger btn-block btn_taohoso"><i class="fa fa-plus fa-lg fa-fw"></i> TẠO HỒ SƠ NGAY
                         </button></a>
                 </div>
             </div>
             <?php
 					}
+					else
+					{
 			?>
             <div class=" tt tthoso">
             	 <h3 class="blue"><i class="red">Hồ Sơ:</i> <?=$nguoitimviec['tieu_de'];?></h3>
@@ -88,15 +90,19 @@
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 xemhs">
                     	<a href="<?=base_url('quanlynguoitimviec/xemhoso');?>">
-                    	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xemhoso">
-                            <i class="fa fa-eye fa-lg fa-fw"></i> XEM
-                        </button></a>
+                            <button type="submit" class="btn btn-info btn-block btn_qlhs btn_xemhoso">
+                                <i class="fa fa-eye fa-lg fa-fw"></i> XEM
+                            </button></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 xoahs">
-                    	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xoahoso">
-                            <i class="fa fa-trash fa-lg fa-fw"></i> XÓA
-                        </button>
+                    	<a href="<?=base_url('quanlynguoitimviec/xoahoso/'.$nguoitimviec['id_hoso']);?>">
+                            <button type="submit" class="btn btn-info btn-block btn_qlhs btn_xoahoso">
+                                <i class="fa fa-trash fa-lg fa-fw"></i> XÓA
+                            </button></a>
                     </div>
                 </div>
             </div><!--end tthoso-->
+            <?php
+					}
+			?>
         </div>
