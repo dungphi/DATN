@@ -35,6 +35,7 @@ class Quanlynguoitimviec extends CI_Controller {
 		$this->load->model('hinh_thuc_lam_viec');
 		$this->load->model('cap_bac');
 		$this->load->model('ngoai_ngu');
+		
 	}
 public function quanlytaikhoan()
 	{
@@ -45,6 +46,7 @@ public function quanlytaikhoan()
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinnguoidung($user);
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);//ttql
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
@@ -59,6 +61,7 @@ public function quanlytaikhoan()
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinnguoidung($user);
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		if(isset($_POST['luu']))
@@ -147,7 +150,7 @@ public function quanlytaikhoan()
 				}
 			}
 		else 
-			$data['thongbao'] = '<script>alert("Lỗi.")</script>';
+			$data['thongbao'] = '<script>alert("Lỗi! Kiểm tra lại nội dung nhập.")</script>';
 		}
 		
 		$this->load->view('trangchu', $data);
@@ -186,17 +189,41 @@ public function quanlytaikhoan()
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
 		
 	}
-	public function taohoso()
+	public function xoalyhoso($id)
+	{
+		$data['title'] = 'Quản lý hồ sơ';
+		$data['content'] = 'nguoi_timviec/quanlyhoso';
+		$data['active'] = 6;
+		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);//chưa có hs
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$kq = $this->nguoi_tim_viec->xoahoso($id);
+		if(isset($kq))
+			$data['thongbao'] = '<script>alert("Xóa thành công.");location.assign("'.base_url('quanlynguoitimviec/quanlyhoso').'");</script>';
+		else
+			$data['thongbao'] = '<script>alert("Lỗi.")</script>';
+		
+		$this->load->view('trangchu', $data);
+		
+	}
+	public function taohoso($id)
 	{
 		$data['title'] = 'Tạo hồ sơ';
 		$data['content'] = 'nguoi_timviec/taohoso';
 		$data['active'] = 6;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
+		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
 		$data['ngoaingu'] = $this->ngoai_ngu->ngoaingu();
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
@@ -205,6 +232,59 @@ public function quanlytaikhoan()
 		$data['mucluong'] = $this->muc_luong->mucluong();
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
+		if(isset($_POST['luuhoso']))
+		{	
+			if($nguoitimviec['id_hs']!="")
+			
+				$data['thongbao'] ='<script>alert("Bạn đã có hồ sơ! Vui lòng kiểm tra lại.");location.assign("'.base_url('quanlynguoitimviec/taohoso').'");</script>';
+			else
+			{
+				// Kiểm tra dữ liệu nhập
+				$this->form_validation->set_rules('tieu_de', 'Tiêu đề', 'required|min_length[10]|max_length[70]', array('required' => 'Bạn chưa nhập %s.', 'min_length'=>"%s tối thiểu 10 kí tự", 'max_length'=>'%s tối đa 70 kí tự'));
+				
+				//
+				$tieude = $this->input->post('tieu_de');
+				$trinhdo = $this->input->post('trinh_do');
+				$kinhnghiem = $this->input->post('kinh_nghiem');
+				$caphientai = $this->input->post('cap_hien_tai');
+				$capmongmuon = $this->input->post('cap_mong_muon');
+				$nganhnghe = $this->input->post('nganh_nghe');
+				$diadiem = $this->input->post('dia_diem');
+				$hinhthuclv = $this->input->post('hinh_thuc');
+				$mucluong = $this->input->post('muc_luong');
+				$muctieu = $this->input->post('muc_tieu');
+				$ngaydk = $this->input->post('ngay_dk');
+				
+				if ($this->form_validation->run() == TRUE)
+				{
+					$dat = array(
+						'id_ntimviec' => $id,
+						'tieu_de' => $tieude,
+						'id_trinh_do'=> $trinhdo,
+						'id_kinh_nghiem'=>$kinhnghiem,
+						'chuc_vu_ht'=>$caphientai,
+						'chuc_vu_mm'=>$capmongmuon,
+						'id_nn'=>$nganhnghe,
+						'id_ddlv' => $diadiem,
+						'hinh_thuc_lam_viec' => $hinhthuclv,
+						'id_muc_luong' => $mucluong,
+						'muc_tieu' => $muctieu,
+						'ngay_dk' => $ngaydk,
+						);
+						
+					$this->nguoi_tim_viec->themhoso($dat,$id);
+					
+					$data['thongbao'] ='<script>alert("Tạo Hồ Sơ thành công");location.assign("'.base_url('quanlynguoitimviec/xemhoso').'");</script>';
+					
+				}
+				else 
+				{
+					$data['thongbao'] ='<script>alert("Tạo hồ sơ Không thành công! Kiểm tra lại nội dung nhập.")</script>';
+				}
+			}
+		}
+		
+		
 		$this->load->view('trangchu', $data);
 	}
 	public function chinhsuahoso($id)
@@ -216,6 +296,7 @@ public function quanlytaikhoan()
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
 		$data['trinhdo'] = $this->Trinh_do->trinhdo();
@@ -239,7 +320,7 @@ public function quanlytaikhoan()
 			$hinhthuclv = $this->input->post('hinh_thuc');
 			$mucluong = $this->input->post('muc_luong');
 			$muctieu = $this->input->post('muc_tieu');
-			
+			$ngaydk = $this->input->post('ngay_dk');
 			
 			if ($this->form_validation->run() == TRUE)
 			{
@@ -255,6 +336,7 @@ public function quanlytaikhoan()
 					'hinh_thuc_lam_viec' => $hinhthuclv,
 					'id_muc_luong' => $mucluong,
 					'muc_tieu' => $muctieu,
+					'ngay_dk' => $ngaydk,
 					);
 				$kq = $this->nguoi_tim_viec->capnhathoso($dat, $id);
 				if(isset($kq))
@@ -265,7 +347,7 @@ public function quanlytaikhoan()
 			}
 			else 
 			{
-				$data['thongbao'] ='<script>alert("Lỗi cập nhật.")</script>';
+				$data['thongbao'] ='<script>alert("Lỗi Chỉnh sửa! Kiểm tra lại nội dung nhập")</script>';
 			}
 		}
 		$this->load->view('trangchu', $data);
@@ -280,6 +362,7 @@ public function quanlytaikhoan()
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
 		$data['trinhdo'] = $this->Trinh_do->trinhdo();
@@ -290,12 +373,14 @@ public function quanlytaikhoan()
 		$this->load->view('trangchu', $data);
 		
 	}
+	
 	public function vieclamdaluu()
 	{
 		$data['title'] = 'Việc làm đã lưu';
 		$data['content'] = 'nguoi_timviec/vieclamdaluu';
 		$data['active'] = 7;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);
@@ -307,6 +392,7 @@ public function quanlytaikhoan()
 		$data['content'] = 'nguoi_timviec/ntdxemhoso';
 		$data['active'] = 8;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		$this->load->view('trangchu', $data);

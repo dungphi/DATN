@@ -98,6 +98,25 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->order_by('nguoi_tim_viec.id_ntv', 'desc');
 		return $this->db->get()->row_array();
 	}
+	public function taohoso($user)
+	{
+		$this->db->select('*');
+		$this->db->from('nguoi_tim_viec');
+		$this->db->where('email', $user);
+		$this->db->order_by('nguoi_tim_viec.id_ntv', 'desc');
+		return $this->db->get()->row_array();
+	}
+	public function xoahoso($id)
+	{
+		$this->db->where('id_hoso', $id);
+		return $this->db->delete('ho_so_tim_viec');
+	
+	}
+	public function themhoso($db = array(),$id)
+	{
+		return $this->db->insert('ho_so_tim_viec',$db);
+		
+	}
 	public function capnhathoso($data=array(),$id)
 	{
 		$this->db->where('id_hoso',$id);

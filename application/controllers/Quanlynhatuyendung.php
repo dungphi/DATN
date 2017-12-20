@@ -74,19 +74,11 @@ class Quanlynhatuyendung extends CI_Controller {
 				$avatar = $config['upload_path'].$img['file_name'];
 			}
 			else 
-<<<<<<< HEAD
- 			{
- 				$avatar = $this->input->post('img_upload');
- 				if($avatar == '')
- 					$avatar = 'images/no-img.png';
- 			}
-=======
 			{
 				$avatar = $this->input->post('img_upload');
 				if($avatar == '')
 					$avatar = 'images/no-img.png';
 			}
->>>>>>> e6b5c1a1d4f599f6e72cb51be0f7c6950ef275e2
 			if($email == $user)
 			{
 				$dat = array(
