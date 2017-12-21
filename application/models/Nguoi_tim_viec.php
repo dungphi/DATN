@@ -87,7 +87,7 @@ class Nguoi_tim_viec extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('nguoi_tim_viec,ho_so_tim_viec,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
-		$this->db->where('nguoi_tim_viec.id_hs = ho_so_tim_viec.id_hoso');
+		$this->db->where('nguoi_tim_viec.id_ntv = ho_so_tim_viec.id_ntimviec');
 		$this->db->where('ho_so_tim_viec.id_nn = nganh_nghe.id_nn'); 
 		$this->db->where('ho_so_tim_viec.id_ddlv = dia_diem.id_dd');
 		$this->db->where('ho_so_tim_viec.id_kinh_nghiem = kinh_nghiem.id_kn');
@@ -95,8 +95,7 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->where('nguoi_tim_viec.id_gioi_tinh = gioi_tinh.id_gt');
 		$this->db->where('ho_so_tim_viec.id_trinh_do = trinh_do.id_td');
 		$this->db->where('email', $user);
-		$this->db->order_by('nguoi_tim_viec.id_ntv', 'desc');
-		return $this->db->get()->row_array();
+		return $this->db->get()->result_array();
 	}
 	public function taohoso($user)
 	{
@@ -112,7 +111,7 @@ class Nguoi_tim_viec extends CI_Model{
 		return $this->db->delete('ho_so_tim_viec');
 	
 	}
-	public function themhoso($db = array(),$id)
+	public function themhoso($db = array())
 	{
 		return $this->db->insert('ho_so_tim_viec',$db);
 		

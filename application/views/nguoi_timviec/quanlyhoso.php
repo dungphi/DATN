@@ -9,8 +9,9 @@
             	<label class="hidden-xs"> Bạn được tạo tối đa 02 hồ sơ (01 hồ sơ trực tuyến và 01 hồ sơ đính kèm từ máy tính). Trong đó chỉ có 01 hồ sơ được “cho phép tìm kiếm” bởi Nhà tuyển dụng. </label>
 				<i> Tất cả các Hồ sơ ở trạng thái “Đã duyệt” đều có thể sử dụng để “Nộp hồ sơ” trực tuyến.</i> 
             </div>
-            <?php if(!isset($nguoitimviec['id_hs']))
-					{
+            <?php 
+			if(count($hoso) == 0)
+			{
 						
 			?>
             <div class=" tt tthoso">
@@ -23,9 +24,11 @@
                 </div>
             </div>
             <?php
-					}
-					else
-					{
+			}
+			else
+			{
+				foreach($hoso as $nguoitimviec)
+				{
 			?>
             <div class=" tt tthoso">
             	 <h3 class="blue"><i class="red">Hồ Sơ:</i> <?=$nguoitimviec['tieu_de'];?></h3>
@@ -72,11 +75,12 @@
                     </div>
                 </div>
                 <?php
-				 	if(!$nguoitimviec['duyet']==2)
+				 	if($nguoitimviec['duyet']==1)
 						{
 				?>
                 <div class="chotimkiem">
-           				<input type="checkbox" name="cho_tim_kiem" value="yes"/> <i class="red">Cho phép nhà tuyển dụng tìm kiếm hồ sơ và liên hệ với bạn</i>
+           			<input type="radio" name="cho_tim_kiem" value="<?=$nguoitimviec['id_hoso'] ?>" <?php if($nguoitimviec['id_hs'] == $nguoitimviec['id_hoso']) echo 'checked'; ?> onClick="check(<?=$nguoitimviec['id_ntv']?>,<?=$nguoitimviec['id_hoso']?>)" id="radio_<?=$nguoitimviec['id_hoso']?>" > 
+					<i class="red">Cho phép nhà tuyển dụng tìm kiếm hồ sơ và liên hệ với bạn</i>
                 </div>
                 <?php
 						}
@@ -103,6 +107,23 @@
                 </div>
             </div><!--end tthoso-->
             <?php
-					}
+				}
+			}
 			?>
         </div>
+<script>
+	function check(id_ntv,id_hs){
+        $.ajax({
+            method:"POST",
+            url:"<?=base_url('quanlynguoitimviec/select'); ?>",
+            data:{id_ntv:id_ntv,id_hs:id_hs},
+			success: function(result)
+			{
+				if(result == 1)
+					alert('Hoàn tất!');
+				else
+					alert('Lỗi!');
+			}
+        });
+    }
+</script>

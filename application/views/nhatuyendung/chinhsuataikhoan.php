@@ -46,11 +46,7 @@ if(isset($thongbao))
 							<label for="avatar" onClick="return chonhinh()"><img src="<?php if($nhatuyendung['avatar'] == '') {echo base_url('images/no-img.png');} else echo base_url().$nhatuyendung['avatar']; ?>" alt="" id="images" width="200px"></label>
 							<input name="avatar" id="avatar" type="file" class="hidden-lg hidden-md hidden-sm hidden-xs">
 							<input name="img_upload" id="avatar" type="text" class="hidden-lg hidden-md hidden-sm hidden-xs" value="<?=$nhatuyendung['avatar'];?>">
-<<<<<<< HEAD
                         </div>
-=======
-						</div>
->>>>>>> e6b5c1a1d4f599f6e72cb51be0f7c6950ef275e2
 					</div>
 					<div class="row tt tthoten">
 						<div class="  col-sm-4 col-md-4">
