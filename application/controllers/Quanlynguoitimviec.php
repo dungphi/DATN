@@ -234,15 +234,10 @@ public function quanlytaikhoan()
 		$data['diadiem'] = $this->dia_diem->diadiem();
 		if(isset($_POST['luuhoso']))
 		{	
-			//if($nguoitimviec['id_hs']!="")
-			
-				//$data['thongbao'] ='<script>alert("Bạn đã có hồ sơ! Vui lòng kiểm tra lại.");location.assign("'.base_url('quanlynguoitimviec/taohoso').'");</script>';
-			//else
-			//{
+
 				// Kiểm tra dữ liệu nhập
 				$this->form_validation->set_rules('tieu_de', 'Tiêu đề', 'required|min_length[10]|max_length[70]', array('required' => 'Bạn chưa nhập %s.', 'min_length'=>"%s tối thiểu 10 kí tự", 'max_length'=>'%s tối đa 70 kí tự'));
 				
-				//
 				$tieude = $this->input->post('tieu_de');
 				$trinhdo = $this->input->post('trinh_do');
 				$kinhnghiem = $this->input->post('kinh_nghiem');
@@ -279,7 +274,6 @@ public function quanlytaikhoan()
 				{
 					$data['thongbao'] ='<script>alert("Tạo hồ sơ Không thành công! Kiểm tra lại nội dung nhập.")</script>';
 				}
-			//}
 		}		
 		$this->load->view('trangchu', $data);
 	}
