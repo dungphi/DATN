@@ -27,8 +27,8 @@ class Trangchu extends CI_Controller {
 		$this->load->model('dia_diem');
 	}
 	public function index()
-	{	if($this->uri->segment(2))
-			$batdau = $this->uri->segment(2);
+	{	if($this->uri->segment(1))
+			$batdau = $this->uri->segment(1);
 		else
 			$batdau =0;
 		$data['title'] = 'Trang việc làm Online';
@@ -36,7 +36,7 @@ class Trangchu extends CI_Controller {
 		$data['active'] = 1;
 		//cấu hình phân trang
 		$config['per_page'] = 2;
-		$config['uri_segment'] = 2;
+		$config['uri_segment'] = 1;
 		$config['num_links'] = 5;
 		
 		$data['vieclam'] = $this->viec_lam->vieclam($config['per_page'],$batdau);
