@@ -97,6 +97,18 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->where('email', $user);
 		return $this->db->get()->result_array();
 	}
+	public function xemhoso($id)
+	{
+		$this->db->select('*');
+		$this->db->from('ho_so_tim_viec,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
+		$this->db->where('ho_so_tim_viec.id_nn = nganh_nghe.id_nn'); 
+		$this->db->where('ho_so_tim_viec.id_ddlv = dia_diem.id_dd');
+		$this->db->where('ho_so_tim_viec.id_kinh_nghiem = kinh_nghiem.id_kn');
+		$this->db->where('ho_so_tim_viec.id_muc_luong = muc_luong.id_ml');
+		$this->db->where('ho_so_tim_viec.id_trinh_do = trinh_do.id_td');
+		$this->db->where('id_hoso', $id);
+		return $this->db->get()->row_array();
+	}
 	public function taohoso($user)
 	{
 		$this->db->select('*');
@@ -113,7 +125,8 @@ class Nguoi_tim_viec extends CI_Model{
 	}
 	public function themhoso($db = array())
 	{
-		return $this->db->insert('ho_so_tim_viec',$db);
+		$this->db->insert('ho_so_tim_viec',$db);
+		return $this->db->insert_id();
 		
 	}
 	public function capnhathoso($data=array(),$id)

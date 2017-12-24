@@ -93,16 +93,15 @@
                             </button></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 xemhs">
-                    	<a href="<?=base_url('quanlynguoitimviec/xemhoso');?>">
+                    	<a href="<?=base_url('quanlynguoitimviec/xemhoso/'.$nguoitimviec['id_hoso']);?>">
                             <button type="submit" class="btn btn-info btn-block btn_qlhs btn_xemhoso">
                                 <i class="fa fa-eye fa-lg fa-fw"></i> XEM
                             </button></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 xoahs">
-                    	<a href="<?=base_url('quanlynguoitimviec/xoahoso/'.$nguoitimviec['id_hoso']);?>">
-                            <button type="submit" class="btn btn-info btn-block btn_qlhs btn_xoahoso">
+                    	<button class="btn btn-info btn-block btn_qlhs btn_xoahoso" onClick="xoa_hoso(<?=$nguoitimviec['id_hoso']?>)">
                                 <i class="fa fa-trash fa-lg fa-fw"></i> XÓA
-                            </button></a>
+                            </button>
                     </div>
                 </div>
             </div><!--end tthoso-->
@@ -125,5 +124,23 @@
 					alert('Lỗi!');
 			}
         });
+    }
+	function xoa_hoso(id){
+		if (confirm("Bạn có muốn xóa không?")) {
+			$.ajax({
+				method:"POST",
+				url:"<?=base_url('quanlynguoitimviec/xoa_hoso'); ?>",
+				data:{id_hoso:id},
+				success: function(result)
+				{
+					if(result == 1){
+						alert('Xóa thành công.');
+						location.reload();
+					}
+					else
+						alert('Lỗi!');
+				}
+			});
+		}
     }
 </script>

@@ -267,7 +267,7 @@ public function quanlytaikhoan()
 						'ngay_dk' => $ngaydk,
 						);
 					$a = $this->nguoi_tim_viec->themhoso($dat);
-					$data['thongbao'] ='<script>alert("Tạo Hồ Sơ thành công");location.assign("'.base_url('quanlynguoitimviec/xemhoso').'");</script>';
+					$data['thongbao'] ='<script>alert("Tạo Hồ Sơ thành công");location.assign("'.base_url('quanlynguoitimviec/xemhoso/'.$a).'");</script>';
 					
 				}
 				else 
@@ -343,7 +343,7 @@ public function quanlytaikhoan()
 		$this->load->view('trangchu', $data);
 		
 	}
-		public function xemhoso()
+		public function xemhoso($id)
 	{
 		
 		$data['title'] = 'Xem hồ sơ';
@@ -352,6 +352,7 @@ public function quanlytaikhoan()
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
+		$data['hoso'] = $this->nguoi_tim_viec->xemhoso($id);
 		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
@@ -396,6 +397,12 @@ public function quanlytaikhoan()
 			'id_hs' => $id_hs,
 		);
 		$kq = $this->nguoi_tim_viec->capnhat($dat,$id_ntv);
+		echo $kq;
+	}
+	public function xoa_hoso()
+	{
+		$id = $this->input->post('id_hoso');
+		$kq = $this->nguoi_tim_viec->xoahoso($id);
 		echo $kq;
 	}
 }
