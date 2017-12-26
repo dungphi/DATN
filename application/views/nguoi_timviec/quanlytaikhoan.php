@@ -7,7 +7,7 @@
 				<h3>Quản Lý Tài Khoản</h3>
              </div>   		
             <div class="ttdangnhap">
-            	<h3><i class="fa fa-lock fa-lg fa-fw"></i> Thông Tin Đăng Nhập</h3><?= $nguoitimviec['id_ntv'];?>
+            	<h3><i class="fa fa-lock fa-lg fa-fw"></i> Thông Tin Đăng Nhập</h3>
                 <div class="row ttemail">
                 	<div class=" col-xs-4 col-sm-4 col-md-4">
                     	<label>Email</label>

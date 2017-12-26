@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 21, 2017 lúc 05:28 PM
+-- Thời gian đã tạo: Th12 26, 2017 lúc 02:20 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -49,24 +49,6 @@ INSERT INTO `admin` (`id_admin`, `ten`, `user`, `pass`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bang_cap`
---
-
-DROP TABLE IF EXISTS `bang_cap`;
-CREATE TABLE IF NOT EXISTS `bang_cap` (
-  `id_bc` int(11) NOT NULL AUTO_INCREMENT,
-  `ten_bc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ten_truong` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nam_bat_dau` year(4) NOT NULL,
-  `nam_ket_thuc` year(4) NOT NULL,
-  `chuyen_nganh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `loai_tot_nghiep` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id_bc`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `cap_bac`
 --
 
@@ -88,6 +70,43 @@ INSERT INTO `cap_bac` (`id_cb`, `cap_bac`) VALUES
 (4, 'Trưởng phó phòng'),
 (5, 'Chuyên gia'),
 (6, 'Quản lý cấp cao');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chi_tiet_bang_cap`
+--
+
+DROP TABLE IF EXISTS `chi_tiet_bang_cap`;
+CREATE TABLE IF NOT EXISTS `chi_tiet_bang_cap` (
+  `id_bc` int(11) NOT NULL AUTO_INCREMENT,
+  `ten_bc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ten_truong` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nam_bat_dau` year(4) NOT NULL,
+  `nam_ket_thuc` year(4) NOT NULL,
+  `chuyen_nganh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `loai_tot_nghiep` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_bc`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chi_tiet_kinh_nghiem`
+--
+
+DROP TABLE IF EXISTS `chi_tiet_kinh_nghiem`;
+CREATE TABLE IF NOT EXISTS `chi_tiet_kinh_nghiem` (
+  `id_knlv` int(11) NOT NULL AUTO_INCREMENT,
+  `ten_ct` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chuc_danh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tg_bat_dau` year(4) NOT NULL,
+  `tg_ket_thuc` year(4) NOT NULL,
+  `luong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mo_ta_cv` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `thanh_tich` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id_knlv`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -189,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `ho_so_tim_viec` (
   `chuc_vu_mm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `duyet` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_hoso`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `ho_so_tim_viec`
@@ -199,16 +218,14 @@ INSERT INTO `ho_so_tim_viec` (`id_hoso`, `id_ntimviec`, `vip`, `luot_xem`, `tieu
 (1, 0, 1, 2, 'Tìm việc chăm em bé, giúp việc nhà hoặc nuôi bệnh tại TPHCM', 7, 3, 1, NULL, 7, 0, '2017-10-31', 2, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'nhân viên', 1),
 (2, 0, 1, 3, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, NULL, 1, 0, '2017-10-31', 3, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
 (3, 0, 1, 8, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, NULL, 1, 0, '2017-10-31', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
-(4, 1, 0, 21, 'Kĩ sư máy tính, iT, mạng máy tính - viễn thông', 4, 1, 3, NULL, 1, 0, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', '- Công việc phù hợp và ổn định \r\n- Môi trường làm việc thân thiện Chế độ theo quy định.\r\n- lalala', 'Nhân Viên', 'Trưởng nhóm', 1),
+(4, 0, 0, 22, 'Kĩ sư máy tính, iT, mạng máy tính - viễn thông', 4, 1, 3, NULL, 1, 0, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', '- Công việc phù hợp và ổn định \r\n- Môi trường làm việc thân thiện Chế độ theo quy định.\r\n- lalala', 'Nhân Viên', 'Trưởng nhóm', 0),
 (5, 0, 0, 30, 'Nhân Viên Sale', 6, 1, 3, NULL, 1, 0, '2017-12-03', 3, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
 (6, 0, 1, 25, 'Nhân Viên Bán Hàng', 7, 3, 1, NULL, 5, 0, '2017-12-03', 2, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
 (17, 10, 0, 0, 'dsadsadasdsadsa sadsad', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
 (16, 10, 0, 0, 'sadsadasdsadsa asdsadasd', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
 (15, 10, 0, 0, 'sadasdsadsadasdsadsadsadsa', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
 (14, 10, 0, 0, 'Nhân viên bán hàng', 5, 1, 3, NULL, 1, NULL, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', '1', '', '1', '2', 1),
-(18, 10, 0, 0, 'ssssssssssssss', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
-(19, 1, 0, 0, 'Nhân viên IT', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
-(20, 1, 0, 0, 'ádfasdfasdf', 6, 2, 4, NULL, 1, NULL, '2017-12-21', 4, 'chưa cập nhật', 'chưa cập nhật', '3', 'adsfasdfasdfasdfasdfasdfadfadsf', '4', '3', 1);
+(18, 10, 0, 0, 'ssssssssssssss', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -240,25 +257,6 @@ INSERT INTO `kinh_nghiem` (`id_kn`, `ten_kn`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `kinh_nghiem_lv`
---
-
-DROP TABLE IF EXISTS `kinh_nghiem_lv`;
-CREATE TABLE IF NOT EXISTS `kinh_nghiem_lv` (
-  `id_knlv` int(11) NOT NULL AUTO_INCREMENT,
-  `ten_ct` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chuc_danh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tg_bat_dau` year(4) NOT NULL,
-  `tg_ket_thuc` year(4) NOT NULL,
-  `luong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mo_ta_cv` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `thanh_tich` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id_knlv`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `lien_he`
 --
 
@@ -271,6 +269,20 @@ CREATE TABLE IF NOT EXISTS `lien_he` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sdt_lh` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `luu_viec_lam`
+--
+
+DROP TABLE IF EXISTS `luu_viec_lam`;
+CREATE TABLE IF NOT EXISTS `luu_viec_lam` (
+  `id_lvl` int(11) NOT NULL AUTO_INCREMENT,
+  `id_ntv` int(11) NOT NULL,
+  `id_vl` int(11) NOT NULL,
+  PRIMARY KEY (`id_lvl`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -385,7 +397,7 @@ CREATE TABLE IF NOT EXISTS `nguoi_tim_viec` (
 --
 
 INSERT INTO `nguoi_tim_viec` (`id_ntv`, `id_hs`, `ho`, `ten`, `email`, `phone`, `ngay_sinh`, `dia_chi`, `avatar`, `id_gioi_tinh`, `hon_nhan`, `active`, `pass`) VALUES
-(1, 4, 'Thanh', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'Tp HCM', 'images/hoso/9.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b70'),
+(1, 2, 'Thanh', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'Tp HCM', 'images/hoso/9.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b70'),
 (2, 1, 'Phan Anh', 'Trường', 'truong@gmail.com', '0123456789', '1990-10-03', 'HCM', 'images/hoso/12.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b7'),
 (3, 3, 'Thanh', 'Thùy', 'thuy@gmail.com', '0123456777', '1997-10-19', 'HCM', 'images/hoso/avatar.png', 2, 'Độc thân', 1, ''),
 (8, 4, 'Trần Minh', 'Phi', 'phi@gmail.com', '01234567897', '1991-02-11', 'Q9, HCM', 'images/hoso/man.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b70'),
