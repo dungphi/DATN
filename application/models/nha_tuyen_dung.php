@@ -58,6 +58,13 @@ class Nha_tuyen_dung extends CI_Model{
 		$this->db->where('email', $email);
 		return $this->db->get()->row_array();
 	}
+	public function ds_vieclam($email)
+	{
+		$this->db->from('nha_tuyen_dung, viec_lam');
+		$this->db->where('email', $email);
+		$this->db->where('nha_tuyen_dung.id_ntd = viec_lam.id_ntd');
+		return $this->db->get()->result_array();
+	}
 	public function check_pass($id,$pass)
 	{
 		$this->db->from('nha_tuyen_dung');

@@ -74,20 +74,11 @@ class Quanlynhatuyendung extends CI_Controller {
 				$avatar = $config['upload_path'].$img['file_name'];
 			}
 			else 
-<<<<<<< HEAD
- 			{
- 				$avatar = $this->input->post('img_upload');
- 				if($avatar == '')
- 					$avatar = 'images/no-img.png';
- 			}
-=======
-
 			{
 				$avatar = $this->input->post('img_upload');
 				if($avatar == '')
 					$avatar = 'images/no-img.png';
 			}
->>>>>>> cf6f847a67446bcb542621b2dab25427d114accc
 			if($email == $user)
 			{
 				$dat = array(
@@ -152,6 +143,7 @@ class Quanlynhatuyendung extends CI_Controller {
 		$data['content'] = 'nhatuyendung/quanlyvieclam';
 		$data['active'] = 6;
 		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
+		$data['ds_vieclam'] = $this->nha_tuyen_dung->ds_vieclam($user);
 		$this->load->view('trangchu', $data);
 	}
 	public function doi_pass()
@@ -193,12 +185,12 @@ class Quanlynhatuyendung extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}
-	public function taohoso()
+	public function dangtin()
 	{
-		$data['title'] = 'Tạo hồ sơ';
-		$data['content'] = 'nguoi_timviec/taohoso';
+		$data['title'] = 'Đăng tin tuyển dụng';
+		$data['content'] = 'nhatuyendung/dangtin';
 		$data['active'] = 6;
-		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
 		$data['ngoaingu'] = $this->ngoai_ngu->ngoaingu();
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
