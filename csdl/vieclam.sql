@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 26, 2017 lúc 02:20 PM
+-- Thời gian đã tạo: Th12 28, 2017 lúc 04:08 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -474,6 +474,7 @@ INSERT INTO `trinh_do` (`id_td`, `trinh_do`) VALUES
 DROP TABLE IF EXISTS `viec_lam`;
 CREATE TABLE IF NOT EXISTS `viec_lam` (
   `id_vl` int(11) NOT NULL AUTO_INCREMENT,
+  `id_ntd` int(11) NOT NULL,
   `vip` tinyint(4) NOT NULL DEFAULT '0',
   `id_nganh` int(11) NOT NULL,
   `id_kinh_nghiem` int(11) DEFAULT NULL,
@@ -493,6 +494,7 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
   `luot_xem` int(11) NOT NULL DEFAULT '0',
   `quy_mo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hinh_thuc_lv` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_ngoai_ngu` int(11) NOT NULL,
   PRIMARY KEY (`id_vl`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -500,10 +502,10 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
 -- Đang đổ dữ liệu cho bảng `viec_lam`
 --
 
-INSERT INTO `viec_lam` (`id_vl`, `vip`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`) VALUES
-(1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', 'Giám đốc', 'images/vieclam/3.jpg', 9, '500 người', 'Nhân viên chính thức'),
-(2, 1, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', 'Ky Thuat Vien', 'images/vieclam/4.jpg', 31, '50-100 người', 'Nhân viên chính thức'),
-(3, 1, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', 'nhân viên', 'images/vieclam/hinhanh.png', 48, '10-50 người', 'Nhân viên chính thức');
+INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `vip`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`, `id_ngoai_ngu`) VALUES
+(1, 1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', '2', 'images/vieclam/3.jpg', 9, '500 người', '1', 0),
+(2, 2, 1, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', '3', 'images/vieclam/4.jpg', 31, '50-100 người', '1', 0),
+(3, 4, 1, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', '6', 'images/vieclam/hinhanh.png', 55, '10-50 người', '1', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -20,75 +20,10 @@
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value="<?php echo set_value('tieude')?>"> 
-								 <?php echo form_error('tieude', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
+								<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value=""> 
 							</div>
 
 						</div>
-						<div class="row tt hs_trinhdohs">
-							<div class="col-sm-4 col-md-4">
-								<label class="">Trình độ<i class="red">*</i></label>
-
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="id_trinh_do" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn trình độ</option>
-								<?php
-									foreach($trinhdo as $td)
-									{
-								?>
-									<option value="<?=$td['id_td']; ?>" <?php if(isset($id_td)) {if($id_td == $td['id_td']) echo 'selected';} ?>><?=$td['trinh_do'] ?></option>
-								<?php
-									}
-								?>
-
-								</select>
-
-							</div>
-						</div> 
-						<div class="row tt hs_kinhnghiem">
-							<div class="col-sm-4 col-md-4">
-								<label class="">Số năm kinh nghiệm<i class="red">*</i></label>
-
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="id_kinh_nghiem" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn số năm</option>
-								<?php
-									foreach($kinhnghiem as $kn)
-									{
-								?>
-									<option value="<?=$kn['id_kn']; ?>" <?php if(isset($id_kn)) {if($id_kn == $kn['id_kn']) echo 'selected';} ?>><?=$kn['ten_kn'] ?></option>
-								<?php
-									}
-								?>
-
-								</select>
-
-							</div>
-						</div> 
-						<div class="row tt hs_capbac">
-							<div class="col-sm-4 col-md-4">
-								<label class="">Chức vụ<i class="red">*</i></label>
-
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="chuc_vu" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn cấp bậc</option>
-								<?php
-									foreach($capbac as $cb)
-									{
-								?>
-									<option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
-								<?php
-									}
-								?>
-
-								</select>
-
-							</div>
-						</div>
-						 
 						<div class="row tt hs_nganhnghe">
 							<div class="col-sm-4 col-md-4">
 								<label class="">Ngành nghề<i class="red">*</i></label>
@@ -110,61 +45,19 @@
 
 							</div>
 						</div>
-						<div class="row tt hs_ngoaingu">
+						<div class="row tt hs_kinhnghiem">
 							<div class="col-sm-4 col-md-4">
-								<label class="">Ngoại ngữ</label>
+								<label class="">Số năm kinh nghiệm<i class="red">*</i></label>
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="ngoai_ngu" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn ngoại ngữ</option>
+								<select class="form-control" name="id_kinh_nghiem" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn số năm</option>
 								<?php
-									foreach($ngoaingu as $nn)
+									foreach($kinhnghiem as $kn)
 									{
 								?>
-									<option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if(isset($id_ngoai_ngu)) {if($id_nguoi_ngu == $nn['id_ngoai_ngu']) echo 'selected';} ?>><?=$nn['ten_ngoai_ngu'] ?></option>
-								<?php
-									}
-								?>
-
-								</select>
-
-							</div>
-						</div>
-						<div class="row tt hs_diadiem">
-							<div class="col-sm-4 col-md-4">
-								<label class="">Chọn nơi làm việc<i class="red">*</i></label>
-
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="dia_diem" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn nơi làm việc</option>
-								 <?php
-									foreach($diadiem as $dd)
-									{
-								?>
-									<option value="<?=$dd['id_dd']; ?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd'] ?></option>
-								<?php
-									}
-								?>
-
-								</select>
-
-							</div>
-						</div> 
-						<div class="row tt hs_hinhthuclv">
-							<div class="col-sm-4 col-md-4">
-								<label class="">Hình thức làm việc<i class="red">*</i></label>
-
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="hinh_thuc" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn hình thức làm việc</option>
-								 <?php
-									foreach($hinhthuc as $htlv)
-									{
-								?>
-									<option value="<?=$htlv['id_htlv']; ?>" <?php if(isset($id_htlv)) {if($id_htlv== $htlv['id_htlv']) echo 'selected';} ?>><?=$htlv['hinh_thuc'] ?></option>
+									<option value="<?=$kn['id_kn']; ?>" <?php if(isset($id_kn)) {if($id_kn == $kn['id_kn']) echo 'selected';} ?>><?=$kn['ten_kn'] ?></option>
 								<?php
 									}
 								?>
@@ -175,11 +68,11 @@
 						</div>
 						<div class="row tt hs_mucluong">
 							<div class="col-sm-4 col-md-4">
-								<label class="">Mong muốn mức lương tối thiểu (VND/tháng)<i class="red">*</i></label>
+								<label class="">Mức lương (VND/tháng)<i class="red">*</i></label>
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="muc_luong" tabindex="-1" aria-hidden="true">
+								<select class="form-control" name="id_muc_luong" tabindex="-1" aria-hidden="true">
 									<option value="0">Chọn mức lương</option>
 								 <?php
 									foreach($mucluong as $ml)
@@ -194,15 +87,187 @@
 
 							</div>
 						</div>
-						<div class="row tt hs_muctieu">
+						<div class="row tt hs_diadiem">
 							<div class="col-sm-4 col-md-4">
-								<label class="">Mục tiêu nghề nghiệp</label>
+								<label class="">Địa điểm làm việc<i class="red">*</i></label>
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<textarea name="muc_tieu" placeholder="Gợi ý: 
-						   - Mục tiêu nghề nghiệp của bạn trong một vài năm tới là gì? VD: Tìm được môi trường làm việc giúp mình học hỏi thêm kinh nghiệm...
-						   - Mục tiêu nghề nghiệp của bạn trong dài hạn (5-10 năm tới) là gì? VD: Trở thành lãnh đạo cấp cao của công ty, có chuyên môn và thu nhập tốt.." class="form-control" value="<?php echo set_value('muctieu')?>" rows="7"></textarea>
+								<select class="form-control" name="id_ddlv" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn nơi làm việc</option>
+								 <?php
+									foreach($diadiem as $dd)
+									{
+								?>
+									<option value="<?=$dd['id_dd']; ?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div> 
+						<div class="row tt hs_trinhdohs">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Trình độ<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<select class="form-control" name="id_trinh_do" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn trình độ</option>
+								<?php
+									foreach($trinhdo as $td)
+									{
+								?>
+									<option value="<?=$td['id_td']; ?>" <?php if(isset($id_td)) {if($id_td == $td['id_td']) echo 'selected';} ?>><?=$td['trinh_do'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div> 
+						
+						<div class="row tt hs_capbac">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Chức vụ<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<select class="form-control" name="chuc_vu" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn cấp bậc</option>
+								<?php
+									foreach($capbac as $cb)
+									{
+								?>
+									<option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="row tt hs_ngoaingu">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Ngoại ngữ</label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<select class="form-control" name="id_ngoai_ngu" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn ngoại ngữ</option>
+								<?php
+									foreach($ngoaingu as $nn)
+									{
+								?>
+									<option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if(isset($id_ngoai_ngu)) {if($id_nguoi_ngu == $nn['id_ngoai_ngu']) echo 'selected';} ?>><?=$nn['ten_ngoai_ngu'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="row tt hs_hinhthuclv">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Hình thức làm việc<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<select class="form-control" name="hinh_thuc_lv" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn hình thức làm việc</option>
+								 <?php
+									foreach($hinhthuc as $htlv)
+									{
+								?>
+									<option value="<?=$htlv['id_htlv']; ?>" <?php if(isset($id_htlv)) {if($id_htlv== $htlv['id_htlv']) echo 'selected';} ?>><?=$htlv['hinh_thuc'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="row tt hs_hinhthuclv">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Yêu cầu Giới tính<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<select class="form-control" name="yc_gioi_tinh" tabindex="-1" aria-hidden="true">
+								 <?php
+									foreach($gioitinh as $gt)
+									{
+								?>
+									<option value="<?=$gt['id_gt']; ?>"><?=$gt['gioi_tinh'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="row tt hs_hinhthuclv">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Ngoại ngữ<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<select class="form-control" name="hinh_thuc" tabindex="-1" aria-hidden="true">
+									<option value="0">Chọn hình thức làm việc</option>
+								 <?php
+									foreach($ngoaingu as $ng)
+									{
+								?>
+									<option value="<?=$ng['id_ngoai_ngu']; ?>" ><?=$htlv['ten_ngoai_ngu'] ?></option>
+								<?php
+									}
+								?>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="row tt hs_hinhthuclv">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Hạn nộp<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<input type="date" name="ngay_hh" class="form-control">
+							</div>
+						</div>
+						<div class="row tt hs_hinhthuclv">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Số lượng<i class="red">*</i></label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<input type="number" name="so_luong" class="form-control">
+							</div>
+						</div>
+						<div class="row tt hs_hinhthuclv">
+							<div class="col-sm-4 tt">
+								<label for="hinh_anh">Hình ảnh hiển thị</label>
+							</div>
+							<div class="col-sm-8">
+								<label for="hinh_anh" onClick="return chonhinh()"><img src="<?=base_url('images/no-img.png') ?>" alt="" id="images" width="200px"></label>
+								<input name="hinh_anh" id="hinh_anh" type="file" class="hidden-lg hidden-md hidden-sm hidden-xs">
+							</div>
+						</div>
+						<div class="row tt hs_muctieu">
+							<div class="col-sm-4 col-md-4">
+								<label class="">Mô tả</label>
+
+							</div>
+							<div class="col-sm-8 col-md-8">
+								<textarea name="mo_ta" id="mo_ta" value="" rows="7"></textarea>
 
 							</div>
 						</div>
@@ -288,7 +353,7 @@
 	});
 	function chonhinh() 
 	{
-	$('#avatar').change(function () {
+	$('#hinh_anh').change(function () {
         if ( window.FileReader ) {
             var reader = new FileReader();
             reader.onload = function (e) {
