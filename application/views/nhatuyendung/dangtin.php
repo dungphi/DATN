@@ -20,7 +20,8 @@
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value=""> 
+								<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value="<?php echo set_value('tieu_de')?>"> 
+								<?php echo form_error('tieu_de', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 
 						</div>
@@ -31,18 +32,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="id_nganh" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn ngành nghề</option>
+									<option value="">Chọn ngành nghề</option>
 								<?php
 									foreach($nganhnghe as $nn)
 									{
 								?>
-									<option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
+									<option value="<?=$nn['id_nn']; ?>" <?php if(set_value('id_nganh') == $nn['id_nn']) echo 'selected'; ?>><?=$nn['ten_nn'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('id_nganh', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_kinhnghiem">
@@ -52,18 +53,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="id_kinh_nghiem" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn số năm</option>
+									<option value="">Chọn số năm</option>
 								<?php
 									foreach($kinhnghiem as $kn)
 									{
 								?>
-									<option value="<?=$kn['id_kn']; ?>" <?php if(isset($id_kn)) {if($id_kn == $kn['id_kn']) echo 'selected';} ?>><?=$kn['ten_kn'] ?></option>
+									<option value="<?=$kn['id_kn']; ?>" <?php if(set_value('id_kinh_nghiem') == $kn['id_kn']) echo 'selected'; ?>><?=$kn['ten_kn'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('id_kinh_nghiem', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_mucluong">
@@ -73,18 +74,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="id_muc_luong" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn mức lương</option>
+									<option value="">Chọn mức lương</option>
 								 <?php
 									foreach($mucluong as $ml)
 									{
 								?>
-									<option value="<?=$ml['id_ml']; ?>" <?php if(isset($id_ml)) {if($id_ml== $ml['id_ml']) echo 'selected';} ?>><?=$ml['muc_luong'] ?></option>
+									<option value="<?=$ml['id_ml']; ?>" <?php if(set_value('id_muc_luong') == $ml['id_ml']) echo 'selected'; ?>><?=$ml['muc_luong'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('id_muc_luong', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_diadiem">
@@ -94,18 +95,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="id_ddlv" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn nơi làm việc</option>
+									<option value="">Chọn nơi làm việc</option>
 								 <?php
 									foreach($diadiem as $dd)
 									{
 								?>
-									<option value="<?=$dd['id_dd']; ?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd'] ?></option>
+									<option value="<?=$dd['id_dd']; ?>" <?php if(set_value('id_ddlv') == $dd['id_dd']) echo 'selected'; ?>><?=$dd['ten_dd'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('id_ddlv', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div> 
 						<div class="row tt hs_trinhdohs">
@@ -115,18 +116,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="id_trinh_do" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn trình độ</option>
+									<option value="">Chọn trình độ</option>
 								<?php
 									foreach($trinhdo as $td)
 									{
 								?>
-									<option value="<?=$td['id_td']; ?>" <?php if(isset($id_td)) {if($id_td == $td['id_td']) echo 'selected';} ?>><?=$td['trinh_do'] ?></option>
+									<option value="<?=$td['id_td']; ?>" <?php if(set_value('id_trinh_do') == $td['id_td']) echo 'selected'; ?>><?=$td['trinh_do'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('id_trinh_do', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div> 
 						
@@ -137,18 +138,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="chuc_vu" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn cấp bậc</option>
+									<option value="">Chọn cấp bậc</option>
 								<?php
 									foreach($capbac as $cb)
 									{
 								?>
-									<option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
+									<option value="<?=$cb['id_cb']; ?>" <?php if(set_value('chuc_vu') == $cb['id_cb']) echo 'selected'; ?>><?=$cb['cap_bac'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('chuc_vu', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_ngoaingu">
@@ -158,18 +159,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="id_ngoai_ngu" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn ngoại ngữ</option>
+									<option value="">Chọn ngoại ngữ</option>
 								<?php
 									foreach($ngoaingu as $nn)
 									{
 								?>
-									<option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if(isset($id_ngoai_ngu)) {if($id_nguoi_ngu == $nn['id_ngoai_ngu']) echo 'selected';} ?>><?=$nn['ten_ngoai_ngu'] ?></option>
+									<option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if(set_value('id_ngoai_ngu') == $nn['id_ngoai_ngu']) echo 'selected'; ?>><?=$nn['ten_ngoai_ngu'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('id_ngoai_ngu', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_hinhthuclv">
@@ -179,18 +180,18 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="hinh_thuc_lv" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn hình thức làm việc</option>
+									<option value="">Chọn hình thức làm việc</option>
 								 <?php
 									foreach($hinhthuc as $htlv)
 									{
 								?>
-									<option value="<?=$htlv['id_htlv']; ?>" <?php if(isset($id_htlv)) {if($id_htlv== $htlv['id_htlv']) echo 'selected';} ?>><?=$htlv['hinh_thuc'] ?></option>
+									<option value="<?=$htlv['id_htlv']; ?>" <?php if(set_value('hinh_thuc_lv') == $htlv['id_htlv']) echo 'selected'; ?>><?=$htlv['hinh_thuc'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
+								<?php echo form_error('hinh_thuc_lv', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_hinhthuclv">
@@ -200,56 +201,36 @@
 							</div>
 							<div class="col-sm-8 col-md-8">
 								<select class="form-control" name="yc_gioi_tinh" tabindex="-1" aria-hidden="true">
+									<option value="">Chọn giới tính</option>
 								 <?php
 									foreach($gioitinh as $gt)
 									{
 								?>
-									<option value="<?=$gt['id_gt']; ?>"><?=$gt['gioi_tinh'] ?></option>
+									<option value="<?=$gt['id_gt']; ?>" <?php if(set_value('yc_gioi_tinh') == $gt['id_gt']) echo 'selected'; ?>><?=$gt['gioi_tinh'] ?></option>
 								<?php
 									}
 								?>
 
 								</select>
-
-							</div>
-						</div>
-						<div class="row tt hs_hinhthuclv">
-							<div class="col-sm-4 col-md-4">
-								<label class="">Ngoại ngữ<i class="red">*</i></label>
-
-							</div>
-							<div class="col-sm-8 col-md-8">
-								<select class="form-control" name="hinh_thuc" tabindex="-1" aria-hidden="true">
-									<option value="0">Chọn hình thức làm việc</option>
-								 <?php
-									foreach($ngoaingu as $ng)
-									{
-								?>
-									<option value="<?=$ng['id_ngoai_ngu']; ?>" ><?=$htlv['ten_ngoai_ngu'] ?></option>
-								<?php
-									}
-								?>
-
-								</select>
-
+								<?php echo form_error('yc_gioi_tinh', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_hinhthuclv">
 							<div class="col-sm-4 col-md-4">
 								<label class="">Hạn nộp<i class="red">*</i></label>
-
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="date" name="ngay_hh" class="form-control">
+								<input type="date" name="ngay_hh" value="<?=set_value('ngay_hh') ?>" class="form-control">
+								<?php echo form_error('ngay_hh', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt hs_hinhthuclv">
 							<div class="col-sm-4 col-md-4">
-								<label class="">Số lượng<i class="red">*</i></label>
+								<label class="">Số lượng</label>
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="number" name="so_luong" class="form-control">
+								<input type="number" name="so_luong" class="form-control" value="<?=set_value('so_luong') ?>">
 							</div>
 						</div>
 						<div class="row tt hs_hinhthuclv">
@@ -264,11 +245,10 @@
 						<div class="row tt hs_muctieu">
 							<div class="col-sm-4 col-md-4">
 								<label class="">Mô tả</label>
-
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<textarea name="mo_ta" id="mo_ta" value="" rows="7"></textarea>
-
+								<textarea name="mo_ta" id="mo_ta" value="" rows="7"><?=set_value('mo_ta') ?></textarea>
+								<?php echo form_error('mo_ta', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt" >
@@ -365,7 +345,7 @@
 	}
 	tinymce.init({
 		selector: 'textarea',
-		height: 500,
+		height: 300,
 		theme: 'modern',
 		plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
 		toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',

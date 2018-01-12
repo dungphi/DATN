@@ -55,7 +55,7 @@ class Viec_lam extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->from('nha_tuyen_dung,viec_lam,nganh_nghe,dia_diem,kinh_nghiem,muc_luong,gioi_tinh,trinh_do');
-		$this->db->where('nha_tuyen_dung.id_vl = viec_lam.id_vl');
+		$this->db->where('nha_tuyen_dung.id_ntd = viec_lam.id_ntd');
 		$this->db->where('viec_lam.id_nganh = nganh_nghe.id_nn'); 
 		$this->db->where('viec_lam.id_ddlv = dia_diem.id_dd');
 		$this->db->where('viec_lam.id_kinh_nghiem = kinh_nghiem.id_kn');
@@ -81,16 +81,9 @@ class Viec_lam extends CI_Model{
 		$kq = $this->db->get()->result_array();
 		return count($kq);
 	}
-	//public function phim_play($id)
-//	{
-//		$this->db->select('*');
-//		$this->db->from('phim');
-//		$this->db->where('idphim', $id);
-//		return $this->db->get()->row_array();
-//	}
-//
-//	public function countAll(){
-//		return $this->db->count_all($this->_table); 
-//	}
+	public function them_vl($db = array())
+	{
+		return $this->db->insert('viec_lam',$db);
+	}
 
 }
