@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 28, 2017 lúc 04:08 PM
+-- Thời gian đã tạo: Th1 13, 2018 lúc 01:26 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -496,16 +496,17 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
   `hinh_thuc_lv` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_ngoai_ngu` int(11) NOT NULL,
   PRIMARY KEY (`id_vl`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `viec_lam`
 --
 
 INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `vip`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`, `id_ngoai_ngu`) VALUES
-(1, 1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', '2', 'images/vieclam/3.jpg', 9, '500 người', '1', 0),
-(2, 2, 1, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', '3', 'images/vieclam/4.jpg', 31, '50-100 người', '1', 0),
-(3, 4, 1, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', '6', 'images/vieclam/hinhanh.png', 55, '10-50 người', '1', 0);
+(1, 1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', '2', 'images/vieclam/3.jpg', 9, '500 người', '1', 1),
+(2, 2, 1, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', '3', 'images/vieclam/4.jpg', 31, '50-100 người', '1', 1),
+(3, 4, 1, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', '6', 'images/vieclam/hinhanh.png', 58, '10-50 người', '1', 1),
+(4, 4, 0, 4, 3, 3, 4, 2, 'Nhân viên IT', '', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>sfasfaf a fasf &agrave; &agrave; &aacute; &aacute;&nbsp;</p>\r\n</body>\r\n</html>', 2, '2018-01-12', '2018-02-28', 1, '2', '2', NULL, 3, '', '2', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
