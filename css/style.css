@@ -132,14 +132,17 @@ span.menu {						/*menu*/
 .tieude_tkvl{
 	margin-top: 0px;
 	background-color:#337ab7;
-	padding:10px;
+	padding:10px 0px 1px;
 	font-size:15px;
 	font-weight: 700;
 	color:#FFF;
 	}
+.tkvl{
+	margin-right: -15px;
+}
 .timkiemvl{
 	background-color:#eeeeee;
-	padding:10px 30px;
+	padding:5px 10px;
 	
 	}
 .btn_tim_kiem{
@@ -2047,7 +2050,10 @@ display:none;
 .taohoso{
 	margin:20px 0 0;
 }
-.btn_taohoso, .btn_luuhoso, .btn_red{
+.taovieclam{
+	margin:0 0 20px;
+}
+.btn_taohoso, .btn_luuhoso, .btn_red,.btn_taovieclam{
 	border-radius:1px;
 	padding:10px 0;
 	font-weight:800;

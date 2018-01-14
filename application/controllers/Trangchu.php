@@ -35,7 +35,7 @@ class Trangchu extends CI_Controller {
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
 		//cấu hình phân trang
-		$config['per_page'] = 2;
+		$config['per_page'] = 5;
 		$config['uri_segment'] = 1;
 		$config['num_links'] = 5;
 		$config['reuse_query_string'] = TRUE;
@@ -77,7 +77,7 @@ class Trangchu extends CI_Controller {
 		$config['anchor_class'] = 'follow_link';  
         $this->load->library('pagination', $config);
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
-		$data['hosonoibat'] = $this->ho_so_ntv->hosonoibat(4);
+		$data['hosonoibat'] = $this->ho_so_ntv->hosonoibat(10);
 		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(5,2);
 		$data['vieclamnoibat'] = $this->viec_lam->vieclamnoibat();
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
