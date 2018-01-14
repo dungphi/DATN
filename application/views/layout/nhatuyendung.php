@@ -46,9 +46,15 @@
                <div class="clearfix"> </div>
                
                </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 tkvl">
+                <div class="col-xs-12 col-sm-12 col-md-3 ">
+                <div class ="tkvl">
+                	<div class="taovieclam">
+                	<a href="<?=base_url('Quanlynhatuyendung/dangtin'); ?>">
+                		<button type="submit" class="hidden-xs btn btn-danger btn-block btn_taovieclam"><i class="fa fa-edit fa-lg fa-fw"></i> Đăng tin tuyển dụng
+                    	</button></a>
+               		 </div>
         	<div class="tieude_tkvl">
-        		<h3><center>Tìm kiếm việc làm</center><h3>
+        		<h3><center>Tìm kiếm việc làm</center></h3>
             </div>
             
         	
@@ -103,7 +109,7 @@
                     <button type="button" class="btn btn-danger btn-lg btn-block btn_tim_kiem " name="btntk"><i class="fa fa-search" aria-hidden="true"> TÌM KIẾM</i></button>
                  </div>
               </form>  
-       		  
+       		  	 </div>
         </div>
             </div>
          </div>

@@ -14,7 +14,7 @@ if(isset($thongbao))
         		<i> - Yêu cầu viết tiếng Việt <label>có dấu</label>, không viết chữ in hoa (trừ chữ cái đầu câu).</i></br>
 				<i>- Các hồ sơ không đúng quy định, không đạt chất lượng, nội dung không nghiêm túc sẽ bị xóa không cần báo trước.</i>
         	</div>
-            <form action="<?= base_url('quanlynguoitimviec/chinhsuahoso/'.$nguoitimviec['id_hoso']);?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('quanlynguoitimviec/chinhsuahoso/'.$nguoitimviec['id_hs']);?>" method="post" enctype="multipart/form-data">
             <div class="tttongquan">
             	<h3><i class=""></i> Thông Tin Tổng Quan <i class="red">( Bắt buộc)</i></h3>
             
