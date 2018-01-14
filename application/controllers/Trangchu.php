@@ -38,7 +38,9 @@ class Trangchu extends CI_Controller {
 		$config['per_page'] = 5;
 		$config['uri_segment'] = 1;
 		$config['num_links'] = 5;
-		
+		$config['reuse_query_string'] = TRUE;
+	 	$config['suffix'] = '#vieclam';
+			
 		$data['vieclam'] = $this->viec_lam->vieclam($config['per_page'],$batdau);
 		
 		//phân trang
