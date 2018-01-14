@@ -37,7 +37,7 @@ class Nguoitimviec extends CI_Controller {
 		$data['active'] = 2;
 		
 		//cấu hình phân trang
-		$config['per_page'] = 3;
+		$config['per_page'] = 5;
 		$config['uri_segment'] = 2;
 		$config['num_links'] = 5;
 		

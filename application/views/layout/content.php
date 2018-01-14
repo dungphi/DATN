@@ -91,23 +91,7 @@ if(isset($dangnhap))
 			?> 
         
          
-			<?php
-				foreach($hosotimviec as $tam)
-				{
-					
-    
-			?>
-            	<li>
-					<div class="tintimviec">
-						<img src="<?=base_url($tam['avatar']); ?>" class="img-rounded" alt="" width="250" height="150">
-						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4>
-                        <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?>"><?=$tam['ten']?>, <?=getAge($tam['ngay_sinh']);?> tuổi, giới tính <?=$tam['gioi_tinh']; ?>, ở <?=$tam['dia_chi']; ?></h5>
-                        
-					</div>
-                </li>
-			<?php
-				}
-			?> 
+			
                                                          
 	</ul>    
 <div class="clearout">
