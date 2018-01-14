@@ -75,6 +75,7 @@ class Trangchu extends CI_Controller {
 		$config['anchor_class'] = 'follow_link';  
         $this->load->library('pagination', $config);
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->nguoitimviec();
+		$data['hosonoibat'] = $this->ho_so_ntv->hosonoibat(4);
 		$data['hosotimviec'] = $this->ho_so_ntv->hosotimviec(5,2);
 		$data['vieclamnoibat'] = $this->viec_lam->vieclamnoibat();
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();

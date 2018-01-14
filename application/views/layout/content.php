@@ -80,7 +80,7 @@ if(isset($dangnhap))
                 	
 					<div class="tintuyendung">
                     	<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>">
-						<img src="<?=base_url($tam['hinh_anh']); ?>" class="img-rounded" alt="" width="250" height="150">
+						<img src="<?=base_url($tam['avatar']); ?>" class="img-rounded" alt="" width="250" height="150">
 						<h4 class="text" data-toggle="tooltip" title="<?=$tam['tieu_de']; ?>"><?=$tam['tieu_de']; ?></h4></a>
                         <h5 class="text" data-toggle="tooltip" title="<?=$tam['ten_cty']; ?>"> <?=$tam['ten_cty'];?></h5>
 					</div>
@@ -166,12 +166,13 @@ if(isset($dangnhap))
                         <div class="row">
                         	<div class="baituyendung">
                         		<div class="hidden-xs col-sm-2 col-md-2 hinhanh">
-                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
-                        		</div>
+                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>">
+                                    <img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" width="150"
+                                     height="100"></a></div>
                         		<div class="col-xs-11 col-sm-9 col-md-9 thongtin">
-                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>"><h4> <?=$tam['tieu_de']; ?></h4></a>
+                                    <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_vl']); ?>">
+                                    	<h4> <?=$tam['tieu_de']; ?></h4></a>
                                     <h5 class="text"  title="<?=$tam['ten_cty'];?>"><?=$tam['ten_cty'];?></h5>
-                               
                                     <div class="col-xs-5 col-sm-3 col-md-3"> 
                                         <p class="glyphicon glyphicon-map-marker"></p> <?= $tam['ten_dd'];?>
                                     </div>
@@ -184,9 +185,7 @@ if(isset($dangnhap))
                                     <div class="col-xs-5 col-sm-3 col-md-3"> 
                                         <p class="glyphicon glyphicon-time"></p> <?=date('d-m-Y', strtotime($tam['ngay_dk'])); ?>
                                     </div>
-                            	
                         		</div> 
-                                
                                 <div class="col-xs-1 col-sm-1 col-md-1 thongtin luuvieclam"> 
                                 	<p class="glyphicon glyphicon-star-empty"> </p>
                                 </div>
@@ -281,7 +280,7 @@ if(isset($dangnhap))
 	<!-- device -->
 	<div class="device">
 		<div class="container">
-			<h2>Cẩm nang nghề nghiệp</h2>
+			<h2>Cẩm nan nghề nghiệp</h2>
 				<div class="col-sm-4 col-md-4 devic-left">
 				
 					<img src="<?=base_url(); ?>images/camnan/tham-quoc-quan.jpeg" class="" width="300" height="200" alt="">
