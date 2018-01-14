@@ -90,5 +90,9 @@ class Viec_lam extends CI_Model{
 	{
 		return $this->db->insert('viec_lam',$db);
 	}
-
+	public function xoa_vl($id)
+	{
+		$this->db->where('id_vl', $id);
+		return $this->db->delete('viec_lam');
+	}
 }

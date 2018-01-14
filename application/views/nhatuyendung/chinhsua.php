@@ -59,10 +59,14 @@
 								<select class="form-control" name="id_kinh_nghiem" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn số năm</option>
 								<?php
+									if(set_value('id_kinh_nghiem'))
+										$id_kinh_nghiem = set_value('id_kinh_nghiem');
+									else
+										$id_kinh_nghiem = $vieclam['id_kinh_nghiem'];
 									foreach($kinhnghiem as $kn)
 									{
 								?>
-									<option value="<?=$kn['id_kn']; ?>" <?php if(set_value('id_kinh_nghiem') == $kn['id_kn']) echo 'selected'; ?>><?=$kn['ten_kn'] ?></option>
+									<option value="<?=$kn['id_kn']; ?>" <?php if($id_kinh_nghiem == $kn['id_kn']) echo 'selected'; ?>><?=$kn['ten_kn'] ?></option>
 								<?php
 									}
 								?>
@@ -80,10 +84,14 @@
 								<select class="form-control" name="id_muc_luong" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn mức lương</option>
 								 <?php
+									if(set_value('id_muc_luong'))
+										$id_muc_luong = set_value('id_muc_luong');
+									else
+										$id_muc_luong = $vieclam['id_muc_luong'];
 									foreach($mucluong as $ml)
 									{
 								?>
-									<option value="<?=$ml['id_ml']; ?>" <?php if(set_value('id_muc_luong') == $ml['id_ml']) echo 'selected'; ?>><?=$ml['muc_luong'] ?></option>
+									<option value="<?=$ml['id_ml']; ?>" <?php if($id_muc_luong == $ml['id_ml']) echo 'selected'; ?>><?=$ml['muc_luong'] ?></option>
 								<?php
 									}
 								?>
@@ -101,10 +109,14 @@
 								<select class="form-control" name="id_ddlv" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn nơi làm việc</option>
 								 <?php
+									if(set_value('id_ddlv'))
+										$id_ddlv = set_value('id_ddlv');
+									else
+										$id_ddlv = $vieclam['id_ddlv'];
 									foreach($diadiem as $dd)
 									{
 								?>
-									<option value="<?=$dd['id_dd']; ?>" <?php if(set_value('id_ddlv') == $dd['id_dd']) echo 'selected'; ?>><?=$dd['ten_dd'] ?></option>
+									<option value="<?=$dd['id_dd']; ?>" <?php if($id_ddlv == $dd['id_dd']) echo 'selected'; ?>><?=$dd['ten_dd'] ?></option>
 								<?php
 									}
 								?>
@@ -122,10 +134,14 @@
 								<select class="form-control" name="id_trinh_do" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn trình độ</option>
 								<?php
+									if(set_value('id_trinh_do'))
+										$id_trinh_do = set_value('id_trinh_do');
+									else
+										$id_trinh_do = $vieclam['id_trinh_do'];
 									foreach($trinhdo as $td)
 									{
 								?>
-									<option value="<?=$td['id_td']; ?>" <?php if(set_value('id_trinh_do') == $td['id_td']) echo 'selected'; ?>><?=$td['trinh_do'] ?></option>
+									<option value="<?=$td['id_td']; ?>" <?php if($id_trinh_do == $td['id_td']) echo 'selected'; ?>><?=$td['trinh_do'] ?></option>
 								<?php
 									}
 								?>
@@ -144,10 +160,14 @@
 								<select class="form-control" name="chuc_vu" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn cấp bậc</option>
 								<?php
+									if(set_value('chuc_vu'))
+										$chuc_vu = set_value('chuc_vu');
+									else
+										$chuc_vu = $vieclam['chuc_vu'];
 									foreach($capbac as $cb)
 									{
 								?>
-									<option value="<?=$cb['id_cb']; ?>" <?php if(set_value('chuc_vu') == $cb['id_cb']) echo 'selected'; ?>><?=$cb['cap_bac'] ?></option>
+									<option value="<?=$cb['id_cb']; ?>" <?php if($chuc_vu == $cb['id_cb']) echo 'selected'; ?>><?=$cb['cap_bac'] ?></option>
 								<?php
 									}
 								?>
@@ -165,10 +185,14 @@
 								<select class="form-control" name="id_ngoai_ngu" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn ngoại ngữ</option>
 								<?php
+									if(set_value('id_ngoai_ngu'))
+										$id_ngoai_ngu = set_value('id_ngoai_ngu');
+									else
+										$id_ngoai_ngu = $vieclam['id_ngoai_ngu'];
 									foreach($ngoaingu as $nn)
 									{
 								?>
-									<option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if(set_value('id_ngoai_ngu') == $nn['id_ngoai_ngu']) echo 'selected'; ?>><?=$nn['ten_ngoai_ngu'] ?></option>
+									<option value="<?=$nn['id_ngoai_ngu']; ?>" <?php if($id_ngoai_ngu == $nn['id_ngoai_ngu']) echo 'selected'; ?>><?=$nn['ten_ngoai_ngu'] ?></option>
 								<?php
 									}
 								?>
@@ -186,10 +210,14 @@
 								<select class="form-control" name="hinh_thuc_lv" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn hình thức làm việc</option>
 								 <?php
+									if(set_value('hinh_thuc_lv'))
+										$hinh_thuc_lv = set_value('hinh_thuc_lv');
+									else
+										$hinh_thuc_lv = $vieclam['hinh_thuc_lv'];
 									foreach($hinhthuc as $htlv)
 									{
 								?>
-									<option value="<?=$htlv['id_htlv']; ?>" <?php if(set_value('hinh_thuc_lv') == $htlv['id_htlv']) echo 'selected'; ?>><?=$htlv['hinh_thuc'] ?></option>
+									<option value="<?=$htlv['id_htlv']; ?>" <?php if($hinh_thuc_lv == $htlv['id_htlv']) echo 'selected'; ?>><?=$htlv['hinh_thuc'] ?></option>
 								<?php
 									}
 								?>
@@ -207,10 +235,14 @@
 								<select class="form-control" name="yc_gioi_tinh" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn giới tính</option>
 								 <?php
+									if(set_value('yc_gioi_tinh'))
+										$yc_gioi_tinh = set_value('yc_gioi_tinh');
+									else
+										$yc_gioi_tinh = $vieclam['yc_gioi_tinh'];
 									foreach($gioitinh as $gt)
 									{
 								?>
-									<option value="<?=$gt['id_gt']; ?>" <?php if(set_value('yc_gioi_tinh') == $gt['id_gt']) echo 'selected'; ?>><?=$gt['gioi_tinh'] ?></option>
+									<option value="<?=$gt['id_gt']; ?>" <?php if($yc_gioi_tinh == $gt['id_gt']) echo 'selected'; ?>><?=$gt['gioi_tinh'] ?></option>
 								<?php
 									}
 								?>
@@ -224,7 +256,7 @@
 								<label class="">Hạn nộp<i class="red">*</i></label>
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="date" name="ngay_hh" value="<?=set_value('ngay_hh') ?>" class="form-control">
+								<input type="date" name="ngay_hh" value="<?php if(set_value('ngay_hh')) echo set_value('ngay_hh'); else echo $vieclam['ngay_hh']; ?>" class="form-control">
 								<?php echo form_error('ngay_hh', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
@@ -234,7 +266,7 @@
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="number" name="so_luong" class="form-control" value="<?=set_value('so_luong') ?>">
+								<input type="number" name="so_luong" class="form-control" value="<?php if(set_value('so_luong')) echo set_value('so_luong'); else echo $vieclam['so_luong'] ?>">
 							</div>
 						</div>
 						<div class="row tt hs_muctieu">
@@ -242,14 +274,14 @@
 								<label class="">Mô tả</label>
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<textarea name="mo_ta" id="mo_ta" value="" rows="7"><?=set_value('mo_ta') ?></textarea>
+								<textarea name="mo_ta" id="mo_ta" value="" rows="7"><?php if(set_value('mo_ta')) echo set_value('mo_ta'); else echo $vieclam['mo_ta']; ?></textarea>
 								<?php echo form_error('mo_ta', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 						</div>
 						<div class="row tt" >
 							<div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
 								<button type="submit" class="btn btn-danger btn-block btn_luuhoso" name="luu">
-									<i class="fa fa-save fa-lg fa-fw"></i> ĐĂNG TIN
+									<i class="fa fa-save fa-lg fa-fw"></i> CẬP NHẬT TIN
 								</button>
 							</div>
 						 </div>

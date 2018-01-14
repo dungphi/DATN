@@ -431,5 +431,11 @@ class Quanlynhatuyendung extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}
+	public function xoa_vl()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->viec_lam->xoa_vl($id);
+		echo $kq;
+	}
 }
 ?>

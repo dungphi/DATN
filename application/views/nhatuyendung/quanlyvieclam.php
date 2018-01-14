@@ -54,3 +54,26 @@
                 
                 
 		</div><!--end tthoso-->
+<script type="text/javascript">
+	function xoa_vl(id){
+        if (confirm("Bạn có muốn xóa không?")) {
+            $.ajax({
+                dataType: "json",
+                type:"POST",
+                url:"<?=base_url('quanlynhatuyendung/xoa_vl'); ?>",
+                data:{id:id},
+                success: function(result){
+                    if(result == 1){
+                        alert("Xóa thành công");
+                        setTimeout(function(){
+                        	location.reload();
+                        },1000);
+                    }
+					else{
+						alert("Lỗi!");
+					}
+                }
+            });
+        }
+    }
+</script>

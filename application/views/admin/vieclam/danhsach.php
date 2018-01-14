@@ -43,6 +43,7 @@
 							<th>Địa điểm</th>
 							<th>Ngày hết hạn</th>
 							<th>Active</th>
+							<th>Vip</th>
 							<th>Chỉnh sửa</th>
 						</tr>
 					</thead>
@@ -58,8 +59,12 @@
 							<td><?=$vl['ten_dd'] ?></td>
 							<td><?=$vl['ngay_hh'] ?></td>
 							<td><input type="checkbox" id="active_<?=$vl['id_vl'] ?>" value="1" <?php if($vl['active_vl'] == '1') echo "checked"; ?> onclick="return update_info(<?=$vl['id_vl']?>)" ></td>
+							<td><input type="checkbox" id="vip_<?=$vl['id_vl'] ?>" value="1" <?php if($vl['vip'] == '1') echo "checked"; ?> onclick="return update_vip(<?=$vl['id_vl']?>)" ></td>
 							<td class="center">
-								<a class="btn btn-danger" href="#">
+								<a class="btn btn-info" href="<?=base_url('nhatuyendung/thongtinvieclam/'.$vl['id_vl']) ?>">
+									<i class="icon-eye-open"></i>  
+								</a>
+								<a class="btn btn-danger" href="#" onClick="xoa_vl(<?=$vl['id_vl'] ?>)">
 									<i class="halflings-icon white trash"></i> 
 								</a>
 							</td>
@@ -96,5 +101,44 @@
 					alert('Lỗi!');
 			}
         });
+    }
+	function update_vip(id){
+        var value = 0;
+        if($("#vip_"+id).is(":checked") == true){
+            value =1;
+        };
+        $.ajax({
+            method:"POST",
+            url:"<?=base_url('admin/vieclam/vip'); ?>",
+            data:{id:id,vip:value},
+			success: function(result)
+			{
+				if(result == 1)
+					alert('Hoàn tất!');
+				else
+					alert('Lỗi!');
+			}
+        });
+    }
+	function xoa_vl(id){
+        if (confirm("Bạn có muốn xóa không?")) {
+            $.ajax({
+                dataType: "json",
+                type:"POST",
+                url:"<?=base_url('admin/vieclam/xoa_vl'); ?>",
+                data:{id:id},
+                success: function(result){
+                    if(result == 1){
+                        alert("Xóa thành công");
+                        setTimeout(function(){
+                        	location.reload();
+                        },1000);
+                    }
+					else{
+						alert("Lỗi!");
+					}
+                }
+            });
+        }
     }
 </script>

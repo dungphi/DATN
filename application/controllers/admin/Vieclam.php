@@ -56,6 +56,25 @@ class Vieclam extends CI_Controller {
 		else
 			die(json_encode(0));
 	}
+	public function vip()
+	{
+		$id = $this->input->post('id');
+		$vip = $this->input->post('vip');
+		$dat = array(
+			'vip' => $vip
+		);
+		$kq = $this->viec_lam->capnhat_vl($dat, $id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_vl()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->viec_lam->xoa_vl($id);
+		echo $kq;
+	}
 	//kết thúc việc làm
 	//Ngành nghề
 	public function nn()
