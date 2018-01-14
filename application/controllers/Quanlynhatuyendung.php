@@ -238,6 +238,91 @@ class Quanlynhatuyendung extends CI_Controller {
 				$so_luong = $this->input->post('so_luong');
 				$mo_ta = $this->input->post('mo_ta');
 				
+				$dat = array(
+					'id_ntd' => $id_ntd,
+					'tieu_de' => $tieu_de,
+					'id_nganh' => $id_nganh,
+					'id_kinh_nghiem' => $id_kinh_nghiem,
+					'id_muc_luong' => $id_muc_luong,
+					'id_ddlv' => $id_ddlv,
+					'id_trinh_do' => $id_trinh_do,
+					'chuc_vu' => $chuc_vu,
+					'id_ngoai_ngu' => $id_ngoai_ngu,
+					'hinh_thuc_lv' => $hinh_thuc_lv,
+					'yc_gioi_tinh' => $yc_gioi_tinh,
+					'ngay_hh' => $ngay_hh,
+					'so_luong' => $so_luong,
+					'mo_ta' => $mo_ta,
+					'ngay_dk' => date('Y-m-d'),
+					'active_vl' => 0,
+
+				);
+				$kq = $this->viec_lam->them_vl($dat);
+				if($kq == 1) 
+					echo '<script>alert("Đăng tin thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlyvieclam').'");</script>';
+				else 
+					echo '<script>alert("Lỗi cơ sở dữ liệu.");location.reload("'.base_url('quanlynhatuyendung/quanlyvieclam').'");</script>';
+						
+			}
+			else
+				$this->session->set_flashdata('flash_message', 'Lỗi đăng tin');
+
+		}
+		$this->load->view('trangchu', $data);
+	}
+	public function chinhsuavieclam($id)
+	{
+		$data['title'] = 'Chỉnh sửa việc làm';
+		$data['content'] = 'nhatuyendung/chinhsua';
+		$data['active'] = 6;
+		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
+		$data['ngoaingu'] = $this->ngoai_ngu->ngoaingu();
+		$data['capbac'] = $this->cap_bac->capbac();
+		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
+		$data['trinhdo'] = $this->Trinh_do->trinhdo();
+		$data['kinhnghiem'] = $this->kinh_nghiem->kinhnghiem();
+		$data['mucluong'] = $this->muc_luong->mucluong();
+		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
+		$data['diadiem'] = $this->dia_diem->diadiem();
+		$data['gioitinh'] = $this->gioi_tinh->danhsach();
+		$data['vieclam'] = $this->viec_lam->get($id);
+		if(isset($_POST['luu']))
+		{
+			//kiểm tra dữ liệu nhập
+			$this->form_validation->set_rules('tieu_de', 'Tiêu đề', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('id_nganh', 'ngành nghề', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('id_kinh_nghiem', 'kinh nghiệm', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('id_muc_luong', 'mức lương', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('id_ddlv', 'địa điểm', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('id_trinh_do', 'trình độ', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('chuc_vu', 'chức vụ', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('id_ngoai_ngu', 'ngoại ngữ', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('hinh_thuc_lv', 'hình thức làm việc', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('yc_gioi_tinh', 'giới tính', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('ngay_hh', 'hạn nộp', 'required', array('required' => 'Bạn chưa nhập %s.'));
+			$this->form_validation->set_rules('mo_ta', 'mô tả', 'required|min_length[10]', array('required' => 'Bạn chưa nhập %s.', 'min_length' => 'Tối thiểu 10 ký tự'));
+			
+			
+			date_default_timezone_set('Asia/Ho_Chi_Minh');
+			if($this->form_validation->run() == TRUE && isset($_SESSION['nhatuyendung']))
+			{
+				$user = $_SESSION['nhatuyendung'];
+				$nhatuyendung = $this->nha_tuyen_dung->get($user);
+				$id_ntd = $nhatuyendung['id_ntd'];
+				$tieu_de = $this->input->post('tieu_de');
+				$id_nganh = $this->input->post('id_nganh');
+				$id_kinh_nghiem = $this->input->post('id_kinh_nghiem');
+				$id_muc_luong = $this->input->post('id_muc_luong');
+				$id_ddlv = $this->input->post('id_ddlv');
+				$id_trinh_do = $this->input->post('id_trinh_do');
+				$chuc_vu = $this->input->post('chuc_vu');
+				$id_ngoai_ngu = $this->input->post('id_ngoai_ngu');
+				$hinh_thuc_lv = $this->input->post('hinh_thuc_lv');
+				$yc_gioi_tinh = $this->input->post('yc_gioi_tinh');
+				$ngay_hh = $this->input->post('ngay_hh');
+				$so_luong = $this->input->post('so_luong');
+				$mo_ta = $this->input->post('mo_ta');
+				
 				//upload hình
 				$config['upload_path'] = 'images/vieclam/';
 				$config['allowed_types'] = 'gif|jpg|png';
@@ -273,9 +358,9 @@ class Quanlynhatuyendung extends CI_Controller {
 					'active_vl' => 0,
 
 				);
-				$kq = $this->viec_lam->them_vl($dat);
+				$kq = $this->viec_lam->capnhat_vl($dat, $id);
 				if($kq == 1) 
-					echo '<script>alert("Đăng tin thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlyvieclam').'");</script>';
+					echo '<script>alert("Chỉnh sửa thành công.");location.reload("'.base_url('quanlynhatuyendung/quanlyvieclam').'");</script>';
 				else 
 					echo '<script>alert("Lỗi cơ sở dữ liệu.");location.reload("'.base_url('quanlynhatuyendung/quanlyvieclam').'");</script>';
 						
