@@ -152,7 +152,7 @@ if(isset($dangnhap))
 	});
 </script>
 	<!-- baidang -->
-    <div class="baidang">
+    <div class="baidang" id="vieclam">
         <div class="container">
             
             <div lass= "row">
