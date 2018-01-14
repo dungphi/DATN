@@ -46,9 +46,9 @@
                <div class="clearfix"> </div>
                
                </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="col-xs-12 col-sm-12 col-md-3 tkvl">
         	<div class="tieude_tkvl">
-        		<h3> <center>Tìm kiếm việc làm</center> </h3>
+        		<h3><center>Tìm kiếm việc làm</center><h3>
             </div>
             
         	

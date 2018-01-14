@@ -35,7 +35,7 @@ class Trangchu extends CI_Controller {
 		$data['content'] = 'layout/content';
 		$data['active'] = 1;
 		//cấu hình phân trang
-		$config['per_page'] = 8;
+		$config['per_page'] = 5;
 		$config['uri_segment'] = 1;
 		$config['num_links'] = 5;
 		

@@ -132,11 +132,14 @@ span.menu {						/*menu*/
 .tieude_tkvl{
 	margin-top: 0px;
 	background-color:#337ab7;
-	padding:10px;
+	padding:10px 0px 1px;
 	font-size:15px;
 	font-weight: 700;
 	color:#FFF;
 	}
+.tkvl{
+	padding-right: -15px;
+}
 .timkiemvl{
 	background-color:#eeeeee;
 	padding:5px 10px;
