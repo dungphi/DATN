@@ -36,7 +36,7 @@ class Nhatuyendung extends CI_Controller {
 		$data['content'] = 'layout/nhatuyendung';
 		$data['active'] = 3;
 		//cấu hình phân trang
-		$config['per_page'] = 1;
+		$config['per_page'] = 5;
 		$config['uri_segment'] = 2;
 		$config['num_links'] = 5;
 		

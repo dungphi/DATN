@@ -64,7 +64,7 @@
         </div>
         <div class="col-md-4">
         	<div class="avatar">
-            	<center><img src="<?=base_url($thongtin['hinh_anh']);?>" class="" alt="" width="180" height="160"></center>
+            	<center><img src="<?=base_url($thongtin['avatar']);?>" class="" alt="" width="180" height="160"></center>
                 <h4><b><?=$thongtin['ten_cty']; ?></b></h4>
                 <div class="tt-phu">
                 	<label>Trụ sở: </label> <span><?=$thongtin['dia_chi'];?> </span>

@@ -3,14 +3,14 @@
     <div class="row">
     	<div class="col-sm-8  col-md-9 taohoso ">
         	<div class="ths">
-				<h3>Đăng tin tuyển dụng</h3>
+				<h3>Chỉnh sửa việc làm</h3>
             </div>
         
         	<div class="tt tttaohoso">
         		<i> - Yêu cầu viết tiếng Việt <label>có dấu</label>, không viết chữ in hoa (trừ chữ cái đầu câu).</i></br>
 				<i>- Các tin tuyển dụng không đúng quy định, không đạt chất lượng, nội dung không nghiêm túc sẽ bị xóa không cần báo trước.</i>
         	</div>
-				<form action="<?=base_url('quanlynhatuyendung/dangtin')?>" method="post" enctype="multipart/form-data">
+				<form action="<?=base_url('quanlynhatuyendung/chinhsuavieclam/'.$vieclam['id_vl'])?>" method="post" enctype="multipart/form-data">
 					<div class="tttongquan">
 						<h3><i class=""></i> Thông Tin Tổng Quan <i class="red">( Bắt buộc)</i></h3>
 
@@ -20,7 +20,7 @@
 
 							</div>
 							<div class="col-sm-8 col-md-8">
-								<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value="<?php echo set_value('tieu_de')?>"> 
+								<input type="text" name="tieu_de" placeholder="VD: Nhân viên Bán Hàng" class="form-control" value="<?php if(set_value('tieu_de')) echo set_value('tieu_de'); else echo $vieclam['tieu_de'];?>"> 
 								<?php echo form_error('tieu_de', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
 							</div>
 
@@ -34,10 +34,14 @@
 								<select class="form-control" name="id_nganh" tabindex="-1" aria-hidden="true">
 									<option value="">Chọn ngành nghề</option>
 								<?php
+									if(set_value('id_nganh'))
+										$id_nganh = set_value('id_nganh');
+									else
+										$id_nganh = $vieclam['id_nganh'];
 									foreach($nganhnghe as $nn)
 									{
 								?>
-									<option value="<?=$nn['id_nn']; ?>" <?php if(set_value('id_nganh') == $nn['id_nn']) echo 'selected'; ?>><?=$nn['ten_nn'] ?></option>
+									<option value="<?=$nn['id_nn']; ?>" <?php if($id_nganh == $nn['id_nn']) echo 'selected'; ?>><?=$nn['ten_nn'] ?></option>
 								<?php
 									}
 								?>
@@ -244,7 +248,7 @@
 						</div>
 						<div class="row tt" >
 							<div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
-								<button type="submit" class="btn btn-danger btn-block btn_luuhoso" name="dangtin">
+								<button type="submit" class="btn btn-danger btn-block btn_luuhoso" name="luu">
 									<i class="fa fa-save fa-lg fa-fw"></i> ĐĂNG TIN
 								</button>
 							</div>
