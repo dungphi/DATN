@@ -16,7 +16,7 @@
             
             </div>
             <div class=" col-xs-3 col-sm-3 col-md-2 td-right">
-            	<a href="#" class="btn luu-vl"><i class="fa fa-star-o fa-lg fa-fw "></i> <span class="hidden-xs">lưu việc làm</span></a>
+            	<a href="#" id="nop_hs" class="btn luu-vl" onClick="nophoso(<?=$thongtin['id_vl'] ?>)" ><i class="fa fa-star-o fa-lg fa-fw "></i> <span class="hidden-xs">Nộp hồ sơ</span></a>
                 <div class="luotxem">
                     <i class="fa fa-eye fa-lg fa-fw "></i> 
                     <label class="hidden-xs">Lượt xem:</label>
@@ -40,9 +40,9 @@
                 </div>
                 <div class="col-sm-6 col-md-6">
                 	<h4><i class="fa fa-money fa-lg fa-fw " ></i> <b>Mức lương: </b><?=$thongtin['muc_luong']; ?></h4>
-                    <h4><i class="fa fa-medkit fa-lg fa-fw "></i> <b>Chức vụ: </b><?=$thongtin['chuc_vu']; ?></h4>
+                    <h4><i class="fa fa-medkit fa-lg fa-fw "></i> <b>Chức vụ: </b><?=$thongtin['cap_bac']; ?></h4>
                     <h4><i class="fa fa-map-marker  fa-lg fa-fw "></i> <b> Địa điểm làm việc: </b> <?=$thongtin['ten_dd'];?></h4>
-                    <h4><i class="fa fa-laptop fa-lg fa-fw "></i> <b>Hình thức làm việc: </b><?=$thongtin['hinh_thuc_lv']; ?></h4>
+                    <h4><i class="fa fa-laptop fa-lg fa-fw "></i> <b>Hình thức làm việc: </b><?=$thongtin['hinh_thuc']; ?></h4>
                 </div>
              </div>
              <div class="clearfix"></div>
@@ -76,4 +76,37 @@
         	
     </div>
 </div>
+<script type="text/javascript">
+	function nophoso(id){
+        $.ajax({
+            dataType: "json",
+            type:"POST",
+            url:"<?=base_url('nguoitimviec/nophoso'); ?>",
+            data:{id:id},
+            success: function(result){
+                alert(result);
+				$('#nop_hs').addClass('btn-warning');
+				$('#nop_hs').removeClass('luu-vl');
+            }
+        });
+    }
+	$(document).ready(function(){
+		$.ajax({
+			dataType: "json",
+			type:"POST",
+			url:"<?=base_url('nguoitimviec/check_nophoso'); ?>",
+			data:{id:<?=$thongtin['id_vl'] ?>},
+			success: function(result){
+				if(result == 1){
+					$('#nop_hs').addClass('btn-warning');
+					$('#nop_hs').removeClass('luu-vl');
+				}
+				else{
+					$('#nop_hs').removeClass('btn-warning');
+					$('#nop_hs').addClass('luu-vl');
+				}
+			}
+		});
+	}); 
+</script>
  

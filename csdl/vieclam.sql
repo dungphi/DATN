@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th1 13, 2018 lúc 01:26 PM
+-- Thời gian đã tạo: Th1 15, 2018 lúc 01:04 PM
 -- Phiên bản máy phục vụ: 5.7.19
 -- Phiên bản PHP: 5.6.31
 
@@ -208,24 +208,25 @@ CREATE TABLE IF NOT EXISTS `ho_so_tim_viec` (
   `chuc_vu_mm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `duyet` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_hoso`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `ho_so_tim_viec`
 --
 
 INSERT INTO `ho_so_tim_viec` (`id_hoso`, `id_ntimviec`, `vip`, `luot_xem`, `tieu_de`, `id_nn`, `id_ddlv`, `id_kinh_nghiem`, `id_knlv`, `id_trinh_do`, `id_bc`, `ngay_dk`, `id_muc_luong`, `chung_chi`, `ngoai_ngu`, `hinh_thuc_lam_viec`, `muc_tieu`, `chuc_vu_ht`, `chuc_vu_mm`, `duyet`) VALUES
-(1, 0, 1, 2, 'Tìm việc chăm em bé, giúp việc nhà hoặc nuôi bệnh tại TPHCM', 7, 3, 1, NULL, 7, 0, '2017-10-31', 2, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'nhân viên', 1),
-(2, 0, 1, 3, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, NULL, 1, 0, '2017-10-31', 3, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
-(3, 0, 1, 8, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, NULL, 1, 0, '2017-10-31', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
-(4, 0, 0, 22, 'Kĩ sư máy tính, iT, mạng máy tính - viễn thông', 4, 1, 3, NULL, 1, 0, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', '- Công việc phù hợp và ổn định \r\n- Môi trường làm việc thân thiện Chế độ theo quy định.\r\n- lalala', 'Nhân Viên', 'Trưởng nhóm', 0),
-(5, 0, 0, 30, 'Nhân Viên Sale', 6, 1, 3, NULL, 1, 0, '2017-12-03', 3, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
-(6, 0, 1, 25, 'Nhân Viên Bán Hàng', 7, 3, 1, NULL, 5, 0, '2017-12-03', 2, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
+(1, 1, 1, 4, 'Tìm việc chăm em bé, giúp việc nhà hoặc nuôi bệnh tại TPHCM', 7, 3, 1, NULL, 7, 0, '2017-10-31', 2, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'nhân viên', 1),
+(2, 2, 1, 3, 'Nhận thiết kế website, Marketing Online, Quản trị web, chăm sóc web', 4, 1, 4, NULL, 1, 0, '2017-10-31', 3, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
+(3, 3, 1, 8, 'Kế toán thuế chuyên nghiệp trong mọi loại hình doanh nghiệp', 6, 1, 7, NULL, 1, 0, '2017-10-31', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
+(4, 4, 0, 23, 'Kĩ sư máy tính, iT, mạng máy tính - viễn thông', 4, 1, 3, NULL, 1, 0, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', '- Công việc phù hợp và ổn định \r\n- Môi trường làm việc thân thiện Chế độ theo quy định.\r\n- lalala', 'Nhân Viên', 'Trưởng nhóm', 0),
+(5, 5, 0, 30, 'Nhân Viên Sale', 6, 1, 3, NULL, 1, 0, '2017-12-03', 3, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
+(6, 5, 1, 27, 'Nhân Viên Bán Hàng', 7, 3, 1, NULL, 5, 0, '2017-12-03', 2, 'chưa cập nhật', 'chưa cập nhật', 'Nhân viên chính thức', 'Công việc phù hợp và ổn định \r\nMôi trường làm việc thân thiện Chế độ theo quy định', 'Nhân Viên', 'Nhân Viên', 1),
 (17, 10, 0, 0, 'dsadsadasdsadsa sadsad', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
 (16, 10, 0, 0, 'sadsadasdsadsa asdsadasd', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
 (15, 10, 0, 0, 'sadasdsadsadasdsadsadsadsa', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
-(14, 10, 0, 0, 'Nhân viên bán hàng', 5, 1, 3, NULL, 1, NULL, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', '1', '', '1', '2', 1),
-(18, 10, 0, 0, 'ssssssssssssss', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1);
+(14, 10, 0, 2, 'Nhân viên bán hàng', 5, 1, 3, NULL, 1, NULL, '2017-12-19', 4, 'chưa cập nhật', 'chưa cập nhật', '1', '', '1', '2', 1),
+(18, 10, 0, 0, 'ssssssssssssss', 0, 0, 0, NULL, 0, NULL, '2017-12-20', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1),
+(19, 1, 0, 0, 'asfdasdfasfasfafs', 0, 0, 0, NULL, 0, NULL, '2018-01-14', 0, 'chưa cập nhật', 'chưa cập nhật', '0', '', '0', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -397,7 +398,7 @@ CREATE TABLE IF NOT EXISTS `nguoi_tim_viec` (
 --
 
 INSERT INTO `nguoi_tim_viec` (`id_ntv`, `id_hs`, `ho`, `ten`, `email`, `phone`, `ngay_sinh`, `dia_chi`, `avatar`, `id_gioi_tinh`, `hon_nhan`, `active`, `pass`) VALUES
-(1, 2, 'Thanh', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'Tp HCM', 'images/hoso/9.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b70'),
+(1, 1, 'Minh', 'Tuấn', 'tuan@gmail.com', '0123456798', '1992-03-10', 'Tp HCM', 'images/hoso/9.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b70'),
 (2, 1, 'Phan Anh', 'Trường', 'truong@gmail.com', '0123456789', '1990-10-03', 'HCM', 'images/hoso/12.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b7'),
 (3, 3, 'Thanh', 'Thùy', 'thuy@gmail.com', '0123456777', '1997-10-19', 'HCM', 'images/hoso/avatar.png', 2, 'Độc thân', 1, ''),
 (8, 4, 'Trần Minh', 'Phi', 'phi@gmail.com', '01234567897', '1991-02-11', 'Q9, HCM', 'images/hoso/man.jpg', 1, 'Độc thân', 1, '202cb962ac59075b964b07152d234b70'),
@@ -426,6 +427,7 @@ CREATE TABLE IF NOT EXISTS `nha_tuyen_dung` (
   `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sdt_lh` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quy_mo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_ntd`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -434,10 +436,10 @@ CREATE TABLE IF NOT EXISTS `nha_tuyen_dung` (
 -- Đang đổ dữ liệu cho bảng `nha_tuyen_dung`
 --
 
-INSERT INTO `nha_tuyen_dung` (`id_ntd`, `id_vl`, `ten_cty`, `email`, `phone`, `dia_chi`, `ms_thue`, `ten_lh`, `email_lh`, `pass`, `sdt_lh`, `avatar`, `active`) VALUES
-(1, 1, 'Công Ty Cổ Phần Ống Thép Việt Đức', 'vietduc@gmail.com', '0123456789', 'TP HCM', NULL, '', '', 'c4ca4238a0b923820dcc509a6f75849b', '0', '', 1),
-(2, 2, 'CÔNG TY TNHH HƯNG THỊNH', 'hungthinh@gmail.com', '0123456678', 'Tp HCM', NULL, '', '', 'c4ca4238a0b923820dcc509a6f75849b', '0', '', 1),
-(4, 3, 'Karaoke Cơ sở Hoa Lan 2', 'a@gmail.com', '0987654321', 'tp hcm', 123455111, '', 'a@gmail.com', '202cb962ac59075b964b07152d234b70', '0987654321', 'images/vieclam/7.jpg', 1);
+INSERT INTO `nha_tuyen_dung` (`id_ntd`, `id_vl`, `ten_cty`, `email`, `phone`, `dia_chi`, `ms_thue`, `ten_lh`, `email_lh`, `pass`, `sdt_lh`, `avatar`, `quy_mo`, `active`) VALUES
+(1, 1, 'Công Ty Cổ Phần Ống Thép Việt Đức', 'vietduc@gmail.com', '0123456789', 'TP HCM', NULL, '', '', 'c4ca4238a0b923820dcc509a6f75849b', '0', '', '', 1),
+(2, 2, 'CÔNG TY TNHH HƯNG THỊNH', 'hungthinh@gmail.com', '0123456678', 'Tp HCM', NULL, '', '', 'c4ca4238a0b923820dcc509a6f75849b', '0', '', '', 1),
+(4, 3, 'Karaoke Cơ sở Hoa Lan 2', 'a@gmail.com', '0987654321', 'tp hcm', 123455111, '', 'a@gmail.com', '202cb962ac59075b964b07152d234b70', '0987654321', 'images/vieclam/7.jpg', '', 1);
 
 -- --------------------------------------------------------
 
@@ -468,6 +470,32 @@ INSERT INTO `trinh_do` (`id_td`, `trinh_do`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `ung_tuyen`
+--
+
+DROP TABLE IF EXISTS `ung_tuyen`;
+CREATE TABLE IF NOT EXISTS `ung_tuyen` (
+  `id_ut` int(11) NOT NULL AUTO_INCREMENT,
+  `id_vl` int(11) NOT NULL,
+  `id_ntv` int(11) NOT NULL,
+  `ngay_ut` datetime NOT NULL,
+  PRIMARY KEY (`id_ut`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `ung_tuyen`
+--
+
+INSERT INTO `ung_tuyen` (`id_ut`, `id_vl`, `id_ntv`, `ngay_ut`) VALUES
+(2, 2, 1, '2018-01-14 16:57:53'),
+(3, 4, 1, '2018-01-14 16:58:46'),
+(4, 1, 1, '2018-01-14 18:12:23'),
+(5, 3, 1, '2018-01-14 18:13:45'),
+(6, 4, 8, '2018-01-15 00:00:26');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `viec_lam`
 --
 
@@ -490,23 +518,21 @@ CREATE TABLE IF NOT EXISTS `viec_lam` (
   `active_vl` tinyint(4) NOT NULL DEFAULT '1',
   `yc_gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'Không yêu cầu',
   `chuc_vu` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hinh_anh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `luot_xem` int(11) NOT NULL DEFAULT '0',
-  `quy_mo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hinh_thuc_lv` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_ngoai_ngu` int(11) NOT NULL,
   PRIMARY KEY (`id_vl`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `viec_lam`
 --
 
-INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `vip`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `hinh_anh`, `luot_xem`, `quy_mo`, `hinh_thuc_lv`, `id_ngoai_ngu`) VALUES
-(1, 1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', '2', 'images/vieclam/3.jpg', 9, '500 người', '1', 1),
-(2, 2, 1, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', '3', 'images/vieclam/4.jpg', 31, '50-100 người', '1', 1),
-(3, 4, 1, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', '6', 'images/vieclam/hinhanh.png', 58, '10-50 người', '1', 1),
-(4, 4, 0, 4, 3, 3, 4, 2, 'Nhân viên IT', '', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>sfasfaf a fasf &agrave; &agrave; &aacute; &aacute;&nbsp;</p>\r\n</body>\r\n</html>', 2, '2018-01-12', '2018-02-28', 1, '2', '2', NULL, 3, '', '2', 2);
+INSERT INTO `viec_lam` (`id_vl`, `id_ntd`, `vip`, `id_nganh`, `id_kinh_nghiem`, `id_muc_luong`, `id_ddlv`, `id_trinh_do`, `tieu_de`, `vi_tri`, `mo_ta`, `so_luong`, `ngay_dk`, `ngay_hh`, `active_vl`, `yc_gioi_tinh`, `chuc_vu`, `luot_xem`, `hinh_thuc_lv`, `id_ngoai_ngu`) VALUES
+(1, 1, 1, 1, 4, 5, 1, 1, 'Tuyển giám đốc kinh doanh', '1', NULL, 1, '2017-10-10', '2017-10-31', 1, '3', '2', 14, '1', 1),
+(2, 2, 1, 2, 3, 3, 4, 1, ' Tuyển kỹ thuật viên', '3', NULL, 3, '2017-10-10', '2017-10-31', 1, '3', '3', 46, '1', 1),
+(3, 4, 1, 3, 1, 4, 2, 7, 'Karaoke Cơ sở Hoa Lan 2  cần tuyển nữ massage và karaoke.', '2', 'Karaoke Cơ sở Hoa Lan 2 số 729 đường Dương Nội, Quận Hà Đông, Hà Nội, cần tuyển nữ massage và karaoke.\r\n- Thu nhập: Karaoke 100K/h, massage 40K/h+ tiền Bo\r\n- Thanh toán vào các ngày cuối tuần trong tháng.\r\nLH: Anh Thắng, 0973.20.20.30', 10, '2017-10-31', '2017-11-30', 1, '2', '6', 73, '1', 1),
+(4, 4, 1, 4, 3, 3, 4, 2, 'Nhân viên IT', '', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>sfasfaf a fasf &agrave; &agrave; &aacute; &aacute;&nbsp;</p>\r\n</body>\r\n</html>', 2, '2018-01-14', '2018-02-28', 1, '3', '2', 15, '2', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

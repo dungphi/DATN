@@ -134,6 +134,14 @@ class Nguoi_tim_viec extends CI_Model{
 		$this->db->where('id_hoso',$id);
         return $this->db->update('ho_so_tim_viec',$data);
 	}
+	public function danhsach_vl($id_ntv)
+	{
+		$this->db->from('ung_tuyen, viec_lam, nha_tuyen_dung');
+		$this->db->where('ung_tuyen.id_ntv', $id_ntv);
+		$this->db->where('ung_tuyen.id_vl = viec_lam.id_vl');
+		$this->db->where('nha_tuyen_dung.id_ntd = viec_lam.id_ntd');
+        return $this->db->get()->result_array();
+	}
 	public function countAll(){
 		return $this->db->count_all('nguoi_tim_viec'); 
 	}

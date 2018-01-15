@@ -99,7 +99,7 @@
 					</li>
 					<li><a href="<?=base_url('Quanlynguoitimviec/quanlyhoso'); ?>"><i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý hồ sơ</a>
 					</li>
-					<li><a href="<?=base_url('Quanlynguoitimviec/vieclamdaluu'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã lưu</a>
+					<li><a href="<?=base_url('Quanlynguoitimviec/vieclamdanop'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã nộp</a>
 					</li>
                     <li><a href="<?=base_url('Quanlynguoitimviec/ntdxemhoso'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Nhà tuyển dụng xem hồ sơ</a>
 					<li class="divider"></li>
@@ -121,7 +121,7 @@
 					</li>
 					<li><a href="<?=base_url('quanlynhatuyendung/quanlyvieclam'); ?>"><i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý việc làm</a>
 					</li>
-					<li><a href="<?=base_url('quanlynhatuyendung/ungviendaxem'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Ứng viên đã xem</a>
+					<li><a href="<?=base_url('quanlynhatuyendung/ungvien'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Ứng viên đã nộp hồ sơ</a>
 					</li>
                     <li><a href="<?=base_url('quanlynhatuyendung/dangtin'); ?>"> <i class="fa fa-eye fa-lg fa-fw"></i>Đăn tin tuyển dụng</a>
 					<li class="divider"></li>

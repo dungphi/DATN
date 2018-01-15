@@ -18,7 +18,7 @@
                         <li <?php if($active == 6) echo('class="active"'); ?>>
                             <a href="<?=base_url('Quanlynguoitimviec/quanlyhoso'); ?>"> <i class="fa fa-file-text-o fa-lg fa-fw"></i> Quản lý hồ sơ</a></li>
                         <li <?php if($active == 7) echo('class="active"'); ?>>
-                            <a href="<?=base_url('Quanlynguoitimviec/vieclamdaluu/'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã lưu</a>
+                            <a href="<?=base_url('Quanlynguoitimviec/vieclamdanop/'); ?>"> <i  class="fa fa-star-o fa-lg fa-fw"></i> Việc làm đã nộp</a>
                         </li>
                             
                         <li <?php if($active == 8) echo('class="active"'); ?>>

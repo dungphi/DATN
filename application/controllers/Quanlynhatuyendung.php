@@ -437,5 +437,28 @@ class Quanlynhatuyendung extends CI_Controller {
 		$kq = $this->viec_lam->xoa_vl($id);
 		echo $kq;
 	}
+	public function ungvien()
+	{
+		$data['active'] = 7;
+		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
+		$data['content'] = 'nhatuyendung/ungvien';
+		$user = $_SESSION['nhatuyendung'];
+		$ds_vieclam = $this->nha_tuyen_dung->ds_vieclam($user);
+		$i = 0;
+		foreach($ds_vieclam as $ds)
+		{
+			$ds_ungvien = $this->nha_tuyen_dung->ds_ungvien($ds['id_vl']);
+			foreach($ds_ungvien as $ds_uv)
+			{
+				$data['ungvien'][$i]['tieu_de'] = $ds_uv['tieu_de'];
+				$data['ungvien'][$i]['ten_uv'] = $ds_uv['ho'].' '.$ds_uv['ten'];
+				$data['ungvien'][$i]['tg_nop'] = date('d-m-Y H:i:s', strtotime($ds_uv['ngay_ut']));
+				$data['ungvien'][$i]['id_hoso'] = $ds_uv['id_hs'];
+				$data['ungvien'][$i]['id_ut'] = $ds_uv['id_ut'];
+				$i++;
+			}
+		}
+		$this->load->view('trangchu', $data);
+	}
 }
 ?>

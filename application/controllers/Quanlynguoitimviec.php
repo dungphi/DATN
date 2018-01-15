@@ -365,15 +365,18 @@ public function quanlytaikhoan()
 		
 	}
 	
-	public function vieclamdaluu()
+	public function vieclamdanop()
 	{
-		$data['title'] = 'Việc làm đã lưu';
-		$data['content'] = 'nguoi_timviec/vieclamdaluu';
+		$data['title'] = 'Việc làm đã nộp';
+		$data['content'] = 'nguoi_timviec/vieclamdanop';
 		$data['active'] = 7;
 		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
+		$user = $_SESSION['nguoitimviec'];
 		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
+		$ntv = $this->nguoi_tim_viec->thongtinnguoidung($user);
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
+		$data['ds_vl'] = $this->nguoi_tim_viec->danhsach_vl($ntv['id_ntv']);
 		$this->load->view('trangchu', $data);
 		
 	}

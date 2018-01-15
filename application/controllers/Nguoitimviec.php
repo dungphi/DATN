@@ -25,6 +25,7 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->model('ho_so_ntv');
 		$this->load->model('nganh_nghe');
 		$this->load->model('dia_diem');
+		$this->load->model('mungtuyen');
 	}
 	public function index()
 	{	
@@ -96,6 +97,54 @@ class Nguoitimviec extends CI_Controller {
 		$this->load->view('trangchu', $data);
 		
 	}		
-	
-	
+	public function nophoso()
+	{
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
+		$id_vl = $this->input->post('id');
+		if(isset($_SESSION['nguoitimviec']))
+		{
+			$user = $_SESSION['nguoitimviec'];
+			$ntv = $this->nguoi_tim_viec->thongtinnguoidung($user);
+			$id_ntimviec = $ntv['id_ntv'];
+			if($this->mungtuyen->check_ungtuyen($id_ntimviec,$id_vl) != 0)
+			{
+				die(json_encode('Bạn đã nộp hồ sơ rồi.'));
+			}
+			else
+			{
+				$dat = array(
+					'id_ntv' => $id_ntimviec,
+					'id_vl' => $id_vl,
+					'ngay_ut' => date('Y-m-d H:i:s'),
+				);
+				$kq = $this->mungtuyen->them($dat);
+				if($kq == 1)
+					die(json_encode('Nộp hồ sơ thành công.'));
+				else
+					die(json_encode('Lỗi kết nối cơ sở dữ liệu.'));
+			}
+		}
+		else
+			die(json_encode('Bạn chưa đăng nhập.'));
+	}
+	public function check_nophoso()
+	{
+		$id_vl = $this->input->post('id');
+		if(isset($_SESSION['nguoitimviec']))
+		{
+			$user = $_SESSION['nguoitimviec'];
+			$ntv = $this->nguoi_tim_viec->thongtinnguoidung($user);
+			$id_ntimviec = $ntv['id_ntv'];
+			if($this->mungtuyen->check_ungtuyen($id_ntimviec,$id_vl) != 0)
+			{
+				die(json_encode(1));
+			}
+			else
+			{
+				die(json_encode(3));
+			}
+		}
+		else
+			die(json_encode(2));
+	}
 }
