@@ -195,25 +195,11 @@ public function quanlytaikhoan()
 		$this->load->view('trangchu', $data);
 		
 	}
-	public function xoalyhoso($id)
+	public function xoa_hoso()
 	{
-		$data['title'] = 'Quản lý hồ sơ';
-		$data['content'] = 'nguoi_timviec/quanlyhoso';
-		$data['active'] = 6;
-		$data['trungtamquanly'] ='nguoi_timviec/trungtamquanly';
-		$user = $_SESSION['nguoitimviec'];
-		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
-		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);//chưa có hs
-		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
-		$data['diadiem'] = $this->dia_diem->diadiem();
-		$kq = $this->nguoi_tim_viec->xoahoso($id);
-		if(isset($kq))
-			$data['thongbao'] = '<script>alert("Xóa thành công.");location.assign("'.base_url('quanlynguoitimviec/quanlyhoso').'");</script>';
-		else
-			$data['thongbao'] = '<script>alert("Lỗi.")</script>';
-		
-		$this->load->view('trangchu', $data);
-		
+		$id = $this->input->post('id');
+		$kq = $this->ho_so_ntv->xoa_hs($id);
+		echo $kq;
 	}
 	public function taohoso($id)
 	{
@@ -287,6 +273,7 @@ public function quanlytaikhoan()
 		$user = $_SESSION['nguoitimviec'];
 		$data['nguoitimviec'] = $this->nguoi_tim_viec->thongtinhoso($user);
 		$data['timviec'] = $this->nguoi_tim_viec->taohoso($user);
+		$data['hoso'] = $this->nguoi_tim_viec->xemhoso($id);
 		$data['capbac'] = $this->cap_bac->capbac();
 		$data['hinhthuc'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
 		$data['trinhdo'] = $this->Trinh_do->trinhdo();
@@ -330,7 +317,7 @@ public function quanlytaikhoan()
 					);
 				$kq = $this->nguoi_tim_viec->capnhathoso($dat, $id);
 				if(isset($kq))
-					$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.assign("'.base_url('quanlynguoitimviec/xemhoso').'");</script>';
+					$data['thongbao'] = '<script>alert("Chỉnh sửa thành công.");location.assign("'.base_url('quanlynguoitimviec/xemhoso/'.$id).'");</script>';
 				else
 					$data['thongbao'] ='<script>alert("Lỗi.")</script>';
 				
@@ -402,10 +389,5 @@ public function quanlytaikhoan()
 		$kq = $this->nguoi_tim_viec->capnhat($dat,$id_ntv);
 		echo $kq;
 	}
-	public function xoa_hoso()
-	{
-		$id = $this->input->post('id_hoso');
-		$kq = $this->nguoi_tim_viec->xoahoso($id);
-		echo $kq;
-	}
+	
 }

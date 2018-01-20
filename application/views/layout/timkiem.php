@@ -10,7 +10,7 @@
                         <div class="row">
                         	<div class="baituyendung">
                         		<div class="col-xs-2 col-sm-2 col-md-2 hinhanh">
-                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><img src="<?=base_url($tam['hinh_anh']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
+                            		<a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><img src="<?=base_url($tam['avatar']); ?>" class="img-responsive" alt="" width="150" height="100"></a>
                         		</div>
                         		<div class="col-xs-9 col-sm-9 col-md-9 thongtin">
                                     <h4> <a href="<?=base_url('nhatuyendung/thongtinvieclam/'.$tam['id_ntd']); ?>"><?=$tam['tieu_de']; ?></a></h4>

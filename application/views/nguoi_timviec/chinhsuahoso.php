@@ -14,7 +14,7 @@ if(isset($thongbao))
         		<i> - Yêu cầu viết tiếng Việt <label>có dấu</label>, không viết chữ in hoa (trừ chữ cái đầu câu).</i></br>
 				<i>- Các hồ sơ không đúng quy định, không đạt chất lượng, nội dung không nghiêm túc sẽ bị xóa không cần báo trước.</i>
         	</div>
-            <form action="<?= base_url('quanlynguoitimviec/chinhsuahoso/'.$nguoitimviec['id_hs']);?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('quanlynguoitimviec/chinhsuahoso/'.$hoso['id_hoso']);?>" method="post" enctype="multipart/form-data">
             <div class="tttongquan">
             	<h3><i class=""></i> Thông Tin Tổng Quan <i class="red">( Bắt buộc)</i></h3>
             
@@ -24,7 +24,7 @@ if(isset($thongbao))
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-              			<input type="text" name="tieu_de" class="form-control" value="<?= $nguoitimviec['tieu_de'];?><?php set_value('tieu_de')?>"> 
+              			<input type="text" name="tieu_de" class="form-control" value="<?= $hoso['tieu_de'];?><?php set_value('tieu_de')?>"> 
 						<?php echo form_error('tieu_de', '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>', '</div>'); ?>
                     </div>
                     
@@ -36,11 +36,11 @@ if(isset($thongbao))
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="trinh_do" tabindex="-1" aria-hidden="true">
-                            <option value="<?=$nguoitimviec['id_td']; ?>"><?=$nguoitimviec['trinh_do']; ?></option>
+                            <option value="<?=$hoso['id_td']; ?>"><?=$hoso['trinh_do']; ?></option>
                        	<?php
                             foreach($trinhdo as $td)
                             {
-								if ($nguoitimviec['id_td']!= $td['id_td'])
+								if ($hoso['id_td']!= $td['id_td'])
 								{
                         ?>
                             <option value="<?=$td['id_td']; ?>" <?php if(isset($id_td)) {if($id_td == $td['id_td']) echo 'selected';} ?>><?=$td['trinh_do'] ?></option>
@@ -60,11 +60,11 @@ if(isset($thongbao))
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="kinh_nghiem" tabindex="-1" aria-hidden="true">
-                            <option value="<?=$nguoitimviec['id_kn'];?>"><?=$nguoitimviec['ten_kn'];?></option>
+                            <option value="<?=$hoso['id_kn'];?>"><?=$hoso['ten_kn'];?></option>
                        	<?php
                             foreach($kinhnghiem as $kn)
                             {
-								if ($nguoitimviec['id_kn']!= $kn['id_kn'])
+								if ($hoso['id_kn']!= $kn['id_kn'])
 								{
                         ?>
                             <option value="<?=$kn['id_kn']; ?>" <?php if(isset($id_kn)) {if($id_kn == $kn['id_kn']) echo 'selected';} ?>><?=$kn['ten_kn'] ?></option>
@@ -88,16 +88,16 @@ if(isset($thongbao))
                         <?php
 							foreach($capbac as $cb)
 							{
-								if ($nguoitimviec['chuc_vu_ht']== $cb['cap_bac'])
+								if ($hoso['chuc_vu_ht']== $cb['cap_bac'])
 									{
 						?>
-                            <option value="<?=$cb['cap_bac'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
+                            <option value="<?=$cb['cap_bac'];?>"><?=$hoso['chuc_vu_ht'];?></option>
                        	<?php
 									}
 							}
                             foreach($capbac as $cb)
                             {
-								if ($nguoitimviec['chuc_vu_ht']!= $cb['cap_bac'])
+								if ($hoso['chuc_vu_ht']!= $cb['cap_bac'])
 								{
                         ?>
                             <option value="<?=$cb['cap_bac']; ?>"><?=$cb['cap_bac'] ?></option>
@@ -120,16 +120,16 @@ if(isset($thongbao))
                        	<?php
 							foreach($capbac as $cb)
 							{
-								if ($nguoitimviec['chuc_vu_mm']== $cb['cap_bac'])
+								if ($hoso['chuc_vu_mm']== $cb['cap_bac'])
 									{
 						?>
-                            <option value="<?=$cb['cap_bac'];?>"><?=$nguoitimviec['chuc_vu_ht'];?></option>
+                            <option value="<?=$cb['cap_bac'];?>"><?=$hoso['chuc_vu_ht'];?></option>
                        	<?php
 									}
 							}
                             foreach($capbac as $cb)
                             {
-								if ($nguoitimviec['chuc_vu_mm']!= $cb['cap_bac'])
+								if ($hoso['chuc_vu_mm']!= $cb['cap_bac'])
 								{
                         ?>
                             <option value="<?=$cb['cap_bac']; ?>"><?=$cb['cap_bac'] ?></option>
@@ -150,11 +150,11 @@ if(isset($thongbao))
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="nganh_nghe" tabindex="-1" aria-hidden="true">
-                            <option value="<?=$nguoitimviec['id_nn'];?>"><?=$nguoitimviec['ten_nn'];?></option>
+                            <option value="<?=$hoso['id_nn'];?>"><?=$hoso['ten_nn'];?></option>
                        	<?php
                             foreach($nganhnghe as $nn)
                             {
-								if ($nguoitimviec['id_nn']!= $nn['id_nn'])
+								if ($hoso['id_nn']!= $nn['id_nn'])
 								{
                         ?>
                             <option value="<?=$nn['id_nn']; ?>" <?php if(isset($id_nn)) {if($id_nn == $nn['id_nn']) echo 'selected';} ?>><?=$nn['ten_nn'] ?></option>
@@ -174,11 +174,11 @@ if(isset($thongbao))
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="dia_diem" tabindex="-1" aria-hidden="true">
-                            <option value="<?=$nguoitimviec['id_ddlv'];?>"><?=$nguoitimviec['ten_dd'];?></option>
+                            <option value="<?=$hoso['id_ddlv'];?>"><?=$hoso['ten_dd'];?></option>
                          <?php
                             foreach($diadiem as $dd)
                             {
-								if ($nguoitimviec['id_ddlv']!= $dd['id_dd'])
+								if ($hoso['id_ddlv']!= $dd['id_dd'])
 								{
                         ?>
                             <option value="<?=$dd['id_dd']; ?>" <?php if(isset($id_dd)) {if($id_dd == $dd['id_dd']) echo 'selected';} ?>><?=$dd['ten_dd'] ?></option>
@@ -201,16 +201,16 @@ if(isset($thongbao))
                         <?php
                             foreach($hinhthuc as $htlv)
                             {
-								if ($nguoitimviec['hinh_thuc_lam_viec']== $htlv['hinh_thuc'])
+								if ($hoso['hinh_thuc_lam_viec']== $htlv['hinh_thuc'])
 								{
                         ?>
-                            <option value="<?=$htlv['hinh_thuc'];?>"><?=$nguoitimviec['hinh_thuc_lam_viec'];?></option>
+                            <option value="<?=$htlv['hinh_thuc'];?>"><?=$hoso['hinh_thuc_lam_viec'];?></option>
                          <?php
 								}
 							}
                             foreach($hinhthuc as $htlv)
                             {
-								if ($nguoitimviec['hinh_thuc_lam_viec']!= $htlv['hinh_thuc'])
+								if ($hoso['hinh_thuc_lam_viec']!= $htlv['hinh_thuc'])
 								{
                         ?>
                             <option value="<?=$htlv['hinh_thuc']; ?>"><?=$htlv['hinh_thuc'] ?></option>
@@ -230,11 +230,11 @@ if(isset($thongbao))
                     </div>
                     <div class="col-sm-8 col-md-8">
                     	<select class="form-control" name="muc_luong" tabindex="-1" aria-hidden="true">
-                            <option value="<?=$nguoitimviec['id_muc_luong'];?>"><?=$nguoitimviec['muc_luong'];?></option>
+                            <option value="<?=$hoso['id_muc_luong'];?>"><?=$hoso['muc_luong'];?></option>
                          <?php
                             foreach($mucluong as $ml)
                             {	
-								if ($nguoitimviec['id_muc_luong']!= $ml['id_ml'])
+								if ($hoso['id_muc_luong']!= $ml['id_ml'])
 								{
                         ?>
                             <option value="<?=$ml['id_ml']; ?>" <?php if(isset($id_ml)) {if($id_ml== $ml['id_ml']) echo 'selected';} ?>><?=$ml['muc_luong'] ?></option>
@@ -253,7 +253,7 @@ if(isset($thongbao))
                     
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <textarea name="muc_tieu" class="form-control" value="" rows="7"><?=$nguoitimviec['muc_tieu'];?></textarea>
+                        <textarea name="muc_tieu" class="form-control" value="" rows="7"><?=$hoso['muc_tieu'];?></textarea>
                          <input type="date"class="hidden" name="ngay_dk" placeholder="" value="<?=date("Y-m-d");?>" />
                      
                     </div>
