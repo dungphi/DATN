@@ -83,7 +83,7 @@ if(isset($thongbao))
                             foreach($capbac as $cb)
                             {
                         ?>
-                            <option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
+                            <option value="<?=$cb['cap_bac']; ?>"><?=$cb['cap_bac'] ?></option>
 						<?php
                             }
                         ?>
@@ -104,7 +104,7 @@ if(isset($thongbao))
                             foreach($capbac as $cb)
                             {
                         ?>
-                            <option value="<?=$cb['id_cb']; ?>" <?php if(isset($id_cb)) {if($id_cb == $cb['id_cb']) echo 'selected';} ?>><?=$cb['cap_bac'] ?></option>
+                            <option value="<?=$cb['cap_bac']; ?>"><?=$cb['cap_bac'] ?></option>
 						<?php
                             }
                         ?>
@@ -188,7 +188,7 @@ if(isset($thongbao))
                             foreach($hinhthuc as $htlv)
                             {
                         ?>
-                            <option value="<?=$htlv['id_htlv']; ?>" <?php if(isset($id_htlv)) {if($id_htlv== $htlv['id_htlv']) echo 'selected';} ?>><?=$htlv['hinh_thuc'] ?></option>
+                            <option value="<?=$htlv['hinh_thuc']; ?>"><?=$htlv['hinh_thuc'] ?></option>
 						<?php
                             }
                         ?>

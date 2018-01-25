@@ -88,7 +88,7 @@
            <div class="ttbangcap">
                <h3 class="blue"> Thông Tin Trình Độ & Bằng Cấp </h3>   
                <div class="row tt">
-               	Chưa xong
+               	Chưa cập nhật
                </div>
            </div>
             <?php
@@ -102,7 +102,7 @@
            <div class="ttkinhnghiem">
                <h3 class="blue"> Thông Tin Kinh Nghiệm </h3>   
                <div class="row tt">
-               	Chưa xong
+               	Chưa cập nhật
                </div>
            </div>
             <?php
@@ -121,16 +121,16 @@
 				?>
            		 <div class="row">
                 	<div class="col-md-4 chinhsuahs">
-                    	<a href="<?=base_url('quanlyhoso/quanlyhoso');?>">
+                    	<a href="<?=base_url('quanlynguoitimviec/quanlyhoso');?>">
                             <button type="submit" class="btn btn-info btn-block btn_qlhs btn_chinhsuahoso">
                                 <i class="fa fa-upload fa-lg fa-fw"></i> ĐĂNG HỒ SƠ
                             </button></a>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 xemhs">
-                    	<a href="<?=base_url('quanlyhoso/xemhoso');?>">
-                    	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xemhoso">
+                    	
+                    	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xemhoso" onclick="xoa_hoso(<?=$hoso['id_hoso']?>)">
                              <i class="fa fa-trash fa-lg fa-fw"></i>XÓA HỒ SƠ
-                        </button></a>
+                        </button>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 xoahs">
                     	<button type="submit" class="btn btn-info btn-block btn_qlhs btn_xoahoso" onclick="javascript:window.history.go(-1)">
@@ -140,3 +140,24 @@
                 </div>
            </div>
         </div>
+<script type="text/javascript">
+	function xoa_hoso(id){
+        if (confirm("Bạn có muốn xóa không?")) {
+            $.ajax({
+                dataType: "json",
+                type:"POST",
+                url:"<?=base_url('quanlynguoitimviec/xoa_hoso'); ?>",
+                data:{id:id},
+                success: function(result){
+                    if(result == 1){
+                        alert("Xóa thành công");
+                        location.assign("<?=base_url('quanlynguoitimviec/quanlyhoso')?>");
+                    }
+					else{
+						alert("Lỗi!");
+					}
+                }
+            });
+        }
+    }
+</script>

@@ -84,6 +84,11 @@ class Ho_so_ntv extends CI_Model{
 		$kq = $this->db->get()->result_array();
 		return count($kq);
 	}
+	public function xoa_hs($id)
+	{
+		$this->db->where('id_hoso', $id);
+		return $this->db->delete('ho_so_tim_viec');
+	}
 	public function capnhatluotxem($data=array(),$id)
 	{
 		$this->db->where('id_hoso',$id);
