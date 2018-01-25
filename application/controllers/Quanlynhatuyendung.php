@@ -37,6 +37,7 @@ class Quanlynhatuyendung extends CI_Controller {
 		$this->load->model('cap_bac');
 		$this->load->model('ngoai_ngu');
 		$this->load->model('gioi_tinh');
+		$this->load->model('mungtuyen');
 	}
 	public function quanlytaikhoan()
 	{
@@ -437,8 +438,15 @@ class Quanlynhatuyendung extends CI_Controller {
 		$kq = $this->viec_lam->xoa_vl($id);
 		echo $kq;
 	}
+	public function xoa_ungvien()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->mungtuyen->xoa($id);
+		echo $kq;
+	}
 	public function ungvien()
 	{
+		$data['title'] = 'Danh sách ứng viên';
 		$data['active'] = 7;
 		$data['trungtamquanly'] ='nhatuyendung/trungtamquanly';
 		$data['content'] = 'nhatuyendung/ungvien';

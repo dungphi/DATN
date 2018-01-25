@@ -97,6 +97,7 @@
 			url:"<?=base_url('nguoitimviec/check_nophoso'); ?>",
 			data:{id:<?=$thongtin['id_vl'] ?>},
 			success: function(result){
+				console.log(result);
 				if(result == 1){
 					$('#nop_hs').addClass('btn-warning');
 					$('#nop_hs').removeClass('luu-vl');

@@ -70,43 +70,99 @@
                 <div class="group-nganh-nghe">
                     <select class="form-control nganh_nghe" name="nganh_nghe" tabindex="-1" aria-hidden="true" >
                         <option value="0">Chọn ngành nghề</option>
+						<?php
+							foreach($nganhnghe as $nn)
+							{
+						?>
+                        <option value="<?=$nn['id_nn'] ?>"><?=$nn['ten_nn'] ?></option>
+						<?php
+							}
+				  		?>
                     </select>
                 </div>
                 <div class="form-group group-tinh-thanh">
                     <select class="form-control tinh_thanh" name="tinh_thanh" tabindex="-1" aria-hidden="true">
                         <option value="0">Chọn nơi làm việc</option>
+						<?php
+						foreach($diadiem as $dd)
+						{
+						?>
+                        <option value="<?=$dd['id_dd'] ?>"><?=$dd['ten_dd'] ?></option>
+						<?php
+						}
+						?>
                      </select>
                  </div>
                  <div class="form-group group-muc-luong">
-                    <select class="form-control muc_luong" name="tinh_thanh" tabindex="-1" aria-hidden="true">
+                    <select class="form-control muc_luong" name="muc_luong" tabindex="-1" aria-hidden="true">
                         <option value="0">Chọn mức lương</option>
+						<?php
+						foreach($mucluong as $ml)
+						{
+						?>
+						<option value="<?=$ml['id_ml'] ?>"><?=$ml['muc_luong'] ?></option>
+						<?php
+						}
+						?>
                      </select>
                  </div>
                  <div class="form-group group-hinh-thuc-lam-viec">
-                    <select class="form-control hinh_thuc_lam_viec" name="tinh_thanh" tabindex="-1" aria-hidden="true">
+                    <select class="form-control hinh_thuc_lam_viec" name="hinh_thuc" tabindex="-1" aria-hidden="true">
                         <option value="0">Chọn hình thức làm việc</option>
+						<?php
+						foreach($hinhthuc_lv as $ht)
+						{
+						?>
+                        <option value="<?=$ht['id_htlv'] ?>"><?=$ht['hinh_thuc'] ?></option>
+						<?php
+						}
+						?>
                      </select>
                  </div>
                  
                  <div class="form-group group-kinh-nghiem">
-                    <select class="form-control kinh_nghiem" name="tinh_thanh" tabindex="-1" aria-hidden="true">
+                    <select class="form-control kinh_nghiem" name="kinh_nghiem" tabindex="-1" aria-hidden="true">
                         <option value="0">Chọn kinh nghiệm</option>
+                        <?php
+						foreach($kinhnghiem as $kn)
+						{
+						?>
+						<option value="<?=$kn['id_kn'] ?>"><?=$kn['ten_kn'] ?></option>
+						<?php
+						}
+						?>
                      </select>
                  </div>
                  
                  <div class="form-group group-trinh-do">
-                    <select class="form-control trinh_do" name="tinh_thanh" tabindex="-1" aria-hidden="true">
+                    <select class="form-control trinh_do" name="trinh_do" tabindex="-1" aria-hidden="true">
                         <option value="0">Chọn trình độ</option>
+                        <?php
+						foreach($trinhdo as $td)
+						{
+						?>
+						<option value="<?=$td['id_td'] ?>"><?=$td['trinh_do'] ?></option>
+						<?php
+						}
+						?>
                      </select>
                  </div>
                  <div class="form-group group-gioi-tinh">
-                    <select class="form-control gioi_tinh" name="tinh_thanh" tabindex="-1" aria-hidden="true">
+                    <select class="form-control gioi_tinh" name="gioi_tinh" tabindex="-1" aria-hidden="true">
                         <option value="0">Chọn giới tính</option>
+						<?php
+						foreach($gioitinh as $gt)
+						{
+						?>
+                        <option value="<?=$gt['id_gt'] ?>"><?=$gt['gioi_tinh'] ?></option>
+						<?php
+						}
+						?>
                      </select>
                  </div>
                  </div>
                  <div class="form-group btn_tim_kiem">
-                    <button type="button" class="btn btn-danger btn-lg btn-block btn_tim_kiem " name="btntk"><i class="fa fa-search" aria-hidden="true"> TÌM KIẾM</i></button>
+                    <button type="submit" class="btn btn-danger btn-lg btn-block btn_tim_kiem " name="btntk"><i class="fa fa-search" aria-hidden="true"> TÌM KIẾM</i></button>
                  </div>
               </form>  
        		  	 </div>

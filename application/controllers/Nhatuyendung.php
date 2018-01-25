@@ -25,6 +25,11 @@ class Nhatuyendung extends CI_Controller {
 		$this->load->model('ho_so_ntv');
 		$this->load->model('nganh_nghe');
 		$this->load->model('dia_diem');
+		$this->load->model('muc_luong');
+		$this->load->model('hinh_thuc_lam_viec');
+		$this->load->model('kinh_nghiem');
+		$this->load->model('trinh_do');
+		$this->load->model('gioi_tinh');
 	}
 	public function index()
 	{	
@@ -78,6 +83,12 @@ class Nhatuyendung extends CI_Controller {
 		
 		$data['nganhnghe'] = $this->nganh_nghe->nganhnghe();
 		$data['diadiem'] = $this->dia_diem->diadiem();
+		$data['mucluong'] = $this->muc_luong->mucluong();
+		$data['hinhthuc_lv'] = $this->hinh_thuc_lam_viec->hinhthuclamviec();
+		$data['kinhnghiem'] = $this->kinh_nghiem->kinhnghiem();
+		$data['trinhdo'] = $this->trinh_do->trinhdo();
+		$data['gioitinh'] = $this->gioi_tinh->danhsach();
+
 		$this->load->view('trangchu', $data);
 
 	}	

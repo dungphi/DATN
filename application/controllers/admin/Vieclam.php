@@ -30,7 +30,9 @@ class Vieclam extends CI_Controller {
 		$this->load->model('kinh_nghiem');
 		$this->load->model('muc_luong');
 		$this->load->model('trinh_do');
+		$this->load->model('cap_bac');
 		$this->load->model('madmin');
+		$this->load->model('ngoai_ngu');
 	}
 	//việc làm
 	public function index()
@@ -313,4 +315,99 @@ class Vieclam extends CI_Controller {
 			die(json_encode(0));
 	}
 	//kết thúc trình độ
+	//Cấp bậc
+	public function capbac()
+	{
+		$data['title'] = 'Danh sách cấp bậc';
+		$data['content'] = 'admin/vieclam/capbac';
+		$data['capbac'] = $this->cap_bac->capbac();
+		$this->load->view('admin/index', $data);
+
+	}
+	public function them_capbac()
+	{
+		$capbac = $this->input->post('capbac');
+		$kq = $this->cap_bac->them_capbac($capbac);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_capbac()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->cap_bac->xoa_capbac($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function chinhsua_capbac()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->cap_bac->chinhsua_capbac($id);
+		if(isset($kq))
+			die(json_encode($kq));
+		else
+			die(json_encode(0));
+	}
+	public function luu_capbac()
+	{
+		$id = $this->input->post('id');
+		$capbac = $this->input->post('capbac');
+		$kq = $this->cap_bac->luu_capbac($id, $capbac);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	//Kết thúc cấp bậc
+	//Ngoại ngữ
+	public function ngoaingu()
+	{
+		$data['title'] = 'Danh sách ngoại ngữ';
+		$data['content'] = 'admin/vieclam/ngoaingu';
+		$data['ngoaingu'] = $this->ngoai_ngu->ngoaingu();
+		$this->load->view('admin/index', $data);
+
+	}
+	public function them_ngoaingu()
+	{
+		$ngoaingu = $this->input->post('ngoaingu');
+		$kq = $this->ngoai_ngu->them_ngoaingu($ngoaingu);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function xoa_ngoaingu()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->ngoai_ngu->xoa_ngoaingu($id);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	public function chinhsua_ngoaingu()
+	{
+		$id = $this->input->post('id');
+		$kq = $this->ngoai_ngu->chinhsua_ngoaingu($id);
+		if(isset($kq))
+			die(json_encode($kq));
+		else
+			die(json_encode(0));
+	}
+	public function luu_ngoaingu()
+	{
+		$id = $this->input->post('id');
+		$ngoaingu = $this->input->post('ngoaingu');
+		$kq = $this->ngoai_ngu->luu_ngoaingu($id, $ngoaingu);
+		if(isset($kq))
+			die(json_encode(1));
+		else
+			die(json_encode(0));
+	}
+	//két thúc ngoại ngữ
+	
 }

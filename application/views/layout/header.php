@@ -151,7 +151,7 @@
 						<li <?php if($active == 1) echo 'class="active"'; ?>><a href="<?=base_url(); ?>"><span class="fa fa-home nav_icon"></span> Trang Chủ</a></li>
 						<li <?php if($active == 2) echo 'class="active"'; ?>><a href="<?=base_url('nguoitimviec'); ?>"> Người Tìm Việc <span class="fa fa-id-card-o nav_icon "></span></a></li>
 						<li <?php if($active == 3) echo 'class="active"'; ?>><a href="<?=base_url('nhatuyendung'); ?>">Nhà Tuyển Dụng <span class="fa fa-file-text-o nav_icon"></span></a></li>
-						<li><a href="<?=base_url('thongtinchitiet');?>">Dịch Vụ Lao Động <span class="fa fa-handshake-o"></span></a></li>
+						<li><a href="<?=base_url('dichvu');?>">Dịch Vụ Lao Động <span class="fa fa-handshake-o"></span></a></li>
 						<li><a href="#">Tài Liệu Tham Khảo <span class="fa fa-book nav_icon"></span></a></li>
 						<!--
                         <li><a href="pages.html">Pages</a></li>
@@ -213,7 +213,7 @@
 			</script>
             
 		<!-- script-for-nav -->
-	</div>
+</div>
 <!-- header -->
 <script>
 function openNav() {

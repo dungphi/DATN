@@ -25,21 +25,21 @@ class Mungtuyen extends CI_Model{
 	{
 		return $this->db->insert('ung_tuyen',$db);
 	}
-	public function xoa_ad($id)
+	public function xoa($id)
 	{
-		$this->db->where('id_ung_tuyen', $id);
+		$this->db->where('id_ut', $id);
 		return $this->db->delete('ung_tuyen');
 	}
 	public function chinhsua($id)
 	{
 		$this->db->select('*');
 		$this->db->from('ung_tuyen');
-		$this->db->where('id_ung_tuyen', $id);
+		$this->db->where('id_ut', $id);
 		return $this->db->get()->row_array();
 	}
 	public function capnhat($data=array(),$id)
 	{
-		$this->db->where('id_ung_tuyen',$id);
+		$this->db->where('id_ut',$id);
         return $this->db->update('ung_tuyen',$data);
 	}
 	public function edit($user)

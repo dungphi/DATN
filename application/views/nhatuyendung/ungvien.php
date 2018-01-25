@@ -47,12 +47,12 @@
                 
 		</div><!--end tthoso-->
 <script type="text/javascript">
-	function xoa_vl(id){
+	function xoa_uv(id){
         if (confirm("Bạn có muốn xóa không?")) {
             $.ajax({
                 dataType: "json",
                 type:"POST",
-                url:"<?=base_url('quanlynhatuyendung/xoa_vl'); ?>",
+                url:"<?=base_url('quanlynhatuyendung/xoa_ungvien'); ?>",
                 data:{id:id},
                 success: function(result){
                     if(result == 1){
